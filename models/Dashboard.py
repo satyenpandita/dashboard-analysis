@@ -1,4 +1,5 @@
 from models.DeltaVsConsensus import DeltaVsConsensus
+from models.TargetPrice import TargetPrice
 
 
 class Dashboard(object):
@@ -6,7 +7,7 @@ class Dashboard(object):
 
     def __init__(self, worksheet):
         super(Dashboard, self).__init__()
-        self.worksheet = worksheet
+        # self.worksheet = worksheet
         self.company = cell_value(worksheet, 2, 2)
         self.stock_code = cell_value(worksheet, 3, 2)
         self.fiscal_year_end = cell_value(worksheet, 4, 2)
@@ -27,6 +28,7 @@ class Dashboard(object):
         self.next_earnings = cell_value(worksheet, 15, 2)
         self.forecast_period = cell_value(worksheet, 16, 2)
         self.delta_consensus_list = get_consensus_list(worksheet)
+        self.target_price = get_target_price(worksheet)
 
         
 def cell_value(worksheet, rowx, colx):
@@ -34,12 +36,14 @@ def cell_value(worksheet, rowx, colx):
 
 
 def get_consensus_list(worksheet):
-    dvc_list = list()
+    dvc_dict = dict()
     keys = ['current_quarter', 'current_year','current_year_plus_one', 'current_year_plus_two',
             'current_year_plus_three']
     for key in keys:
-        dvc_dict = dict()
         colx = 3
         dvc_dict[key] = DeltaVsConsensus(worksheet, colx)
-        dvc_list.append(dvc_dict)
-    return dvc_list
+    return dvc_dict
+
+
+def get_target_price(worksheet):
+    return TargetPrice(worksheet)

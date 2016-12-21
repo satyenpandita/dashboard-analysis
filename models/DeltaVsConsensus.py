@@ -8,7 +8,7 @@ def get_object(worksheet, rowx, colx):
     return dvc
 
 
-class DeltaVsConsensus:
+class DeltaVsConsensus(object):
 
     def __init__(self, worksheet, colx):
         super(DeltaVsConsensus, self).__init__()

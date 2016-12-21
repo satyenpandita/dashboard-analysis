@@ -1,4 +1,5 @@
 from models.Dashboard import Dashboard
+import jsonpickle
 
 
 class DashboardParser:
@@ -7,4 +8,4 @@ class DashboardParser:
         self.dashboard = Dashboard(worksheet)
 
     def save_dashboard(self):
-        print(self.dashboard.__dict__)
+        print(jsonpickle.encode(self.dashboard))

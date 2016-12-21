@@ -2,3 +2,4 @@
 dashboard/
 ~$*
 *.pyc
+.DS_Store
