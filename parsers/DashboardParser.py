@@ -1,5 +1,5 @@
 from models.Dashboard import Dashboard
-import jsonpickle
+from config.mongo_config import db
 
 
 class DashboardParser:
@@ -8,4 +8,5 @@ class DashboardParser:
         self.dashboard = Dashboard(worksheet)
 
     def save_dashboard(self):
-        print(jsonpickle.encode(self.dashboard))
+        print(self.dashboard.__dict__)
+        db.dashboards.insert_one(self.dashboard.__dict__)

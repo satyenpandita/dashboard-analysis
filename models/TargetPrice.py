@@ -52,9 +52,9 @@ class BearScenario(object):
 class TargetPrice(object):
     def __init__(self, worksheet):
         super(TargetPrice, self).__init__()
-        self.base = BaseScenario(worksheet)
-        self.bear = BearScenario(worksheet)
-        self.bull = BullScenario(worksheet)
+        self.base = BaseScenario(worksheet).__dict__
+        self.bear = BearScenario(worksheet).__dict__
+        self.bull = BullScenario(worksheet).__dict__
         self.expected_value_1year = worksheet.cell(46, 4).value
         self.expected_value_3year = worksheet.cell(46, 5).value
         self.borrow_cost_1year = worksheet.cell(47, 4).value

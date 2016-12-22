@@ -1,5 +1,6 @@
 from models.DeltaVsConsensus import DeltaVsConsensus
 from models.TargetPrice import TargetPrice
+from models.DataTracking import DataTracking
 
 
 class Dashboard(object):
@@ -27,8 +28,10 @@ class Dashboard(object):
         self.last_updated = cell_value(worksheet, 14, 2)
         self.next_earnings = cell_value(worksheet, 15, 2)
         self.forecast_period = cell_value(worksheet, 16, 2)
+        self.likely_outcome = cell_value(worksheet, 21, 11)
         self.delta_consensus_list = get_consensus_list(worksheet)
-        self.target_price = get_target_price(worksheet)
+        self.target_price = TargetPrice(worksheet).__dict__
+        self.data_tracking = DataTracking(worksheet).__dict__
 
         
 def cell_value(worksheet, rowx, colx):
@@ -41,9 +44,5 @@ def get_consensus_list(worksheet):
             'current_year_plus_three']
     for key in keys:
         colx = 3
-        dvc_dict[key] = DeltaVsConsensus(worksheet, colx)
+        dvc_dict[key] = DeltaVsConsensus(worksheet, colx).__dict__
     return dvc_dict
-
-
-def get_target_price(worksheet):
-    return TargetPrice(worksheet)
