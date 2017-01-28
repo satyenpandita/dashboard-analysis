@@ -1,11 +1,15 @@
+from utils.cell_functions import cell_value
+
 
 def get_object(worksheet, rowx, colx):
     kpi = dict()
     keys = ['frequency', 'source', 'weight', 'tracking_metric']
     for idx, key in enumerate(keys):
-        cell_value = worksheet.cell(rowx, colx + idx).value
-        if cell_value:
-            kpi[key] = cell_value
+        cell_val = cell_value(worksheet, rowx, colx + idx)
+        if key == 'tracking_metric' and not cell_value:
+            return None
+        if cell_val:
+            kpi[key] = cell_val
     return kpi
 
 

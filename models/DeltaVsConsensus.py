@@ -1,10 +1,11 @@
+from utils.cell_functions import cell_value
 
 
 def get_object(worksheet, rowx, colx):
     dvc = dict()
-    dvc['aim'] = worksheet.cell(rowx, 3).value
-    dvc['consensus'] = worksheet.cell(rowx + 1, 3).value
-    dvc['guidance'] = worksheet.cell(rowx + 2, 3).value
+    dvc['aim'] = cell_value(worksheet, rowx, colx)
+    dvc['consensus'] = cell_value(worksheet, rowx + 1, colx)
+    dvc['guidance'] = cell_value(worksheet, rowx + 2, colx)
     return dvc
 
 
