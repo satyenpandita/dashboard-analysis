@@ -7,7 +7,9 @@ class FinancialInfo:
         super(FinancialInfo, self).__init__()
         self.fd_shares = cell_value(worksheet, 2, 6)
         self.price_per_share = cell_value(worksheet, 3, 6)
-        self.market_cap = self.fd_shares*self.price_per_share
+        self.market_cap = None
+        if self.market_cap and self.price_per_share:
+            self.market_cap = self.fd_shares*self.price_per_share
         self.cash = cell_value(worksheet, 5, 6)
         self.debt = cell_value(worksheet, 6, 6)
         self.others_adj = cell_value(worksheet, 7, 6)

@@ -4,6 +4,10 @@ from models.DataTracking import DataTracking
 from models.FinancialInfo import FinancialInfo
 from models.CurrentValuation import CurrentValuation
 from models.LeverageAndReturns import LeverageAndReturns
+from models.ShortMetrics import ShortMetrics
+from models.AnalystFillCells import AnalystFillCells
+from models.IRRDecomp import IRRDecomp
+from models.Tam import Tam
 from utils.cell_functions import cell_value
 
 
@@ -35,6 +39,10 @@ class Dashboard(object):
             self.forecast_period = cell_value(data, 16, 2)
             self.likely_outcome = cell_value(data, 21, 11)
             self.delta_consensus_list = get_consensus_list(data)
+            self.short_metrics = ShortMetrics(data).__dict__
+            self.irr_decomp = IRRDecomp(data).__dict__
+            self.tam = Tam(data).__dict__
+            self.analyst_fill_cells = AnalystFillCells(data).__dict__
             self.target_price = TargetPrice(data).__dict__
             self.data_tracking = DataTracking(data).__dict__
             self.current_valuation = CurrentValuation(data).__dict__

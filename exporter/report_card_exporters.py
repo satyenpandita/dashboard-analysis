@@ -30,6 +30,7 @@ class ReportCardExporter(object):
         worksheet.merge_range('L2:L3', 'KPI 1', merge_format)
         worksheet.merge_range('M2:M3', 'KPI 2', merge_format)
         worksheet.merge_range('N2:N3', 'KPI 3', merge_format)
+        worksheet.merge_range('O1:O3', 'KPI 3', merge_format)
 
     def __write_data(self):
         row = 4
@@ -60,6 +61,7 @@ class ReportCardExporter(object):
 
         if dsh.base_3yr_present():
             worksheet.write(row, 6, u'\u2713', corr_format)
+            worksheet.write(row, 14, dsh.target_price['base']['pt_3year'])
         else:
             worksheet.write(row, 6, '', err_format)
 
