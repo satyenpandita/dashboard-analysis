@@ -1,5 +1,9 @@
 .idea/
 dashboard/
+denv/
+data*/
+denvn/
 ~$*
 *.pyc
 .DS_Store
+*.xlsx
