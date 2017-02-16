@@ -12,14 +12,14 @@ def get_object(worksheet, rowx, colx):
     return dvc
 
 
-class CurrentValuation(object):
+class CurrentValuationV2(object):
 
     REV_CHOICES = ['EV/Gross Rev  - AIM', 'EV/Net Rev  - AIM','EV/Net Interest Income - AIM', 'EV/GMV - AIM']
     EB_CHOICES = ['EV/Adj. EBITDA - AIM', 'EV/EBITDAR - AIM', 'EV/EBITA - AIM', 'EV/EBIT - AIM', 'EV/PPOP - AIM']
     FCF_CHOICES = ['Free Cash Flow / P - Consensus', 'Core Free Cash Flow / P - Consensus']
 
     def __init__(self, worksheet):
-        super(CurrentValuation, self).__init__()
+        super(CurrentValuationV2, self).__init__()
         self.ev_per_gross_revenue = None
         self.ev_per_net_revenue = None
         self.ev_per_nii = None

@@ -19,11 +19,6 @@ if __name__ == '__main__':
                 worksheet = workbook.sheet_by_index(0)
                 dparser = DashboardParser(worksheet)
                 dparser.save_dashboard()
-    elif sys.argv[1] == 'parse2':
-        for file in os.listdir('data'):
-            if 'xls' in file[-4:]:
-                print(file)
-                DashboardParserV2('data/{}'.format(file))
     elif sys.argv[1] == 'diff':
         name_list = []
         for file in os.listdir('data'):
