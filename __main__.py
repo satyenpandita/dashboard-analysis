@@ -4,9 +4,9 @@ from xlrd import open_workbook
 from parsers.DashboardParser import DashboardParser
 from exporter.report_card_exporters import ReportCardExporter
 from exporter.consolidated_exporter import ConsolidatedExporter
+from exporter.consolidated_exporter_v2 import ConsolidatedExporterV2
 from utils.name_diff import get_name_list
 from utils.cell_functions import find_cell
-from parsers.DasboardParserV2 import DashboardParserV2
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
@@ -34,6 +34,9 @@ if __name__ == '__main__':
         print(name_list)
     elif sys.argv[1] == 'reportcard':
         exporter = ReportCardExporter()
+        exporter.export_report_card()
+    elif sys.argv[1] == 'consolidated2':
+        exporter = ConsolidatedExporterV2()
         exporter.export_report_card()
     elif sys.argv[1] == 'consolidated':
         exporter = ConsolidatedExporter()

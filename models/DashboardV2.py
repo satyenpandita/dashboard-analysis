@@ -60,8 +60,6 @@ class DashboardV2(object):
         if base and bear:
             return base + bear
 
-
-
     def calculate_fcf(self):
         target_year = self.delta_consensus_list.get('current_year_plus_two')
         cash = self.financial_info.get('cash')

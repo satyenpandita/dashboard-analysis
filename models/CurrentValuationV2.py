@@ -25,13 +25,13 @@ class CurrentValuationV2(object):
         self.ev_per_nii = None
         self.ev_per_gmv = None
         metric = cell_value(worksheet, 3, 11)
-        if metric == CurrentValuation.REV_CHOICES[0]:
+        if metric == CurrentValuationV2.REV_CHOICES[0]:
             self.ev_per_gross_revenue = get_object(worksheet, 3, 11)
-        elif metric == CurrentValuation.REV_CHOICES[1]:
+        elif metric == CurrentValuationV2.REV_CHOICES[1]:
             self.ev_per_net_revenue = get_object(worksheet, 3, 11)
-        elif metric == CurrentValuation.REV_CHOICES[2]:
+        elif metric == CurrentValuationV2.REV_CHOICES[2]:
             self.ev_per_nii = get_object(worksheet, 3, 11)
-        elif metric == CurrentValuation.REV_CHOICES[3]:
+        elif metric == CurrentValuationV2.REV_CHOICES[3]:
             self.ev_per_gmv = get_object(worksheet, 3, 11)
 
         self.ev_per_adj_ebidta = None
@@ -41,15 +41,15 @@ class CurrentValuationV2(object):
         self.ev_per_ppop = None
 
         metric = cell_value(worksheet, 5, 11)
-        if metric == CurrentValuation.EB_CHOICES[0]:
+        if metric == CurrentValuationV2.EB_CHOICES[0]:
             self.ev_per_adj_ebidta = get_object(worksheet, 5, 11)
-        elif metric == CurrentValuation.EB_CHOICES[1]:
+        elif metric == CurrentValuationV2.EB_CHOICES[1]:
             self.ev_per_ebidtar = get_object(worksheet, 5, 11)
-        elif metric == CurrentValuation.EB_CHOICES[2]:
+        elif metric == CurrentValuationV2.EB_CHOICES[2]:
             self.ev_per_ebita = get_object(worksheet, 5, 11)
-        elif metric == CurrentValuation.EB_CHOICES[3]:
+        elif metric == CurrentValuationV2.EB_CHOICES[3]:
             self.ev_per_ebit = get_object(worksheet, 5, 11)
-        elif metric == CurrentValuation.EB_CHOICES[3]:
+        elif metric == CurrentValuationV2.EB_CHOICES[3]:
             self.ev_per_ppop = get_object(worksheet, 5, 11)
 
         self.cap_per_adj_eps = get_object(worksheet, 9, 11)
@@ -58,8 +58,8 @@ class CurrentValuationV2(object):
         self.fcf_per_p = None
         self.cfcf_per_p = None
         metric = cell_value(worksheet, 13, 11)
-        if metric == CurrentValuation.FCF_CHOICES[0]:
+        if metric == CurrentValuationV2.FCF_CHOICES[0]:
             self.fcf_per_p = get_object(worksheet, 13, 11)
-        elif metric == CurrentValuation.FCF_CHOICES[1]:
+        elif metric == CurrentValuationV2.FCF_CHOICES[1]:
             self.cfcf_per_p = get_object(worksheet, 13, 11)
 
