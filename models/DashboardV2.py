@@ -8,7 +8,29 @@ from models.ShortMetrics import ShortMetrics
 from models.AnalystFillCells import AnalystFillCells
 from models.IRRDecomp import IRRDecomp
 from models.Tam import Tam
-from utils.cell_functions import cell_value
+from utils.cell_functions import cell_value, cell_value_by_key, find_cell
+
+
+def get_likely_outcome(worksheet):
+    likely_outcome = dict()
+    cell_address = find_cell(worksheet, 'Most likely outcome:')
+    if cell_address:
+        row, col = cell_address
+        likely_outcome['next_1quarter'] = cell_value(worksheet, row + 1, col)
+        likely_outcome['next_1year'] = cell_value(worksheet, row + 2, col)
+        likely_outcome['next_3year'] = cell_value(worksheet, row + 3, col)
+    return likely_outcome
+
+
+def get_opp_thesis(worksheet):
+    opp_thesis = dict()
+    cell_address = find_cell(worksheet, 'Opposite thesis/ Inv Risks (Bear for Long, Bull for Short):')
+    if cell_address:
+        row, col = cell_address
+        opp_thesis['inv_risks'] = cell_value(worksheet, row + 1, col)
+        opp_thesis['next_opposite_thesis'] = cell_value(worksheet, row + 2, col)
+        opp_thesis['next_living_will'] = cell_value(worksheet, row + 3, col)
+    return opp_thesis
 
 
 class DashboardV2(object):
@@ -19,25 +41,26 @@ class DashboardV2(object):
             for k, v in data.items():
                 setattr(self, k, v)
         else:
-            self.company = cell_value(data, 2, 2)
-            self.stock_code = cell_value(data, 3, 2)
-            self.fiscal_year_end = cell_value(data, 4, 2)
-            self.adto_20days = cell_value(data, 7, 2)
-            self.free_float_mshs = cell_value(data, 8, 2)
-            self.free_float_pfdo = cell_value(data, 8, 3)
-            self.wacc_country = cell_value(data, 9, 2)
-            self.wacc_company = cell_value(data, 9, 3)
-            self.direction = cell_value(data, 10, 2)
-            self.current_size = cell_value(data, 10, 3)
-            self.scenario = cell_value(data, 11, 2)
-            self.analyst_primary = cell_value(data, 12, 2)
-            self.analyst_secondary = cell_value(data, 12, 3)
-            self.size_reco_primary = cell_value(data, 13, 2)
-            self.size_reco_secondary = cell_value(data, 13, 3)
-            self.last_updated = cell_value(data, 14, 2)
-            self.next_earnings = cell_value(data, 15, 2)
-            self.forecast_period = cell_value(data, 16, 2)
-            self.likely_outcome = cell_value(data, 21, 11)
+            self.company = cell_value_by_key(data, 'Company:')
+            self.stock_code = cell_value_by_key(data, 'Stock Code:')
+            self.fiscal_year_end = cell_value_by_key(data, 'Fiscal Yea end:')
+            self.adto_20days = cell_value_by_key(data, 'ADTO (20 day, US$mn):')
+            self.free_float_mshs = cell_value_by_key(data, 'Free Float (m shs/% of FDO):')
+            self.free_float_pfdo = cell_value_by_key(data, 'Free Float (m shs/% of FDO):', col_offset=2)
+            self.wacc_country = cell_value_by_key(data, 'WACC (Country/ Company):')
+            self.wacc_company = cell_value_by_key(data, 'WACC (Country/ Company):', col_offset=2)
+            self.direction = cell_value_by_key(data, 'Direction (L/S) & Current Size:')
+            self.current_size = cell_value_by_key(data, 'Direction (L/S) & Current Size:', col_offset=2)
+            self.scenario = cell_value_by_key(data, 'Scenario & (Base+Bear):')
+            self.analyst_primary = cell_value_by_key(data, 'Analyst (Primary/ Secondary):')
+            self.analyst_secondary = cell_value_by_key(data, 'Analyst (Primary/ Secondary):', col_offset=2)
+            self.size_reco_primary = cell_value_by_key(data, 'Size Reco (Primary/ Secondary):')
+            self.size_reco_secondary = cell_value_by_key(data, 'Size Reco (Primary/ Secondary):', col_offset=2)
+            self.last_updated = cell_value_by_key(data, 'Last Updated:')
+            self.next_earnings = cell_value_by_key(data, 'Next earnings: ')
+            self.forecast_period = cell_value_by_key(data, 'Forecast Period:')
+            self.likely_outcome = get_likely_outcome(data)
+            self.opp_thesis = get_opp_thesis(data)
             self.delta_consensus_list = get_consensus_list(data)
             self.short_metrics = ShortMetrics(data).__dict__
             self.irr_decomp = IRRDecomp(data).__dict__
@@ -66,7 +89,7 @@ class DashboardV2(object):
         if target_year and cash:
             other = target_year.get('others')
             if other.get('aim'):
-                return cash/other.get('aim')
+                return cash / other.get('aim')
         return None
 
     def calculate_growth(self, metric):
@@ -77,7 +100,7 @@ class DashboardV2(object):
             next_metric = next_year.get(metric)
             if curr_metric and next_metric:
                 try:
-                    change_percent = (next_metric.get('aim')/curr_metric.get('aim')) - 1
+                    change_percent = (next_metric.get('aim') / curr_metric.get('aim')) - 1
                     return change_percent
                 except Exception:
                     return None
@@ -91,7 +114,7 @@ class DashboardV2(object):
             target_year = target_year.get(metric)
             if curr_metric and target_year:
                 try:
-                    ratio = target_year.get('aim')/curr_metric.get('aim')
+                    ratio = target_year.get('aim') / curr_metric.get('aim')
                     if ratio > 0:
                         cagr = pow(ratio, .25) - 1
                         return cagr
@@ -179,7 +202,7 @@ class DashboardV2(object):
             target_metric = target_year.get(metric)
             if target_metric:
                 try:
-                    change_percent = target_metric.get('aim')/target_metric.get('consensus') - 1
+                    change_percent = target_metric.get('aim') / target_metric.get('consensus') - 1
                     return change_percent
                 except Exception:
                     return None
@@ -189,8 +212,11 @@ def get_consensus_list(worksheet):
     dvc_dict = dict()
     keys = ['current_quarter', 'current_year', 'current_year_plus_one', 'current_year_plus_two',
             'current_year_plus_three']
-    colx = 3
-    for key in keys:
-        dvc_dict[key] = DeltaVsConsensusV2(worksheet, colx).__dict__
-        colx += 1
+    cell_address = find_cell(worksheet, 'Delta v/s Consensus')
+    if cell_address:
+        row, col = cell_address
+        colx = col + 2
+        for idx, key in enumerate(keys):
+            dvc_dict[key] = DeltaVsConsensusV2(worksheet, row, colx + idx).__dict__
+            colx += 1
     return dvc_dict

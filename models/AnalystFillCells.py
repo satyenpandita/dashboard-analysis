@@ -1,13 +1,13 @@
-from utils.cell_functions import cell_value
+from utils.cell_functions import cell_value, cell_value_by_key
 
 
 class AnalystFillCells(object):
     def __init__(self, workbook):
-        self.base_model = cell_value(workbook, 3, 9)
-        self.best_research = cell_value(workbook, 4, 9)
-        self.bull_analyst = cell_value(workbook, 5, 9)
-        self.bear_analyst = cell_value(workbook, 6, 9)
-        self.best_expert_call = cell_value(workbook, 7, 9)
-        self.av_theme = cell_value(workbook, 8, 9)
-        self.sub_theme = cell_value(workbook, 9, 9)
-        self.aisa_angle = cell_value(workbook, 10, 9)
+        self.base_model = cell_value_by_key(workbook, 'Base Model')
+        self.best_research = cell_value_by_key(workbook, 'Best research')
+        self.bull_analyst = cell_value_by_key(workbook, 'Bull Analyst')
+        self.bear_analyst = cell_value_by_key(workbook, 'Bear Analyst')
+        self.best_expert_call = cell_value_by_key(workbook, 'Best expert call')
+        self.av_theme = cell_value_by_key(workbook,'AV Theme')
+        self.sub_theme = cell_value_by_key(workbook, 'Sub-Theme')
+        self.aisa_angle = cell_value_by_key(workbook, 'Asia angle')

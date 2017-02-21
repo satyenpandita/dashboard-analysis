@@ -1,16 +1,26 @@
 import xlrd
 
 
-def find_cell(worksheet, val):
-    rows, cols = worksheet.nrows, worksheet.ncols
-    for row in range(rows):
-        for col in range(cols):
-            cell = worksheet.cell(row, col)
-            if cell.ctype == xlrd.XL_CELL_TEXT:
-                cell_val = cell_value(worksheet, row, col)
+def find_cell(worksheet, val, row_fixed=None):
+    if row_fixed:
+        return __cell_by_row(worksheet, row_fixed, val)
+    else:
+        for row in range(worksheet.nrows):
+            return __cell_by_row(worksheet, row, val)
+
+
+def __cell_by_row(worksheet, row, val):
+    cols = worksheet.ncols
+    for col in range(cols):
+        cell = worksheet.cell(row, col)
+        if cell.ctype == xlrd.XL_CELL_TEXT:
+            cell_val = cell_value(worksheet, row, col)
+            if isinstance(val, list):
+                if cell_val in val:
+                    return row, col, cell_val
+            else:
                 if cell_val and cell_val.strip().lower() == val.strip().lower():
                     return row, col
-
 
 def cell_value(worksheet, rowx, colx):
     cell = worksheet.cell(rowx, colx)
@@ -19,6 +29,12 @@ def cell_value(worksheet, rowx, colx):
     else:
         return worksheet.cell(rowx, colx).value
 
+
+def cell_value_by_key(worksheet, key_str, row_offset=0, col_offset=1):
+    cell_address = find_cell(worksheet, key_str)
+    if cell_address:
+        row, col = cell_address
+        return cell_value(row + row_offset, col+col_offset)
 
 def get_next_column(col_str):
     col = __get_next_column_by_offset(col_str, 1)
