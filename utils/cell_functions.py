@@ -5,8 +5,10 @@ def find_cell(worksheet, val, row_fixed=None):
     if row_fixed:
         return __cell_by_row(worksheet, row_fixed, val)
     else:
-        for row in range(worksheet.nrows):
-            return __cell_by_row(worksheet, row, val)
+        for row in range(176):
+            cell = __cell_by_row(worksheet, row, val)
+            if cell:
+                return cell
 
 
 def __cell_by_row(worksheet, row, val):
@@ -22,6 +24,7 @@ def __cell_by_row(worksheet, row, val):
                 if cell_val and cell_val.strip().lower() == val.strip().lower():
                     return row, col
 
+
 def cell_value(worksheet, rowx, colx):
     cell = worksheet.cell(rowx, colx)
     if cell.ctype == xlrd.XL_CELL_ERROR:
@@ -34,7 +37,8 @@ def cell_value_by_key(worksheet, key_str, row_offset=0, col_offset=1):
     cell_address = find_cell(worksheet, key_str)
     if cell_address:
         row, col = cell_address
-        return cell_value(row + row_offset, col+col_offset)
+        return cell_value(worksheet, row + row_offset, col + col_offset)
+
 
 def get_next_column(col_str):
     col = __get_next_column_by_offset(col_str, 1)

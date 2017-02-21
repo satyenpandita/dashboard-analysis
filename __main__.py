@@ -2,6 +2,7 @@ import sys
 import os
 from xlrd import open_workbook
 from parsers.DashboardParser import DashboardParser
+from parsers.DashboardParserV2 import DashboardParserV2
 from exporter.report_card_exporters import ReportCardExporter
 from exporter.consolidated_exporter import ConsolidatedExporter
 from exporter.consolidated_exporter_v2 import ConsolidatedExporterV2
@@ -17,7 +18,7 @@ if __name__ == '__main__':
                 print(file)
                 workbook = open_workbook('data/'+file)
                 worksheet = workbook.sheet_by_index(0)
-                dparser = DashboardParser(worksheet)
+                dparser = DashboardParserV2(worksheet)
                 dparser.save_dashboard()
     elif sys.argv[1] == 'diff':
         name_list = []

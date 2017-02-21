@@ -17,8 +17,8 @@ def get_likely_outcome(worksheet):
     if cell_address:
         row, col = cell_address
         likely_outcome['next_1quarter'] = cell_value(worksheet, row + 1, col)
-        likely_outcome['next_1year'] = cell_value(worksheet, row + 2, col)
-        likely_outcome['next_3year'] = cell_value(worksheet, row + 3, col)
+        likely_outcome['next_1year'] = cell_value(worksheet, row + 4, col)
+        likely_outcome['next_3year'] = cell_value(worksheet, row + 7, col)
     return likely_outcome
 
 
@@ -28,8 +28,8 @@ def get_opp_thesis(worksheet):
     if cell_address:
         row, col = cell_address
         opp_thesis['inv_risks'] = cell_value(worksheet, row + 1, col)
-        opp_thesis['next_opposite_thesis'] = cell_value(worksheet, row + 2, col)
-        opp_thesis['next_living_will'] = cell_value(worksheet, row + 3, col)
+        opp_thesis['next_opposite_thesis'] = cell_value(worksheet, row + 3, col)
+        opp_thesis['next_living_will'] = cell_value(worksheet, row + 6, col)
     return opp_thesis
 
 
@@ -75,7 +75,7 @@ class DashboardV2(object):
             self.cagr_4years_revenue = self.calculate_cagr_4yrs('gross_revenue')
             self.yoy_growth_eps = self.calculate_growth('adj_eps')
             self.cagr_4years_eps = self.calculate_cagr_4yrs('adj_eps')
-            self.base_plus_bear = self.calculate_base_plus_bear()
+            # self.base_plus_bear = self.calculate_base_plus_bear()
 
     def calculate_base_plus_bear(self):
         base = self.target_price.get('base').get('return_1year')
