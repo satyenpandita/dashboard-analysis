@@ -17,12 +17,12 @@ class DataTracking(object):
 
     def __init__(self, worksheet):
         super(DataTracking, self).__init__()
-        cell_address =  find_cell(worksheet, 'Data Tracking:')
+        cell_address = find_cell(worksheet, 'Data Tracking:')
         if cell_address:
             row, col = cell_address
-            self.kpi1 = get_object(worksheet, row + 1, col - 1)
-            self.kpi2 = get_object(worksheet, row + 2, col - 1)
-            self.kpi3 = get_object(worksheet, row + 3, col - 1)
-            self.kpi4 = get_object(worksheet, row + 4, col - 1)
-            self.kpi5 = get_object(worksheet, row + 5, col - 1)
-            self.kpi6 = get_object(worksheet, row + 6, col - 1)
+            self.kpi1 = get_object(worksheet, row + 2, col - 1)
+            self.kpi2 = get_object(worksheet, row + 3, col - 1)
+            self.kpi3 = get_object(worksheet, row + 4, col - 1)
+            self.kpi4 = get_object(worksheet, row + 5, col - 1)
+            self.kpi5 = get_object(worksheet, row + 6, col - 1)
+            self.kpi6 = get_object(worksheet, row + 7, col - 1)
