@@ -1,25 +1,34 @@
-set :application, "set your application name here"
-set :repository,  "set your repository location here"
+# require 'capistrano-virtualenv'
 
-# set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
-# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
+server "ec2-52-43-105-252.us-west-2.compute.amazonaws.com", :web, :app, :db,primary: true
 
-role :web, "your web-server here"                          # Your HTTP server, Apache/etc
-role :app, "your app-server here"                          # This may be the same as your `Web` server
-role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
-role :db,  "your slave db-server here"
+set :tld, "ec2-52-43-105-252.us-west-2.compute.amazonaws.com"
 
-# if you want to clean up old releases on each deploy uncomment this:
-# after "deploy:restart", "deploy:cleanup"
+# Uncomment the packages that you require. Do not comment out any package
+load "config/recipes/base"
 
-# if you're still using the script/reaper helper you will need
-# these http://github.com/rails/irs_process_scripts
+# RVM settings
+load "config/recipes/rvm_signature_fix"
+# load "config/recipes/rvm"
 
-# If you are using Passenger mod_rails uncomment this:
-# namespace :deploy do
-#   task :start do ; end
-#   task :stop do ; end
-#   task :restart, :roles => :app, :except => { :no_release => true } do
-#     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-#   end
-# end
+# Nginx
+load "config/recipes/nginx"
+# load "config/recipes/nginx_with_https"
+
+# Unicorn
+load "config/recipes/unicorn"
+
+#Flask
+load "config/recipes/flask"
+
+
+set :application, "auroville"
+set :repository,  "git@github.com:Prashant31/dashboard-analysis.git"
+
+set :user, "ubuntu"
+set :deploy_to, "/home/#{user}/apps/#{application}"
+set :deploy_via, :remote_cache
+set :use_sudo, false
+set :scm, "git"
+default_run_options[:pty] = true
+set :ssh_options, { forward_agent: true, paranoid: true, keys: "~/.ssh/id_rsa" }

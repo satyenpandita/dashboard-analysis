@@ -1,0 +1,19 @@
+staging:
+  adapter: mysql2
+  encoding: <%= mysql_encoding %>
+  reconnect: false
+  database: <%= mysql_database %>
+  pool: <%= mysql_connection_pool %>
+  username: <%= mysql_user %>
+  password: <%= mysql_password %>
+  host: <%= mysql_host %>
+
+production:
+  adapter: mysql2
+  encoding: <%= mysql_encoding %>
+  reconnect: false
+  database: <%= mysql_database %>
+  pool: <%= mysql_connection_pool %>
+  username: <%= mysql_user %>
+  password: <%= mysql_password %>
+  host: <%= mysql_host %>
