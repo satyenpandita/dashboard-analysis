@@ -12,6 +12,7 @@ def index():
 def dashboard_update():
     file = request.files['uploadfile']
     print(file.filename)
+    file.save('uploaded_files/{}'.format(file.filename))
     return jsonify({'file': file.filename}), 201
 
 
