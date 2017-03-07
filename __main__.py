@@ -1,11 +1,11 @@
 import sys
 import os
 from xlrd import open_workbook
-from parsers.DashboardParser import DashboardParser
 from parsers.DashboardParserV2 import DashboardParserV2
 from exporter.report_card_exporters import ReportCardExporter
 from exporter.consolidated_exporter import ConsolidatedExporter
 from exporter.consolidated_exporter_v2 import ConsolidatedExporterV2
+from exporter.consolidated_exporter_v3 import ConsolidatedExporterV3
 from utils.name_diff import get_name_list
 from utils.cell_functions import find_cell
 
@@ -37,7 +37,7 @@ if __name__ == '__main__':
         exporter = ReportCardExporter()
         exporter.export_report_card()
     elif sys.argv[1] == 'consolidated2':
-        exporter = ConsolidatedExporterV2()
+        exporter = ConsolidatedExporterV3()
         exporter.export_report_card()
     elif sys.argv[1] == 'consolidated':
         exporter = ConsolidatedExporter()
