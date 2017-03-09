@@ -1,0 +1,178 @@
+# Logfile created on 2017-03-09 13:23:58 +0530 by logger.rb/56815
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 13:23:58 +0530 cap production git:check
+  INFO ---------------------------------------------------------------------------
+  INFO [53b555dc] Running /usr/bin/env mkdir -p /tmp as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [53b555dc] Command: /usr/bin/env mkdir -p /tmp
+  INFO [53b555dc] Finished in 4.197 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-auroville-production-ppal.sh 0.0%
+  INFO Uploading /tmp/git-ssh-auroville-production-ppal.sh 100.0%
+  INFO [f132bca0] Running /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-ppal.sh as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [f132bca0] Command: /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-ppal.sh
+  INFO [f132bca0] Finished in 0.606 seconds with exit status 0 (successful).
+  INFO [3595382e] Running /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [3595382e] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-ppal.sh" ; /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD )
+ DEBUG [3595382e] 	Warning: Permanently added 'github.com,192.30.253.113' (RSA) to the list of known hosts.
+ DEBUG [3595382e] 	
+ DEBUG [3595382e] 	Permission denied (publickey).
+ DEBUG [3595382e] 	
+ DEBUG [3595382e] 	fatal: Could not read from remote repository.
+ DEBUG [3595382e] 	
+ DEBUG [3595382e] 	
+ DEBUG [3595382e] 	Please make sure you have the correct access rights
+ DEBUG [3595382e] 	and the repository exists.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 13:25:51 +0530 cap production git:check
+  INFO ---------------------------------------------------------------------------
+  INFO [3cea10e8] Running /usr/bin/env mkdir -p /tmp as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [3cea10e8] Command: /usr/bin/env mkdir -p /tmp
+  INFO [3cea10e8] Finished in 4.134 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-auroville-production-ppal.sh 0.0%
+  INFO Uploading /tmp/git-ssh-auroville-production-ppal.sh 100.0%
+  INFO [4b00dd4f] Running /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-ppal.sh as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [4b00dd4f] Command: /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-ppal.sh
+  INFO [4b00dd4f] Finished in 0.619 seconds with exit status 0 (successful).
+  INFO [fcb56f87] Running /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [fcb56f87] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-ppal.sh" ; /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD )
+ DEBUG [fcb56f87] 	Warning: Permanently added the RSA host key for IP address '192.30.253.112' to the list of known hosts.
+ DEBUG [fcb56f87] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 13:26:35 +0530 cap production git:check
+  INFO ---------------------------------------------------------------------------
+  INFO [8104a87f] Running /usr/bin/env mkdir -p /tmp as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [8104a87f] Command: /usr/bin/env mkdir -p /tmp
+  INFO [8104a87f] Finished in 4.115 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-auroville-production-ppal.sh 0.0%
+  INFO Uploading /tmp/git-ssh-auroville-production-ppal.sh 100.0%
+  INFO [a6775d96] Running /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-ppal.sh as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [a6775d96] Command: /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-ppal.sh
+  INFO [a6775d96] Finished in 0.628 seconds with exit status 0 (successful).
+  INFO [2b1d7c57] Running /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [2b1d7c57] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-ppal.sh" ; /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD )
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 13:30:12 +0530 cap production git:check
+  INFO ---------------------------------------------------------------------------
+  INFO [c3e8cfd2] Running /usr/bin/env mkdir -p /tmp as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [c3e8cfd2] Command: /usr/bin/env mkdir -p /tmp
+  INFO [c3e8cfd2] Finished in 4.139 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-auroville-production-ppal.sh 0.0%
+  INFO Uploading /tmp/git-ssh-auroville-production-ppal.sh 100.0%
+  INFO [b543315e] Running /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-ppal.sh as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [b543315e] Command: /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-ppal.sh
+  INFO [b543315e] Finished in 0.620 seconds with exit status 0 (successful).
+  INFO [6b577480] Running /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [6b577480] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-ppal.sh" ; /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD )
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 13:46:19 +0530 cap production git:check
+  INFO ---------------------------------------------------------------------------
+  INFO [d40866d9] Running /usr/bin/env mkdir -p /tmp as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [d40866d9] Command: /usr/bin/env mkdir -p /tmp
+  INFO [d40866d9] Finished in 4.124 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-auroville-production-ppal.sh 0.0%
+  INFO Uploading /tmp/git-ssh-auroville-production-ppal.sh 100.0%
+  INFO [62576edd] Running /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-ppal.sh as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [62576edd] Command: /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-ppal.sh
+  INFO [62576edd] Finished in 0.605 seconds with exit status 0 (successful).
+  INFO [4b8dd537] Running /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [4b8dd537] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-ppal.sh" ; /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD )
+ DEBUG [4b8dd537] 	Permission denied (publickey).
+ DEBUG [4b8dd537] 	
+ DEBUG [4b8dd537] 	fatal: Could not read from remote repository.
+ DEBUG [4b8dd537] 	
+ DEBUG [4b8dd537] 	
+ DEBUG [4b8dd537] 	Please make sure you have the correct access rights
+and the repository exists.
+ DEBUG [4b8dd537] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 13:47:34 +0530 cap production git:check
+  INFO ---------------------------------------------------------------------------
+  INFO [7ed8d868] Running /usr/bin/env mkdir -p /tmp as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [7ed8d868] Command: /usr/bin/env mkdir -p /tmp
+  INFO [7ed8d868] Finished in 4.032 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-auroville-production-ppal.sh 0.0%
+  INFO Uploading /tmp/git-ssh-auroville-production-ppal.sh 100.0%
+  INFO [81aef868] Running /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-ppal.sh as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [81aef868] Command: /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-ppal.sh
+  INFO [81aef868] Finished in 0.617 seconds with exit status 0 (successful).
+  INFO [1088964b] Running /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [1088964b] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-ppal.sh" ; /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD )
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 13:48:37 +0530 cap production git:check
+  INFO ---------------------------------------------------------------------------
+  INFO [0d6f131f] Running /usr/bin/env mkdir -p /tmp as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [0d6f131f] Command: /usr/bin/env mkdir -p /tmp
+  INFO [0d6f131f] Finished in 4.063 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-auroville-production-ppal.sh 0.0%
+  INFO Uploading /tmp/git-ssh-auroville-production-ppal.sh 100.0%
+  INFO [f6333b0a] Running /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-ppal.sh as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [f6333b0a] Command: /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-ppal.sh
+  INFO [f6333b0a] Finished in 0.616 seconds with exit status 0 (successful).
+  INFO [ab5be85f] Running /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [ab5be85f] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-ppal.sh" ; /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD )
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 13:50:01 +0530 cap production git:check
+  INFO ---------------------------------------------------------------------------
+  INFO [967ad8e6] Running /usr/bin/env mkdir -p /tmp as deploy@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [967ad8e6] Command: /usr/bin/env mkdir -p /tmp
+  INFO [967ad8e6] Finished in 3.926 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-auroville-production-ppal.sh 0.0%
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 13:54:27 +0530 cap production git:check
+  INFO ---------------------------------------------------------------------------
+  INFO [7338d20d] Running /usr/bin/env mkdir -p /tmp as deploy@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [7338d20d] Command: /usr/bin/env mkdir -p /tmp
+  INFO [7338d20d] Finished in 3.961 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-auroville-production-ppal.sh 0.0%
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 13:55:05 +0530 cap production git:check
+  INFO ---------------------------------------------------------------------------
+  INFO [f7714679] Running /usr/bin/env mkdir -p /tmp as deploy@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [f7714679] Command: /usr/bin/env mkdir -p /tmp
+  INFO [f7714679] Finished in 3.823 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-auroville-production-ppal.sh 0.0%
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 13:58:48 +0530 cap production git:check
+  INFO ---------------------------------------------------------------------------
+  INFO [55a716cd] Running /usr/bin/env mkdir -p /tmp as deploy@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [55a716cd] Command: /usr/bin/env mkdir -p /tmp
+  INFO [55a716cd] Finished in 3.902 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-auroville-production-ppal.sh 0.0%
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 14:03:14 +0530 cap production git:check
+  INFO ---------------------------------------------------------------------------
+  INFO [06ed1f39] Running /usr/bin/env mkdir -p /tmp as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [06ed1f39] Command: /usr/bin/env mkdir -p /tmp
+  INFO [06ed1f39] Finished in 4.085 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-auroville-production-ppal.sh 0.0%
+  INFO Uploading /tmp/git-ssh-auroville-production-ppal.sh 100.0%
+  INFO [df023bcf] Running /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-ppal.sh as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [df023bcf] Command: /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-ppal.sh
+  INFO [df023bcf] Finished in 0.614 seconds with exit status 0 (successful).
+  INFO [201ea0fe] Running /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [201ea0fe] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-ppal.sh" ; /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD )
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 14:05:39 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [a069942a] Running /usr/bin/env mkdir -p /tmp as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [a069942a] Command: /usr/bin/env mkdir -p /tmp
+  INFO [a069942a] Finished in 3.916 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-auroville-production-ppal.sh 0.0%
+  INFO Uploading /tmp/git-ssh-auroville-production-ppal.sh 100.0%
+  INFO [4fda98c5] Running /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-ppal.sh as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [4fda98c5] Command: /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-ppal.sh
+  INFO [4fda98c5] Finished in 0.613 seconds with exit status 0 (successful).
+  INFO [7c71c45c] Running /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [7c71c45c] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-ppal.sh" ; /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD )
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 14:10:09 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [9d579d94] Running /usr/bin/env mkdir -p /tmp as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [9d579d94] Command: /usr/bin/env mkdir -p /tmp
+  INFO [9d579d94] Finished in 4.024 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-auroville-production-ppal.sh 0.0%
+  INFO Uploading /tmp/git-ssh-auroville-production-ppal.sh 100.0%
+  INFO [069559bf] Running /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-ppal.sh as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [069559bf] Command: /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-ppal.sh
+  INFO [069559bf] Finished in 0.625 seconds with exit status 0 (successful).
+  INFO [13e387cf] Running /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [13e387cf] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-ppal.sh" ; /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD )
