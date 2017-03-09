@@ -3087,3 +3087,1126 @@ and the repository exists.
  DEBUG [e3936078] 	
  DEBUG [e3936078] 	You should consider upgrading via the 'pip install --upgrade pip' command.[0m
  DEBUG [e3936078] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 16:07:29 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [d65e5645] Running /usr/bin/env sudo apt-get -y update as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [d65e5645] Command: /usr/bin/env sudo apt-get -y update
+ DEBUG [d65e5645] 	0% [Working]
+ DEBUG [d65e5645] 	            
+ DEBUG [d65e5645] 	Hit:1 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial InRelease
+ DEBUG [d65e5645] 	
+ DEBUG [d65e5645] 	0% [Connecting to security.ubuntu.com (91.189.91.26)]
+ DEBUG [d65e5645] 	                                                     
+ DEBUG [d65e5645] 	Hit:2 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates InRelease
+ DEBUG [d65e5645] 	
+ DEBUG [d65e5645] 	                                                     
+ DEBUG [d65e5645] 	Hit:3 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-backports InRelease
+ DEBUG [d65e5645] 	
+ DEBUG [d65e5645] 	0% [Connecting to security.ubuntu.com (91.189.91.26)]
+ DEBUG [d65e5645] 	0% [1 InRelease gpgv 247 kB] [Connecting to security.ubuntu.com (91.189.91.26)]
+ DEBUG [d65e5645] 	                                                                               
+ DEBUG [d65e5645] 	0% [Connecting to security.ubuntu.com (91.189.91.26)]
+ DEBUG [d65e5645] 	                                                     
+ DEBUG [d65e5645] 	0% [2 InRelease gpgv 102 kB] [Waiting for headers]
+ DEBUG [d65e5645] 	                                                  
+ DEBUG [d65e5645] 	0% [Waiting for headers]
+ DEBUG [d65e5645] 	0% [3 InRelease gpgv 102 kB] [Waiting for headers]
+ DEBUG [d65e5645] 	                                                  
+ DEBUG [d65e5645] 	Get:4 http://security.ubuntu.com/ubuntu xenial-security InRelease [102 kB]
+ DEBUG [d65e5645] 	
+ DEBUG [d65e5645] 	0% [3 InRelease gpgv 102 kB] [4 InRelease 14.2 kB/102 kB 14%]
+ DEBUG [d65e5645] 	                                                             
+ DEBUG [d65e5645] 	0% [4 InRelease 14.2 kB/102 kB 14%]
+ DEBUG [d65e5645] 	                                   
+ DEBUG [d65e5645] 	0% [Working]
+ DEBUG [d65e5645] 	0% [4 InRelease gpgv 102 kB]
+ DEBUG [d65e5645] 	                            
+ DEBUG [d65e5645] 	100% [Working]
+ DEBUG [d65e5645] 	              
+ DEBUG [d65e5645] 	Fetched 102 kB in 0s (224 kB/s)
+ DEBUG [d65e5645] 	
+ DEBUG [d65e5645] 	Reading package lists... 0%
+ DEBUG [d65e5645] 	Reading package lists... 0%
+ DEBUG [d65e5645] 	Reading package lists... 1%
+ DEBUG [d65e5645] 	Reading package lists... 7%
+ DEBUG [d65e5645] 	Reading package lists... 7%
+ DEBUG [d65e5645] 	Reading package lists... 11%
+ DEBUG [d65e5645] 	Reading package lists... 11%
+ DEBUG [d65e5645] 	Reading package lists... 12%
+ DEBUG [d65e5645] 	Reading package lists... 12%
+ DEBUG [d65e5645] 	Reading package lists... 12%
+ DEBUG [d65e5645] 	Reading package lists... 12%
+ DEBUG [d65e5645] 	Reading package lists... 58%
+ DEBUG [d65e5645] 	Reading package lists... 58%
+ DEBUG [d65e5645] 	Reading package lists... 83%
+ DEBUG [d65e5645] 	Reading package lists... 83%
+ DEBUG [d65e5645] 	Reading package lists... 84%
+ DEBUG [d65e5645] 	Reading package lists... 84%
+ DEBUG [d65e5645] 	Reading package lists... 85%
+ DEBUG [d65e5645] 	Reading package lists... 85%
+ DEBUG [d65e5645] 	Reading package lists... 88%
+ DEBUG [d65e5645] 	Reading package lists... 88%
+ DEBUG [d65e5645] 	Reading package lists... 90%
+ DEBUG [d65e5645] 	Reading package lists... 90%
+ DEBUG [d65e5645] 	Reading package lists... 90%
+ DEBUG [d65e5645] 	Reading package lists... 90%
+ DEBUG [d65e5645] 	Reading package lists... 90%
+ DEBUG [d65e5645] 	Reading package lists... 90%
+ DEBUG [d65e5645] 	Reading package lists... 93%
+ DEBUG [d65e5645] 	Reading package lists... 93%
+ DEBUG [d65e5645] 	Reading package lists... 95%
+ DEBUG [d65e5645] 	Reading package lists... 95%
+ DEBUG [d65e5645] 	Reading package lists... 95%
+ DEBUG [d65e5645] 	Reading package lists... 95%
+ DEBUG [d65e5645] 	Reading package lists... 95%
+ DEBUG [d65e5645] 	Reading package lists... 95%
+ DEBUG [d65e5645] 	Reading package lists... 95%
+ DEBUG [d65e5645] 	Reading package lists... 95%
+ DEBUG [d65e5645] 	Reading package lists... 95%
+ DEBUG [d65e5645] 	Reading package lists... 95%
+ DEBUG [d65e5645] 	Reading package lists... 95%
+ DEBUG [d65e5645] 	Reading package lists... 95%
+ DEBUG [d65e5645] 	Reading package lists... 95%
+ DEBUG [d65e5645] 	Reading package lists... 95%
+ DEBUG [d65e5645] 	Reading package lists... 95%
+ DEBUG [d65e5645] 	Reading package lists... 97%
+ DEBUG [d65e5645] 	Reading package lists... 97%
+ DEBUG [d65e5645] 	Reading package lists... 98%
+ DEBUG [d65e5645] 	Reading package lists... 98%
+ DEBUG [d65e5645] 	Reading package lists... 98%
+ DEBUG [d65e5645] 	Reading package lists... 98%
+ DEBUG [d65e5645] 	Reading package lists... 98%
+ DEBUG [d65e5645] 	Reading package lists... 98%
+ DEBUG [d65e5645] 	Reading package lists... 99%
+ DEBUG [d65e5645] 	Reading package lists... 99%
+ DEBUG [d65e5645] 	Reading package lists... 99%
+ DEBUG [d65e5645] 	Reading package lists... 99%
+ DEBUG [d65e5645] 	Reading package lists... 99%
+ DEBUG [d65e5645] 	Reading package lists... 99%
+ DEBUG [d65e5645] 	Reading package lists... 99%
+ DEBUG [d65e5645] 	Reading package lists... 99%
+ DEBUG [d65e5645] 	Reading package lists... Done
+ DEBUG [d65e5645] 	
+  INFO [d65e5645] Finished in 5.729 seconds with exit status 0 (successful).
+  INFO [3d73b07f] Running /usr/bin/env sudo apt-get -y upgrade as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [3d73b07f] Command: /usr/bin/env sudo apt-get -y upgrade
+ DEBUG [3d73b07f] 	Reading package lists... 0%
+ DEBUG [3d73b07f] 	Reading package lists... 100%
+ DEBUG [3d73b07f] 	Reading package lists... Done
+ DEBUG [3d73b07f] 	
+ DEBUG [3d73b07f] 	Building dependency tree... 0%
+ DEBUG [3d73b07f] 	Building dependency tree... 0%
+ DEBUG [3d73b07f] 	Building dependency tree... 50%
+ DEBUG [3d73b07f] 	Building dependency tree... 50%
+ DEBUG [3d73b07f] 	Building dependency tree       
+ DEBUG [3d73b07f] 	
+ DEBUG [3d73b07f] 	Reading state information... 0%
+ DEBUG [3d73b07f] 	Reading state information... 1%
+ DEBUG [3d73b07f] 	Reading state information... Done
+ DEBUG [3d73b07f] 	
+ DEBUG [3d73b07f] 	Calculating upgrade... 0%
+ DEBUG [3d73b07f] 	Calculating upgrade... 50%
+ DEBUG [3d73b07f] 	Calculating upgrade... Done
+ DEBUG [3d73b07f] 	
+ DEBUG [3d73b07f] 	The following packages have been kept back:
+ DEBUG [3d73b07f] 	
+ DEBUG [3d73b07f] 	  linux-headers-generic linux-headers-virtual linux-image-virtual
+ DEBUG [3d73b07f] 	
+ DEBUG [3d73b07f] 	  linux-virtual
+ DEBUG [3d73b07f] 	
+ DEBUG [3d73b07f] 	0 upgraded, 0 newly installed, 0 to remove and 4 not upgraded.
+ DEBUG [3d73b07f] 	
+  INFO [3d73b07f] Finished in 4.613 seconds with exit status 0 (successful).
+  INFO [78816703] Running /usr/bin/env sudo apt-get -y install python3 python3-pip nginx gunicorn mongodb as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [78816703] Command: /usr/bin/env sudo apt-get -y install python3 python3-pip nginx gunicorn mongodb
+ DEBUG [78816703] 	Reading package lists... 0%
+ DEBUG [78816703] 	Reading package lists... 100%
+ DEBUG [78816703] 	Reading package lists... Done
+ DEBUG [78816703] 	
+ DEBUG [78816703] 	Building dependency tree... 0%
+ DEBUG [78816703] 	Building dependency tree... 0%
+ DEBUG [78816703] 	Building dependency tree... 50%
+ DEBUG [78816703] 	Building dependency tree... 50%
+ DEBUG [78816703] 	Building dependency tree       
+ DEBUG [78816703] 	
+ DEBUG [78816703] 	Reading state information... 0%
+ DEBUG [78816703] 	Reading state information... 1%
+ DEBUG [78816703] 	Reading state information... Done
+ DEBUG [78816703] 	
+ DEBUG [78816703] 	python3 is already the newest version (3.5.1-3).
+ DEBUG [78816703] 	
+ DEBUG [78816703] 	gunicorn is already the newest version (19.4.5-1ubuntu1).
+ DEBUG [78816703] 	
+ DEBUG [78816703] 	mongodb is already the newest version (1:2.6.10-0ubuntu1).
+ DEBUG [78816703] 	
+ DEBUG [78816703] 	nginx is already the newest version (1.10.0-0ubuntu0.16.04.4).
+ DEBUG [78816703] 	
+ DEBUG [78816703] 	python3-pip is already the newest version (8.1.1-2ubuntu0.4).
+ DEBUG [78816703] 	
+ DEBUG [78816703] 	0 upgraded, 0 newly installed, 0 to remove and 4 not upgraded.
+ DEBUG [78816703] 	
+  INFO [78816703] Finished in 0.914 seconds with exit status 0 (successful).
+  INFO [8dbb9ab4] Running pip3 install virtualenv as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [8dbb9ab4] Command: pip3 install virtualenv
+ DEBUG [8dbb9ab4] 	Collecting virtualenv
+ DEBUG [8dbb9ab4] 	
+ DEBUG [8dbb9ab4] 	  Using cached virtualenv-15.1.0-py2.py3-none-any.whl
+ DEBUG [8dbb9ab4] 	
+ DEBUG [8dbb9ab4] 	Installing collected packages: virtualenv
+ DEBUG [8dbb9ab4] 	
+ DEBUG [8dbb9ab4] 	Successfully installed virtualenv-15.1.0
+ DEBUG [8dbb9ab4] 	
+ DEBUG [8dbb9ab4] 	[33mYou are using pip version 8.1.1, however version 9.0.1 is available.
+ DEBUG [8dbb9ab4] 	
+ DEBUG [8dbb9ab4] 	You should consider upgrading via the 'pip install --upgrade pip' command.[0m
+ DEBUG [8dbb9ab4] 	
+  INFO [8dbb9ab4] Finished in 1.837 seconds with exit status 0 (successful).
+  INFO [7ff36db4] Running /usr/bin/env mkdir -p /tmp as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [7ff36db4] Command: /usr/bin/env mkdir -p /tmp
+  INFO [7ff36db4] Finished in 4.305 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-auroville-production-prashantpal.sh 0.0%
+  INFO Uploading /tmp/git-ssh-auroville-production-prashantpal.sh 100.0%
+  INFO [10f0e417] Running /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-prashantpal.sh as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [10f0e417] Command: /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-prashantpal.sh
+  INFO [10f0e417] Finished in 0.825 seconds with exit status 0 (successful).
+  INFO [b7c2530c] Running /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [b7c2530c] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD )
+ DEBUG [b7c2530c] 	3f312f64d2e77279fd1292d4a228dc15411a3cac
+ DEBUG [b7c2530c] 		HEAD
+  INFO [b7c2530c] Finished in 2.744 seconds with exit status 0 (successful).
+  INFO [5c5a2e57] Running /usr/bin/env mkdir -p /var/www/auroville/shared /var/www/auroville/releases as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [5c5a2e57] Command: /usr/bin/env mkdir -p /var/www/auroville/shared /var/www/auroville/releases
+  INFO [5c5a2e57] Finished in 1.124 seconds with exit status 0 (successful).
+ DEBUG [72b1b3e5] Running [ -f /var/www/auroville/current/REVISION ] as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [72b1b3e5] Command: [ -f /var/www/auroville/current/REVISION ]
+ DEBUG [72b1b3e5] Finished in 0.716 seconds with exit status 0 (successful).
+ DEBUG [b593b3e6] Running /usr/bin/env cat /var/www/auroville/current/REVISION 2>/dev/null as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [b593b3e6] Command: /usr/bin/env cat /var/www/auroville/current/REVISION 2>/dev/null
+ DEBUG [b593b3e6] 	d70afc63b124f5aecaccf522412aaee4dceef964
+ DEBUG [b593b3e6] 	
+ DEBUG [b593b3e6] Finished in 0.819 seconds with exit status 0 (successful).
+ DEBUG [e2de8e72] Running [ -f /var/www/auroville/repo/HEAD ] as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [e2de8e72] Command: [ -f /var/www/auroville/repo/HEAD ]
+ DEBUG [e2de8e72] Finished in 0.818 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/auroville/repo
+ DEBUG [963c09be] Running if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [963c09be] Command: if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi
+ DEBUG [963c09be] Finished in 0.713 seconds with exit status 0 (successful).
+  INFO [37a11283] Running /usr/bin/env git remote set-url origin git@github.com:Prashant31/dashboard-analysis.git as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [37a11283] Command: cd /var/www/auroville/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git remote set-url origin git@github.com:Prashant31/dashboard-analysis.git )
+  INFO [37a11283] Finished in 0.719 seconds with exit status 0 (successful).
+  INFO [93d53b56] Running /usr/bin/env git remote update --prune as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [93d53b56] Command: cd /var/www/auroville/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [93d53b56] 	Fetching origin
+ DEBUG [93d53b56] 	
+ DEBUG [93d53b56] 	remote: Counting objects: 13, done.[K
+ DEBUG [93d53b56] 	
+ DEBUG [93d53b56] 	remote: Compressing objects:  10% (1/10)   [K
+ DEBUG [93d53b56] 	remote: Compressing objects:  20% (2/10)   [K
+ DEBUG [93d53b56] 	remote: Compressing objects:  30% (3/10)   [K
+ DEBUG [93d53b56] 	remote: Compressing objects:  40% (4/10)   [K
+ DEBUG [93d53b56] 	remote: Compressing objects:  50% (5/10)   [K
+ DEBUG [93d53b56] 	remote: Compressing objects:  60% (6/10)   [K
+ DEBUG [93d53b56] 	remote: Compressing objects:
+ DEBUG [93d53b56] 	  70% (7/10)   [K
+ DEBUG [93d53b56] 	remote: Compressing objects:  80% (8/10)   [K
+ DEBUG [93d53b56] 	remote: Compressing objects:  90% (9/10)   [K
+ DEBUG [93d53b56] 	remote: Compressing objects: 100% (10/10)   [K
+ DEBUG [93d53b56] 	remote: Com
+ DEBUG [93d53b56] 	pressing objects: 100% (10/10), done.[K
+ DEBUG [93d53b56] 	
+ DEBUG [93d53b56] 	Unpacking objects:   7% (1/13)   
+ DEBUG [93d53b56] 	Unpacking objects:  15% (2/13)   
+ DEBUG [93d53b56] 	Unpacking objects:  23% (3/13)   
+ DEBUG [93d53b56] 	Unpacking objects:  30% (4/13)   
+ DEBUG [93d53b56] 	Unpacking objects:  38% (5/13)   
+ DEBUG [93d53b56] 	Unpacking objects:  46% (6/13)   
+ DEBUG [93d53b56] 	Unpacking objects:  53% (7/13)   
+ DEBUG [93d53b56] 	Unpacking objects:  61% (8/13)   
+ DEBUG [93d53b56] 	Unpacking objects:  69% (9/13)   
+ DEBUG [93d53b56] 	Unpacking objects:  76% (10/13)   
+ DEBUG [93d53b56] 	Unpacking objects:  84% (11/13)   
+ DEBUG [93d53b56] 	remote: Total 13 (delta 0), reused 0 (delta 0), pack-reused 0[K
+ DEBUG [93d53b56] 	
+ DEBUG [93d53b56] 	Unpacking objects:  92% (12/13)   
+ DEBUG [93d53b56] 	Unpacking objects: 100% (13/13)   
+ DEBUG [93d53b56] 	Unpacking objects: 100% (13/13), done.
+ DEBUG [93d53b56] 	
+ DEBUG [93d53b56] 	From github.com:Prashant31/dashboard-analysis
+ DEBUG [93d53b56] 	
+ DEBUG [93d53b56] 	   d70afc6..1dc5ff4  flask_api  -> flask_api
+ DEBUG [93d53b56] 	
+  INFO [93d53b56] Finished in 4.815 seconds with exit status 0 (successful).
+ DEBUG [a8d0b445] Running if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [a8d0b445] Command: if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi
+ DEBUG [a8d0b445] Finished in 0.952 seconds with exit status 0 (successful).
+  INFO [47ee7d1d] Running /usr/bin/env mkdir -p /var/www/auroville/releases/20170309103759 as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [47ee7d1d] Command: cd /var/www/auroville/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env mkdir -p /var/www/auroville/releases/20170309103759 )
+  INFO [47ee7d1d] Finished in 0.682 seconds with exit status 0 (successful).
+  INFO [ac6ffa34] Running /usr/bin/env git archive flask_api | /usr/bin/env tar -x -f - -C /var/www/auroville/releases/20170309103759 as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [ac6ffa34] Command: cd /var/www/auroville/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git archive flask_api | /usr/bin/env tar -x -f - -C /var/www/auroville/releases/20170309103759 )
+  INFO [ac6ffa34] Finished in 0.753 seconds with exit status 0 (successful).
+ DEBUG [3e5d7ef4] Running if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [3e5d7ef4] Command: if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi
+ DEBUG [3e5d7ef4] Finished in 0.683 seconds with exit status 0 (successful).
+ DEBUG [49627fcb] Running /usr/bin/env git rev-list --max-count=1 flask_api as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [49627fcb] Command: cd /var/www/auroville/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git rev-list --max-count=1 flask_api )
+ DEBUG [49627fcb] 	1dc5ff43cdcfb0d1bcba16a84e5881756042c8e7
+ DEBUG [49627fcb] 	
+ DEBUG [49627fcb] Finished in 0.713 seconds with exit status 0 (successful).
+ DEBUG [d337e266] Running if test ! -d /var/www/auroville/releases/20170309103759; then echo "Directory does not exist '/var/www/auroville/releases/20170309103759'" 1>&2; false; fi as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [d337e266] Command: if test ! -d /var/www/auroville/releases/20170309103759; then echo "Directory does not exist '/var/www/auroville/releases/20170309103759'" 1>&2; false; fi
+ DEBUG [d337e266] Finished in 0.713 seconds with exit status 0 (successful).
+  INFO [0d2f2703] Running /usr/bin/env echo "1dc5ff43cdcfb0d1bcba16a84e5881756042c8e7" >> REVISION as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [0d2f2703] Command: cd /var/www/auroville/releases/20170309103759 && /usr/bin/env echo "1dc5ff43cdcfb0d1bcba16a84e5881756042c8e7" >> REVISION
+  INFO [0d2f2703] Finished in 0.663 seconds with exit status 0 (successful).
+  INFO [b598151a] Running source /var/www/auroville/shared/env/bin/activate as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [b598151a] Command: source /var/www/auroville/shared/env/bin/activate
+  INFO [b598151a] Finished in 0.694 seconds with exit status 0 (successful).
+  INFO [6584e932] Running pip3 install -r /var/www/auroville/current/requirements.txt as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [6584e932] Command: pip3 install -r /var/www/auroville/current/requirements.txt
+ DEBUG [6584e932] 	Collecting click==6.7 (from -r /var/www/auroville/current/requirements.txt (line 1))
+ DEBUG [6584e932] 	
+ DEBUG [6584e932] 	  Using cached click-6.7-py2.py3-none-any.whl
+ DEBUG [6584e932] 	
+ DEBUG [6584e932] 	Collecting comtypes==1.1.3 (from -r /var/www/auroville/current/requirements.txt (line 2))
+ DEBUG [6584e932] 	
+ DEBUG [6584e932] 	[31m  Could not find a version that satisfies the requirement comtypes==1.1.3 (from -r /var/www/auroville/current/requirements.txt (line 2)) (from versions: 0.6.4, 1.0.0, 1.1.0, 1.1.1, 1.1.3.post2)[0m
+ DEBUG [6584e932] 	
+ DEBUG [6584e932] 	[31mNo matching distribution found for comtypes==1.1.3 (from -r /var/www/auroville/current/requirements.txt (line 2))[0m
+ DEBUG [6584e932] 	
+ DEBUG [6584e932] 	[33mYou are using pip version 8.1.1, however version 9.0.1 is available.
+ DEBUG [6584e932] 	
+ DEBUG [6584e932] 	You should consider upgrading via the 'pip install --upgrade pip' command.[0m
+ DEBUG [6584e932] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 16:09:48 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [0605709f] Running /usr/bin/env mkdir -p /tmp as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [0605709f] Command: /usr/bin/env mkdir -p /tmp
+  INFO [0605709f] Finished in 4.283 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-auroville-production-prashantpal.sh 0.0%
+  INFO Uploading /tmp/git-ssh-auroville-production-prashantpal.sh 100.0%
+  INFO [2da5edc1] Running /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-prashantpal.sh as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [2da5edc1] Command: /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-prashantpal.sh
+  INFO [2da5edc1] Finished in 0.700 seconds with exit status 0 (successful).
+  INFO [1bf30091] Running /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [1bf30091] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD )
+ DEBUG [1bf30091] 	3f312f64d2e77279fd1292d4a228dc15411a3cac	HEAD
+  INFO [1bf30091] Finished in 9.391 seconds with exit status 0 (successful).
+  INFO [3297dca0] Running /usr/bin/env mkdir -p /var/www/auroville/shared /var/www/auroville/releases as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [3297dca0] Command: /usr/bin/env mkdir -p /var/www/auroville/shared /var/www/auroville/releases
+  INFO [3297dca0] Finished in 1.021 seconds with exit status 0 (successful).
+ DEBUG [8e01031a] Running [ -f /var/www/auroville/current/REVISION ] as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [8e01031a] Command: [ -f /var/www/auroville/current/REVISION ]
+ DEBUG [8e01031a] Finished in 0.822 seconds with exit status 0 (successful).
+ DEBUG [1af61af4] Running /usr/bin/env cat /var/www/auroville/current/REVISION 2>/dev/null as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [1af61af4] Command: /usr/bin/env cat /var/www/auroville/current/REVISION 2>/dev/null
+ DEBUG [1af61af4] 	d70afc63b124f5aecaccf522412aaee4dceef964
+ DEBUG [1af61af4] 	
+ DEBUG [1af61af4] Finished in 0.709 seconds with exit status 0 (successful).
+ DEBUG [797409e3] Running [ -f /var/www/auroville/repo/HEAD ] as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [797409e3] Command: [ -f /var/www/auroville/repo/HEAD ]
+ DEBUG [797409e3] Finished in 0.619 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/auroville/repo
+ DEBUG [34c8f4f6] Running if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [34c8f4f6] Command: if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi
+ DEBUG [34c8f4f6] Finished in 0.716 seconds with exit status 0 (successful).
+  INFO [e92b0f59] Running /usr/bin/env git remote set-url origin git@github.com:Prashant31/dashboard-analysis.git as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [e92b0f59] Command: cd /var/www/auroville/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git remote set-url origin git@github.com:Prashant31/dashboard-analysis.git )
+  INFO [e92b0f59] Finished in 1.180 seconds with exit status 0 (successful).
+  INFO [8e0b46b0] Running /usr/bin/env git remote update --prune as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [8e0b46b0] Command: cd /var/www/auroville/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [8e0b46b0] 	Fetching origin
+ DEBUG [8e0b46b0] 	
+  INFO [8e0b46b0] Finished in 2.551 seconds with exit status 0 (successful).
+ DEBUG [46280a04] Running if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [46280a04] Command: if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi
+ DEBUG [46280a04] Finished in 1.179 seconds with exit status 0 (successful).
+  INFO [6ffdcd78] Running /usr/bin/env mkdir -p /var/www/auroville/releases/20170309104010 as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [6ffdcd78] Command: cd /var/www/auroville/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env mkdir -p /var/www/auroville/releases/20170309104010 )
+  INFO [6ffdcd78] Finished in 0.719 seconds with exit status 0 (successful).
+  INFO [491cbb82] Running /usr/bin/env git archive flask_api | /usr/bin/env tar -x -f - -C /var/www/auroville/releases/20170309104010 as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [491cbb82] Command: cd /var/www/auroville/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git archive flask_api | /usr/bin/env tar -x -f - -C /var/www/auroville/releases/20170309104010 )
+  INFO [491cbb82] Finished in 0.631 seconds with exit status 0 (successful).
+ DEBUG [84dbde33] Running if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [84dbde33] Command: if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi
+ DEBUG [84dbde33] Finished in 0.798 seconds with exit status 0 (successful).
+ DEBUG [847f031f] Running /usr/bin/env git rev-list --max-count=1 flask_api as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [847f031f] Command: cd /var/www/auroville/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git rev-list --max-count=1 flask_api )
+ DEBUG [847f031f] 	1dc5ff43cdcfb0d1bcba16a84e5881756042c8e7
+ DEBUG [847f031f] 	
+ DEBUG [847f031f] Finished in 0.614 seconds with exit status 0 (successful).
+ DEBUG [d717cbb9] Running if test ! -d /var/www/auroville/releases/20170309104010; then echo "Directory does not exist '/var/www/auroville/releases/20170309104010'" 1>&2; false; fi as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [d717cbb9] Command: if test ! -d /var/www/auroville/releases/20170309104010; then echo "Directory does not exist '/var/www/auroville/releases/20170309104010'" 1>&2; false; fi
+ DEBUG [d717cbb9] Finished in 0.720 seconds with exit status 0 (successful).
+  INFO [eeb01552] Running /usr/bin/env echo "1dc5ff43cdcfb0d1bcba16a84e5881756042c8e7" >> REVISION as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [eeb01552] Command: cd /var/www/auroville/releases/20170309104010 && /usr/bin/env echo "1dc5ff43cdcfb0d1bcba16a84e5881756042c8e7" >> REVISION
+  INFO [eeb01552] Finished in 0.816 seconds with exit status 0 (successful).
+  INFO [83f989e9] Running /usr/bin/env ln -s /var/www/auroville/releases/20170309104010 /var/www/auroville/releases/current as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [83f989e9] Command: /usr/bin/env ln -s /var/www/auroville/releases/20170309104010 /var/www/auroville/releases/current
+  INFO [83f989e9] Finished in 0.713 seconds with exit status 0 (successful).
+  INFO [56eab2f7] Running /usr/bin/env mv /var/www/auroville/releases/current /var/www/auroville as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [56eab2f7] Command: /usr/bin/env mv /var/www/auroville/releases/current /var/www/auroville
+  INFO [56eab2f7] Finished in 0.617 seconds with exit status 0 (successful).
+  INFO [cd02468b] Running source /var/www/auroville/shared/env/bin/activate as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [cd02468b] Command: source /var/www/auroville/shared/env/bin/activate
+  INFO [cd02468b] Finished in 1.125 seconds with exit status 0 (successful).
+  INFO [b1156a45] Running pip3 install -r /var/www/auroville/current/requirements.txt as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [b1156a45] Command: pip3 install -r /var/www/auroville/current/requirements.txt
+ DEBUG [b1156a45] 	Collecting click==6.7 (from -r /var/www/auroville/current/requirements.txt (line 1))
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	  Using cached click-6.7-py2.py3-none-any.whl
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	Collecting Flask==0.12 (from -r /var/www/auroville/current/requirements.txt (line 2))
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	  Downloading Flask-0.12-py2.py3-none-any.whl (82kB)
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	[?25l[K
+ DEBUG [b1156a45] 	    12% |████                            | 10kB 16.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    24% |████████                        | 20kB 2.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    37% |███████████▉                    | 30kB 2.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    49% |███████████████▉                | 40kB 2.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    61% |███████████████████▊            | 51kB 2.8MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    74% |███████████████████████▊        | 61kB 3.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    86% |███████████████████████████▊    | 71kB 3.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    98% |███████████████████████████████▋| 81kB 3.8MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    100% |████████████████████████████████| 92kB 3.3MB/s 
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	[?25hCollecting itsdangerous==0.24 (from -r /var/www/auroville/current/requirements.txt (line 3))
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	  Downloading itsdangerous-0.24.tar.gz (46kB)
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	[?25l[K
+ DEBUG [b1156a45] 	    22% |███████                         | 10kB 61.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    44% |██████████████                  | 20kB 10.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    66% |█████████████████████▏          | 30kB 14.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    88% |████████████████████████████▏   | 40kB 7.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    100% |████████████████████████████████| 51kB 5.7MB/s 
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	[?25hCollecting Jinja2==2.9.5 (from -r /var/www/auroville/current/requirements.txt (line 4))
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	  Downloading Jinja2-2.9.5-py2.py3-none-any.whl (340kB)
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	[?25l[K
+ DEBUG [b1156a45] 	    3% |█                               | 10kB 55.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    6% |██                              | 20kB 11.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    9% |██▉                             | 30kB 15.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    12% |███▉                            | 40kB 9.1MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    15% |████▉                           | 51kB 6.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    18% |█████▊                          | 61kB 7.1MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    21% |██████▊                         | 71kB 6.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    24% |███████▊                        | 81kB 6.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    27% |████████▋                       | 92kB 6.9MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    30% |█████████▋                      | 102kB 6.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    33% |██████████▋                     | 112kB 6.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    36% |███████████▌                    | 122kB 6.1MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    39% |████████████▌                   | 133kB 5.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    42% |█████████████▌                  | 143kB 6.1MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    45% |██████████████▍                 | 153kB 6.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    48% |███████████████▍                | 163kB 5.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    51% |████████████████▍               | 174kB 6.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    54% |█████████████████▎              | 184kB 6.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    57% |██████████████████▎             | 194kB 6.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    60% |███████████████████▎            | 204kB 7.1MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    63% |████████████████████▏           | 215kB 6.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    66% |█████████████████████▏          | 225kB 7.1MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    69% |██████████████████████▏         | 235kB 6.9MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    72% |███████████████████████         | 245kB 6.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    75% |████████████████████████        | 256kB 7.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    78% |█████████████████████████       | 266kB 7.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    81% |██████████████████████████      | 276kB 7.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    84% |███████████████████████████     | 286kB 7.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    87% |████████████████████████████    | 296kB 6.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    90% |████████████████████████████▉   | 307kB 7.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    93% |█████████████████████████████▉  | 317kB 6.9MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    96% |██████████████████████████████▉ | 327kB 6.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    99% |███████████████████████████████▊| 337kB 7.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    100% |████████████████████████████████| 348kB 4.1MB/s 
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	[?25hCollecting MarkupSafe==0.23 (from -r /var/www/auroville/current/requirements.txt (line 5))
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	  Downloading MarkupSafe-0.23.tar.gz
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	Collecting pymongo==3.4.0 (from -r /var/www/auroville/current/requirements.txt (line 6))
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	  Downloading pymongo-3.4.0-cp35-cp35m-manylinux1_x86_64.whl (359kB)
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	[?25l[K
+ DEBUG [b1156a45] 	    2% |█                               | 10kB 55.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    5% |█▉                              | 20kB 29.1MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    8% |██▊                             | 30kB 33.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    11% |███▋                            | 40kB 15.9MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    14% |████▋                           | 51kB 12.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    17% |█████▌                          | 61kB 13.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    19% |██████▍                         | 71kB 11.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    22% |███████▎                        | 81kB 8.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    25% |████████▏                       | 92kB 9.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    28% |█████████▏                      | 102kB 9.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    31% |██████████                      | 112kB 9.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    34% |███████████                     | 122kB 8.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    37% |███████████▉                    | 133kB 7.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    39% |████████████▊                   | 143kB 8.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    42% |█████████████▊                  | 153kB 8.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    45% |██████████████▋                 | 163kB 7.8MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    48% |███████████████▌                | 174kB 8.9MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    51% |████████████████▍               | 184kB 9.1MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    54% |█████████████████▎              | 194kB 9.1MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    57% |██████████████████▎             | 204kB 9.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    59% |███████████████████▏            | 215kB 8.1MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    62% |████████████████████            | 225kB 9.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    65% |█████████████████████           | 235kB 9.9MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    68% |██████████████████████          | 245kB 8.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    71% |██████████████████████▉         | 256kB 9.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    74% |███████████████████████▊        | 266kB 9.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    76% |████████████████████████▋       | 276kB 9.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    79% |█████████████████████████▌      | 286kB 10.8MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    82% |██████████████████████████▌     | 296kB 9.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    85% |███████████████████████████▍    | 307kB 10.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    88% |████████████████████████████▎   | 317kB 10.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    91% |█████████████████████████████▏  | 327kB 9.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    94% |██████████████████████████████  | 337kB 10.1MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    96% |███████████████████████████████ | 348kB 11.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    99% |████████████████████████████████| 358kB 11.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    100% |████████████████████████████████| 368kB 3.2MB/s 
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	[?25hCollecting tornado==4.4.2 (from -r /var/www/auroville/current/requirements.txt (line 7))
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	  Downloading tornado-4.4.2.tar.gz (460kB)
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	[?25l[K
+ DEBUG [b1156a45] 	    2% |▊                               | 10kB 57.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    4% |█▍                              | 20kB 16.1MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    6% |██▏                             | 30kB 21.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    8% |██▉                             | 40kB 13.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    11% |███▋                            | 51kB 10.8MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    13% |████▎                           | 61kB 12.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    15% |█████                           | 71kB 10.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    17% |█████▊                          | 81kB 9.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    20% |██████▍                         | 92kB 10.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    22% |███████▏                        | 102kB 10.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    24% |███████▉                        | 112kB 10.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    26% |████████▌                       | 122kB 9.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    28% |█████████▎                      | 133kB 8.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    31% |██████████                      | 143kB 9.8MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    33% |██████████▊                     | 153kB 10.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    35% |███████████▍                    | 163kB 9.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    37% |████████████                    | 174kB 11.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    40% |████████████▉                   | 184kB 11.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    42% |█████████████▌                  | 194kB 11.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    44% |██████████████▎                 | 204kB 10.9MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    46% |███████████████                 | 215kB 9.9MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    48% |███████████████▋                | 225kB 11.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    51% |████████████████▍               | 235kB 12.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    53% |█████████████████               | 245kB 10.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    55% |█████████████████▉              | 256kB 11.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    57% |██████████████████▌             | 266kB 11.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    60% |███████████████████▎            | 276kB 11.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    62% |████████████████████            | 286kB 12.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    64% |████████████████████▋           | 296kB 10.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    66% |█████████████████████▍          | 307kB 12.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    68% |██████████████████████          | 317kB 12.9MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    71% |██████████████████████▉         | 327kB 10.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    73% |███████████████████████▌        | 337kB 11.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    75% |████████████████████████▏       | 348kB 12.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    77% |█████████████████████████       | 358kB 12.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    80% |█████████████████████████▋      | 368kB 12.8MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    82% |██████████████████████████▍     | 378kB 11.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    84% |███████████████████████████     | 389kB 13.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    86% |███████████████████████████▊    | 399kB 13.9MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    89% |████████████████████████████▌   | 409kB 11.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    91% |█████████████████████████████▏  | 419kB 12.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    93% |██████████████████████████████  | 430kB 14.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    95% |██████████████████████████████▋ | 440kB 14.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    97% |███████████████████████████████▎| 450kB 13.8MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    100% |████████████████████████████████| 460kB 2.6MB/s 
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	[?25hCollecting Werkzeug==0.11.15 (from -r /var/www/auroville/current/requirements.txt (line 8))
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	  Downloading Werkzeug-0.11.15-py2.py3-none-any.whl (307kB)
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	[?25l[K
+ DEBUG [b1156a45] 	    3% |█                               | 10kB 55.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    6% |██▏                             | 20kB 29.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    9% |███▏                            | 30kB 32.9MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    13% |████▎                           | 40kB 15.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    16% |█████▎                          | 51kB 13.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    19% |██████▍                         | 61kB 15.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    23% |███████▌                        | 71kB 13.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    26% |████████▌                       | 81kB 11.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    29% |█████████▋                      | 92kB 12.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    33% |██████████▋                     | 102kB 12.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    36% |███████████▊                    | 112kB 12.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    39% |████████████▉                   | 122kB 11.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    43% |█████████████▉                  | 133kB 9.9MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    46% |███████████████                 | 143kB 11.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    49% |████████████████                | 153kB 12.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    53% |█████████████████               | 163kB 10.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    56% |██████████████████▏             | 174kB 12.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    59% |███████████████████▏            | 184kB 14.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    63% |████████████████████▎           | 194kB 14.1MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    66% |█████████████████████▎          | 204kB 14.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    69% |██████████████████████▍         | 215kB 11.8MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    73% |███████████████████████▌        | 225kB 12.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    76% |████████████████████████▌       | 235kB 14.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    79% |█████████████████████████▋      | 245kB 12.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    83% |██████████████████████████▋     | 256kB 13.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    86% |███████████████████████████▊    | 266kB 14.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    89% |████████████████████████████▉   | 276kB 14.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    93% |█████████████████████████████▉  | 286kB 14.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    96% |███████████████████████████████ | 296kB 12.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    99% |████████████████████████████████| 307kB 13.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    100% |████████████████████████████████| 317kB 3.8MB/s 
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	[?25hCollecting xlrd==1.0.0 (from -r /var/www/auroville/current/requirements.txt (line 9))
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	  Downloading xlrd-1.0.0-py3-none-any.whl (143kB)
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	[?25l[K
+ DEBUG [b1156a45] 	    7% |██▎                             | 10kB 59.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    14% |████▋                           | 20kB 39.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    21% |██████▉                         | 30kB 42.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    28% |█████████▏                      | 40kB 26.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    35% |███████████▍                    | 51kB 14.8MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    42% |█████████████▊                  | 61kB 16.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    49% |████████████████                | 71kB 16.1MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    57% |██████████████████▎             | 81kB 13.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    64% |████████████████████▌           | 92kB 14.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    71% |██████████████████████▉         | 102kB 14.1MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    78% |█████████████████████████       | 112kB 14.1MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    85% |███████████████████████████▍    | 122kB 12.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    92% |█████████████████████████████▋  | 133kB 11.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    99% |████████████████████████████████| 143kB 12.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    100% |████████████████████████████████| 153kB 6.4MB/s 
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	[?25hCollecting XlsxWriter==0.9.6 (from -r /var/www/auroville/current/requirements.txt (line 10))
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	  Downloading XlsxWriter-0.9.6-py2.py3-none-any.whl (137kB)
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	[?25l[K
+ DEBUG [b1156a45] 	    7% |██▍                             | 10kB 20.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    14% |████▊                           | 20kB 10.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    22% |███████▏                        | 30kB 14.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    29% |█████████▌                      | 40kB 11.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    37% |████████████                    | 51kB 13.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    44% |██████████████▎                 | 61kB 13.1MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    52% |████████████████▊               | 71kB 12.9MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    59% |███████████████████             | 81kB 12.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    67% |█████████████████████▌          | 92kB 12.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    74% |███████████████████████▉        | 102kB 10.9MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    82% |██████████████████████████▎     | 112kB 11.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    89% |████████████████████████████▋   | 122kB 12.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    96% |███████████████████████████████ | 133kB 12.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    100% |████████████████████████████████| 143kB 6.3MB/s 
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	[?25hCollecting xlwings==0.10.3 (from -r /var/www/auroville/current/requirements.txt (line 11))
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	  Downloading xlwings-0.10.3.tar.gz (1.5MB)
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	[?25l[K
+ DEBUG [b1156a45] 	    0% |▏                               | 10kB 46.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    1% |▍                               | 20kB 34.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    1% |▋                               | 30kB 37.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    2% |▉                               | 40kB 25.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    3% |█                               | 51kB 19.9MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    3% |█▎                              | 61kB 22.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    4% |█▌                              | 71kB 20.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    5% |█▊                              | 81kB 18.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    5% |██                              | 92kB 19.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    6% |██▏                             | 102kB 18.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    7% |██▍                             | 112kB 18.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    7% |██▌                             | 122kB 17.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    8% |██▊                             | 133kB 13.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    9% |███                             | 143kB 14.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    9% |███▏                            | 153kB 15.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    10% |███▍                            | 163kB 13.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    11% |███▋                            | 174kB 14.8MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    11% |███▉                            | 184kB 15.8MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    12% |████                            | 194kB 15.8MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    13% |████▎                           | 204kB 14.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    13% |████▌                           | 215kB 12.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    14% |████▊                           | 225kB 13.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    15% |█████                           | 235kB 16.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    15% |█████                           | 245kB 15.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    16% |█████▎                          | 256kB 17.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    17% |█████▌                          | 266kB 17.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    17% |█████▊                          | 276kB 17.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    18% |██████                          | 286kB 17.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    19% |██████▏                         | 296kB 15.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    19% |██████▍                         | 307kB 18.9MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    20% |██████▋                         | 317kB 19.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    21% |██████▉                         | 327kB 16.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    21% |███████                         | 337kB 18.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    22% |███████▎                        | 348kB 17.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    23% |███████▍                        | 358kB 17.1MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    23% |███████▋                        | 368kB 17.1MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    24% |███████▉                        | 378kB 15.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    25% |████████                        | 389kB 17.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    25% |████████▎                       | 399kB 17.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    26% |████████▌                       | 409kB 15.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    27% |████████▊                       | 419kB 16.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    27% |█████████                       | 430kB 17.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    28% |█████████▏                      | 440kB 17.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    29% |█████████▍                      | 450kB 19.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    29% |█████████▋                      | 460kB 15.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    30% |█████████▉                      | 471kB 16.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    31% |██████████                      | 481kB 18.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    31% |██████████▏                     | 491kB 16.8MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    32% |██████████▍                     | 501kB 19.1MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    33% |██████████▋                     | 512kB 19.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    33% |██████████▉                     | 522kB 19.8MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    34% |███████████                     | 532kB 19.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    35% |███████████▎                    | 542kB 16.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    35% |███████████▌                    | 552kB 16.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    36% |███████████▊                    | 563kB 19.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    37% |████████████                    | 573kB 19.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    37% |████████████▏                   | 583kB 19.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    38% |████████████▎                   | 593kB 19.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    39% |████████████▌                   | 604kB 18.9MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    39% |████████████▊                   | 614kB 19.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    40% |█████████████                   | 624kB 16.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    41% |█████████████▏                  | 634kB 18.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    41% |█████████████▍                  | 645kB 20.8MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    42% |█████████████▋                  | 655kB 17.8MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    43% |█████████████▉                  | 665kB 19.1MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    43% |██████████████                  | 675kB 18.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    44% |██████████████▎                 | 686kB 18.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    45% |██████████████▌                 | 696kB 16.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    45% |██████████████▊                 | 706kB 16.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    46% |██████████████▉                 | 716kB 17.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    47% |███████████████                 | 727kB 19.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    47% |███████████████▎                | 737kB 16.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    48% |███████████████▌                | 747kB 17.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    49% |███████████████▊                | 757kB 19.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    49% |████████████████                | 768kB 19.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    50% |████████████████▏               | 778kB 21.1MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    51% |████████████████▍               | 788kB 17.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    51% |████████████████▋               | 798kB 21.9MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    52% |████████████████▉               | 808kB 19.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    53% |█████████████████               | 819kB 17.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    53% |█████████████████▏              | 829kB 18.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    54% |█████████████████▍              | 839kB 20.9MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    55% |█████████████████▋              | 849kB 21.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    55% |█████████████████▉              | 860kB 18.1MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    56% |██████████████████              | 870kB 16.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    57% |██████████████████▎             | 880kB 16.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    57% |██████████████████▌             | 890kB 18.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    58% |██████████████████▊             | 901kB 18.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    59% |███████████████████             | 911kB 20.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    59% |███████████████████▏            | 921kB 21.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    60% |███████████████████▍            | 931kB 21.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    61% |███████████████████▋            | 942kB 21.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    61% |███████████████████▊            | 952kB 16.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    62% |████████████████████            | 962kB 19.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    63% |████████████████████▏           | 972kB 19.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    63% |████████████████████▍           | 983kB 19.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    64% |████████████████████▋           | 993kB 20.8MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    65% |████████████████████▉           | 1.0MB 19.8MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    65% |█████████████████████           | 1.0MB 19.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    66% |█████████████████████▎          | 1.0MB 18.9MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    67% |█████████████████████▌          | 1.0MB 18.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    67% |█████████████████████▊          | 1.0MB 18.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    68% |██████████████████████          | 1.1MB 23.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    69% |██████████████████████          | 1.1MB 20.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    69% |██████████████████████▎         | 1.1MB 23.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    70% |██████████████████████▌         | 1.1MB 21.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    71% |██████████████████████▊         | 1.1MB 21.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    71% |███████████████████████         | 1.1MB 22.8MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    72% |███████████████████████▏        | 1.1MB 21.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    73% |███████████████████████▍        | 1.1MB 26.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    73% |███████████████████████▋        | 1.1MB 20.8MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    74% |███████████████████████▉        | 1.1MB 19.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    75% |████████████████████████        | 1.2MB 20.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    75% |████████████████████████▎       | 1.2MB 21.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    76% |████████████████████████▌       | 1.2MB 21.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    77% |████████████████████████▋       | 1.2MB 23.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    77% |████████████████████████▉       | 1.2MB 18.8MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    78% |█████████████████████████       | 1.2MB 19.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    79% |█████████████████████████▎      | 1.2MB 18.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    79% |█████████████████████████▌      | 1.2MB 18.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    80% |█████████████████████████▊      | 1.2MB 22.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    81% |██████████████████████████      | 1.2MB 23.1MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    81% |██████████████████████████▏     | 1.3MB 23.1MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    82% |██████████████████████████▍     | 1.3MB 23.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    83% |██████████████████████████▋     | 1.3MB 21.3MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    83% |██████████████████████████▉     | 1.3MB 21.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    84% |███████████████████████████     | 1.3MB 27.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    85% |███████████████████████████▏    | 1.3MB 21.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    85% |███████████████████████████▍    | 1.3MB 23.6MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    86% |███████████████████████████▋    | 1.3MB 21.8MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    87% |███████████████████████████▉    | 1.3MB 21.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    87% |████████████████████████████    | 1.4MB 21.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    88% |████████████████████████████▎   | 1.4MB 20.4MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    89% |████████████████████████████▌   | 1.4MB 22.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    89% |████████████████████████████▊   | 1.4MB 21.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    90% |█████████████████████████████   | 1.4MB 21.1MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    91% |█████████████████████████████▏  | 1.4MB 21.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    91% |█████████████████████████████▍  | 1.4MB 22.1MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    92% |█████████████████████████████▌  | 1.4MB 21.9MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    93% |█████████████████████████████▊  | 1.4MB 24.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    93% |██████████████████████████████  | 1.4MB 22.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    94% |██████████████████████████████▏ | 1.5MB 25.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    94% |██████████████████████████████▍ | 1.5MB 23.1MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    95% |██████████████████████████████▋ | 1.5MB 21.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    96% |██████████████████████████████▉ | 1.5MB 24.7MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    96% |███████████████████████████████ | 1.5MB 24.8MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    97% |███████████████████████████████▎| 1.5MB 24.8MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    98% |███████████████████████████████▌| 1.5MB 29.5MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    98% |███████████████████████████████▊| 1.5MB 23.0MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    99% |███████████████████████████████▉| 1.5MB 23.2MB/s eta 0:00:01
+ DEBUG [b1156a45] 	[K
+ DEBUG [b1156a45] 	    100% |████████████████████████████████| 1.5MB 939kB/s 
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	[?25h    Complete output from command python setup.py egg_info:
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	    Traceback (most recent call last):
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	      File "<string>", line 1, in <module>
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	      File "/tmp/pip-build-u1tch2b5/xlwings/setup.py", line 31, in <module>
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	        raise OSError("currently only Windows and OSX are supported.")
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	    OSError: currently only Windows and OSX are supported.
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	    
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	    ----------------------------------------
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	[31mCommand "python setup.py egg_info" failed with error code 1 in /tmp/pip-build-u1tch2b5/xlwings/[0m
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	[33mYou are using pip version 8.1.1, however version 9.0.1 is available.
+ DEBUG [b1156a45] 	
+ DEBUG [b1156a45] 	You should consider upgrading via the 'pip install --upgrade pip' command.[0m
+ DEBUG [b1156a45] 	

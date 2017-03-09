@@ -36,6 +36,5 @@ set :pty, true
 # set :keep_releases, 5
 
 namespace :deploy do
-  before "deploy:starting", "deploy:install"
-  after "deploy:install", "deploy:setup"
+  after "deploy:published", "deploy:setup"
 end
