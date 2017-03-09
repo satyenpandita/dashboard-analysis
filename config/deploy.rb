@@ -1,34 +1,33 @@
-# require 'capistrano-virtualenv'
+# config valid only for current version of Capistrano
+lock "3.7.2"
 
-server "ec2-52-43-105-252.us-west-2.compute.amazonaws.com", :web, :app, :db,primary: true
+set :application, "my_app_name"
+set :repo_url, "git@example.com:me/my_repo.git"
 
-set :tld, "ec2-52-43-105-252.us-west-2.compute.amazonaws.com"
+# Default branch is :master
+# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
-# Uncomment the packages that you require. Do not comment out any package
-load "config/recipes/base"
+# Default deploy_to directory is /var/www/my_app_name
+# set :deploy_to, "/var/www/my_app_name"
 
-# RVM settings
-load "config/recipes/rvm_signature_fix"
-# load "config/recipes/rvm"
+# Default value for :format is :airbrussh.
+# set :format, :airbrussh
 
-# Nginx
-load "config/recipes/nginx"
-# load "config/recipes/nginx_with_https"
+# You can configure the Airbrussh format using :format_options.
+# These are the defaults.
+# set :format_options, command_output: true, log_file: "log/capistrano.log", color: :auto, truncate: :auto
 
-# Unicorn
-load "config/recipes/unicorn"
+# Default value for :pty is false
+# set :pty, true
 
-#Flask
-load "config/recipes/flask"
+# Default value for :linked_files is []
+# append :linked_files, "config/database.yml", "config/secrets.yml"
 
+# Default value for linked_dirs is []
+# append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
 
-set :application, "auroville"
-set :repository,  "git@github.com:Prashant31/dashboard-analysis.git"
+# Default value for default_env is {}
+# set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
-set :user, "ubuntu"
-set :deploy_to, "/home/#{user}/apps/#{application}"
-set :deploy_via, :remote_cache
-set :use_sudo, false
-set :scm, "git"
-default_run_options[:pty] = true
-set :ssh_options, { forward_agent: true, paranoid: true, keys: "~/.ssh/id_rsa" }
+# Default value for keep_releases is 5
+# set :keep_releases, 5
