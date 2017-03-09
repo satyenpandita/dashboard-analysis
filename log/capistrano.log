@@ -4210,3 +4210,1281 @@ and the repository exists.
  DEBUG [b1156a45] 	
  DEBUG [b1156a45] 	You should consider upgrading via the 'pip install --upgrade pip' command.[0m
  DEBUG [b1156a45] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 16:11:43 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [f1898cb3] Running /usr/bin/env mkdir -p /tmp as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [f1898cb3] Command: /usr/bin/env mkdir -p /tmp
+  INFO [f1898cb3] Finished in 4.526 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-auroville-production-prashantpal.sh 0.0%
+  INFO Uploading /tmp/git-ssh-auroville-production-prashantpal.sh 100.0%
+  INFO [319a3727] Running /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-prashantpal.sh as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [319a3727] Command: /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-prashantpal.sh
+  INFO [319a3727] Finished in 0.819 seconds with exit status 0 (successful).
+  INFO [8fd9c937] Running /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [8fd9c937] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD )
+ DEBUG [8fd9c937] 	3f312f64d2e77279fd1292d4a228dc15411a3cac	HEAD
+  INFO [8fd9c937] Finished in 7.047 seconds with exit status 0 (successful).
+  INFO [3592c168] Running /usr/bin/env mkdir -p /var/www/auroville/shared /var/www/auroville/releases as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [3592c168] Command: /usr/bin/env mkdir -p /var/www/auroville/shared /var/www/auroville/releases
+  INFO [3592c168] Finished in 0.919 seconds with exit status 0 (successful).
+ DEBUG [456d0f2c] Running [ -f /var/www/auroville/current/REVISION ] as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [456d0f2c] Command: [ -f /var/www/auroville/current/REVISION ]
+ DEBUG [456d0f2c] Finished in 0.716 seconds with exit status 0 (successful).
+ DEBUG [93e4b9ac] Running /usr/bin/env cat /var/www/auroville/current/REVISION 2>/dev/null as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [93e4b9ac] Command: /usr/bin/env cat /var/www/auroville/current/REVISION 2>/dev/null
+ DEBUG [93e4b9ac] 	1dc5ff43cdcfb0d1bcba16a84e5881756042c8e7
+ DEBUG [93e4b9ac] 	
+ DEBUG [93e4b9ac] Finished in 0.716 seconds with exit status 0 (successful).
+ DEBUG [10af7b7d] Running [ -f /var/www/auroville/repo/HEAD ] as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [10af7b7d] Command: [ -f /var/www/auroville/repo/HEAD ]
+ DEBUG [10af7b7d] Finished in 1.226 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/auroville/repo
+ DEBUG [ac3b385b] Running if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [ac3b385b] Command: if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi
+ DEBUG [ac3b385b] Finished in 0.615 seconds with exit status 0 (successful).
+  INFO [49d414df] Running /usr/bin/env git remote set-url origin git@github.com:Prashant31/dashboard-analysis.git as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [49d414df] Command: cd /var/www/auroville/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git remote set-url origin git@github.com:Prashant31/dashboard-analysis.git )
+  INFO [49d414df] Finished in 0.716 seconds with exit status 0 (successful).
+  INFO [4954e547] Running /usr/bin/env git remote update --prune as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [4954e547] Command: cd /var/www/auroville/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [4954e547] 	Fetching origin
+ DEBUG [4954e547] 	
+ DEBUG [4954e547] 	remote: Counting objects: 12, done.[K
+ DEBUG [4954e547] 	
+ DEBUG [4954e547] 	remote: Compressing objects:  11% (1/9)   [K
+ DEBUG [4954e547] 	remote: Compressing objects:  22% (2/9)   [K
+ DEBUG [4954e547] 	remote: Compressing objects:  33% (3/9)   [K
+ DEBUG [4954e547] 	remote: Compressing objects:  44% (4/9)   [K
+ DEBUG [4954e547] 	remote: Compressing objects:  55% (5/9)   [K
+ DEBUG [4954e547] 	remote: Compressing objects:  66% (6/9)   [K
+ DEBUG [4954e547] 	remote: Compressing objects:  77% (7/9)   [K
+ DEBUG [4954e547] 	remote: Compressing objects:  88% (8/9)   [K
+ DEBUG [4954e547] 	remote: Compressing objects: 100% (9/9)   [K
+ DEBUG [4954e547] 	remote: Compressing objects: 100% (9/9), done.[K
+ DEBUG [4954e547] 	
+ DEBUG [4954e547] 	remote: Total 12 (delta 0), reused 0 (delta 0), pack-reused 0[K
+ DEBUG [4954e547] 	
+ DEBUG [4954e547] 	Unpacking objects:   8% (1/12)   
+ DEBUG [4954e547] 	Unpacking objects:  16% (2/12)   
+ DEBUG [4954e547] 	Unpacking objects:  25% (3/12)   
+ DEBUG [4954e547] 	Unpacking objects:  33% (4/12)   
+ DEBUG [4954e547] 	Unpacking objects:  41% (5/12)   
+ DEBUG [4954e547] 	Unpacking objects:  50% (6/12)   
+ DEBUG [4954e547] 	Unpacking objects:  58% (7/12)   
+ DEBUG [4954e547] 	Unpacking objects:  66% (8/12)   
+ DEBUG [4954e547] 	Unpacking objects:  75% (9/12)   
+ DEBUG [4954e547] 	Unpacking objects:  83% (10/12)   
+ DEBUG [4954e547] 	Unpacking objects:  91% (11/12)   
+ DEBUG [4954e547] 	Unpacking objects: 100% (12/12)   
+ DEBUG [4954e547] 	Unpacking objects: 100% (12/12), done.
+ DEBUG [4954e547] 	
+ DEBUG [4954e547] 	From github.com:Prashant31/dashboard-analysis
+ DEBUG [4954e547] 	
+ DEBUG [4954e547] 	   1dc5ff4..da24cfc  flask_api  -> flask_api
+ DEBUG [4954e547] 	
+  INFO [4954e547] Finished in 2.902 seconds with exit status 0 (successful).
+ DEBUG [5d037da9] Running if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [5d037da9] Command: if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi
+ DEBUG [5d037da9] Finished in 0.988 seconds with exit status 0 (successful).
+  INFO [f7956100] Running /usr/bin/env mkdir -p /var/www/auroville/releases/20170309104203 as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [f7956100] Command: cd /var/www/auroville/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env mkdir -p /var/www/auroville/releases/20170309104203 )
+  INFO [f7956100] Finished in 0.716 seconds with exit status 0 (successful).
+  INFO [c8c95a18] Running /usr/bin/env git archive flask_api | /usr/bin/env tar -x -f - -C /var/www/auroville/releases/20170309104203 as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [c8c95a18] Command: cd /var/www/auroville/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git archive flask_api | /usr/bin/env tar -x -f - -C /var/www/auroville/releases/20170309104203 )
+  INFO [c8c95a18] Finished in 0.716 seconds with exit status 0 (successful).
+ DEBUG [14d41478] Running if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [14d41478] Command: if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi
+ DEBUG [14d41478] Finished in 0.611 seconds with exit status 0 (successful).
+ DEBUG [c8233e09] Running /usr/bin/env git rev-list --max-count=1 flask_api as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [c8233e09] Command: cd /var/www/auroville/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git rev-list --max-count=1 flask_api )
+ DEBUG [c8233e09] 	da24cfc9da9811b3124ab00d9d59e74e07752774
+ DEBUG [c8233e09] 	
+ DEBUG [c8233e09] Finished in 0.717 seconds with exit status 0 (successful).
+ DEBUG [139caea3] Running if test ! -d /var/www/auroville/releases/20170309104203; then echo "Directory does not exist '/var/www/auroville/releases/20170309104203'" 1>&2; false; fi as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [139caea3] Command: if test ! -d /var/www/auroville/releases/20170309104203; then echo "Directory does not exist '/var/www/auroville/releases/20170309104203'" 1>&2; false; fi
+ DEBUG [139caea3] Finished in 0.613 seconds with exit status 0 (successful).
+  INFO [0170d994] Running /usr/bin/env echo "da24cfc9da9811b3124ab00d9d59e74e07752774" >> REVISION as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [0170d994] Command: cd /var/www/auroville/releases/20170309104203 && /usr/bin/env echo "da24cfc9da9811b3124ab00d9d59e74e07752774" >> REVISION
+  INFO [0170d994] Finished in 0.821 seconds with exit status 0 (successful).
+  INFO [0f127bce] Running /usr/bin/env ln -s /var/www/auroville/releases/20170309104203 /var/www/auroville/releases/current as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [0f127bce] Command: /usr/bin/env ln -s /var/www/auroville/releases/20170309104203 /var/www/auroville/releases/current
+  INFO [0f127bce] Finished in 0.611 seconds with exit status 0 (successful).
+  INFO [0f2810d7] Running /usr/bin/env mv /var/www/auroville/releases/current /var/www/auroville as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [0f2810d7] Command: /usr/bin/env mv /var/www/auroville/releases/current /var/www/auroville
+  INFO [0f2810d7] Finished in 0.818 seconds with exit status 0 (successful).
+  INFO [6d038fba] Running source /var/www/auroville/shared/env/bin/activate as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [6d038fba] Command: source /var/www/auroville/shared/env/bin/activate
+  INFO [6d038fba] Finished in 0.616 seconds with exit status 0 (successful).
+  INFO [286e2c68] Running pip3 install -r /var/www/auroville/current/requirements.txt as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [286e2c68] Command: pip3 install -r /var/www/auroville/current/requirements.txt
+ DEBUG [286e2c68] 	Collecting click==6.7 (from -r /var/www/auroville/current/requirements.txt (line 1))
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	  Using cached click-6.7-py2.py3-none-any.whl
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	Collecting Flask==0.12 (from -r /var/www/auroville/current/requirements.txt (line 2))
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	  Using cached Flask-0.12-py2.py3-none-any.whl
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	Collecting itsdangerous==0.24 (from -r /var/www/auroville/current/requirements.txt (line 3))
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	  Using cached itsdangerous-0.24.tar.gz
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	Collecting Jinja2==2.9.5 (from -r /var/www/auroville/current/requirements.txt (line 4))
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	  Using cached Jinja2-2.9.5-py2.py3-none-any.whl
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	Collecting MarkupSafe==0.23 (from -r /var/www/auroville/current/requirements.txt (line 5))
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	  Using cached MarkupSafe-0.23.tar.gz
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	Collecting pymongo==3.4.0 (from -r /var/www/auroville/current/requirements.txt (line 6))
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	  Using cached pymongo-3.4.0-cp35-cp35m-manylinux1_x86_64.whl
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	Collecting tornado==4.4.2 (from -r /var/www/auroville/current/requirements.txt (line 7))
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	  Using cached tornado-4.4.2.tar.gz
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	Collecting Werkzeug==0.11.15 (from -r /var/www/auroville/current/requirements.txt (line 8))
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	  Using cached Werkzeug-0.11.15-py2.py3-none-any.whl
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	Collecting xlrd==1.0.0 (from -r /var/www/auroville/current/requirements.txt (line 9))
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	  Using cached xlrd-1.0.0-py3-none-any.whl
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	Collecting XlsxWriter==0.9.6 (from -r /var/www/auroville/current/requirements.txt (line 10))
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	  Using cached XlsxWriter-0.9.6-py2.py3-none-any.whl
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	Building wheels for collected packages: itsdangerous, MarkupSafe, tornado
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	  Running setup.py bdist_wheel for itsdangerous ... [?25l-
+ DEBUG [286e2c68] 	 done
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	[?25h  Stored in directory: /home/ubuntu/.cache/pip/wheels/fc/a8/66/24d655233c757e178d45dea2de22a04c6d92766abfb741129a
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	  Running setup.py bdist_wheel for MarkupSafe ... [?25l-
+ DEBUG [286e2c68] 	 \
+ DEBUG [286e2c68] 	 done
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	[?25h  Stored in directory: /home/ubuntu/.cache/pip/wheels/a3/fa/dc/0198eed9ad95489b8a4f45d14dd5d2aee3f8984e46862c5748
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	  Running setup.py bdist_wheel for tornado ... [?25l-
+ DEBUG [286e2c68] 	 \
+ DEBUG [286e2c68] 	 done
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	[?25h  Stored in directory: /home/ubuntu/.cache/pip/wheels/b3/db/47/46e05d1ee3ecfba252fcab42f0a156dab0df0cddf99fa0827c
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	Successfully built itsdangerous MarkupSafe tornado
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	Installing collected packages: click, Werkzeug, itsdangerous, MarkupSafe, Jinja2, Flask, pymongo, tornado, xlrd, XlsxWriter
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	Successfully installed Flask-0.12 Jinja2-2.9.5 MarkupSafe-0.23 Werkzeug-0.11.15 XlsxWriter-0.9.6 click-6.7 itsdangerous-0.24 pymongo-3.4.0 tornado-4.4.2 xlrd-1.0.0
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	[33mYou are using pip version 8.1.1, however version 9.0.1 is available.
+ DEBUG [286e2c68] 	
+ DEBUG [286e2c68] 	You should consider upgrading via the 'pip install --upgrade pip' command.[0m
+ DEBUG [286e2c68] 	
+  INFO [286e2c68] Finished in 5.467 seconds with exit status 0 (successful).
+ DEBUG [b1d036e9] Running /usr/bin/env ls -x /var/www/auroville/releases as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [b1d036e9] Command: /usr/bin/env ls -x /var/www/auroville/releases
+ DEBUG [b1d036e9] 	20170309092141
+ DEBUG [b1d036e9] 		
+ DEBUG [b1d036e9] 	20170309103759
+ DEBUG [b1d036e9] 		
+ DEBUG [b1d036e9] 	20170309104010
+ DEBUG [b1d036e9] 		
+ DEBUG [b1d036e9] 	20170309104203
+ DEBUG [b1d036e9] 	
+ DEBUG [b1d036e9] Finished in 1.081 seconds with exit status 0 (successful).
+ DEBUG [c0b1f59e] Running if test ! -d /var/www/auroville/releases; then echo "Directory does not exist '/var/www/auroville/releases'" 1>&2; false; fi as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [c0b1f59e] Command: if test ! -d /var/www/auroville/releases; then echo "Directory does not exist '/var/www/auroville/releases'" 1>&2; false; fi
+ DEBUG [c0b1f59e] Finished in 0.716 seconds with exit status 0 (successful).
+  INFO [11ab0345] Running /usr/bin/env echo "Branch flask_api (at da24cfc9da9811b3124ab00d9d59e74e07752774) deployed as release 20170309104203 by prashantpal" >> /var/www/auroville/revisions.log as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [11ab0345] Command: cd /var/www/auroville/releases && /usr/bin/env echo "Branch flask_api (at da24cfc9da9811b3124ab00d9d59e74e07752774) deployed as release 20170309104203 by prashantpal" >> /var/www/auroville/revisions.log
+  INFO [11ab0345] Finished in 0.821 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 16:13:44 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [b042d9f1] Running /usr/bin/env mkdir -p /tmp as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [b042d9f1] Command: /usr/bin/env mkdir -p /tmp
+  INFO [b042d9f1] Finished in 4.104 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-auroville-production-prashantpal.sh 0.0%
+  INFO Uploading /tmp/git-ssh-auroville-production-prashantpal.sh 100.0%
+  INFO [d19d4cbb] Running /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-prashantpal.sh as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [d19d4cbb] Command: /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-prashantpal.sh
+  INFO [d19d4cbb] Finished in 0.819 seconds with exit status 0 (successful).
+  INFO [26aa4903] Running /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [26aa4903] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD )
+ DEBUG [26aa4903] 	3f312f64d2e77279fd1292d4a228dc15411a3cac	HEAD
+  INFO [26aa4903] Finished in 6.511 seconds with exit status 0 (successful).
+  INFO [0c8f6c67] Running /usr/bin/env mkdir -p /var/www/auroville/shared /var/www/auroville/releases as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [0c8f6c67] Command: /usr/bin/env mkdir -p /var/www/auroville/shared /var/www/auroville/releases
+  INFO [0c8f6c67] Finished in 0.916 seconds with exit status 0 (successful).
+ DEBUG [5d9972cc] Running [ -f /var/www/auroville/current/REVISION ] as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [5d9972cc] Command: [ -f /var/www/auroville/current/REVISION ]
+ DEBUG [5d9972cc] Finished in 0.613 seconds with exit status 0 (successful).
+ DEBUG [ff628e11] Running /usr/bin/env cat /var/www/auroville/current/REVISION 2>/dev/null as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [ff628e11] Command: /usr/bin/env cat /var/www/auroville/current/REVISION 2>/dev/null
+ DEBUG [ff628e11] 	da24cfc9da9811b3124ab00d9d59e74e07752774
+ DEBUG [ff628e11] 	
+ DEBUG [ff628e11] Finished in 0.613 seconds with exit status 0 (successful).
+ DEBUG [9f13547c] Running [ -f /var/www/auroville/repo/HEAD ] as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [9f13547c] Command: [ -f /var/www/auroville/repo/HEAD ]
+ DEBUG [9f13547c] Finished in 0.617 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/auroville/repo
+ DEBUG [3c2a4d56] Running if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [3c2a4d56] Command: if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi
+ DEBUG [3c2a4d56] Finished in 0.613 seconds with exit status 0 (successful).
+  INFO [b42e4d29] Running /usr/bin/env git remote set-url origin git@github.com:Prashant31/dashboard-analysis.git as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [b42e4d29] Command: cd /var/www/auroville/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git remote set-url origin git@github.com:Prashant31/dashboard-analysis.git )
+  INFO [b42e4d29] Finished in 0.637 seconds with exit status 0 (successful).
+  INFO [b7dbeb9d] Running /usr/bin/env git remote update --prune as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [b7dbeb9d] Command: cd /var/www/auroville/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [b7dbeb9d] 	Fetching origin
+ DEBUG [b7dbeb9d] 	
+  INFO [b7dbeb9d] Finished in 2.660 seconds with exit status 0 (successful).
+ DEBUG [1d4a5e6c] Running if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [1d4a5e6c] Command: if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi
+ DEBUG [1d4a5e6c] Finished in 0.921 seconds with exit status 0 (successful).
+  INFO [678c4ad9] Running /usr/bin/env mkdir -p /var/www/auroville/releases/20170309104404 as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [678c4ad9] Command: cd /var/www/auroville/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env mkdir -p /var/www/auroville/releases/20170309104404 )
+  INFO [678c4ad9] Finished in 0.819 seconds with exit status 0 (successful).
+  INFO [cacf8166] Running /usr/bin/env git archive flask_api | /usr/bin/env tar -x -f - -C /var/www/auroville/releases/20170309104404 as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [cacf8166] Command: cd /var/www/auroville/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git archive flask_api | /usr/bin/env tar -x -f - -C /var/www/auroville/releases/20170309104404 )
+  INFO [cacf8166] Finished in 0.640 seconds with exit status 0 (successful).
+ DEBUG [3f7a0724] Running if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [3f7a0724] Command: if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi
+ DEBUG [3f7a0724] Finished in 0.791 seconds with exit status 0 (successful).
+ DEBUG [c5a62702] Running /usr/bin/env git rev-list --max-count=1 flask_api as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [c5a62702] Command: cd /var/www/auroville/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git rev-list --max-count=1 flask_api )
+ DEBUG [c5a62702] 	da24cfc9da9811b3124ab00d9d59e74e07752774
+ DEBUG [c5a62702] 	
+ DEBUG [c5a62702] Finished in 0.618 seconds with exit status 0 (successful).
+ DEBUG [27555b52] Running if test ! -d /var/www/auroville/releases/20170309104404; then echo "Directory does not exist '/var/www/auroville/releases/20170309104404'" 1>&2; false; fi as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [27555b52] Command: if test ! -d /var/www/auroville/releases/20170309104404; then echo "Directory does not exist '/var/www/auroville/releases/20170309104404'" 1>&2; false; fi
+ DEBUG [27555b52] Finished in 0.815 seconds with exit status 0 (successful).
+  INFO [bec0fe1e] Running /usr/bin/env echo "da24cfc9da9811b3124ab00d9d59e74e07752774" >> REVISION as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [bec0fe1e] Command: cd /var/www/auroville/releases/20170309104404 && /usr/bin/env echo "da24cfc9da9811b3124ab00d9d59e74e07752774" >> REVISION
+  INFO [bec0fe1e] Finished in 0.818 seconds with exit status 0 (successful).
+  INFO [0c15ccfd] Running /usr/bin/env ln -s /var/www/auroville/releases/20170309104404 /var/www/auroville/releases/current as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [0c15ccfd] Command: /usr/bin/env ln -s /var/www/auroville/releases/20170309104404 /var/www/auroville/releases/current
+  INFO [0c15ccfd] Finished in 0.616 seconds with exit status 0 (successful).
+  INFO [283810d2] Running /usr/bin/env mv /var/www/auroville/releases/current /var/www/auroville as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [283810d2] Command: /usr/bin/env mv /var/www/auroville/releases/current /var/www/auroville
+  INFO [283810d2] Finished in 0.816 seconds with exit status 0 (successful).
+  INFO [0d46a413] Running source /var/www/auroville/shared/env/bin/activate as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [0d46a413] Command: source /var/www/auroville/shared/env/bin/activate
+  INFO [0d46a413] Finished in 0.817 seconds with exit status 0 (successful).
+  INFO [e806c4e1] Running pip3 install -r /var/www/auroville/current/requirements.txt as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [e806c4e1] Command: pip3 install -r /var/www/auroville/current/requirements.txt
+ DEBUG [e806c4e1] 	Collecting click==6.7 (from -r /var/www/auroville/current/requirements.txt (line 1))
+ DEBUG [e806c4e1] 	
+ DEBUG [e806c4e1] 	  Using cached click-6.7-py2.py3-none-any.whl
+ DEBUG [e806c4e1] 	
+ DEBUG [e806c4e1] 	Collecting Flask==0.12 (from -r /var/www/auroville/current/requirements.txt (line 2))
+ DEBUG [e806c4e1] 	
+ DEBUG [e806c4e1] 	  Using cached Flask-0.12-py2.py3-none-any.whl
+ DEBUG [e806c4e1] 	
+ DEBUG [e806c4e1] 	Collecting itsdangerous==0.24 (from -r /var/www/auroville/current/requirements.txt (line 3))
+ DEBUG [e806c4e1] 	
+ DEBUG [e806c4e1] 	Collecting Jinja2==2.9.5 (from -r /var/www/auroville/current/requirements.txt (line 4))
+ DEBUG [e806c4e1] 	
+ DEBUG [e806c4e1] 	  Using cached Jinja2-2.9.5-py2.py3-none-any.whl
+ DEBUG [e806c4e1] 	
+ DEBUG [e806c4e1] 	Collecting MarkupSafe==0.23 (from -r /var/www/auroville/current/requirements.txt (line 5))
+ DEBUG [e806c4e1] 	
+ DEBUG [e806c4e1] 	Collecting pymongo==3.4.0 (from -r /var/www/auroville/current/requirements.txt (line 6))
+ DEBUG [e806c4e1] 	
+ DEBUG [e806c4e1] 	  Using cached pymongo-3.4.0-cp35-cp35m-manylinux1_x86_64.whl
+ DEBUG [e806c4e1] 	
+ DEBUG [e806c4e1] 	Collecting tornado==4.4.2 (from -r /var/www/auroville/current/requirements.txt (line 7))
+ DEBUG [e806c4e1] 	
+ DEBUG [e806c4e1] 	Collecting Werkzeug==0.11.15 (from -r /var/www/auroville/current/requirements.txt (line 8))
+ DEBUG [e806c4e1] 	
+ DEBUG [e806c4e1] 	  Using cached Werkzeug-0.11.15-py2.py3-none-any.whl
+ DEBUG [e806c4e1] 	
+ DEBUG [e806c4e1] 	Collecting xlrd==1.0.0 (from -r /var/www/auroville/current/requirements.txt (line 9))
+ DEBUG [e806c4e1] 	
+ DEBUG [e806c4e1] 	  Using cached xlrd-1.0.0-py3-none-any.whl
+ DEBUG [e806c4e1] 	
+ DEBUG [e806c4e1] 	Collecting XlsxWriter==0.9.6 (from -r /var/www/auroville/current/requirements.txt (line 10))
+ DEBUG [e806c4e1] 	
+ DEBUG [e806c4e1] 	  Using cached XlsxWriter-0.9.6-py2.py3-none-any.whl
+ DEBUG [e806c4e1] 	
+ DEBUG [e806c4e1] 	Installing collected packages: click, Werkzeug, itsdangerous, MarkupSafe, Jinja2, Flask, pymongo, tornado, xlrd, XlsxWriter
+ DEBUG [e806c4e1] 	
+ DEBUG [e806c4e1] 	Successfully installed Flask-0.12 Jinja2-2.9.5 MarkupSafe-0.23 Werkzeug-0.11.15 XlsxWriter-0.9.6 click-6.7 itsdangerous-0.24 pymongo-3.4.0 tornado-4.4.2 xlrd-1.0.0
+ DEBUG [e806c4e1] 	
+ DEBUG [e806c4e1] 	[33mYou are using pip version 8.1.1, however version 9.0.1 is available.
+ DEBUG [e806c4e1] 	
+ DEBUG [e806c4e1] 	You should consider upgrading via the 'pip install --upgrade pip' command.[0m
+ DEBUG [e806c4e1] 	
+  INFO [e806c4e1] Finished in 3.390 seconds with exit status 0 (successful).
+  INFO [875d5035] Running /usr/bin/env sudo service mongodb restart as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [875d5035] Command: /usr/bin/env sudo service mongodb restart
+  INFO [875d5035] Finished in 0.741 seconds with exit status 0 (successful).
+ DEBUG [2f7528fb] Running /usr/bin/env ls -x /var/www/auroville/releases as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [2f7528fb] Command: /usr/bin/env ls -x /var/www/auroville/releases
+ DEBUG [2f7528fb] 	20170309092141
+ DEBUG [2f7528fb] 		
+ DEBUG [2f7528fb] 	20170309103759
+ DEBUG [2f7528fb] 		
+ DEBUG [2f7528fb] 	20170309104010
+ DEBUG [2f7528fb] 		
+ DEBUG [2f7528fb] 	20170309104203
+ DEBUG [2f7528fb] 		
+ DEBUG [2f7528fb] 	20170309104404
+ DEBUG [2f7528fb] 	
+ DEBUG [2f7528fb] Finished in 0.729 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 5 deployed releases on ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+  INFO No old releases (keeping newest 5) on ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [67e657b3] Running if test ! -d /var/www/auroville/releases; then echo "Directory does not exist '/var/www/auroville/releases'" 1>&2; false; fi as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [67e657b3] Command: if test ! -d /var/www/auroville/releases; then echo "Directory does not exist '/var/www/auroville/releases'" 1>&2; false; fi
+ DEBUG [67e657b3] Finished in 0.665 seconds with exit status 0 (successful).
+  INFO [1ff18a36] Running /usr/bin/env echo "Branch flask_api (at da24cfc9da9811b3124ab00d9d59e74e07752774) deployed as release 20170309104404 by prashantpal" >> /var/www/auroville/revisions.log as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [1ff18a36] Command: cd /var/www/auroville/releases && /usr/bin/env echo "Branch flask_api (at da24cfc9da9811b3124ab00d9d59e74e07752774) deployed as release 20170309104404 by prashantpal" >> /var/www/auroville/revisions.log
+  INFO [1ff18a36] Finished in 0.819 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 17:27:32 +0530 cap production deploy:install
+  INFO ---------------------------------------------------------------------------
+  INFO [bde0ee76] Running /usr/bin/env sudo apt-get -y update as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [bde0ee76] Command: /usr/bin/env sudo apt-get -y update
+ DEBUG [bde0ee76] 	0% [Working]
+ DEBUG [bde0ee76] 	            
+ DEBUG [bde0ee76] 	Hit:1 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial InRelease
+ DEBUG [bde0ee76] 	
+ DEBUG [bde0ee76] 	0% [Connecting to security.ubuntu.com (91.189.88.162)]
+ DEBUG [bde0ee76] 	                                                      
+ DEBUG [bde0ee76] 	Get:2 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates InRelease [102 kB]
+ DEBUG [bde0ee76] 	
+ DEBUG [bde0ee76] 	                                                      
+ DEBUG [bde0ee76] 	Get:3 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-backports InRelease [102 kB]
+ DEBUG [bde0ee76] 	
+ DEBUG [bde0ee76] 	0% [3 InRelease 102 kB/102 kB 100%] [Connecting to security.ubuntu.com (91.189.
+ DEBUG [bde0ee76] 	                                                                               
+ DEBUG [bde0ee76] 	0% [Connecting to security.ubuntu.com (91.189.88.162)]
+ DEBUG [bde0ee76] 	0% [1 InRelease gpgv 247 kB] [Connecting to security.ubuntu.com (91.189.88.162)
+ DEBUG [bde0ee76] 	                                                                               
+ DEBUG [bde0ee76] 	0% [Connecting to security.ubuntu.com (91.189.88.162)]
+ DEBUG [bde0ee76] 	0% [2 InRelease gpgv 102 kB] [Connecting to security.ubuntu.com (91.189.88.162)
+ DEBUG [bde0ee76] 	                                                                               
+ DEBUG [bde0ee76] 	0% [Connecting to security.ubuntu.com (91.189.88.162)]
+ DEBUG [bde0ee76] 	0% [3 InRelease gpgv 102 kB] [Connecting to security.ubuntu.com (91.189.88.162)
+ DEBUG [bde0ee76] 	                                                                               
+ DEBUG [bde0ee76] 	0% [Waiting for headers]
+ DEBUG [bde0ee76] 	                        
+ DEBUG [bde0ee76] 	Get:4 http://security.ubuntu.com/ubuntu xenial-security InRelease [102 kB]
+ DEBUG [bde0ee76] 	
+ DEBUG [bde0ee76] 	0% [4 InRelease 14.2 kB/102 kB 14%]
+ DEBUG [bde0ee76] 	                                   
+ DEBUG [bde0ee76] 	0% [Working]
+ DEBUG [bde0ee76] 	0% [4 InRelease gpgv 102 kB]
+ DEBUG [bde0ee76] 	                            
+ DEBUG [bde0ee76] 	100% [Working]
+ DEBUG [bde0ee76] 	              
+ DEBUG [bde0ee76] 	Fetched 306 kB in 0s (386 kB/s)
+ DEBUG [bde0ee76] 	
+ DEBUG [bde0ee76] 	Reading package lists... 0%
+ DEBUG [bde0ee76] 	Reading package lists... 0%
+ DEBUG [bde0ee76] 	Reading package lists... 1%
+ DEBUG [bde0ee76] 	Reading package lists... 7%
+ DEBUG [bde0ee76] 	Reading package lists... 7%
+ DEBUG [bde0ee76] 	Reading package lists... 11%
+ DEBUG [bde0ee76] 	Reading package lists... 11%
+ DEBUG [bde0ee76] 	Reading package lists... 12%
+ DEBUG [bde0ee76] 	Reading package lists... 12%
+ DEBUG [bde0ee76] 	Reading package lists... 12%
+ DEBUG [bde0ee76] 	Reading package lists... 12%
+ DEBUG [bde0ee76] 	Reading package lists... 58%
+ DEBUG [bde0ee76] 	Reading package lists... 58%
+ DEBUG [bde0ee76] 	Reading package lists... 83%
+ DEBUG [bde0ee76] 	Reading package lists... 83%
+ DEBUG [bde0ee76] 	Reading package lists... 84%
+ DEBUG [bde0ee76] 	Reading package lists... 84%
+ DEBUG [bde0ee76] 	Reading package lists... 85%
+ DEBUG [bde0ee76] 	Reading package lists... 85%
+ DEBUG [bde0ee76] 	Reading package lists... 88%
+ DEBUG [bde0ee76] 	Reading package lists... 88%
+ DEBUG [bde0ee76] 	Reading package lists... 88%
+ DEBUG [bde0ee76] 	Reading package lists... 90%
+ DEBUG [bde0ee76] 	Reading package lists... 90%
+ DEBUG [bde0ee76] 	Reading package lists... 90%
+ DEBUG [bde0ee76] 	Reading package lists... 90%
+ DEBUG [bde0ee76] 	Reading package lists... 90%
+ DEBUG [bde0ee76] 	Reading package lists... 90%
+ DEBUG [bde0ee76] 	Reading package lists... 93%
+ DEBUG [bde0ee76] 	Reading package lists... 93%
+ DEBUG [bde0ee76] 	Reading package lists... 95%
+ DEBUG [bde0ee76] 	Reading package lists... 95%
+ DEBUG [bde0ee76] 	Reading package lists... 95%
+ DEBUG [bde0ee76] 	Reading package lists... 95%
+ DEBUG [bde0ee76] 	Reading package lists... 95%
+ DEBUG [bde0ee76] 	Reading package lists... 95%
+ DEBUG [bde0ee76] 	Reading package lists... 95%
+ DEBUG [bde0ee76] 	Reading package lists... 95%
+ DEBUG [bde0ee76] 	Reading package lists... 95%
+ DEBUG [bde0ee76] 	Reading package lists... 95%
+ DEBUG [bde0ee76] 	Reading package lists... 95%
+ DEBUG [bde0ee76] 	Reading package lists... 95%
+ DEBUG [bde0ee76] 	Reading package lists... 95%
+ DEBUG [bde0ee76] 	Reading package lists... 95%
+ DEBUG [bde0ee76] 	Reading package lists... 97%
+ DEBUG [bde0ee76] 	Reading package lists... 97%
+ DEBUG [bde0ee76] 	Reading package lists... 98%
+ DEBUG [bde0ee76] 	Reading package lists... 98%
+ DEBUG [bde0ee76] 	Reading package lists... 98%
+ DEBUG [bde0ee76] 	Reading package lists... 98%
+ DEBUG [bde0ee76] 	Reading package lists... 98%
+ DEBUG [bde0ee76] 	Reading package lists... 98%
+ DEBUG [bde0ee76] 	Reading package lists... 99%
+ DEBUG [bde0ee76] 	Reading package lists... 99%
+ DEBUG [bde0ee76] 	Reading package lists... 99%
+ DEBUG [bde0ee76] 	Reading package lists... 99%
+ DEBUG [bde0ee76] 	Reading package lists... 99%
+ DEBUG [bde0ee76] 	Reading package lists... 99%
+ DEBUG [bde0ee76] 	Reading package lists... 99%
+ DEBUG [bde0ee76] 	Reading package lists... 99%
+ DEBUG [bde0ee76] 	Reading package lists... Done
+ DEBUG [bde0ee76] 	
+  INFO [bde0ee76] Finished in 9.028 seconds with exit status 0 (successful).
+  INFO [f56d367b] Running /usr/bin/env sudo apt-get -y upgrade as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [f56d367b] Command: /usr/bin/env sudo apt-get -y upgrade
+ DEBUG [f56d367b] 	Reading package lists... 0%
+ DEBUG [f56d367b] 	Reading package lists... 100%
+ DEBUG [f56d367b] 	Reading package lists... Done
+ DEBUG [f56d367b] 	
+ DEBUG [f56d367b] 	Building dependency tree... 0%
+ DEBUG [f56d367b] 	Building dependency tree... 0%
+ DEBUG [f56d367b] 	Building dependency tree... 50%
+ DEBUG [f56d367b] 	Building dependency tree... 50%
+ DEBUG [f56d367b] 	Building dependency tree       
+ DEBUG [f56d367b] 	
+ DEBUG [f56d367b] 	Reading state information... 0%
+ DEBUG [f56d367b] 	Reading state information... 1%
+ DEBUG [f56d367b] 	Reading state information... Done
+ DEBUG [f56d367b] 	
+ DEBUG [f56d367b] 	Calculating upgrade... 0%
+ DEBUG [f56d367b] 	Calculating upgrade... 50%
+ DEBUG [f56d367b] 	Calculating upgrade... Done
+ DEBUG [f56d367b] 	
+ DEBUG [f56d367b] 	The following packages have been kept back:
+ DEBUG [f56d367b] 	
+ DEBUG [f56d367b] 	  linux-headers-generic linux-headers-virtual linux-image-virtual
+ DEBUG [f56d367b] 	
+ DEBUG [f56d367b] 	  linux-virtual
+ DEBUG [f56d367b] 	
+ DEBUG [f56d367b] 	0 upgraded, 0 newly installed, 0 to remove and 4 not upgraded.
+ DEBUG [f56d367b] 	
+  INFO [f56d367b] Finished in 4.390 seconds with exit status 0 (successful).
+  INFO [679dc758] Running /usr/bin/env sudo apt-get -y install python3 python3-pip gunicorn supervisor mongodb as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [679dc758] Command: /usr/bin/env sudo apt-get -y install python3 python3-pip gunicorn supervisor mongodb
+ DEBUG [679dc758] 	Reading package lists... 0%
+ DEBUG [679dc758] 	Reading package lists... 100%
+ DEBUG [679dc758] 	Reading package lists... Done
+ DEBUG [679dc758] 	
+ DEBUG [679dc758] 	Building dependency tree... 0%
+ DEBUG [679dc758] 	Building dependency tree... 0%
+ DEBUG [679dc758] 	Building dependency tree... 50%
+ DEBUG [679dc758] 	Building dependency tree... 50%
+ DEBUG [679dc758] 	Building dependency tree       
+ DEBUG [679dc758] 	
+ DEBUG [679dc758] 	Reading state information... 0%
+ DEBUG [679dc758] 	Reading state information... 1%
+ DEBUG [679dc758] 	Reading state information... Done
+ DEBUG [679dc758] 	
+ DEBUG [679dc758] 	python3 is already the newest version (3.5.1-3).
+ DEBUG [679dc758] 	
+ DEBUG [679dc758] 	gunicorn is already the newest version (19.4.5-1ubuntu1).
+ DEBUG [679dc758] 	
+ DEBUG [679dc758] 	mongodb is already the newest version (1:2.6.10-0ubuntu1).
+ DEBUG [679dc758] 	
+ DEBUG [679dc758] 	python3-pip is already the newest version (8.1.1-2ubuntu0.4).
+ DEBUG [679dc758] 	
+ DEBUG [679dc758] 	The following additional packages will be installed:
+ DEBUG [679dc758] 	
+ DEBUG [679dc758] 	  python-meld3
+ DEBUG [679dc758] 	
+ DEBUG [679dc758] 	Suggested packages:
+ DEBUG [679dc758] 	
+ DEBUG [679dc758] 	  supervisor-doc
+ DEBUG [679dc758] 	
+ DEBUG [679dc758] 	The following NEW packages will be installed:
+ DEBUG [679dc758] 	
+ DEBUG [679dc758] 	  python-meld3 supervisor
+ DEBUG [679dc758] 	
+ DEBUG [679dc758] 	0 upgraded, 2 newly installed, 0 to remove and 4 not upgraded.
+ DEBUG [679dc758] 	
+ DEBUG [679dc758] 	Need to get 283 kB of archives.
+ DEBUG [679dc758] 	
+ DEBUG [679dc758] 	After this operation, 1,549 kB of additional disk space will be used.
+ DEBUG [679dc758] 	
+ DEBUG [679dc758] 	0% [Working]
+ DEBUG [679dc758] 	            
+ DEBUG [679dc758] 	Get:1 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/universe amd64 python-meld3 all 1.0.2-2 [30.9 kB]
+ DEBUG [679dc758] 	
+0% [1 python-meld3 0 B/30.9 kB 0%]
+ DEBUG [679dc758] 	                                  
+ DEBUG [679dc758] 	19% [Working]
+ DEBUG [679dc758] 	             
+ DEBUG [679dc758] 	Get:2 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/universe amd64 supervisor all 3.2.0-2 [252 kB]
+ DEBUG [679dc758] 	
+19% [2 supervisor 0 B/252 kB 0%]
+ DEBUG [679dc758] 	                                
+ DEBUG [679dc758] 	100% [Working]
+ DEBUG [679dc758] 	              
+ DEBUG [679dc758] 	Fetched 283 kB in 0s (22.7 MB/s)
+ DEBUG [679dc758] 	
+ DEBUG [679dc758] 	Selecting previously unselected package python-meld3.
+ DEBUG [679dc758] 	
+ DEBUG [679dc758] 	(Reading database ... 
+ DEBUG [679dc758] 	(Reading database ... 5%
+ DEBUG [679dc758] 	(Reading database ... 10%
+ DEBUG [679dc758] 	(Reading database ... 15%
+ DEBUG [679dc758] 	(Reading database ... 20%
+ DEBUG [679dc758] 	(Reading database ... 25%
+ DEBUG [679dc758] 	(Reading database ... 30%
+ DEBUG [679dc758] 	(Reading database ... 35%
+ DEBUG [679dc758] 	(Reading database ... 40%
+ DEBUG [679dc758] 	(Reading database ... 45%
+ DEBUG [679dc758] 	(Reading database ... 50%
+ DEBUG [679dc758] 	(Reading database ... 55%
+ DEBUG [679dc758] 	(Reading database ... 60%
+ DEBUG [679dc758] 	(Reading database ... 65%
+ DEBUG [679dc758] 	(Reading database ... 70%
+ DEBUG [679dc758] 	(Reading database ... 75%
+ DEBUG [679dc758] 	(Reading database ... 80%
+ DEBUG [679dc758] 	(Reading database ... 85%
+ DEBUG [679dc758] 	(Reading database ... 90%
+ DEBUG [679dc758] 	(Reading database ... 95%
+ DEBUG [679dc758] 	(Reading database ... 100%
+ DEBUG [679dc758] 	(Reading database ... 
+ DEBUG [679dc758] 	60661 files and directories currently installed.)
+ DEBUG [679dc758] 	
+ DEBUG [679dc758] 	Preparing to unpack .../python-meld3_1.0.2-2_all.deb ...
+ DEBUG [679dc758] 	
+ DEBUG [679dc758] 	Unpacking python-meld3 (1.0.2-2) ...
+ DEBUG [679dc758] 	
+ DEBUG [679dc758] 	Selecting previously unselected package supervisor.
+ DEBUG [679dc758] 	
+ DEBUG [679dc758] 	Preparing to unpack .../supervisor_3.2.0-2_all.deb ...
+ DEBUG [679dc758] 	
+ DEBUG [679dc758] 	Unpacking supervisor (3.2.0-2) ...
+ DEBUG [679dc758] 	
+ DEBUG [679dc758] 	Processing triggers for systemd (229-4ubuntu16) ...
+ DEBUG [679dc758] 	
+ DEBUG [679dc758] 	Processing triggers for ureadahead (0.100.0-19) ...
+ DEBUG [679dc758] 	Processing triggers for man-db (2.7.5-1) ...
+ DEBUG [679dc758] 	
+ DEBUG [679dc758] 	Setting up python-meld3 (1.0.2-2) ...
+ DEBUG [679dc758] 	
+ DEBUG [679dc758] 	Setting up supervisor (3.2.0-2) ...
+ DEBUG [679dc758] 	
+ DEBUG [679dc758] 	Processing triggers for systemd (229-4ubuntu16) ...
+ DEBUG [679dc758] 	Processing triggers for ureadahead (0.100.0-19) ...
+  INFO [679dc758] Finished in 4.168 seconds with exit status 0 (successful).
+  INFO [28e635ac] Running pip3 install virtualenv as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [28e635ac] Command: pip3 install virtualenv
+ DEBUG [28e635ac] 	Collecting virtualenv
+ DEBUG [28e635ac] 	
+ DEBUG [28e635ac] 	  Using cached virtualenv-15.1.0-py2.py3-none-any.whl
+ DEBUG [28e635ac] 	
+ DEBUG [28e635ac] 	Installing collected packages: virtualenv
+ DEBUG [28e635ac] 	
+ DEBUG [28e635ac] 	Successfully installed virtualenv-15.1.0
+ DEBUG [28e635ac] 	
+ DEBUG [28e635ac] 	[33mYou are using pip version 8.1.1, however version 9.0.1 is available.
+ DEBUG [28e635ac] 	
+ DEBUG [28e635ac] 	You should consider upgrading via the 'pip install --upgrade pip' command.[0m
+ DEBUG [28e635ac] 	
+  INFO [28e635ac] Finished in 1.961 seconds with exit status 0 (successful).
+  INFO [a6a86f6e] Running /usr/bin/env sudo apt-get -y update as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [a6a86f6e] Command: /usr/bin/env sudo apt-get -y update
+ DEBUG [a6a86f6e] 	0% [Working]
+ DEBUG [a6a86f6e] 	            
+ DEBUG [a6a86f6e] 	Hit:1 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial InRelease
+ DEBUG [a6a86f6e] 	
+ DEBUG [a6a86f6e] 	0% [Connecting to security.ubuntu.com (91.189.88.161)]
+ DEBUG [a6a86f6e] 	                                                      
+ DEBUG [a6a86f6e] 	Hit:2 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates InRelease
+ DEBUG [a6a86f6e] 	
+ DEBUG [a6a86f6e] 	0% [Waiting for headers] [Connecting to security.ubuntu.com (91.189.88.161)]
+ DEBUG [a6a86f6e] 	0% [1 InRelease gpgv 247 kB] [Waiting for headers] [Connecting to security.ubun
+ DEBUG [a6a86f6e] 	                                                                               
+ DEBUG [a6a86f6e] 	Hit:3 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-backports InRelease
+ DEBUG [a6a86f6e] 	
+ DEBUG [a6a86f6e] 	0% [1 InRelease gpgv 247 kB] [Connecting to security.ubuntu.com (91.189.88.161)
+ DEBUG [a6a86f6e] 	                                                                               
+ DEBUG [a6a86f6e] 	0% [Connecting to security.ubuntu.com (91.189.88.161)]
+ DEBUG [a6a86f6e] 	0% [2 InRelease gpgv 102 kB] [Connecting to security.ubuntu.com (91.189.88.161)
+ DEBUG [a6a86f6e] 	                                                                               
+ DEBUG [a6a86f6e] 	0% [Connecting to security.ubuntu.com (91.189.88.161)]
+ DEBUG [a6a86f6e] 	0% [3 InRelease gpgv 102 kB] [Connecting to security.ubuntu.com (91.189.88.161)
+ DEBUG [a6a86f6e] 	                                                                               
+ DEBUG [a6a86f6e] 	0% [Waiting for headers]
+ DEBUG [a6a86f6e] 	                        
+ DEBUG [a6a86f6e] 	Hit:4 http://security.ubuntu.com/ubuntu xenial-security InRelease
+ DEBUG [a6a86f6e] 	
+ DEBUG [a6a86f6e] 	                        
+ DEBUG [a6a86f6e] 	0% [Working]
+ DEBUG [a6a86f6e] 	0% [4 InRelease gpgv 102 kB]
+ DEBUG [a6a86f6e] 	                            
+ DEBUG [a6a86f6e] 	20% [Working]
+ DEBUG [a6a86f6e] 	             
+ DEBUG [a6a86f6e] 	Reading package lists... 0%
+ DEBUG [a6a86f6e] 	Reading package lists... 0%
+ DEBUG [a6a86f6e] 	Reading package lists... 1%
+ DEBUG [a6a86f6e] 	Reading package lists... 7%
+ DEBUG [a6a86f6e] 	Reading package lists... 7%
+ DEBUG [a6a86f6e] 	Reading package lists... 11%
+ DEBUG [a6a86f6e] 	Reading package lists... 11%
+ DEBUG [a6a86f6e] 	Reading package lists... 12%
+ DEBUG [a6a86f6e] 	Reading package lists... 12%
+ DEBUG [a6a86f6e] 	Reading package lists... 12%
+ DEBUG [a6a86f6e] 	Reading package lists... 12%
+ DEBUG [a6a86f6e] 	Reading package lists... 58%
+ DEBUG [a6a86f6e] 	Reading package lists... 58%
+ DEBUG [a6a86f6e] 	Reading package lists... 83%
+ DEBUG [a6a86f6e] 	Reading package lists... 83%
+ DEBUG [a6a86f6e] 	Reading package lists... 84%
+ DEBUG [a6a86f6e] 	Reading package lists... 84%
+ DEBUG [a6a86f6e] 	Reading package lists... 85%
+ DEBUG [a6a86f6e] 	Reading package lists... 85%
+ DEBUG [a6a86f6e] 	Reading package lists... 88%
+ DEBUG [a6a86f6e] 	Reading package lists... 88%
+ DEBUG [a6a86f6e] 	Reading package lists... 90%
+ DEBUG [a6a86f6e] 	Reading package lists... 90%
+ DEBUG [a6a86f6e] 	Reading package lists... 90%
+ DEBUG [a6a86f6e] 	Reading package lists... 90%
+ DEBUG [a6a86f6e] 	Reading package lists... 90%
+ DEBUG [a6a86f6e] 	Reading package lists... 90%
+ DEBUG [a6a86f6e] 	Reading package lists... 90%
+ DEBUG [a6a86f6e] 	Reading package lists... 93%
+ DEBUG [a6a86f6e] 	Reading package lists... 93%
+ DEBUG [a6a86f6e] 	Reading package lists... 95%
+ DEBUG [a6a86f6e] 	Reading package lists... 95%
+ DEBUG [a6a86f6e] 	Reading package lists... 95%
+ DEBUG [a6a86f6e] 	Reading package lists... 95%
+ DEBUG [a6a86f6e] 	Reading package lists... 95%
+ DEBUG [a6a86f6e] 	Reading package lists... 95%
+ DEBUG [a6a86f6e] 	Reading package lists... 95%
+ DEBUG [a6a86f6e] 	Reading package lists... 95%
+ DEBUG [a6a86f6e] 	Reading package lists... 95%
+ DEBUG [a6a86f6e] 	Reading package lists... 95%
+ DEBUG [a6a86f6e] 	Reading package lists... 95%
+ DEBUG [a6a86f6e] 	Reading package lists... 95%
+ DEBUG [a6a86f6e] 	Reading package lists... 95%
+ DEBUG [a6a86f6e] 	Reading package lists... 95%
+ DEBUG [a6a86f6e] 	Reading package lists... 97%
+ DEBUG [a6a86f6e] 	Reading package lists... 97%
+ DEBUG [a6a86f6e] 	Reading package lists... 98%
+ DEBUG [a6a86f6e] 	Reading package lists... 98%
+ DEBUG [a6a86f6e] 	Reading package lists... 98%
+ DEBUG [a6a86f6e] 	Reading package lists... 98%
+ DEBUG [a6a86f6e] 	Reading package lists... 98%
+ DEBUG [a6a86f6e] 	Reading package lists... 98%
+ DEBUG [a6a86f6e] 	Reading package lists... 99%
+ DEBUG [a6a86f6e] 	Reading package lists... 99%
+ DEBUG [a6a86f6e] 	Reading package lists... 99%
+ DEBUG [a6a86f6e] 	Reading package lists... 99%
+ DEBUG [a6a86f6e] 	Reading package lists... 99%
+ DEBUG [a6a86f6e] 	Reading package lists... 99%
+ DEBUG [a6a86f6e] 	Reading package lists... 99%
+ DEBUG [a6a86f6e] 	Reading package lists... 99%
+ DEBUG [a6a86f6e] 	Reading package lists... Done
+ DEBUG [a6a86f6e] 	
+  INFO [a6a86f6e] Finished in 5.332 seconds with exit status 0 (successful).
+  INFO [08648dc2] Running /usr/bin/env sudo apt-get -y install nginx as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [08648dc2] Command: /usr/bin/env sudo apt-get -y install nginx
+ DEBUG [08648dc2] 	Reading package lists... 0%
+ DEBUG [08648dc2] 	Reading package lists... 100%
+ DEBUG [08648dc2] 	Reading package lists... Done
+ DEBUG [08648dc2] 	
+ DEBUG [08648dc2] 	Building dependency tree... 0%
+ DEBUG [08648dc2] 	Building dependency tree... 0%
+ DEBUG [08648dc2] 	Building dependency tree... 50%
+ DEBUG [08648dc2] 	Building dependency tree... 50%
+ DEBUG [08648dc2] 	Building dependency tree       
+ DEBUG [08648dc2] 	
+ DEBUG [08648dc2] 	Reading state information... 0%
+ DEBUG [08648dc2] 	Reading state information... 1%
+ DEBUG [08648dc2] 	Reading state information... Done
+ DEBUG [08648dc2] 	
+ DEBUG [08648dc2] 	nginx is already the newest version (1.10.0-0ubuntu0.16.04.4).
+ DEBUG [08648dc2] 	
+ DEBUG [08648dc2] 	0 upgraded, 0 newly installed, 0 to remove and 4 not upgraded.
+ DEBUG [08648dc2] 	
+  INFO [08648dc2] Finished in 4.494 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 17:28:51 +0530 cap production deploy:install
+  INFO ---------------------------------------------------------------------------
+  INFO [c0dab35d] Running /usr/bin/env sudo apt-get -y update as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [c0dab35d] Command: /usr/bin/env sudo apt-get -y update
+ DEBUG [c0dab35d] 	0% [Working]
+ DEBUG [c0dab35d] 	            
+ DEBUG [c0dab35d] 	Hit:1 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial InRelease
+ DEBUG [c0dab35d] 	
+ DEBUG [c0dab35d] 	0% [Connecting to security.ubuntu.com (91.189.88.162)]
+ DEBUG [c0dab35d] 	                                                      
+ DEBUG [c0dab35d] 	Hit:2 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates InRelease
+ DEBUG [c0dab35d] 	
+ DEBUG [c0dab35d] 	                                                      
+ DEBUG [c0dab35d] 	Hit:3 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-backports InRelease
+ DEBUG [c0dab35d] 	
+ DEBUG [c0dab35d] 	0% [Connecting to security.ubuntu.com (91.189.88.162)]
+ DEBUG [c0dab35d] 	0% [1 InRelease gpgv 247 kB] [Connecting to security.ubuntu.com (91.189.88.162)
+ DEBUG [c0dab35d] 	                                                                               
+ DEBUG [c0dab35d] 	0% [Connecting to security.ubuntu.com (91.189.88.162)]
+ DEBUG [c0dab35d] 	0% [2 InRelease gpgv 102 kB] [Connecting to security.ubuntu.com (91.189.88.162)
+ DEBUG [c0dab35d] 	                                                                               
+ DEBUG [c0dab35d] 	0% [Connecting to security.ubuntu.com (91.189.88.162)]
+ DEBUG [c0dab35d] 	0% [3 InRelease gpgv 102 kB] [Connecting to security.ubuntu.com (91.189.88.162)
+ DEBUG [c0dab35d] 	                                                                               
+ DEBUG [c0dab35d] 	0% [Waiting for headers]
+ DEBUG [c0dab35d] 	                        
+ DEBUG [c0dab35d] 	Hit:4 http://security.ubuntu.com/ubuntu xenial-security InRelease
+ DEBUG [c0dab35d] 	
+ DEBUG [c0dab35d] 	                        
+ DEBUG [c0dab35d] 	0% [Working]
+ DEBUG [c0dab35d] 	0% [4 InRelease gpgv 102 kB]
+ DEBUG [c0dab35d] 	                            
+ DEBUG [c0dab35d] 	20% [Working]
+ DEBUG [c0dab35d] 	             
+ DEBUG [c0dab35d] 	Reading package lists... 0%
+ DEBUG [c0dab35d] 	Reading package lists... 0%
+ DEBUG [c0dab35d] 	Reading package lists... 1%
+ DEBUG [c0dab35d] 	Reading package lists... 7%
+ DEBUG [c0dab35d] 	Reading package lists... 7%
+ DEBUG [c0dab35d] 	Reading package lists... 11%
+ DEBUG [c0dab35d] 	Reading package lists... 11%
+ DEBUG [c0dab35d] 	Reading package lists... 12%
+ DEBUG [c0dab35d] 	Reading package lists... 12%
+ DEBUG [c0dab35d] 	Reading package lists... 12%
+ DEBUG [c0dab35d] 	Reading package lists... 12%
+ DEBUG [c0dab35d] 	Reading package lists... 58%
+ DEBUG [c0dab35d] 	Reading package lists... 58%
+ DEBUG [c0dab35d] 	Reading package lists... 83%
+ DEBUG [c0dab35d] 	Reading package lists... 83%
+ DEBUG [c0dab35d] 	Reading package lists... 84%
+ DEBUG [c0dab35d] 	Reading package lists... 84%
+ DEBUG [c0dab35d] 	Reading package lists... 85%
+ DEBUG [c0dab35d] 	Reading package lists... 85%
+ DEBUG [c0dab35d] 	Reading package lists... 88%
+ DEBUG [c0dab35d] 	Reading package lists... 88%
+ DEBUG [c0dab35d] 	Reading package lists... 89%
+ DEBUG [c0dab35d] 	Reading package lists... 90%
+ DEBUG [c0dab35d] 	Reading package lists... 90%
+ DEBUG [c0dab35d] 	Reading package lists... 90%
+ DEBUG [c0dab35d] 	Reading package lists... 90%
+ DEBUG [c0dab35d] 	Reading package lists... 90%
+ DEBUG [c0dab35d] 	Reading package lists... 90%
+ DEBUG [c0dab35d] 	Reading package lists... 93%
+ DEBUG [c0dab35d] 	Reading package lists... 93%
+ DEBUG [c0dab35d] 	Reading package lists... 95%
+ DEBUG [c0dab35d] 	Reading package lists... 95%
+ DEBUG [c0dab35d] 	Reading package lists... 95%
+ DEBUG [c0dab35d] 	Reading package lists... 95%
+ DEBUG [c0dab35d] 	Reading package lists... 95%
+ DEBUG [c0dab35d] 	Reading package lists... 95%
+ DEBUG [c0dab35d] 	Reading package lists... 95%
+ DEBUG [c0dab35d] 	Reading package lists... 95%
+ DEBUG [c0dab35d] 	Reading package lists... 95%
+ DEBUG [c0dab35d] 	Reading package lists... 95%
+ DEBUG [c0dab35d] 	Reading package lists... 95%
+ DEBUG [c0dab35d] 	Reading package lists... 95%
+ DEBUG [c0dab35d] 	Reading package lists... 95%
+ DEBUG [c0dab35d] 	Reading package lists... 95%
+ DEBUG [c0dab35d] 	Reading package lists... 97%
+ DEBUG [c0dab35d] 	Reading package lists... 97%
+ DEBUG [c0dab35d] 	Reading package lists... 98%
+ DEBUG [c0dab35d] 	Reading package lists... 98%
+ DEBUG [c0dab35d] 	Reading package lists... 98%
+ DEBUG [c0dab35d] 	Reading package lists... 98%
+ DEBUG [c0dab35d] 	Reading package lists... 98%
+ DEBUG [c0dab35d] 	Reading package lists... 98%
+ DEBUG [c0dab35d] 	Reading package lists... 99%
+ DEBUG [c0dab35d] 	Reading package lists... 99%
+ DEBUG [c0dab35d] 	Reading package lists... 99%
+ DEBUG [c0dab35d] 	Reading package lists... 99%
+ DEBUG [c0dab35d] 	Reading package lists... 99%
+ DEBUG [c0dab35d] 	Reading package lists... 99%
+ DEBUG [c0dab35d] 	Reading package lists... 99%
+ DEBUG [c0dab35d] 	Reading package lists... 99%
+ DEBUG [c0dab35d] 	Reading package lists... Done
+ DEBUG [c0dab35d] 	
+  INFO [c0dab35d] Finished in 5.700 seconds with exit status 0 (successful).
+  INFO [474a824f] Running /usr/bin/env sudo apt-get -y upgrade as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [474a824f] Command: /usr/bin/env sudo apt-get -y upgrade
+ DEBUG [474a824f] 	Reading package lists... 0%
+ DEBUG [474a824f] 	Reading package lists... 100%
+ DEBUG [474a824f] 	Reading package lists... Done
+ DEBUG [474a824f] 	
+ DEBUG [474a824f] 	Building dependency tree... 0%
+ DEBUG [474a824f] 	Building dependency tree... 0%
+ DEBUG [474a824f] 	Building dependency tree... 50%
+ DEBUG [474a824f] 	Building dependency tree... 50%
+ DEBUG [474a824f] 	Building dependency tree       
+ DEBUG [474a824f] 	
+ DEBUG [474a824f] 	Reading state information... 0%
+ DEBUG [474a824f] 	Reading state information... 1%
+ DEBUG [474a824f] 	Reading state information... Done
+ DEBUG [474a824f] 	
+ DEBUG [474a824f] 	Calculating upgrade... 0%
+ DEBUG [474a824f] 	Calculating upgrade... 50%
+ DEBUG [474a824f] 	Calculating upgrade... Done
+ DEBUG [474a824f] 	
+ DEBUG [474a824f] 	The following packages have been kept back:
+ DEBUG [474a824f] 	
+ DEBUG [474a824f] 	  linux-headers-generic linux-headers-virtual linux-image-virtual
+ DEBUG [474a824f] 	
+ DEBUG [474a824f] 	  linux-virtual
+ DEBUG [474a824f] 	
+ DEBUG [474a824f] 	0 upgraded, 0 newly installed, 0 to remove and 4 not upgraded.
+ DEBUG [474a824f] 	
+  INFO [474a824f] Finished in 4.903 seconds with exit status 0 (successful).
+  INFO [336f465e] Running /usr/bin/env sudo apt-get -y install python3 python3-pip gunicorn supervisor mongodb as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [336f465e] Command: /usr/bin/env sudo apt-get -y install python3 python3-pip gunicorn supervisor mongodb
+ DEBUG [336f465e] 	Reading package lists... 0%
+ DEBUG [336f465e] 	Reading package lists... 100%
+ DEBUG [336f465e] 	Reading package lists... Done
+ DEBUG [336f465e] 	
+ DEBUG [336f465e] 	Building dependency tree... 0%
+ DEBUG [336f465e] 	Building dependency tree... 0%
+ DEBUG [336f465e] 	Building dependency tree... 50%
+ DEBUG [336f465e] 	Building dependency tree... 50%
+ DEBUG [336f465e] 	Building dependency tree       
+ DEBUG [336f465e] 	
+ DEBUG [336f465e] 	Reading state information... 0%
+ DEBUG [336f465e] 	Reading state information... 1%
+ DEBUG [336f465e] 	Reading state information... Done
+ DEBUG [336f465e] 	
+ DEBUG [336f465e] 	python3 is already the newest version (3.5.1-3).
+ DEBUG [336f465e] 	
+ DEBUG [336f465e] 	gunicorn is already the newest version (19.4.5-1ubuntu1).
+ DEBUG [336f465e] 	
+ DEBUG [336f465e] 	mongodb is already the newest version (1:2.6.10-0ubuntu1).
+ DEBUG [336f465e] 	
+ DEBUG [336f465e] 	supervisor is already the newest version (3.2.0-2).
+ DEBUG [336f465e] 	
+ DEBUG [336f465e] 	python3-pip is already the newest version (8.1.1-2ubuntu0.4).
+ DEBUG [336f465e] 	
+ DEBUG [336f465e] 	0 upgraded, 0 newly installed, 0 to remove and 4 not upgraded.
+ DEBUG [336f465e] 	
+  INFO [336f465e] Finished in 1.131 seconds with exit status 0 (successful).
+  INFO [cc2fc371] Running pip3 install virtualenv as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [cc2fc371] Command: pip3 install virtualenv
+ DEBUG [cc2fc371] 	Collecting virtualenv
+ DEBUG [cc2fc371] 	
+ DEBUG [cc2fc371] 	  Using cached virtualenv-15.1.0-py2.py3-none-any.whl
+ DEBUG [cc2fc371] 	
+ DEBUG [cc2fc371] 	Installing collected packages: virtualenv
+ DEBUG [cc2fc371] 	
+ DEBUG [cc2fc371] 	Successfully installed virtualenv-15.1.0
+ DEBUG [cc2fc371] 	
+ DEBUG [cc2fc371] 	[33mYou are using pip version 8.1.1, however version 9.0.1 is available.
+ DEBUG [cc2fc371] 	
+ DEBUG [cc2fc371] 	You should consider upgrading via the 'pip install --upgrade pip' command.[0m
+ DEBUG [cc2fc371] 	
+  INFO [cc2fc371] Finished in 1.794 seconds with exit status 0 (successful).
+  INFO [d977f159] Running /usr/bin/env sudo apt-get -y update as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [d977f159] Command: /usr/bin/env sudo apt-get -y update
+ DEBUG [d977f159] 	0% [Working]
+ DEBUG [d977f159] 	            
+ DEBUG [d977f159] 	Hit:1 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial InRelease
+ DEBUG [d977f159] 	
+ DEBUG [d977f159] 	0% [Connecting to security.ubuntu.com (91.189.88.161)]
+ DEBUG [d977f159] 	                                                      
+ DEBUG [d977f159] 	Hit:2 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates InRelease
+ DEBUG [d977f159] 	
+ DEBUG [d977f159] 	                                                      
+ DEBUG [d977f159] 	Hit:3 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-backports InRelease
+ DEBUG [d977f159] 	
+ DEBUG [d977f159] 	0% [Connecting to security.ubuntu.com (91.189.88.161)]
+ DEBUG [d977f159] 	0% [1 InRelease gpgv 247 kB] [Connecting to security.ubuntu.com (91.189.88.161)
+ DEBUG [d977f159] 	                                                                               
+ DEBUG [d977f159] 	0% [Connecting to security.ubuntu.com (91.189.88.161)]
+ DEBUG [d977f159] 	0% [2 InRelease gpgv 102 kB] [Connecting to security.ubuntu.com (91.189.88.161)
+ DEBUG [d977f159] 	                                                                               
+ DEBUG [d977f159] 	0% [Connecting to security.ubuntu.com (91.189.88.161)]
+ DEBUG [d977f159] 	0% [3 InRelease gpgv 102 kB] [Connecting to security.ubuntu.com (91.189.88.161)
+ DEBUG [d977f159] 	                                                                               
+ DEBUG [d977f159] 	0% [Waiting for headers]
+ DEBUG [d977f159] 	                        
+ DEBUG [d977f159] 	Hit:4 http://security.ubuntu.com/ubuntu xenial-security InRelease
+ DEBUG [d977f159] 	
+ DEBUG [d977f159] 	                        
+ DEBUG [d977f159] 	0% [Working]
+ DEBUG [d977f159] 	0% [4 InRelease gpgv 102 kB]
+ DEBUG [d977f159] 	                            
+ DEBUG [d977f159] 	20% [Working]
+ DEBUG [d977f159] 	             
+ DEBUG [d977f159] 	Reading package lists... 0%
+ DEBUG [d977f159] 	Reading package lists... 0%
+ DEBUG [d977f159] 	Reading package lists... 1%
+ DEBUG [d977f159] 	Reading package lists... 7%
+ DEBUG [d977f159] 	Reading package lists... 7%
+ DEBUG [d977f159] 	Reading package lists... 11%
+ DEBUG [d977f159] 	Reading package lists... 11%
+ DEBUG [d977f159] 	Reading package lists... 12%
+ DEBUG [d977f159] 	Reading package lists... 12%
+ DEBUG [d977f159] 	Reading package lists... 12%
+ DEBUG [d977f159] 	Reading package lists... 12%
+ DEBUG [d977f159] 	Reading package lists... 58%
+ DEBUG [d977f159] 	Reading package lists... 58%
+ DEBUG [d977f159] 	Reading package lists... 83%
+ DEBUG [d977f159] 	Reading package lists... 83%
+ DEBUG [d977f159] 	Reading package lists... 84%
+ DEBUG [d977f159] 	Reading package lists... 84%
+ DEBUG [d977f159] 	Reading package lists... 85%
+ DEBUG [d977f159] 	Reading package lists... 85%
+ DEBUG [d977f159] 	Reading package lists... 88%
+ DEBUG [d977f159] 	Reading package lists... 88%
+ DEBUG [d977f159] 	Reading package lists... 90%
+ DEBUG [d977f159] 	Reading package lists... 90%
+ DEBUG [d977f159] 	Reading package lists... 90%
+ DEBUG [d977f159] 	Reading package lists... 90%
+ DEBUG [d977f159] 	Reading package lists... 90%
+ DEBUG [d977f159] 	Reading package lists... 90%
+ DEBUG [d977f159] 	Reading package lists... 92%
+ DEBUG [d977f159] 	Reading package lists... 93%
+ DEBUG [d977f159] 	Reading package lists... 93%
+ DEBUG [d977f159] 	Reading package lists... 95%
+ DEBUG [d977f159] 	Reading package lists... 95%
+ DEBUG [d977f159] 	Reading package lists... 95%
+ DEBUG [d977f159] 	Reading package lists... 95%
+ DEBUG [d977f159] 	Reading package lists... 95%
+ DEBUG [d977f159] 	Reading package lists... 95%
+ DEBUG [d977f159] 	Reading package lists... 95%
+ DEBUG [d977f159] 	Reading package lists... 95%
+ DEBUG [d977f159] 	Reading package lists... 95%
+ DEBUG [d977f159] 	Reading package lists... 95%
+ DEBUG [d977f159] 	Reading package lists... 95%
+ DEBUG [d977f159] 	Reading package lists... 95%
+ DEBUG [d977f159] 	Reading package lists... 95%
+ DEBUG [d977f159] 	Reading package lists... 95%
+ DEBUG [d977f159] 	Reading package lists... 97%
+ DEBUG [d977f159] 	Reading package lists... 97%
+ DEBUG [d977f159] 	Reading package lists... 98%
+ DEBUG [d977f159] 	Reading package lists... 98%
+ DEBUG [d977f159] 	Reading package lists... 98%
+ DEBUG [d977f159] 	Reading package lists... 98%
+ DEBUG [d977f159] 	Reading package lists... 98%
+ DEBUG [d977f159] 	Reading package lists... 98%
+ DEBUG [d977f159] 	Reading package lists... 99%
+ DEBUG [d977f159] 	Reading package lists... 99%
+ DEBUG [d977f159] 	Reading package lists... 99%
+ DEBUG [d977f159] 	Reading package lists... 99%
+ DEBUG [d977f159] 	Reading package lists... 99%
+ DEBUG [d977f159] 	Reading package lists... 99%
+ DEBUG [d977f159] 	Reading package lists... 99%
+ DEBUG [d977f159] 	Reading package lists... 99%
+ DEBUG [d977f159] 	Reading package lists... Done
+ DEBUG [d977f159] 	
+  INFO [d977f159] Finished in 5.244 seconds with exit status 0 (successful).
+  INFO [b68af191] Running /usr/bin/env sudo apt-get -y install nginx as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [b68af191] Command: /usr/bin/env sudo apt-get -y install nginx
+ DEBUG [b68af191] 	Reading package lists... 0%
+ DEBUG [b68af191] 	Reading package lists... 100%
+ DEBUG [b68af191] 	Reading package lists... Done
+ DEBUG [b68af191] 	
+ DEBUG [b68af191] 	Building dependency tree... 0%
+ DEBUG [b68af191] 	Building dependency tree... 0%
+ DEBUG [b68af191] 	Building dependency tree... 50%
+ DEBUG [b68af191] 	Building dependency tree... 50%
+ DEBUG [b68af191] 	Building dependency tree       
+ DEBUG [b68af191] 	
+ DEBUG [b68af191] 	Reading state information... 0%
+ DEBUG [b68af191] 	Reading state information... 1%
+ DEBUG [b68af191] 	Reading state information... Done
+ DEBUG [b68af191] 	
+ DEBUG [b68af191] 	nginx is already the newest version (1.10.0-0ubuntu0.16.04.4).
+ DEBUG [b68af191] 	
+ DEBUG [b68af191] 	0 upgraded, 0 newly installed, 0 to remove and 4 not upgraded.
+ DEBUG [b68af191] 	
+  INFO [b68af191] Finished in 4.416 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 17:30:31 +0530 cap production deploy:install
+  INFO ---------------------------------------------------------------------------
+  INFO [e637f5b5] Running /usr/bin/env sudo apt-get -y update as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [e637f5b5] Command: /usr/bin/env sudo apt-get -y update
+ DEBUG [e637f5b5] 	0% [Working]
+ DEBUG [e637f5b5] 	            
+ DEBUG [e637f5b5] 	Hit:1 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial InRelease
+ DEBUG [e637f5b5] 	
+ DEBUG [e637f5b5] 	0% [Connecting to security.ubuntu.com (91.189.88.149)]
+ DEBUG [e637f5b5] 	                                                      
+ DEBUG [e637f5b5] 	Hit:2 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates InRelease
+ DEBUG [e637f5b5] 	
+ DEBUG [e637f5b5] 	0% [Waiting for headers] [Connecting to security.ubuntu.com (91.189.88.149)]
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 17:30:41 +0530 cap production deploy:setup
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 17:32:20 +0530 cap production deploy:setup
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 17:34:39 +0530 cap production deploy:setup
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 17:38:25 +0530 cap production deploy:setup
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 17:40:08 +0530 cap production deploy:setup
+  INFO ---------------------------------------------------------------------------
+ DEBUG Uploading /tmp/nginx_conf 0.0%
+  INFO Uploading /tmp/nginx_conf 100.0%
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 17:43:22 +0530 cap production deploy:setup
+  INFO ---------------------------------------------------------------------------
+ DEBUG Uploading /tmp/nginx_conf 0.0%
+  INFO Uploading /tmp/nginx_conf 100.0%
+  INFO [35a53bad] Running /usr/bin/env sudo mv /tmp/nginx_conf /etc/nginx/sites-enabled/auroville as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [35a53bad] Command: /usr/bin/env sudo mv /tmp/nginx_conf /etc/nginx/sites-enabled/auroville
+  INFO [35a53bad] Finished in 4.004 seconds with exit status 0 (successful).
+  INFO [6c577f55] Running /usr/bin/env sudo rm -f /etc/nginx/sites-enabled/default as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [6c577f55] Command: /usr/bin/env sudo rm -f /etc/nginx/sites-enabled/default
+  INFO [6c577f55] Finished in 0.808 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 17:45:30 +0530 cap production deploy:setup
+  INFO ---------------------------------------------------------------------------
+ DEBUG Uploading /tmp/nginx_conf 0.0%
+  INFO Uploading /tmp/nginx_conf 100.0%
+  INFO [e44024c6] Running /usr/bin/env sudo mv /tmp/nginx_conf /etc/nginx/sites-enabled/auroville as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [e44024c6] Command: /usr/bin/env sudo mv /tmp/nginx_conf /etc/nginx/sites-enabled/auroville
+  INFO [e44024c6] Finished in 4.282 seconds with exit status 0 (successful).
+  INFO [806a1b9a] Running /usr/bin/env sudo rm -f /etc/nginx/sites-enabled/default as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [806a1b9a] Command: /usr/bin/env sudo rm -f /etc/nginx/sites-enabled/default
+  INFO [806a1b9a] Finished in 0.608 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 17:47:50 +0530 cap production deploy:setup
+  INFO ---------------------------------------------------------------------------
+ DEBUG Uploading /tmp/nginx_conf 0.0%
+  INFO Uploading /tmp/nginx_conf 100.0%
+  INFO [686fb669] Running /usr/bin/env sudo mv /tmp/nginx_conf /etc/nginx/sites-enabled/auroville as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [686fb669] Command: /usr/bin/env sudo mv /tmp/nginx_conf /etc/nginx/sites-enabled/auroville
+  INFO [686fb669] Finished in 4.417 seconds with exit status 0 (successful).
+  INFO [9897e04f] Running /usr/bin/env sudo rm -f /etc/nginx/sites-enabled/default as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [9897e04f] Command: /usr/bin/env sudo rm -f /etc/nginx/sites-enabled/default
+  INFO [9897e04f] Finished in 0.614 seconds with exit status 0 (successful).
+  INFO [83d3a737] Running /usr/bin/env sudo  service nginx restart as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [83d3a737] Command: /usr/bin/env sudo  service nginx restart
+  INFO [83d3a737] Finished in 4.400 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 17:49:06 +0530 cap production deploy:setup
+  INFO ---------------------------------------------------------------------------
+ DEBUG Uploading /tmp/nginx_conf 0.0%
+  INFO Uploading /tmp/nginx_conf 100.0%
+  INFO [6aedb655] Running /usr/bin/env sudo mv /tmp/nginx_conf /etc/nginx/sites-enabled/auroville as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [6aedb655] Command: /usr/bin/env sudo mv /tmp/nginx_conf /etc/nginx/sites-enabled/auroville
+  INFO [6aedb655] Finished in 4.171 seconds with exit status 0 (successful).
+  INFO [b6810633] Running /usr/bin/env sudo rm -f /etc/nginx/sites-enabled/default as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [b6810633] Command: /usr/bin/env sudo rm -f /etc/nginx/sites-enabled/default
+  INFO [b6810633] Finished in 0.614 seconds with exit status 0 (successful).
+  INFO [33d36417] Running /usr/bin/env sudo  service nginx restart as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [33d36417] Command: /usr/bin/env sudo  service nginx restart
+  INFO [33d36417] Finished in 4.100 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 17:49:57 +0530 cap production deploy:setup
+  INFO ---------------------------------------------------------------------------
+ DEBUG Uploading /tmp/nginx_conf 0.0%
+  INFO Uploading /tmp/nginx_conf 100.0%
+  INFO [bce760a1] Running /usr/bin/env sudo mv /tmp/nginx_conf /etc/nginx/sites-enabled/auroville as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [bce760a1] Command: /usr/bin/env sudo mv /tmp/nginx_conf /etc/nginx/sites-enabled/auroville
+  INFO [bce760a1] Finished in 3.897 seconds with exit status 0 (successful).
+  INFO [733822bd] Running /usr/bin/env sudo rm -f /etc/nginx/sites-enabled/default as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [733822bd] Command: /usr/bin/env sudo rm -f /etc/nginx/sites-enabled/default
+  INFO [733822bd] Finished in 0.710 seconds with exit status 0 (successful).
+  INFO [bf3f4562] Running /usr/bin/env sudo  service nginx restart as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [bf3f4562] Command: /usr/bin/env sudo  service nginx restart
+  INFO [bf3f4562] Finished in 3.960 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 17:50:52 +0530 cap production deploy:setup
+  INFO ---------------------------------------------------------------------------
+ DEBUG Uploading /tmp/nginx_conf 0.0%
+  INFO Uploading /tmp/nginx_conf 100.0%
+  INFO [3a6f85c8] Running /usr/bin/env sudo mv /tmp/nginx_conf /etc/nginx/sites-enabled/auroville as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [3a6f85c8] Command: /usr/bin/env sudo mv /tmp/nginx_conf /etc/nginx/sites-enabled/auroville
+  INFO [3a6f85c8] Finished in 4.309 seconds with exit status 0 (successful).
+  INFO [28051bdf] Running /usr/bin/env sudo rm -f /etc/nginx/sites-enabled/default as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [28051bdf] Command: /usr/bin/env sudo rm -f /etc/nginx/sites-enabled/default
+  INFO [28051bdf] Finished in 0.678 seconds with exit status 0 (successful).
+  INFO [20e5fec8] Running /usr/bin/env sudo  service nginx restart as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [20e5fec8] Command: /usr/bin/env sudo  service nginx restart
+  INFO [20e5fec8] Finished in 4.418 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 17:51:30 +0530 cap production deploy:setup
+  INFO ---------------------------------------------------------------------------
+ DEBUG Uploading /tmp/nginx_conf 0.0%
+  INFO Uploading /tmp/nginx_conf 100.0%
+  INFO [08ef8e42] Running /usr/bin/env sudo mv /tmp/nginx_conf /etc/nginx/sites-enabled/auroville as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [08ef8e42] Command: /usr/bin/env sudo mv /tmp/nginx_conf /etc/nginx/sites-enabled/auroville
+  INFO [08ef8e42] Finished in 4.301 seconds with exit status 0 (successful).
+  INFO [f0c28df8] Running /usr/bin/env sudo rm -f /etc/nginx/sites-enabled/default as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [f0c28df8] Command: /usr/bin/env sudo rm -f /etc/nginx/sites-enabled/default
+  INFO [f0c28df8] Finished in 0.818 seconds with exit status 0 (successful).
+  INFO [5f11cc49] Running /usr/bin/env sudo  service nginx restart as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [5f11cc49] Command: /usr/bin/env sudo  service nginx restart
+  INFO [5f11cc49] Finished in 4.148 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/supervisor_conf 0.0%
+  INFO Uploading /tmp/supervisor_conf 100.0%
+  INFO [24fc4221] Running /usr/bin/env sudo mv /tmp/supervisor_conf /etc/supervisor/conf.d/auroville.conf as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [24fc4221] Command: /usr/bin/env sudo mv /tmp/supervisor_conf /etc/supervisor/conf.d/auroville.conf
+  INFO [24fc4221] Finished in 0.640 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 17:52:45 +0530 cap production deploy:setup
+  INFO ---------------------------------------------------------------------------
+ DEBUG Uploading /tmp/nginx_conf 0.0%
+  INFO Uploading /tmp/nginx_conf 100.0%
+  INFO [15eb2bcc] Running /usr/bin/env sudo mv /tmp/nginx_conf /etc/nginx/sites-enabled/auroville as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [15eb2bcc] Command: /usr/bin/env sudo mv /tmp/nginx_conf /etc/nginx/sites-enabled/auroville
+  INFO [15eb2bcc] Finished in 4.520 seconds with exit status 0 (successful).
+  INFO [7afdd19f] Running /usr/bin/env sudo rm -f /etc/nginx/sites-enabled/default as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [7afdd19f] Command: /usr/bin/env sudo rm -f /etc/nginx/sites-enabled/default
+  INFO [7afdd19f] Finished in 0.700 seconds with exit status 0 (successful).
+  INFO [0a1b669d] Running /usr/bin/env sudo  service nginx restart as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [0a1b669d] Command: /usr/bin/env sudo  service nginx restart
+  INFO [0a1b669d] Finished in 4.095 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/supervisor_conf 0.0%
+  INFO Uploading /tmp/supervisor_conf 100.0%
+  INFO [34c4b8db] Running /usr/bin/env sudo mv /tmp/supervisor_conf /etc/supervisor/conf.d/auroville.conf as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [34c4b8db] Command: /usr/bin/env sudo mv /tmp/supervisor_conf /etc/supervisor/conf.d/auroville.conf
+  INFO [34c4b8db] Finished in 0.608 seconds with exit status 0 (successful).
+  INFO [ab19eb0e] Running /usr/bin/env sudo supervisorctl reread as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [ab19eb0e] Command: /usr/bin/env sudo supervisorctl reread
+ DEBUG [ab19eb0e] 	error: <class 'socket.error'>, [Errno 2] No such file or directory: file: /usr/lib/python2.7/socket.py line: 228
+ DEBUG [ab19eb0e] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 17:55:08 +0530 cap production deploy:setup
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 17:56:03 +0530 cap production deploy:setup
+  INFO ---------------------------------------------------------------------------
+  INFO [d501d738] Running source /var/www/auroville/shared/env/bin/activate as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [d501d738] Command: source /var/www/auroville/shared/env/bin/activate
+  INFO [d501d738] Finished in 4.000 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/nginx_conf 0.0%
+  INFO Uploading /tmp/nginx_conf 100.0%
+  INFO [8f5b0048] Running /usr/bin/env sudo mv /tmp/nginx_conf /etc/nginx/sites-enabled/auroville as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [8f5b0048] Command: /usr/bin/env sudo mv /tmp/nginx_conf /etc/nginx/sites-enabled/auroville
+  INFO [8f5b0048] Finished in 4.092 seconds with exit status 0 (successful).
+  INFO [21729cfa] Running /usr/bin/env sudo rm -f /etc/nginx/sites-enabled/default as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [21729cfa] Command: /usr/bin/env sudo rm -f /etc/nginx/sites-enabled/default
+  INFO [21729cfa] Finished in 0.921 seconds with exit status 0 (successful).
+  INFO [22de456a] Running /usr/bin/env sudo  service nginx restart as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [22de456a] Command: /usr/bin/env sudo  service nginx restart
+  INFO [22de456a] Finished in 0.818 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/supervisor_conf 0.0%
+  INFO Uploading /tmp/supervisor_conf 100.0%
+  INFO [2642b8ac] Running /usr/bin/env sudo mv /tmp/supervisor_conf /etc/supervisor/conf.d/auroville.conf as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [2642b8ac] Command: /usr/bin/env sudo mv /tmp/supervisor_conf /etc/supervisor/conf.d/auroville.conf
+  INFO [2642b8ac] Finished in 0.618 seconds with exit status 0 (successful).
+  INFO [d0249e23] Running /usr/bin/env sudo supervisorctl reread as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [d0249e23] Command: /usr/bin/env sudo supervisorctl reread
+ DEBUG [d0249e23] 	error: <class 'socket.error'>, [Errno 2] No such file or directory: file: /usr/lib/python2.7/socket.py line: 228
+ DEBUG [d0249e23] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 18:01:49 +0530 cap production deploy:setup
+  INFO ---------------------------------------------------------------------------
+  INFO [336f1b30] Running source /var/www/auroville/shared/env/bin/activate as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [336f1b30] Command: source /var/www/auroville/shared/env/bin/activate
+  INFO [336f1b30] Finished in 3.891 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/nginx_conf 0.0%
+  INFO Uploading /tmp/nginx_conf 100.0%
+  INFO [3f54658d] Running /usr/bin/env sudo mv /tmp/nginx_conf /etc/nginx/sites-enabled/auroville as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [3f54658d] Command: /usr/bin/env sudo mv /tmp/nginx_conf /etc/nginx/sites-enabled/auroville
+  INFO [3f54658d] Finished in 4.132 seconds with exit status 0 (successful).
+  INFO [9f739d56] Running /usr/bin/env sudo rm -f /etc/nginx/sites-enabled/default as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [9f739d56] Command: /usr/bin/env sudo rm -f /etc/nginx/sites-enabled/default
+  INFO [9f739d56] Finished in 0.615 seconds with exit status 0 (successful).
+  INFO [6e31ab41] Running /usr/bin/env sudo  service nginx restart as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [6e31ab41] Command: /usr/bin/env sudo  service nginx restart
+  INFO [6e31ab41] Finished in 0.664 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/supervisor_conf 0.0%
+  INFO Uploading /tmp/supervisor_conf 100.0%
+  INFO [71f425a0] Running /usr/bin/env sudo mv /tmp/supervisor_conf /etc/supervisor/conf.d/auroville.conf as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [71f425a0] Command: /usr/bin/env sudo mv /tmp/supervisor_conf /etc/supervisor/conf.d/auroville.conf
+  INFO [71f425a0] Finished in 0.833 seconds with exit status 0 (successful).
+  INFO [67ec3c4f] Running /usr/bin/env sudo supervisorctl update as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [67ec3c4f] Command: /usr/bin/env sudo supervisorctl update
+ DEBUG [67ec3c4f] 	error: <class 'socket.error'>, [Errno 2] No such file or directory: file: /usr/lib/python2.7/socket.py line: 228
+ DEBUG [67ec3c4f] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 18:12:21 +0530 cap production deploy:setup
+  INFO ---------------------------------------------------------------------------
+  INFO [25e1741f] Running source /var/www/auroville/shared/env/bin/activate as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [25e1741f] Command: source /var/www/auroville/shared/env/bin/activate
+  INFO [25e1741f] Finished in 4.143 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/nginx_conf 0.0%
+  INFO Uploading /tmp/nginx_conf 100.0%
+  INFO [9f0c995e] Running /usr/bin/env sudo mv /tmp/nginx_conf /etc/nginx/sites-enabled/auroville as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [9f0c995e] Command: /usr/bin/env sudo mv /tmp/nginx_conf /etc/nginx/sites-enabled/auroville
+  INFO [9f0c995e] Finished in 4.535 seconds with exit status 0 (successful).
+  INFO [9db88358] Running /usr/bin/env sudo rm -f /etc/nginx/sites-enabled/default as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [9db88358] Command: /usr/bin/env sudo rm -f /etc/nginx/sites-enabled/default
+  INFO [9db88358] Finished in 0.632 seconds with exit status 0 (successful).
+  INFO [3a982d7a] Running /usr/bin/env sudo  service nginx restart as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [3a982d7a] Command: /usr/bin/env sudo  service nginx restart
+  INFO [3a982d7a] Finished in 0.691 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/supervisor_conf 0.0%
+  INFO Uploading /tmp/supervisor_conf 100.0%
+  INFO [09098db8] Running /usr/bin/env sudo mv /tmp/supervisor_conf /etc/supervisor/conf.d/auroville.conf as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [09098db8] Command: /usr/bin/env sudo mv /tmp/supervisor_conf /etc/supervisor/conf.d/auroville.conf
+  INFO [09098db8] Finished in 0.622 seconds with exit status 0 (successful).
+  INFO [aa7999ca] Running /usr/bin/env sudo supervisorctl update as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [aa7999ca] Command: /usr/bin/env sudo supervisorctl update
+ DEBUG [aa7999ca] 	error: <class 'socket.error'>, [Errno 2] No such file or directory: file: /usr/lib/python2.7/socket.py line: 228
+ DEBUG [aa7999ca] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 18:15:44 +0530 cap production deploy:setup
+  INFO ---------------------------------------------------------------------------
+  INFO [cd01028b] Running source /var/www/auroville/shared/env/bin/activate as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [cd01028b] Command: source /var/www/auroville/shared/env/bin/activate
+  INFO [cd01028b] Finished in 4.437 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/nginx_conf 0.0%
+  INFO Uploading /tmp/nginx_conf 100.0%
+  INFO [e2938a25] Running /usr/bin/env sudo mv /tmp/nginx_conf /etc/nginx/sites-enabled/auroville as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [e2938a25] Command: /usr/bin/env sudo mv /tmp/nginx_conf /etc/nginx/sites-enabled/auroville
+  INFO [e2938a25] Finished in 3.979 seconds with exit status 0 (successful).
+  INFO [244b1e36] Running /usr/bin/env sudo rm -f /etc/nginx/sites-enabled/default as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [244b1e36] Command: /usr/bin/env sudo rm -f /etc/nginx/sites-enabled/default
+  INFO [244b1e36] Finished in 0.788 seconds with exit status 0 (successful).
+  INFO [0b2319d4] Running /usr/bin/env sudo  service nginx restart as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [0b2319d4] Command: /usr/bin/env sudo  service nginx restart
+  INFO [0b2319d4] Finished in 0.785 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/supervisor_conf 0.0%
+  INFO Uploading /tmp/supervisor_conf 100.0%
+  INFO [bc2215ca] Running /usr/bin/env sudo mv /tmp/supervisor_conf /etc/supervisor/conf.d/auroville.conf as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [bc2215ca] Command: /usr/bin/env sudo mv /tmp/supervisor_conf /etc/supervisor/conf.d/auroville.conf
+  INFO [bc2215ca] Finished in 0.625 seconds with exit status 0 (successful).
+  INFO [9811cec9] Running /usr/bin/env sudo supervisorctl update as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [9811cec9] Command: /usr/bin/env sudo supervisorctl update
+ DEBUG [9811cec9] 	error: <class 'socket.error'>, [Errno 2] No such file or directory: file: /usr/lib/python2.7/socket.py line: 228
+ DEBUG [9811cec9] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 18:18:50 +0530 cap production deploy:setup
+  INFO ---------------------------------------------------------------------------
+  INFO [8a65824b] Running source /var/www/auroville/shared/env/bin/activate as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [8a65824b] Command: source /var/www/auroville/shared/env/bin/activate
+  INFO [8a65824b] Finished in 4.311 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/nginx_conf 0.0%
+  INFO Uploading /tmp/nginx_conf 100.0%
+  INFO [a4d5b884] Running /usr/bin/env sudo mv /tmp/nginx_conf /etc/nginx/sites-enabled/auroville as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [a4d5b884] Command: /usr/bin/env sudo mv /tmp/nginx_conf /etc/nginx/sites-enabled/auroville
+  INFO [a4d5b884] Finished in 4.447 seconds with exit status 0 (successful).
+  INFO [62506daf] Running /usr/bin/env sudo rm -f /etc/nginx/sites-enabled/default as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [62506daf] Command: /usr/bin/env sudo rm -f /etc/nginx/sites-enabled/default
+  INFO [62506daf] Finished in 0.818 seconds with exit status 0 (successful).
+  INFO [77fcf383] Running /usr/bin/env sudo  service nginx restart as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [77fcf383] Command: /usr/bin/env sudo  service nginx restart
+  INFO [77fcf383] Finished in 0.818 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/supervisor_conf 0.0%
+  INFO Uploading /tmp/supervisor_conf 100.0%
+  INFO [e25f060e] Running /usr/bin/env sudo mv /tmp/supervisor_conf /etc/supervisor/conf.d/auroville.conf as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [e25f060e] Command: /usr/bin/env sudo mv /tmp/supervisor_conf /etc/supervisor/conf.d/auroville.conf
+  INFO [e25f060e] Finished in 0.822 seconds with exit status 0 (successful).
+  INFO [33ac6eb1] Running /usr/bin/env sudo supervisorctl update as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [33ac6eb1] Command: /usr/bin/env sudo supervisorctl update
+ DEBUG [33ac6eb1] 	error: <class 'socket.error'>, [Errno 2] No such file or directory: file: /usr/lib/python2.7/socket.py line: 228
+ DEBUG [33ac6eb1] 	

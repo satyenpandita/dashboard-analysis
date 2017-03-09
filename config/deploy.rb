@@ -6,6 +6,7 @@ set :user, "ubuntu"
 set :branch, "flask_api"
 set :repo_url, "git@github.com:Prashant31/dashboard-analysis.git"
 set :pty, true
+set :tld, "ec2-35-165-146-82.us-west-2.compute.amazonaws.com"
 
 # Default branch is :master
 # ask :flask_api, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -36,5 +37,10 @@ set :pty, true
 # set :keep_releases, 5
 
 namespace :deploy do
-  after "deploy:published", "deploy:setup"
+  after "deploy:install", "nginx:install"
+  after "deploy:install", "deploy:setup"
+  after "deploy:setup", "nginx:setup"
+  after "nginx:setup", "supervisor:setup"
+  after "deploy:published", "deploy:update_env"
+  after "deploy:published", "mongo:restart", "nginx:restart", "supervisor:restart"
 end

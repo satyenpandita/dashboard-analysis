@@ -4,7 +4,7 @@ namespace :deploy do
     on roles(:all) do |host|
         execute :sudo, "apt-get -y update"
         execute :sudo, "apt-get -y upgrade"
-        execute :sudo, "apt-get -y install python3 python3-pip nginx gunicorn mongodb"
+        execute :sudo, "apt-get -y install python3 python3-pip gunicorn supervisor mongodb"
         execute "pip3 install virtualenv"
     end
   end

@@ -2,9 +2,7 @@ from os import environ as env
 from flask import Flask, request, jsonify, abort
 from parsers.DashboardParserV2 import DashboardParserV2
 from xlrd import open_workbook
-from tornado.wsgi import WSGIContainer
-from tornado.httpserver import HTTPServer
-from tornado.ioloop import IOLoop
+from werkzeug.contrib.fixers import ProxyFix
 
 app = Flask(__name__)
 
@@ -25,8 +23,6 @@ def dashboard_update():
     dparser.save_dashboard()
     return jsonify({'file': file.filename}), 201
 
-
+app.wsgi_app = ProxyFix(app.wsgi_app)
 if __name__ == '__main__':
-    http_server = HTTPServer(WSGIContainer(app))
-    http_server.listen(env.get('app.port', 5000))
-    IOLoop.instance().start()
+    app.run()
