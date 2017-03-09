@@ -7,3 +7,5 @@ denvn/
 *.pyc
 .DS_Store
 *.xlsx
+log
+

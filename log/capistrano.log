@@ -176,3 +176,2914 @@ and the repository exists.
   INFO [069559bf] Finished in 0.625 seconds with exit status 0 (successful).
   INFO [13e387cf] Running /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
  DEBUG [13e387cf] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-ppal.sh" ; /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD )
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 14:28:56 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [8a83a71b] Running /usr/bin/env mkdir -p /tmp as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [8a83a71b] Command: /usr/bin/env mkdir -p /tmp
+  INFO [8a83a71b] Finished in 4.936 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-auroville-production-prashantpal.sh 0.0%
+  INFO Uploading /tmp/git-ssh-auroville-production-prashantpal.sh 100.0%
+  INFO [c3410d92] Running /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-prashantpal.sh as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [c3410d92] Command: /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-prashantpal.sh
+  INFO [c3410d92] Finished in 0.718 seconds with exit status 0 (successful).
+  INFO [1325a668] Running /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [1325a668] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD )
+ DEBUG [1325a668] 	Permission denied (publickey).
+ DEBUG [1325a668] 	
+ DEBUG [1325a668] 	fatal: Could not read from remote repository.
+ DEBUG [1325a668] 	
+ DEBUG [1325a668] 	
+ DEBUG [1325a668] 	Please make sure you have the correct access rights
+and the repository exists.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 14:30:45 +0530 cap production git:check
+  INFO ---------------------------------------------------------------------------
+  INFO [6ba8be1d] Running /usr/bin/env mkdir -p /tmp as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [6ba8be1d] Command: /usr/bin/env mkdir -p /tmp
+  INFO [6ba8be1d] Finished in 3.908 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-auroville-production-prashantpal.sh 0.0%
+  INFO Uploading /tmp/git-ssh-auroville-production-prashantpal.sh 100.0%
+  INFO [1185fedc] Running /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-prashantpal.sh as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [1185fedc] Command: /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-prashantpal.sh
+  INFO [1185fedc] Finished in 0.616 seconds with exit status 0 (successful).
+  INFO [42bbd691] Running /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [42bbd691] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD )
+ DEBUG [42bbd691] 	Permission denied (publickey).
+ DEBUG [42bbd691] 	
+ DEBUG [42bbd691] 	fatal: Could not read from remote repository.
+ DEBUG [42bbd691] 	
+ DEBUG [42bbd691] 	
+ DEBUG [42bbd691] 	Please make sure you have the correct access rights
+and the repository exists.
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 14:34:21 +0530 cap production git:check
+  INFO ---------------------------------------------------------------------------
+  INFO [2b38bacb] Running /usr/bin/env mkdir -p /tmp as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [2b38bacb] Command: /usr/bin/env mkdir -p /tmp
+  INFO [2b38bacb] Finished in 4.256 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-auroville-production-prashantpal.sh 0.0%
+  INFO Uploading /tmp/git-ssh-auroville-production-prashantpal.sh 100.0%
+  INFO [4ab4ac76] Running /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-prashantpal.sh as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [4ab4ac76] Command: /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-prashantpal.sh
+  INFO [4ab4ac76] Finished in 0.718 seconds with exit status 0 (successful).
+  INFO [85682c0d] Running /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [85682c0d] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD )
+ DEBUG [85682c0d] 	3f312f64d2e77279fd1292d4a228dc15411a3cac
+ DEBUG [85682c0d] 		HEAD
+  INFO [85682c0d] Finished in 5.935 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 14:34:52 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [6cff368e] Running /usr/bin/env mkdir -p /tmp as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [6cff368e] Command: /usr/bin/env mkdir -p /tmp
+  INFO [6cff368e] Finished in 4.357 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-auroville-production-prashantpal.sh 0.0%
+  INFO Uploading /tmp/git-ssh-auroville-production-prashantpal.sh 100.0%
+  INFO [d4179496] Running /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-prashantpal.sh as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [d4179496] Command: /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-prashantpal.sh
+  INFO [d4179496] Finished in 0.718 seconds with exit status 0 (successful).
+  INFO [7799c221] Running /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [7799c221] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD )
+ DEBUG [7799c221] 	3f312f64d2e77279fd1292d4a228dc15411a3cac
+ DEBUG [7799c221] 		HEAD
+  INFO [7799c221] Finished in 6.428 seconds with exit status 0 (successful).
+  INFO [ad594aa2] Running /usr/bin/env mkdir -p /var/www/auroville/shared /var/www/auroville/releases as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [ad594aa2] Command: /usr/bin/env mkdir -p /var/www/auroville/shared /var/www/auroville/releases
+ DEBUG [ad594aa2] 	mkdir: 
+ DEBUG [ad594aa2] 	cannot create directory ‘/var/www’
+ DEBUG [ad594aa2] 	: Permission denied
+ DEBUG [ad594aa2] 	
+ DEBUG [ad594aa2] 	mkdir: 
+ DEBUG [ad594aa2] 	cannot create directory ‘/var/www’
+ DEBUG [ad594aa2] 	: Permission denied
+ DEBUG [ad594aa2] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 14:38:59 +0530 cap production deploy:setup
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 14:39:14 +0530 cap production deploy:check
+  INFO ---------------------------------------------------------------------------
+  INFO [707eeedf] Running /usr/bin/env mkdir -p /tmp as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [707eeedf] Command: /usr/bin/env mkdir -p /tmp
+  INFO [707eeedf] Finished in 4.612 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-auroville-production-prashantpal.sh 0.0%
+  INFO Uploading /tmp/git-ssh-auroville-production-prashantpal.sh 100.0%
+  INFO [393bfb94] Running /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-prashantpal.sh as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [393bfb94] Command: /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-prashantpal.sh
+  INFO [393bfb94] Finished in 1.483 seconds with exit status 0 (successful).
+  INFO [385d9916] Running /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [385d9916] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD )
+ DEBUG [385d9916] 	3f312f64d2e77279fd1292d4a228dc15411a3cac
+ DEBUG [385d9916] 		HEAD
+  INFO [385d9916] Finished in 6.294 seconds with exit status 0 (successful).
+  INFO [cbf1524b] Running /usr/bin/env mkdir -p /var/www/auroville/shared /var/www/auroville/releases as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [cbf1524b] Command: /usr/bin/env mkdir -p /var/www/auroville/shared /var/www/auroville/releases
+ DEBUG [cbf1524b] 	mkdir: 
+ DEBUG [cbf1524b] 	cannot create directory ‘/var/www’
+ DEBUG [cbf1524b] 	: Permission denied
+ DEBUG [cbf1524b] 	
+ DEBUG [cbf1524b] 	mkdir: 
+ DEBUG [cbf1524b] 	cannot create directory ‘/var/www’
+ DEBUG [cbf1524b] 	: Permission denied
+ DEBUG [cbf1524b] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 14:41:29 +0530 cap production deploy:check
+  INFO ---------------------------------------------------------------------------
+  INFO [de97b5c7] Running /usr/bin/env mkdir -p /tmp as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [de97b5c7] Command: /usr/bin/env mkdir -p /tmp
+  INFO [de97b5c7] Finished in 4.463 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-auroville-production-prashantpal.sh 0.0%
+  INFO Uploading /tmp/git-ssh-auroville-production-prashantpal.sh 100.0%
+  INFO [0c422d6b] Running /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-prashantpal.sh as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [0c422d6b] Command: /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-prashantpal.sh
+  INFO [0c422d6b] Finished in 0.635 seconds with exit status 0 (successful).
+  INFO [92db7e0e] Running /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [92db7e0e] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD )
+ DEBUG [92db7e0e] 	3f312f64d2e77279fd1292d4a228dc15411a3cac
+ DEBUG [92db7e0e] 		HEAD
+  INFO [92db7e0e] Finished in 6.221 seconds with exit status 0 (successful).
+  INFO [42ca79b1] Running /usr/bin/env mkdir -p /var/www/auroville/shared /var/www/auroville/releases as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [42ca79b1] Command: /usr/bin/env mkdir -p /var/www/auroville/shared /var/www/auroville/releases
+ DEBUG [42ca79b1] 	mkdir: 
+ DEBUG [42ca79b1] 	cannot create directory ‘/var/www’
+ DEBUG [42ca79b1] 	: Permission denied
+ DEBUG [42ca79b1] 	
+ DEBUG [42ca79b1] 	mkdir: 
+ DEBUG [42ca79b1] 	cannot create directory ‘/var/www’
+ DEBUG [42ca79b1] 	: Permission denied
+ DEBUG [42ca79b1] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 14:43:40 +0530 cap production deploy:check
+  INFO ---------------------------------------------------------------------------
+  INFO [c46698a3] Running /usr/bin/env mkdir -p /tmp as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [c46698a3] Command: /usr/bin/env mkdir -p /tmp
+  INFO [c46698a3] Finished in 4.295 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-auroville-production-prashantpal.sh 0.0%
+  INFO Uploading /tmp/git-ssh-auroville-production-prashantpal.sh 100.0%
+  INFO [0f686c82] Running /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-prashantpal.sh as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [0f686c82] Command: /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-prashantpal.sh
+  INFO [0f686c82] Finished in 0.619 seconds with exit status 0 (successful).
+  INFO [97d9b458] Running /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [97d9b458] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD )
+ DEBUG [97d9b458] 	3f312f64d2e77279fd1292d4a228dc15411a3cac
+ DEBUG [97d9b458] 		HEAD
+  INFO [97d9b458] Finished in 6.215 seconds with exit status 0 (successful).
+  INFO [63a5bad0] Running /usr/bin/env mkdir -p /var/www/auroville/shared /var/www/auroville/releases as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [63a5bad0] Command: /usr/bin/env mkdir -p /var/www/auroville/shared /var/www/auroville/releases
+ DEBUG [63a5bad0] 	mkdir: 
+ DEBUG [63a5bad0] 	cannot create directory ‘/var/www’
+ DEBUG [63a5bad0] 	: Permission denied
+ DEBUG [63a5bad0] 	
+ DEBUG [63a5bad0] 	mkdir: 
+ DEBUG [63a5bad0] 	cannot create directory ‘/var/www’
+ DEBUG [63a5bad0] 	: Permission denied
+ DEBUG [63a5bad0] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 14:50:48 +0530 cap production deploy:check
+  INFO ---------------------------------------------------------------------------
+  INFO [cc80d6ca] Running /usr/bin/env mkdir -p /tmp as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [cc80d6ca] Command: /usr/bin/env mkdir -p /tmp
+  INFO [cc80d6ca] Finished in 4.488 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-auroville-production-prashantpal.sh 0.0%
+  INFO Uploading /tmp/git-ssh-auroville-production-prashantpal.sh 100.0%
+  INFO [dcdfe8fb] Running /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-prashantpal.sh as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [dcdfe8fb] Command: /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-prashantpal.sh
+  INFO [dcdfe8fb] Finished in 0.819 seconds with exit status 0 (successful).
+  INFO [0ba3f27f] Running /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [0ba3f27f] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD )
+ DEBUG [0ba3f27f] 	3f312f64d2e77279fd1292d4a228dc15411a3cac
+ DEBUG [0ba3f27f] 		HEAD
+  INFO [0ba3f27f] Finished in 6.957 seconds with exit status 0 (successful).
+  INFO [65b6765f] Running /usr/bin/env mkdir -p /var/www/auroville/shared /var/www/auroville/releases as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [65b6765f] Command: /usr/bin/env mkdir -p /var/www/auroville/shared /var/www/auroville/releases
+  INFO [65b6765f] Finished in 0.922 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 14:51:22 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [8cfa6c2e] Running /usr/bin/env mkdir -p /tmp as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [8cfa6c2e] Command: /usr/bin/env mkdir -p /tmp
+  INFO [8cfa6c2e] Finished in 4.378 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-auroville-production-prashantpal.sh 0.0%
+  INFO Uploading /tmp/git-ssh-auroville-production-prashantpal.sh 100.0%
+  INFO [25a0ac10] Running /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-prashantpal.sh as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [25a0ac10] Command: /usr/bin/env chmod 700 /tmp/git-ssh-auroville-production-prashantpal.sh
+  INFO [25a0ac10] Finished in 0.623 seconds with exit status 0 (successful).
+  INFO [e291bb41] Running /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [e291bb41] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git ls-remote git@github.com:Prashant31/dashboard-analysis.git HEAD )
+ DEBUG [e291bb41] 	3f312f64d2e77279fd1292d4a228dc15411a3cac
+ DEBUG [e291bb41] 		HEAD
+  INFO [e291bb41] Finished in 6.095 seconds with exit status 0 (successful).
+  INFO [2129386d] Running /usr/bin/env mkdir -p /var/www/auroville/shared /var/www/auroville/releases as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [2129386d] Command: /usr/bin/env mkdir -p /var/www/auroville/shared /var/www/auroville/releases
+  INFO [2129386d] Finished in 0.928 seconds with exit status 0 (successful).
+ DEBUG [34ad28fa] Running [ -f /var/www/auroville/current/REVISION ] as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [34ad28fa] Command: [ -f /var/www/auroville/current/REVISION ]
+ DEBUG [34ad28fa] Finished in 0.623 seconds with exit status 1 (failed).
+ DEBUG [eb4ebe9c] Running [ -f /var/www/auroville/repo/HEAD ] as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [eb4ebe9c] Command: [ -f /var/www/auroville/repo/HEAD ]
+ DEBUG [eb4ebe9c] Finished in 0.615 seconds with exit status 1 (failed).
+ DEBUG [bab637f6] Running if test ! -d /var/www/auroville; then echo "Directory does not exist '/var/www/auroville'" 1>&2; false; fi as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [bab637f6] Command: if test ! -d /var/www/auroville; then echo "Directory does not exist '/var/www/auroville'" 1>&2; false; fi
+ DEBUG [bab637f6] Finished in 0.716 seconds with exit status 0 (successful).
+  INFO [3dcab56d] Running /usr/bin/env git clone --mirror git@github.com:Prashant31/dashboard-analysis.git /var/www/auroville/repo as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [3dcab56d] Command: cd /var/www/auroville && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git clone --mirror git@github.com:Prashant31/dashboard-analysis.git /var/www/auroville/repo )
+ DEBUG [3dcab56d] 	Cloning into bare repository '/var/www/auroville/repo'...
+ DEBUG [3dcab56d] 	
+ DEBUG [3dcab56d] 	remote: Counting objects: 261, done.[K
+ DEBUG [3dcab56d] 	
+ DEBUG [3dcab56d] 	remote: Compressing objects:   1% (1/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:   2% (2/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:   3% (3/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:   4% (4/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:   5% (5/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:
+ DEBUG [3dcab56d] 	   7% (6/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:   8% (7/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:   9% (8/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  10% (9/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  11% (10/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  13% (11/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  14% (12/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  15% (13/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  16% (14/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  17% (15/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  19% (16/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  20% (17/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  21% (18/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  22% (19/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  23% (20/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  25% (21/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  26% (22/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  27% (23/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  28% (24/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  29% (25/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  30% (26/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  32% (27/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  33% (28/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  34% (29/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  35% (30/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  36% (31/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  38% (32/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  39% (33/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  40% (34/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  41% (35/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  42% (36/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  44% (37/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  45% (38/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  46% (39/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  47% (40/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  48% (41/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  50% (42/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  51% (43/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  52% (44/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  53% (45/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  54% (46/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  55% (47/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  57% (48/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  58% (49/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  59% (50/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  60% (51/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  61% (52/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  63% (53/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  64% (54/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  65% (55/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  66% (56/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  67% (57/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  69% (58/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  70% (59/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  71% (60/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  72% (61/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  73% (62/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  75% (63/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  76% (64/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  77% (65/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  78% (66/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  79% (67/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  80% (68/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  82% (69/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  83% (70/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  84% (71/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  85% (72/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  86% (73/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  88% (74/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  89% (75/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  90% (76/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  91% (77/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  92% (78/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  94% (79/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  95% (80/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  96% (81/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  97% (82/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects:  98% (83/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects: 100% (84/84)   [K
+ DEBUG [3dcab56d] 	remote: Compressing objects: 100% (84/84), done.[K
+ DEBUG [3dcab56d] 	
+ DEBUG [3dcab56d] 	Receiving objects:   0% (1/261)   
+ DEBUG [3dcab56d] 	Receiving objects:   1% (3/261)   
+ DEBUG [3dcab56d] 	Receiving objects:   2% (6/261)   
+ DEBUG [3dcab56d] 	Receiving objects:   3% (8/261)   
+ DEBUG [3dcab56d] 	Receiving objects:   4% (11/261)   
+ DEBUG [3dcab56d] 	Receiving objects:   5% (14/261)   
+ DEBUG [3dcab56d] 	Receiving objects:   6% (16/261)   
+ DEBUG [3dcab56d] 	Receiving objects:   7% (19/261)   
+ DEBUG [3dcab56d] 	Receiving objects:   8% (21/261)   
+ DEBUG [3dcab56d] 	Receiving objects:   9% (24/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  10% (27/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  11% (29/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  12% (32/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  13% (34/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  14% (37/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  15% (40/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  16% (42/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  17% (45/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  18% (47/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  19% (50/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  20% (53/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  21% (55/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  22% (58/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  23% (61/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  24% (63/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  25% (66/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  26% (68/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  27% (71/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  28% (74/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  29% (76/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  30% (79/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  31% (81/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  32% (84/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  33% (87/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  34% (89/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  35% (92/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  36% (94/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  37% (97/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  38% (100/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  39% (102/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  40% (105/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  41% (108/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  42% (110/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  43% (113/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  44% (115/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  45% (118/261)   
+ DEBUG [3dcab56d] 	Receiving objects:  46% (121/261), 1.46 MiB | 2.77 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  47% (123/261), 1.46 MiB | 2.77 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  48% (126/261), 1.46 MiB | 2.77 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  49% (128/261), 1.46 MiB | 2.77 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  50% (131/261), 1.46 MiB | 2.77 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  51% (134/261), 1.46 MiB | 2.77 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  52% (136/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  53% (139/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  54% (141/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  55% (144/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  56% (147/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  57% (149/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  58% (152/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  59% (154/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  60% (157/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  61% (160/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  62% (162/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  63% (165/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  64% (168/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  65% (170/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  66% (173/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  67% (175/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  68% (178/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  69% (181/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  70% (183/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  71% (186/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  72% (188/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  73% (191/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  74% (194/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  75% (196/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  76% (199/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  77% (201/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  78% (204/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  79% (207/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  80% (209/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  81% (212/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  82% (215/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  83% (217/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  84% (220/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  85% (222/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  86% (225/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  87% (228/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  88% (230/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  89% (233/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  90% (235/261), 7.00 MiB | 6.81 MiB/s   
+ DEBUG [3dcab56d] 	remote: Total 261 (delta 18), reused 0 (delta 0), pack-reused 173[K
+ DEBUG [3dcab56d] 	
+ DEBUG [3dcab56d] 	Receiving objects:  91% (238/261), 10.73 MiB | 7.02 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  92% (241/261), 10.73 MiB | 7.02 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  93% (243/261), 10.73 MiB | 7.02 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  94% (246/261), 10.73 MiB | 7.02 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  95% (248/261), 10.73 MiB | 7.02 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  96% (251/261), 10.73 MiB | 7.02 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  97% (254/261), 10.73 MiB | 7.02 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  98% (256/261), 10.73 MiB | 7.02 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects:  99% (259/261), 10.73 MiB | 7.02 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects: 100% (261/261), 10.73 MiB | 7.02 MiB/s   
+ DEBUG [3dcab56d] 	Receiving objects: 100% (261/261), 10.76 MiB | 7.02 MiB/s, done.
+ DEBUG [3dcab56d] 	
+ DEBUG [3dcab56d] 	Resolving deltas:   0% (0/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:   4% (5/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  10% (11/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  11% (12/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  13% (14/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  14% (15/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  24% (25/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  26% (27/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  27% (28/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  30% (31/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  39% (40/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  42% (43/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  44% (45/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  47% (48/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  49% (50/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  50% (52/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  51% (53/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  54% (56/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  56% (58/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  61% (63/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  65% (67/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  66% (68/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  67% (69/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  73% (75/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  74% (76/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  75% (77/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  80% (82/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  81% (83/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  82% (84/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  88% (90/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  90% (92/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  91% (93/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  92% (94/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  93% (95/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  94% (96/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  95% (97/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  97% (99/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  98% (100/102)   
+ DEBUG [3dcab56d] 	Resolving deltas:  99% (101/102)   
+ DEBUG [3dcab56d] 	Resolving deltas: 100% (102/102)   
+ DEBUG [3dcab56d] 	Resolving deltas: 100% (102/102), done.
+ DEBUG [3dcab56d] 	
+ DEBUG [3dcab56d] 	Checking connectivity... 
+ DEBUG [3dcab56d] 	done.
+ DEBUG [3dcab56d] 	
+  INFO [3dcab56d] Finished in 4.418 seconds with exit status 0 (successful).
+ DEBUG [99af9d41] Running if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [99af9d41] Command: if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi
+ DEBUG [99af9d41] Finished in 1.211 seconds with exit status 0 (successful).
+  INFO [91d82928] Running /usr/bin/env git remote set-url origin git@github.com:Prashant31/dashboard-analysis.git as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [91d82928] Command: cd /var/www/auroville/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git remote set-url origin git@github.com:Prashant31/dashboard-analysis.git )
+  INFO [91d82928] Finished in 0.691 seconds with exit status 0 (successful).
+  INFO [85faf593] Running /usr/bin/env git remote update --prune as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [85faf593] Command: cd /var/www/auroville/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [85faf593] 	Fetching origin
+ DEBUG [85faf593] 	
+  INFO [85faf593] Finished in 2.691 seconds with exit status 0 (successful).
+ DEBUG [125fd8cf] Running if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [125fd8cf] Command: if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi
+ DEBUG [125fd8cf] Finished in 1.020 seconds with exit status 0 (successful).
+  INFO [db64cbef] Running /usr/bin/env mkdir -p /var/www/auroville/releases/20170309092141 as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [db64cbef] Command: cd /var/www/auroville/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env mkdir -p /var/www/auroville/releases/20170309092141 )
+  INFO [db64cbef] Finished in 0.817 seconds with exit status 0 (successful).
+  INFO [1866177b] Running /usr/bin/env git archive flask_api | /usr/bin/env tar -x -f - -C /var/www/auroville/releases/20170309092141 as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [1866177b] Command: cd /var/www/auroville/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git archive flask_api | /usr/bin/env tar -x -f - -C /var/www/auroville/releases/20170309092141 )
+  INFO [1866177b] Finished in 0.717 seconds with exit status 0 (successful).
+ DEBUG [0afbb683] Running if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [0afbb683] Command: if test ! -d /var/www/auroville/repo; then echo "Directory does not exist '/var/www/auroville/repo'" 1>&2; false; fi
+ DEBUG [0afbb683] Finished in 0.611 seconds with exit status 0 (successful).
+ DEBUG [500e2529] Running /usr/bin/env git rev-list --max-count=1 flask_api as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [500e2529] Command: cd /var/www/auroville/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-auroville-production-prashantpal.sh" ; /usr/bin/env git rev-list --max-count=1 flask_api )
+ DEBUG [500e2529] 	d70afc63b124f5aecaccf522412aaee4dceef964
+ DEBUG [500e2529] 	
+ DEBUG [500e2529] Finished in 0.614 seconds with exit status 0 (successful).
+ DEBUG [63f18472] Running if test ! -d /var/www/auroville/releases/20170309092141; then echo "Directory does not exist '/var/www/auroville/releases/20170309092141'" 1>&2; false; fi as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [63f18472] Command: if test ! -d /var/www/auroville/releases/20170309092141; then echo "Directory does not exist '/var/www/auroville/releases/20170309092141'" 1>&2; false; fi
+ DEBUG [63f18472] Finished in 0.616 seconds with exit status 0 (successful).
+  INFO [aa434701] Running /usr/bin/env echo "d70afc63b124f5aecaccf522412aaee4dceef964" >> REVISION as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [aa434701] Command: cd /var/www/auroville/releases/20170309092141 && /usr/bin/env echo "d70afc63b124f5aecaccf522412aaee4dceef964" >> REVISION
+  INFO [aa434701] Finished in 0.717 seconds with exit status 0 (successful).
+  INFO [21577aa4] Running /usr/bin/env ln -s /var/www/auroville/releases/20170309092141 /var/www/auroville/releases/current as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [21577aa4] Command: /usr/bin/env ln -s /var/www/auroville/releases/20170309092141 /var/www/auroville/releases/current
+  INFO [21577aa4] Finished in 0.714 seconds with exit status 0 (successful).
+  INFO [3bee9d56] Running /usr/bin/env mv /var/www/auroville/releases/current /var/www/auroville as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [3bee9d56] Command: /usr/bin/env mv /var/www/auroville/releases/current /var/www/auroville
+  INFO [3bee9d56] Finished in 0.614 seconds with exit status 0 (successful).
+ DEBUG [da8528c8] Running /usr/bin/env ls -x /var/www/auroville/releases as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [da8528c8] Command: /usr/bin/env ls -x /var/www/auroville/releases
+ DEBUG [da8528c8] 	20170309092141
+ DEBUG [da8528c8] 	
+ DEBUG [da8528c8] Finished in 0.611 seconds with exit status 0 (successful).
+ DEBUG [ee242da6] Running if test ! -d /var/www/auroville/releases; then echo "Directory does not exist '/var/www/auroville/releases'" 1>&2; false; fi as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [ee242da6] Command: if test ! -d /var/www/auroville/releases; then echo "Directory does not exist '/var/www/auroville/releases'" 1>&2; false; fi
+ DEBUG [ee242da6] Finished in 0.640 seconds with exit status 0 (successful).
+  INFO [77416d2b] Running /usr/bin/env echo "Branch flask_api (at d70afc63b124f5aecaccf522412aaee4dceef964) deployed as release 20170309092141 by prashantpal" >> /var/www/auroville/revisions.log as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [77416d2b] Command: cd /var/www/auroville/releases && /usr/bin/env echo "Branch flask_api (at d70afc63b124f5aecaccf522412aaee4dceef964) deployed as release 20170309092141 by prashantpal" >> /var/www/auroville/revisions.log
+  INFO [77416d2b] Finished in 0.609 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 15:38:30 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [9b68a897] Running /usr/bin/env sudo apt-get -y update as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [9b68a897] Command: /usr/bin/env sudo apt-get -y update
+ DEBUG [9b68a897] 	0% [Working]
+ DEBUG [9b68a897] 	            
+ DEBUG [9b68a897] 	Hit:1 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial InRelease
+ DEBUG [9b68a897] 	
+ DEBUG [9b68a897] 	0% [Connecting to security.ubuntu.com (91.189.88.161)]
+ DEBUG [9b68a897] 	                                                      
+ DEBUG [9b68a897] 	Get:2 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates InRelease [102 kB]
+ DEBUG [9b68a897] 	
+ DEBUG [9b68a897] 	0% [Waiting for headers] [Connecting to security.ubuntu.com (91.189.88.161)]
+ DEBUG [9b68a897] 	0% [1 InRelease gpgv 247 kB] [Waiting for headers] [Connecting to security.ubun
+ DEBUG [9b68a897] 	                                                                               
+ DEBUG [9b68a897] 	Get:3 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-backports InRelease [102 kB]
+ DEBUG [9b68a897] 	
+ DEBUG [9b68a897] 	0% [1 InRelease gpgv 247 kB] [3 InRelease 17.1 kB/102 kB 17%] [Connecting to se
+ DEBUG [9b68a897] 	0% [1 InRelease gpgv 247 kB] [Connecting to security.ubuntu.com (91.189.88.161)
+ DEBUG [9b68a897] 	                                                                               
+ DEBUG [9b68a897] 	0% [Connecting to security.ubuntu.com (91.189.88.161)]
+ DEBUG [9b68a897] 	0% [2 InRelease gpgv 102 kB] [Waiting for headers] [Connecting to security.ubun
+ DEBUG [9b68a897] 	                                                                               
+ DEBUG [9b68a897] 	Get:4 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main Sources [868 kB]
+ DEBUG [9b68a897] 	
+0% [2 InRelease gpgv 102 kB] [4 Sources 25.9 kB/868 kB 3%] [Connecting to secur
+ DEBUG [9b68a897] 	0% [2 InRelease gpgv 102 kB] [Connecting to security.ubuntu.com (91.189.88.161)
+ DEBUG [9b68a897] 	0% [4 Sources store 0 B] [2 InRelease gpgv 102 kB] [Waiting for headers] [Conne
+ DEBUG [9b68a897] 	                                                                               
+ DEBUG [9b68a897] 	Get:5 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/restricted Sources [4,808 B]
+ DEBUG [9b68a897] 	
+ DEBUG [9b68a897] 	0% [4 Sources store 0 B] [2 InRelease gpgv 102 kB] [Waiting for headers] [Conne
+ DEBUG [9b68a897] 	                                                                               
+ DEBUG [9b68a897] 	Get:6 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/universe Sources [7,728 kB]
+ DEBUG [9b68a897] 	
+ DEBUG [9b68a897] 	0% [4 Sources store 0 B] [2 InRelease gpgv 102 kB] [6 Sources 25.9 kB/7,728 kB 
+ DEBUG [9b68a897] 	                                                                               
+ DEBUG [9b68a897] 	Get:7 http://security.ubuntu.com/ubuntu xenial-security InRelease [102 kB]
+ DEBUG [9b68a897] 	
+ DEBUG [9b68a897] 	0% [4 Sources store 0 B] [2 InRelease gpgv 102 kB] [6 Sources 4,427 kB/7,728 kB
+ DEBUG [9b68a897] 	0% [4 Sources store 0 B] [6 Sources 5,017 kB/7,728 kB 65%] [7 InRelease 14.2 kB
+ DEBUG [9b68a897] 	0% [4 Sources store 0 B] [3 InRelease gpgv 102 kB] [6 Sources 5,017 kB/7,728 kB
+ DEBUG [9b68a897] 	0% [4 Sources store 0 B] [3 InRelease gpgv 102 kB] [Waiting for headers] [7 InR
+ DEBUG [9b68a897] 	                                                                               
+ DEBUG [9b68a897] 	Get:8 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/multiverse Sources [179 kB]
+ DEBUG [9b68a897] 	
+0% [4 Sources store 0 B] [3 InRelease gpgv 102 kB] [8 Sources 26.6 kB/179 kB 15
+ DEBUG [9b68a897] 	0% [4 Sources store 0 B] [3 InRelease gpgv 102 kB] [7 InRelease 43.1 kB/102 kB 
+ DEBUG [9b68a897] 	                                                                               
+ DEBUG [9b68a897] 	Get:9 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main Sources [235 kB]
+ DEBUG [9b68a897] 	
+0% [4 Sources store 0 B] [3 InRelease gpgv 102 kB] [9 Sources 0 B/235 kB 0%] [7
+ DEBUG [9b68a897] 	0% [4 Sources store 0 B] [3 InRelease gpgv 102 kB] [7 InRelease 43.1 kB/102 kB 
+ DEBUG [9b68a897] 	                                                                               
+ DEBUG [9b68a897] 	Get:10 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/restricted Sources [2,688 B]
+ DEBUG [9b68a897] 	
+ DEBUG [9b68a897] 	0% [4 Sources store 0 B] [3 InRelease gpgv 102 kB] [Waiting for headers] [7 InR
+ DEBUG [9b68a897] 	                                                                               
+ DEBUG [9b68a897] 	Get:11 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/universe Sources [140 kB]
+ DEBUG [9b68a897] 	
+ DEBUG [9b68a897] 	0% [4 Sources store 0 B] [3 InRelease gpgv 102 kB] [11 Sources 26.6 kB/140 kB 1
+ DEBUG [9b68a897] 	0% [4 Sources store 0 B] [3 InRelease gpgv 102 kB] [7 InRelease 43.1 kB/102 kB 
+ DEBUG [9b68a897] 	                                                                               
+ DEBUG [9b68a897] 	Get:12 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/multiverse Sources [4,556 B]
+ DEBUG [9b68a897] 	
+0% [4 Sources store 0 B] [3 InRelease gpgv 102 kB] [12 Sources 0 B/4,556 B 0%] 
+ DEBUG [9b68a897] 	0% [4 Sources store 0 B] [3 InRelease gpgv 102 kB] [7 InRelease 43.1 kB/102 kB 
+ DEBUG [9b68a897] 	                                                                               
+ DEBUG [9b68a897] 	Get:13 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [488 kB]
+ DEBUG [9b68a897] 	
+ DEBUG [9b68a897] 	0% [4 Sources store 0 B] [3 InRelease gpgv 102 kB] [13 Packages 24.4 kB/488 kB 
+ DEBUG [9b68a897] 	0% [4 Sources store 0 B] [3 InRelease gpgv 102 kB] [7 InRelease 43.1 kB/102 kB 
+ DEBUG [9b68a897] 	                                                                               
+ DEBUG [9b68a897] 	Get:14 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main Translation-en [194 kB]
+ DEBUG [9b68a897] 	
+ DEBUG [9b68a897] 	0% [4 Sources store 0 B] [3 InRelease gpgv 102 kB] [14 Translation-en 170 kB/19
+ DEBUG [9b68a897] 	0% [4 Sources store 0 B] [3 InRelease gpgv 102 kB] [7 InRelease 43.1 kB/102 kB 
+ DEBUG [9b68a897] 	                                                                               
+ DEBUG [9b68a897] 	Get:15 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [432 kB]
+ DEBUG [9b68a897] 	
+ DEBUG [9b68a897] 	0% [4 Sources store 0 B] [3 InRelease gpgv 102 kB] [15 Packages 229 kB/432 kB 5
+ DEBUG [9b68a897] 	0% [3 InRelease gpgv 102 kB] [15 Packages 229 kB/432 kB 53%] [7 InRelease 43.1 
+ DEBUG [9b68a897] 	                                                                               
+ DEBUG [9b68a897] 	0% [3 InRelease gpgv 102 kB] [7 InRelease 43.1 kB/102 kB 42%]
+ DEBUG [9b68a897] 	0% [5 Sources store 0 B] [3 InRelease gpgv 102 kB] [Waiting for headers] [7 InR
+ DEBUG [9b68a897] 	0% [3 InRelease gpgv 102 kB] [Waiting for headers] [7 InRelease 43.1 kB/102 kB 
+ DEBUG [9b68a897] 	0% [6 Sources store 0 B] [3 InRelease gpgv 102 kB] [Waiting for headers] [7 InR
+ DEBUG [9b68a897] 	                                                                               
+ DEBUG [9b68a897] 	Get:16 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/universe Translation-en [164 kB]
+ DEBUG [9b68a897] 	
+ DEBUG [9b68a897] 	0% [6 Sources store 0 B] [3 InRelease gpgv 102 kB] [16 Translation-en 0 B/164 k
+ DEBUG [9b68a897] 	0% [6 Sources store 0 B] [3 InRelease gpgv 102 kB] [7 InRelease 43.1 kB/102 kB 
+ DEBUG [9b68a897] 	                                                                               
+ DEBUG [9b68a897] 	0% [6 Sources store 0 B] [7 InRelease 43.1 kB/102 kB 42%]
+ DEBUG [9b68a897] 	                                                         
+ DEBUG [9b68a897] 	Get:17 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-backports/main Sources [3,200 B]
+ DEBUG [9b68a897] 	
+ DEBUG [9b68a897] 	0% [6 Sources store 0 B] [7 InRelease 43.1 kB/102 kB 42%]
+ DEBUG [9b68a897] 	                                                         
+ DEBUG [9b68a897] 	Get:18 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-backports/universe Sources [1,868 B]
+ DEBUG [9b68a897] 	
+ DEBUG [9b68a897] 	0% [6 Sources store 0 B] [Waiting for headers] [7 InRelease 43.1 kB/102 kB 42%]
+ DEBUG [9b68a897] 	                                                                               
+ DEBUG [9b68a897] 	Get:19 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-backports/main amd64 Packages [4,672 B]
+ DEBUG [9b68a897] 	
+0% [6 Sources store 0 B] [Waiting for headers] [7 InRelease 43.1 kB/102 kB 42%]
+ DEBUG [9b68a897] 	                                                                               
+ DEBUG [9b68a897] 	Get:20 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-backports/main Translation-en [3,200 B]
+ DEBUG [9b68a897] 	
+ DEBUG [9b68a897] 	0% [6 Sources store 0 B] [Waiting for headers] [7 InRelease 43.1 kB/102 kB 42%]
+ DEBUG [9b68a897] 	                                                                               
+ DEBUG [9b68a897] 	Get:21 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-backports/universe amd64 Packages [2,512 B]
+ DEBUG [9b68a897] 	
+0% [6 Sources store 0 B] [Waiting for headers] [7 InRelease 43.1 kB/102 kB 42%]
+ DEBUG [9b68a897] 	                                                                               
+ DEBUG [9b68a897] 	Get:22 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-backports/universe Translation-en [1,216 B]
+ DEBUG [9b68a897] 	
+ DEBUG [9b68a897] 	                                                                               
+ DEBUG [9b68a897] 	0% [6 Sources store 0 B] [7 InRelease 43.1 kB/102 kB 42%]
+ DEBUG [9b68a897] 	                                                         
+ DEBUG [9b68a897] 	0% [6 Sources store 0 B]
+ DEBUG [9b68a897] 	0% [6 Sources store 0 B] [7 InRelease gpgv 102 kB]
+ DEBUG [9b68a897] 	                                                  
+ DEBUG [9b68a897] 	90% [6 Sources store 0 B]
+ DEBUG [9b68a897] 	                         
+ DEBUG [9b68a897] 	Get:23 http://security.ubuntu.com/ubuntu xenial-security/main Sources [62.3 kB]
+ DEBUG [9b68a897] 	
+91% [6 Sources store 0 B]
+ DEBUG [9b68a897] 	                         
+ DEBUG [9b68a897] 	Get:24 http://security.ubuntu.com/ubuntu xenial-security/restricted Sources [2,288 B]
+ DEBUG [9b68a897] 	
+ DEBUG [9b68a897] 	91% [6 Sources store 0 B] [Waiting for headers]
+ DEBUG [9b68a897] 	                                               
+ DEBUG [9b68a897] 	Get:25 http://security.ubuntu.com/ubuntu xenial-security/universe Sources [23.9 kB]
+ DEBUG [9b68a897] 	
+ DEBUG [9b68a897] 	91% [6 Sources store 0 B] [Waiting for headers]
+ DEBUG [9b68a897] 	                                               
+ DEBUG [9b68a897] 	Get:26 http://security.ubuntu.com/ubuntu xenial-security/multiverse Sources [1,148 B]
+ DEBUG [9b68a897] 	
+91% [6 Sources store 0 B] [Waiting for headers]
+ DEBUG [9b68a897] 	                                               
+ DEBUG [9b68a897] 	Get:27 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [226 kB]
+ DEBUG [9b68a897] 	
+92% [6 Sources store 0 B] [27 Packages 130 kB/226 kB 58%]
+ DEBUG [9b68a897] 	                                                         
+ DEBUG [9b68a897] 	93% [27 Packages 207 kB/226 kB 91%]
+ DEBUG [9b68a897] 	93% [8 Sources store 0 B] [27 Packages 207 kB/226 kB 91%]
+ DEBUG [9b68a897] 	                                                         
+ DEBUG [9b68a897] 	93% [27 Packages 207 kB/226 kB 91%]
+ DEBUG [9b68a897] 	93% [9 Sources store 0 B] [27 Packages 207 kB/226 kB 91%]
+ DEBUG [9b68a897] 	                                                         
+ DEBUG [9b68a897] 	93% [27 Packages 207 kB/226 kB 91%]
+ DEBUG [9b68a897] 	93% [10 Sources store 0 B] [27 Packages 207 kB/226 kB 91%]
+ DEBUG [9b68a897] 	                                                          
+ DEBUG [9b68a897] 	93% [27 Packages 207 kB/226 kB 91%]
+ DEBUG [9b68a897] 	93% [11 Sources store 0 B] [27 Packages 207 kB/226 kB 91%]
+ DEBUG [9b68a897] 	                                                          
+ DEBUG [9b68a897] 	94% [27 Packages 207 kB/226 kB 91%]
+ DEBUG [9b68a897] 	94% [12 Sources store 0 B] [27 Packages 207 kB/226 kB 91%]
+ DEBUG [9b68a897] 	                                                          
+ DEBUG [9b68a897] 	94% [27 Packages 207 kB/226 kB 91%]
+ DEBUG [9b68a897] 	94% [13 Packages store 0 B] [27 Packages 207 kB/226 kB 91%]
+ DEBUG [9b68a897] 	                                                           
+ DEBUG [9b68a897] 	94% [13 Packages store 0 B] [Waiting for headers]
+ DEBUG [9b68a897] 	                                                 
+ DEBUG [9b68a897] 	94% [Waiting for headers]
+ DEBUG [9b68a897] 	94% [14 Translation-en store 0 B] [Waiting for headers]
+ DEBUG [9b68a897] 	                                                       
+ DEBUG [9b68a897] 	95% [Waiting for headers]
+ DEBUG [9b68a897] 	95% [15 Packages store 0 B] [Waiting for headers]
+ DEBUG [9b68a897] 	                                                 
+ DEBUG [9b68a897] 	Get:28 http://security.ubuntu.com/ubuntu xenial-security/main Translation-en [94.6 kB]
+ DEBUG [9b68a897] 	
+ DEBUG [9b68a897] 	95% [15 Packages store 0 B] [Waiting for headers]
+ DEBUG [9b68a897] 	                                                 
+ DEBUG [9b68a897] 	95% [Waiting for headers]
+ DEBUG [9b68a897] 	95% [16 Translation-en store 0 B] [Waiting for headers]
+ DEBUG [9b68a897] 	                                                       
+ DEBUG [9b68a897] 	96% [Waiting for headers]
+ DEBUG [9b68a897] 	96% [17 Sources store 0 B] [Waiting for headers]
+ DEBUG [9b68a897] 	                                                
+ DEBUG [9b68a897] 	96% [Waiting for headers]
+ DEBUG [9b68a897] 	96% [18 Sources store 0 B] [Waiting for headers]
+ DEBUG [9b68a897] 	                                                
+ DEBUG [9b68a897] 	96% [Waiting for headers]
+ DEBUG [9b68a897] 	96% [19 Packages store 0 B] [Waiting for headers]
+ DEBUG [9b68a897] 	                                                 
+ DEBUG [9b68a897] 	96% [Waiting for headers]
+ DEBUG [9b68a897] 	96% [20 Translation-en store 0 B] [Waiting for headers]
+ DEBUG [9b68a897] 	                                                       
+ DEBUG [9b68a897] 	97% [Waiting for headers]
+ DEBUG [9b68a897] 	97% [21 Packages store 0 B] [Waiting for headers]
+ DEBUG [9b68a897] 	                                                 
+ DEBUG [9b68a897] 	97% [Waiting for headers]
+ DEBUG [9b68a897] 	97% [22 Translation-en store 0 B] [Waiting for headers]
+ DEBUG [9b68a897] 	                                                       
+ DEBUG [9b68a897] 	97% [Waiting for headers]
+ DEBUG [9b68a897] 	97% [23 Sources store 0 B] [Waiting for headers]
+ DEBUG [9b68a897] 	                                                
+ DEBUG [9b68a897] 	97% [Waiting for headers]
+ DEBUG [9b68a897] 	97% [24 Sources store 0 B] [Waiting for headers]
+ DEBUG [9b68a897] 	                                                
+ DEBUG [9b68a897] 	98% [Waiting for headers]
+ DEBUG [9b68a897] 	98% [25 Sources store 0 B] [Waiting for headers]
+ DEBUG [9b68a897] 	                                                
+ DEBUG [9b68a897] 	98% [Waiting for headers]
+ DEBUG [9b68a897] 	98% [26 Sources store 0 B] [Waiting for headers]
+ DEBUG [9b68a897] 	                                                
+ DEBUG [9b68a897] 	98% [Waiting for headers]
+ DEBUG [9b68a897] 	98% [27 Packages store 0 B] [Waiting for headers]
+ DEBUG [9b68a897] 	                                                 
+ DEBUG [9b68a897] 	98% [Waiting for headers]
+ DEBUG [9b68a897] 	98% [28 Translation-en store 0 B] [Waiting for headers]
+ DEBUG [9b68a897] 	                                                       
+ DEBUG [9b68a897] 	Get:29 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [92.5 kB]
+ DEBUG [9b68a897] 	
+ DEBUG [9b68a897] 	99% [28 Translation-en store 0 B] [29 Packages 50.5 kB/92.5 kB 55%]
+ DEBUG [9b68a897] 	                                                                   
+ DEBUG [9b68a897] 	99% [28 Translation-en store 0 B]
+ DEBUG [9b68a897] 	                                 
+ DEBUG [9b68a897] 	99% [Waiting for headers]
+ DEBUG [9b68a897] 	99% [29 Packages store 0 B] [Waiting for headers]
+ DEBUG [9b68a897] 	                                                 
+ DEBUG [9b68a897] 	99% [Waiting for headers]
+ DEBUG [9b68a897] 	                         
+ DEBUG [9b68a897] 	Get:30 http://security.ubuntu.com/ubuntu xenial-security/universe Translation-en [50.3 kB]
+ DEBUG [9b68a897] 	
+ DEBUG [9b68a897] 	100% [30 Translation-en 15.7 kB/50.3 kB 31%]
+ DEBUG [9b68a897] 	                                            
+ DEBUG [9b68a897] 	100% [Working]
+ DEBUG [9b68a897] 	100% [30 Translation-en store 0 B]
+ DEBUG [9b68a897] 	                                  
+ DEBUG [9b68a897] 	100% [Working]
+ DEBUG [9b68a897] 	              
+ DEBUG [9b68a897] 	Fetched 11.3 MB in 2s (4,732 kB/s)
+ DEBUG [9b68a897] 	
+ DEBUG [9b68a897] 	Reading package lists... 0%
+ DEBUG [9b68a897] 	Reading package lists... 0%
+ DEBUG [9b68a897] 	Reading package lists... 1%
+ DEBUG [9b68a897] 	Reading package lists... 7%
+ DEBUG [9b68a897] 	Reading package lists... 7%
+ DEBUG [9b68a897] 	Reading package lists... 11%
+ DEBUG [9b68a897] 	Reading package lists... 11%
+ DEBUG [9b68a897] 	Reading package lists... 12%
+ DEBUG [9b68a897] 	Reading package lists... 12%
+ DEBUG [9b68a897] 	Reading package lists... 12%
+ DEBUG [9b68a897] 	Reading package lists... 12%
+ DEBUG [9b68a897] 	Reading package lists... 58%
+ DEBUG [9b68a897] 	Reading package lists... 58%
+ DEBUG [9b68a897] 	Reading package lists... 83%
+ DEBUG [9b68a897] 	Reading package lists... 83%
+ DEBUG [9b68a897] 	Reading package lists... 84%
+ DEBUG [9b68a897] 	Reading package lists... 84%
+ DEBUG [9b68a897] 	Reading package lists... 85%
+ DEBUG [9b68a897] 	Reading package lists... 85%
+ DEBUG [9b68a897] 	Reading package lists... 88%
+ DEBUG [9b68a897] 	Reading package lists... 88%
+ DEBUG [9b68a897] 	Reading package lists... 90%
+ DEBUG [9b68a897] 	Reading package lists... 90%
+ DEBUG [9b68a897] 	Reading package lists... 90%
+ DEBUG [9b68a897] 	Reading package lists... 90%
+ DEBUG [9b68a897] 	Reading package lists... 90%
+ DEBUG [9b68a897] 	Reading package lists... 90%
+ DEBUG [9b68a897] 	Reading package lists... 94%
+ DEBUG [9b68a897] 	Reading package lists... 94%
+ DEBUG [9b68a897] 	Reading package lists... 94%
+ DEBUG [9b68a897] 	Reading package lists... 95%
+ DEBUG [9b68a897] 	Reading package lists... 95%
+ DEBUG [9b68a897] 	Reading package lists... 95%
+ DEBUG [9b68a897] 	Reading package lists... 95%
+ DEBUG [9b68a897] 	Reading package lists... 95%
+ DEBUG [9b68a897] 	Reading package lists... 95%
+ DEBUG [9b68a897] 	Reading package lists... 95%
+ DEBUG [9b68a897] 	Reading package lists... 95%
+ DEBUG [9b68a897] 	Reading package lists... 95%
+ DEBUG [9b68a897] 	Reading package lists... 95%
+ DEBUG [9b68a897] 	Reading package lists... 95%
+ DEBUG [9b68a897] 	Reading package lists... 95%
+ DEBUG [9b68a897] 	Reading package lists... 95%
+ DEBUG [9b68a897] 	Reading package lists... 95%
+ DEBUG [9b68a897] 	Reading package lists... 97%
+ DEBUG [9b68a897] 	Reading package lists... 97%
+ DEBUG [9b68a897] 	Reading package lists... 98%
+ DEBUG [9b68a897] 	Reading package lists... 98%
+ DEBUG [9b68a897] 	Reading package lists... 98%
+ DEBUG [9b68a897] 	Reading package lists... 98%
+ DEBUG [9b68a897] 	Reading package lists... 98%
+ DEBUG [9b68a897] 	Reading package lists... 98%
+ DEBUG [9b68a897] 	Reading package lists... 99%
+ DEBUG [9b68a897] 	Reading package lists... 99%
+ DEBUG [9b68a897] 	Reading package lists... 99%
+ DEBUG [9b68a897] 	Reading package lists... 99%
+ DEBUG [9b68a897] 	Reading package lists... 99%
+ DEBUG [9b68a897] 	Reading package lists... 99%
+ DEBUG [9b68a897] 	Reading package lists... 99%
+ DEBUG [9b68a897] 	Reading package lists... 99%
+ DEBUG [9b68a897] 	Reading package lists... Done
+ DEBUG [9b68a897] 	
+  INFO [9b68a897] Finished in 8.979 seconds with exit status 0 (successful).
+  INFO [3176ec02] Running /usr/bin/env sudo apt-get -y upgrade as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [3176ec02] Command: /usr/bin/env sudo apt-get -y upgrade
+ DEBUG [3176ec02] 	Reading package lists... 0%
+ DEBUG [3176ec02] 	Reading package lists... 100%
+ DEBUG [3176ec02] 	Reading package lists... Done
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Building dependency tree... 0%
+ DEBUG [3176ec02] 	Building dependency tree... 0%
+ DEBUG [3176ec02] 	Building dependency tree... 50%
+ DEBUG [3176ec02] 	Building dependency tree... 50%
+ DEBUG [3176ec02] 	Building dependency tree       
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Reading state information... 0%
+ DEBUG [3176ec02] 	Reading state information... 7%
+ DEBUG [3176ec02] 	Reading state information... Done
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Calculating upgrade... 0%
+ DEBUG [3176ec02] 	Calculating upgrade... 50%
+ DEBUG [3176ec02] 	Calculating upgrade... Done
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	The following packages have been kept back:
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	  linux-headers-generic linux-headers-virtual linux-image-virtual
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	  linux-virtual
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	The following packages will be upgraded:
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	  cloud-init grub-legacy-ec2 lxd lxd-client mdadm nano pollinate resolvconf
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	  snap-confine snapd ubuntu-core-launcher
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	11 upgraded, 0 newly installed, 0 to remove and 4 not upgraded.
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Need to get 15.0 MB of archives.
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	After this operation, 1,335 kB of additional disk space will be used.
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	0% [Working]
+ DEBUG [3176ec02] 	            
+ DEBUG [3176ec02] 	Get:1 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 lxd amd64 2.0.9-0ubuntu1~16.04.2 [3,417 kB]
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	0% [1 lxd 0 B/3,417 kB 0%]
+ DEBUG [3176ec02] 	                          
+ DEBUG [3176ec02] 	20% [Working]
+ DEBUG [3176ec02] 	             
+ DEBUG [3176ec02] 	Get:2 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 lxd-client amd64 2.0.9-0ubuntu1~16.04.2 [1,846 kB]
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	20% [2 lxd-client 0 B/1,846 kB 0%]
+ DEBUG [3176ec02] 	                                  
+ DEBUG [3176ec02] 	32% [Working]
+ DEBUG [3176ec02] 	             
+ DEBUG [3176ec02] 	Get:3 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 snapd amd64 2.22.6 [8,745 kB]
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	32% [3 snapd 0 B/8,745 kB 0%]
+ DEBUG [3176ec02] 	                             
+ DEBUG [3176ec02] 	80% [Working]
+ DEBUG [3176ec02] 	             
+ DEBUG [3176ec02] 	Get:4 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 ubuntu-core-launcher amd64 2.22.6 [1,576 B]
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	80% [4 ubuntu-core-launcher 0 B/1,576 B 0%]
+ DEBUG [3176ec02] 	                                           
+ DEBUG [3176ec02] 	82% [Working]
+ DEBUG [3176ec02] 	             
+ DEBUG [3176ec02] 	Get:5 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 snap-confine amd64 2.22.6 [39.0 kB]
+ DEBUG [3176ec02] 	
+82% [5 snap-confine 0 B/39.0 kB 0%]
+ DEBUG [3176ec02] 	                                   
+ DEBUG [3176ec02] 	84% [Working]
+ DEBUG [3176ec02] 	             
+ DEBUG [3176ec02] 	Get:6 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 resolvconf all 1.78ubuntu4 [51.1 kB]
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	84% [6 resolvconf 0 B/51.1 kB 0%]
+ DEBUG [3176ec02] 	                                 
+ DEBUG [3176ec02] 	86% [Working]
+ DEBUG [3176ec02] 	             
+ DEBUG [3176ec02] 	Get:7 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 nano amd64 2.5.3-2ubuntu2 [191 kB]
+ DEBUG [3176ec02] 	
+86% [7 nano 0 B/191 kB 0%]
+ DEBUG [3176ec02] 	                          
+ DEBUG [3176ec02] 	89% [Working]
+ DEBUG [3176ec02] 	             
+ DEBUG [3176ec02] 	Get:8 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 mdadm amd64 3.3-2ubuntu7.2 [393 kB]
+ DEBUG [3176ec02] 	
+89% [8 mdadm 0 B/393 kB 0%]
+ DEBUG [3176ec02] 	                           
+ DEBUG [3176ec02] 	93% [Working]
+ DEBUG [3176ec02] 	             
+ DEBUG [3176ec02] 	Get:9 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 pollinate all 4.23-0ubuntu1~16.04.1 [11.9 kB]
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	93% [9 pollinate 0 B/11.9 kB 0%]
+ DEBUG [3176ec02] 	                                
+ DEBUG [3176ec02] 	95% [Working]
+ DEBUG [3176ec02] 	             
+ DEBUG [3176ec02] 	Get:10 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 cloud-init all 0.7.9-0ubuntu1~16.04.2 [287 kB]
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	95% [10 cloud-init 0 B/287 kB 0%]
+ DEBUG [3176ec02] 	                                 
+ DEBUG [3176ec02] 	98% [Working]
+ DEBUG [3176ec02] 	             
+ DEBUG [3176ec02] 	Get:11 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 grub-legacy-ec2 all 0.7.9-0ubuntu1~16.04.2 [23.6 kB]
+ DEBUG [3176ec02] 	
+98% [11 grub-legacy-ec2 0 B/23.6 kB 0%]
+ DEBUG [3176ec02] 	                                       
+ DEBUG [3176ec02] 	100% [Working]
+ DEBUG [3176ec02] 	              
+ DEBUG [3176ec02] 	Fetched 15.0 MB in 0s (48.1 MB/s)
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Preconfiguring packages ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	(Reading database ... 
+ DEBUG [3176ec02] 	(Reading database ... 5%
+ DEBUG [3176ec02] 	(Reading database ... 10%
+ DEBUG [3176ec02] 	(Reading database ... 15%
+ DEBUG [3176ec02] 	(Reading database ... 20%
+ DEBUG [3176ec02] 	(Reading database ... 25%
+ DEBUG [3176ec02] 	(Reading database ... 30%
+ DEBUG [3176ec02] 	(Reading database ... 35%
+ DEBUG [3176ec02] 	(Reading database ... 40%
+ DEBUG [3176ec02] 	(Reading database ... 45%
+ DEBUG [3176ec02] 	(Reading database ... 50%
+ DEBUG [3176ec02] 	(Reading database ... 55%
+ DEBUG [3176ec02] 	(Reading database ... 60%
+ DEBUG [3176ec02] 	(Reading database ... 65%
+ DEBUG [3176ec02] 	(Reading database ... 70%
+ DEBUG [3176ec02] 	(Reading database ... 75%
+ DEBUG [3176ec02] 	(Reading database ... 80%
+ DEBUG [3176ec02] 	(Reading database ... 85%
+ DEBUG [3176ec02] 	(Reading database ... 90%
+ DEBUG [3176ec02] 	(Reading database ... 95%
+ DEBUG [3176ec02] 	(Reading database ... 100%
+ DEBUG [3176ec02] 	(Reading database ... 
+ DEBUG [3176ec02] 	53844 files and directories currently installed.)
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Preparing to unpack .../lxd_2.0.9-0ubuntu1~16.04.2_amd64.deb ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Warning: Stopping lxd.service, but it can still be activated by:
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	  lxd.socket
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Unpacking lxd (2.0.9-0ubuntu1~16.04.2) over (2.0.9-0ubuntu1~16.04.1) ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Warning: Stopping lxd.service, but it can still be activated by:
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	  lxd.socket
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Preparing to unpack .../lxd-client_2.0.9-0ubuntu1~16.04.2_amd64.deb ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Unpacking lxd-client (2.0.9-0ubuntu1~16.04.2) over (2.0.9-0ubuntu1~16.04.1) ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Preparing to unpack .../snapd_2.22.6_amd64.deb ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Warning: Stopping snapd.service, but it can still be activated by:
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	  snapd.socket
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Unpacking snapd (2.22.6) over (2.22.3) ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Preparing to unpack .../ubuntu-core-launcher_2.22.6_amd64.deb ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Unpacking ubuntu-core-launcher (2.22.6) over (2.22.3) ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Preparing to unpack .../snap-confine_2.22.6_amd64.deb ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Unpacking snap-confine (2.22.6) over (2.22.3) ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Preparing to unpack .../resolvconf_1.78ubuntu4_all.deb ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Unpacking resolvconf (1.78ubuntu4) over (1.78ubuntu2) ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Preparing to unpack .../nano_2.5.3-2ubuntu2_amd64.deb ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Unpacking nano (2.5.3-2ubuntu2) over (2.5.3-2ubuntu1) ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Preparing to unpack .../mdadm_3.3-2ubuntu7.2_amd64.deb ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Unpacking mdadm (3.3-2ubuntu7.2) over (3.3-2ubuntu7.1) ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Preparing to unpack .../pollinate_4.23-0ubuntu1~16.04.1_all.deb ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Unpacking pollinate (4.23-0ubuntu1~16.04.1) over (4.23-0ubuntu1~16.04) ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Preparing to unpack .../cloud-init_0.7.9-0ubuntu1~16.04.2_all.deb ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Unpacking cloud-init (0.7.9-0ubuntu1~16.04.2) over (0.7.8-49-g9e904bb-0ubuntu1~16.04.4) ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Preparing to unpack .../grub-legacy-ec2_0.7.9-0ubuntu1~16.04.2_all.deb ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Leaving 'diversion of /usr/sbin/grub-set-default to /usr/sbin/grub-set-default.real by grub-legacy-ec2'
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Unpacking grub-legacy-ec2 (0.7.9-0ubuntu1~16.04.2) over (0.7.8-49-g9e904bb-0ubuntu1~16.04.4) ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Processing triggers for man-db (2.7.5-1) ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Processing triggers for ureadahead (0.100.0-19) ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Processing triggers for systemd (229-4ubuntu16) ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Processing triggers for install-info (6.1.0.dfsg.1-5) ...
+ DEBUG [3176ec02] 	Setting up lxd-client (2.0.9-0ubuntu1~16.04.2) ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Setting up lxd (2.0.9-0ubuntu1~16.04.2) ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Setting up snap-confine (2.22.6) ...
+ DEBUG [3176ec02] 	Setting up snapd (2.22.6) ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Setting up ubuntu-core-launcher (2.22.6) ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Setting up resolvconf (1.78ubuntu4) ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Setting up nano (2.5.3-2ubuntu2) ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Setting up mdadm (3.3-2ubuntu7.2) ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	update-initramfs: deferring update (trigger activated)
+ DEBUG [3176ec02] 	Generating grub configuration file ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Found linux image: /boot/vmlinuz-4.4.0-64-generic
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Found initrd image: /boot/initrd.img-4.4.0-64-generic
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	File descriptor 3 (pipe:[43619]) leaked on lvs invocation.
+ DEBUG [3176ec02] 	 Parent PID 16508: /bin/sh
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	done
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	update-rc.d: warning: start and stop actions are no longer supported; falling back to defaults
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Setting up pollinate (4.23-0ubuntu1~16.04.1) ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Setting up cloud-init (0.7.9-0ubuntu1~16.04.2) ...
+ DEBUG [3176ec02] 	Installing new version of config file /etc/NetworkManager/dispatcher.d/hook-network-manager ...
+ DEBUG [3176ec02] 	Installing new version of config file /etc/cloud/cloud.cfg.d/05_logging.cfg ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Installing new version of config file /etc/dhcp/dhclient-exit-hooks.d/hook-dhclient ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Installing new version of config file /etc/profile.d/Z99-cloud-locale-test.sh ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Leaving 'diversion of /etc/init/ureadahead.conf to /etc/init/ureadahead.conf.disabled by cloud-init'
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Setting up grub-legacy-ec2 (0.7.9-0ubuntu1~16.04.2) ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Searching for GRUB installation directory ... 
+ DEBUG [3176ec02] 	found: /boot/grub
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Searching for default file ... 
+ DEBUG [3176ec02] 	found: /boot/grub/default
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Testing for an existing GRUB menu.lst file ... 
+ DEBUG [3176ec02] 	found: /boot/grub/menu.lst
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Searching for splash image ... 
+ DEBUG [3176ec02] 	none found, skipping ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Found kernel: /boot/vmlinuz-4.4.0-64-generic
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Found kernel: /boot/vmlinuz-4.4.0-64-generic
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Updating /boot/grub/menu.lst ... 
+ DEBUG [3176ec02] 	done
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Processing triggers for resolvconf (1.78ubuntu4) ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	Processing triggers for initramfs-tools (0.122ubuntu8.8) ...
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	update-initramfs: Generating /boot/initrd.img-4.4.0-64-generic
+ DEBUG [3176ec02] 	
+ DEBUG [3176ec02] 	W: mdadm: /etc/mdadm/mdadm.conf defines no arrays.
+ DEBUG [3176ec02] 	
+  INFO [3176ec02] Finished in 27.179 seconds with exit status 0 (successful).
+  INFO [4c2ea85c] Running /usr/bin/env sudo apt-get -y install python3 python3-pip nginx gunicorn mongodb as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [4c2ea85c] Command: /usr/bin/env sudo apt-get -y install python3 python3-pip nginx gunicorn mongodb
+ DEBUG [4c2ea85c] 	Reading package lists... 0%
+ DEBUG [4c2ea85c] 	Reading package lists... 100%
+ DEBUG [4c2ea85c] 	Reading package lists... Done
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Building dependency tree... 0%
+ DEBUG [4c2ea85c] 	Building dependency tree... 0%
+ DEBUG [4c2ea85c] 	Building dependency tree... 50%
+ DEBUG [4c2ea85c] 	Building dependency tree... 50%
+ DEBUG [4c2ea85c] 	Building dependency tree       
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Reading state information... 0%
+ DEBUG [4c2ea85c] 	Reading state information... 7%
+ DEBUG [4c2ea85c] 	Reading state information... Done
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	python3 is already the newest version (3.5.1-3).
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	The following additional packages will be installed:
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  binutils build-essential cpp cpp-5 dpkg-dev fakeroot fontconfig-config
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  fonts-dejavu-core g++ g++-5 gcc gcc-5 libalgorithm-diff-perl
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  libalgorithm-diff-xs-perl libalgorithm-merge-perl libasan2 libatomic1
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  libboost-filesystem1.58.0 libboost-program-options1.58.0
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  libboost-system1.58.0 libboost-thread1.58.0 libc-dev-bin libc6-dev libcc1-0
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  libcilkrts5 libdpkg-perl libexpat1-dev libfakeroot libfile-fcntllock-perl
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  libfontconfig1 libgcc-5-dev libgd3 libgomp1 libgoogle-perftools4 libisl15
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  libitm1 libjbig0 libjpeg-turbo8 libjpeg8 liblsan0 libmpc3 libmpx0
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  libpcrecpp0v5 libpython-stdlib libpython2.7-minimal libpython2.7-stdlib
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  libpython3-dev libpython3.5-dev libquadmath0 libsnappy1v5 libstdc++-5-dev
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  libtcmalloc-minimal4 libtiff5 libtsan0 libubsan0 libunwind8 libv8-3.14.5
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  libvpx3 libxpm4 libxslt1.1 libyaml-cpp0.5v5 linux-libc-dev make manpages-dev
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  mongodb-clients mongodb-server nginx-common nginx-core python
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  python-gunicorn python-minimal python-pip-whl python-pkg-resources
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  python-setuptools python2.7 python2.7-minimal python3-dev python3-setuptools
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  python3-wheel python3.5-dev
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Suggested packages:
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  binutils-doc cpp-doc gcc-5-locales debian-keyring g++-multilib
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  g++-5-multilib gcc-5-doc libstdc++6-5-dbg gcc-multilib autoconf automake
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  libtool flex bison gdb gcc-doc gcc-5-multilib libgcc1-dbg libgomp1-dbg
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  libitm1-dbg libatomic1-dbg libasan2-dbg liblsan0-dbg libtsan0-dbg
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  libubsan0-dbg libcilkrts5-dbg libmpx0-dbg libquadmath0-dbg gunicorn-examples
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  python-gevent python-pastedeploy python-setproctitle python-tornado
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  glibc-doc libgd-tools libstdc++-5-doc make-doc fcgiwrap nginx-doc ssl-cert
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  python-doc python-tk python-setuptools-doc python2.7-doc binfmt-support
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	The following NEW packages will be installed:
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  binutils build-essential cpp cpp-5 dpkg-dev fakeroot fontconfig-config
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  fonts-dejavu-core g++ g++-5 gcc gcc-5 gunicorn libalgorithm-diff-perl
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  libalgorithm-diff-xs-perl libalgorithm-merge-perl libasan2 libatomic1
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  libboost-filesystem1.58.0 libboost-program-options1.58.0
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  libboost-system1.58.0 libboost-thread1.58.0 libc-dev-bin libc6-dev libcc1-0
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  libcilkrts5 libdpkg-perl libexpat1-dev libfakeroot libfile-fcntllock-perl
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  libfontconfig1 libgcc-5-dev libgd3 libgomp1 libgoogle-perftools4 libisl15
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  libitm1 libjbig0 libjpeg-turbo8 libjpeg8 liblsan0 libmpc3 libmpx0
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  libpcrecpp0v5 libpython-stdlib libpython2.7-minimal libpython2.7-stdlib
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  libpython3-dev libpython3.5-dev libquadmath0 libsnappy1v5 libstdc++-5-dev
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  libtcmalloc-minimal4 libtiff5 libtsan0 libubsan0 libunwind8 libv8-3.14.5
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  libvpx3 libxpm4 libxslt1.1 libyaml-cpp0.5v5 linux-libc-dev make manpages-dev
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  mongodb mongodb-clients mongodb-server nginx nginx-common nginx-core python
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  python-gunicorn python-minimal python-pip-whl python-pkg-resources
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  python-setuptools python2.7 python2.7-minimal python3-dev python3-pip
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	  python3-setuptools python3-wheel python3.5-dev
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	0 upgraded, 84 newly installed, 0 to remove and 4 not upgraded.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Need to get 143 MB of archives.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	After this operation, 425 MB of additional disk space will be used.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	0% [Working]
+ DEBUG [4c2ea85c] 	            
+ DEBUG [4c2ea85c] 	Get:1 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 libjpeg-turbo8 amd64 1.4.2-0ubuntu3 [111 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	0% [1 libjpeg-turbo8 0 B/111 kB 0%]
+ DEBUG [4c2ea85c] 	                                   
+ DEBUG [4c2ea85c] 	0% [Working]
+ DEBUG [4c2ea85c] 	            
+ DEBUG [4c2ea85c] 	Get:2 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 libpcrecpp0v5 amd64 2:8.38-3.1 [15.2 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	0% [2 libpcrecpp0v5 0 B/15.2 kB 0%]
+ DEBUG [4c2ea85c] 	                                   
+ DEBUG [4c2ea85c] 	1% [Working]
+ DEBUG [4c2ea85c] 	            
+ DEBUG [4c2ea85c] 	Get:3 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libpython2.7-minimal amd64 2.7.12-1ubuntu0~16.04.1 [339 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	1% [3 libpython2.7-minimal 0 B/339 kB 0%]
+ DEBUG [4c2ea85c] 	                                         
+ DEBUG [4c2ea85c] 	1% [Working]
+ DEBUG [4c2ea85c] 	            
+ DEBUG [4c2ea85c] 	Get:4 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 python2.7-minimal amd64 2.7.12-1ubuntu0~16.04.1 [1,295 kB]
+ DEBUG [4c2ea85c] 	
+1% [4 python2.7-minimal 0 B/1,295 kB 0%]
+ DEBUG [4c2ea85c] 	                                        
+ DEBUG [4c2ea85c] 	2% [Working]
+ DEBUG [4c2ea85c] 	            
+ DEBUG [4c2ea85c] 	Get:5 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 python-minimal amd64 2.7.11-1 [28.2 kB]
+ DEBUG [4c2ea85c] 	
+2% [5 python-minimal 0 B/28.2 kB 0%]
+ DEBUG [4c2ea85c] 	                                    
+ DEBUG [4c2ea85c] 	2% [Working]
+ DEBUG [4c2ea85c] 	            
+ DEBUG [4c2ea85c] 	Get:6 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libpython2.7-stdlib amd64 2.7.12-1ubuntu0~16.04.1 [1,884 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	2% [6 libpython2.7-stdlib 0 B/1,884 kB 0%]
+ DEBUG [4c2ea85c] 	                                          
+ DEBUG [4c2ea85c] 	3% [Working]
+ DEBUG [4c2ea85c] 	            
+ DEBUG [4c2ea85c] 	Get:7 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 python2.7 amd64 2.7.12-1ubuntu0~16.04.1 [224 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	3% [7 python2.7 0 B/224 kB 0%]
+ DEBUG [4c2ea85c] 	                              
+ DEBUG [4c2ea85c] 	4% [Working]
+ DEBUG [4c2ea85c] 	            
+ DEBUG [4c2ea85c] 	Get:8 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 libpython-stdlib amd64 2.7.11-1 [7,656 B]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	4% [8 libpython-stdlib 0 B/7,656 B 0%]
+ DEBUG [4c2ea85c] 	                                      
+ DEBUG [4c2ea85c] 	4% [Working]
+ DEBUG [4c2ea85c] 	            
+ DEBUG [4c2ea85c] 	Get:9 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 python amd64 2.7.11-1 [137 kB]
+ DEBUG [4c2ea85c] 	
+4% [9 python 0 B/137 kB 0%]
+ DEBUG [4c2ea85c] 	                           
+ DEBUG [4c2ea85c] 	4% [Working]
+ DEBUG [4c2ea85c] 	            
+ DEBUG [4c2ea85c] 	Get:10 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 libjbig0 amd64 2.1-3.1 [26.6 kB]
+ DEBUG [4c2ea85c] 	
+4% [10 libjbig0 0 B/26.6 kB 0%]
+ DEBUG [4c2ea85c] 	                               
+ DEBUG [4c2ea85c] 	5% [Working]
+ DEBUG [4c2ea85c] 	            
+ DEBUG [4c2ea85c] 	Get:11 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 libmpc3 amd64 1.0.3-1 [39.7 kB]
+ DEBUG [4c2ea85c] 	
+5% [11 libmpc3 0 B/39.7 kB 0%]
+ DEBUG [4c2ea85c] 	                              
+ DEBUG [4c2ea85c] 	5% [Working]
+ DEBUG [4c2ea85c] 	            
+ DEBUG [4c2ea85c] 	Get:12 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 binutils amd64 2.26.1-1ubuntu1~16.04.3 [2,310 kB]
+ DEBUG [4c2ea85c] 	
+5% [12 binutils 0 B/2,310 kB 0%]
+ DEBUG [4c2ea85c] 	                                
+ DEBUG [4c2ea85c] 	6% [Working]
+ DEBUG [4c2ea85c] 	            
+ DEBUG [4c2ea85c] 	Get:13 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libc-dev-bin amd64 2.23-0ubuntu5 [68.7 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	6% [13 libc-dev-bin 0 B/68.7 kB 0%]
+ DEBUG [4c2ea85c] 	                                   
+ DEBUG [4c2ea85c] 	7% [Working]
+ DEBUG [4c2ea85c] 	            
+ DEBUG [4c2ea85c] 	Get:14 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 linux-libc-dev amd64 4.4.0-66.87 [833 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	7% [14 linux-libc-dev 0 B/833 kB 0%]
+ DEBUG [4c2ea85c] 	                                    
+ DEBUG [4c2ea85c] 	7% [Working]
+ DEBUG [4c2ea85c] 	            
+ DEBUG [4c2ea85c] 	Get:15 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libc6-dev amd64 2.23-0ubuntu5 [2,078 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	7% [15 libc6-dev 0 B/2,078 kB 0%]
+ DEBUG [4c2ea85c] 	                                 
+ DEBUG [4c2ea85c] 	9% [Working]
+ DEBUG [4c2ea85c] 	            
+ DEBUG [4c2ea85c] 	Get:16 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 libisl15 amd64 0.16.1-1 [524 kB]
+ DEBUG [4c2ea85c] 	
+9% [16 libisl15 0 B/524 kB 0%]
+ DEBUG [4c2ea85c] 	                              
+ DEBUG [4c2ea85c] 	9% [Working]
+ DEBUG [4c2ea85c] 	            
+ DEBUG [4c2ea85c] 	Get:17 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 cpp-5 amd64 5.4.0-6ubuntu1~16.04.4 [7,653 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	9% [17 cpp-5 0 B/7,653 kB 0%]
+ DEBUG [4c2ea85c] 	                             
+ DEBUG [4c2ea85c] 	14% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:18 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 cpp amd64 4:5.3.1-1ubuntu1 [27.7 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	14% [18 cpp 0 B/27.7 kB 0%]
+ DEBUG [4c2ea85c] 	                           
+ DEBUG [4c2ea85c] 	14% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:19 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libcc1-0 amd64 5.4.0-6ubuntu1~16.04.4 [38.8 kB]
+ DEBUG [4c2ea85c] 	
+14% [19 libcc1-0 0 B/38.8 kB 0%]
+ DEBUG [4c2ea85c] 	                                
+ DEBUG [4c2ea85c] 	14% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:20 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgomp1 amd64 5.4.0-6ubuntu1~16.04.4 [55.0 kB]
+14% [20 libgomp1 0 B/55.0 kB 0%]
+ DEBUG [4c2ea85c] 	                                
+ DEBUG [4c2ea85c] 	15% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:21 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libitm1 amd64 5.4.0-6ubuntu1~16.04.4 [27.4 kB]
+ DEBUG [4c2ea85c] 	
+15% [21 libitm1 0 B/27.4 kB 0%]
+ DEBUG [4c2ea85c] 	                               
+ DEBUG [4c2ea85c] 	15% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:22 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libatomic1 amd64 5.4.0-6ubuntu1~16.04.4 [8,912 B]
+ DEBUG [4c2ea85c] 	
+15% [22 libatomic1 0 B/8,912 B 0%]
+ DEBUG [4c2ea85c] 	                                  
+ DEBUG [4c2ea85c] 	15% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:23 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libasan2 amd64 5.4.0-6ubuntu1~16.04.4 [264 kB]
+ DEBUG [4c2ea85c] 	
+15% [23 libasan2 0 B/264 kB 0%]
+ DEBUG [4c2ea85c] 	                               
+ DEBUG [4c2ea85c] 	16% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:24 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 liblsan0 amd64 5.4.0-6ubuntu1~16.04.4 [105 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	16% [24 liblsan0 0 B/105 kB 0%]
+ DEBUG [4c2ea85c] 	                               
+ DEBUG [4c2ea85c] 	16% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:25 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libtsan0 amd64 5.4.0-6ubuntu1~16.04.4 [244 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	16% [25 libtsan0 0 B/244 kB 0%]
+ DEBUG [4c2ea85c] 	                               
+ DEBUG [4c2ea85c] 	16% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:26 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libubsan0 amd64 5.4.0-6ubuntu1~16.04.4 [95.3 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	16% [26 libubsan0 0 B/95.3 kB 0%]
+ DEBUG [4c2ea85c] 	                                 
+ DEBUG [4c2ea85c] 	17% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:27 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libcilkrts5 amd64 5.4.0-6ubuntu1~16.04.4 [40.1 kB]
+ DEBUG [4c2ea85c] 	
+17% [27 libcilkrts5 0 B/40.1 kB 0%]
+ DEBUG [4c2ea85c] 	                                   
+ DEBUG [4c2ea85c] 	17% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:28 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libmpx0 amd64 5.4.0-6ubuntu1~16.04.4 [9,766 B]
+ DEBUG [4c2ea85c] 	
+17% [28 libmpx0 0 B/9,766 B 0%]
+ DEBUG [4c2ea85c] 	                               
+ DEBUG [4c2ea85c] 	17% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:29 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libquadmath0 amd64 5.4.0-6ubuntu1~16.04.4 [131 kB]
+ DEBUG [4c2ea85c] 	17% [29 libquadmath0 0 B/131 kB 0%]
+ DEBUG [4c2ea85c] 	                                   
+ DEBUG [4c2ea85c] 	17% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:30 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgcc-5-dev amd64 5.4.0-6ubuntu1~16.04.4 [2,237 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	17% [30 libgcc-5-dev 0 B/2,237 kB 0%]
+ DEBUG [4c2ea85c] 	                                     
+ DEBUG [4c2ea85c] 	19% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:31 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 gcc-5 amd64 5.4.0-6ubuntu1~16.04.4 [8,577 kB]
+ DEBUG [4c2ea85c] 	
+19% [31 gcc-5 0 B/8,577 kB 0%]
+ DEBUG [4c2ea85c] 	                              
+ DEBUG [4c2ea85c] 	24% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:32 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 gcc amd64 4:5.3.1-1ubuntu1 [5,244 B]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	24% [32 gcc 0 B/5,244 B 0%]
+ DEBUG [4c2ea85c] 	                           
+ DEBUG [4c2ea85c] 	24% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:33 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libstdc++-5-dev amd64 5.4.0-6ubuntu1~16.04.4 [1,426 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	24% [33 libstdc++-5-dev 0 B/1,426 kB 0%]
+ DEBUG [4c2ea85c] 	                                        
+ DEBUG [4c2ea85c] 	25% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:34 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 g++-5 amd64 5.4.0-6ubuntu1~16.04.4 [8,300 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	25% [34 g++-5 0 B/8,300 kB 0%]
+ DEBUG [4c2ea85c] 	                              
+ DEBUG [4c2ea85c] 	30% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:35 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 g++ amd64 4:5.3.1-1ubuntu1 [1,504 B]
+ DEBUG [4c2ea85c] 	
+30% [35 g++ 0 B/1,504 B 0%]
+ DEBUG [4c2ea85c] 	                           
+ DEBUG [4c2ea85c] 	30% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:36 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 make amd64 4.1-6 [151 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	30% [36 make 0 B/151 kB 0%]
+ DEBUG [4c2ea85c] 	                           
+ DEBUG [4c2ea85c] 	31% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:37 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libdpkg-perl all 1.18.4ubuntu1.1 [195 kB]
+ DEBUG [4c2ea85c] 	
+31% [37 libdpkg-perl 0 B/195 kB 0%]
+ DEBUG [4c2ea85c] 	                                   
+ DEBUG [4c2ea85c] 	31% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:38 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 dpkg-dev all 1.18.4ubuntu1.1 [584 kB]
+31% [38 dpkg-dev 0 B/584 kB 0%]
+ DEBUG [4c2ea85c] 	                               
+ DEBUG [4c2ea85c] 	32% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:39 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 build-essential amd64 12.1ubuntu2 [4,758 B]
+ DEBUG [4c2ea85c] 	
+32% [39 build-essential 0 B/4,758 B 0%]
+ DEBUG [4c2ea85c] 	                                       
+ DEBUG [4c2ea85c] 	32% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:40 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 libfakeroot amd64 1.20.2-1ubuntu1 [25.5 kB]
+ DEBUG [4c2ea85c] 	
+32% [40 libfakeroot 0 B/25.5 kB 0%]
+ DEBUG [4c2ea85c] 	                                   
+ DEBUG [4c2ea85c] 	32% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:41 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 fakeroot amd64 1.20.2-1ubuntu1 [61.8 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	32% [41 fakeroot 0 B/61.8 kB 0%]
+ DEBUG [4c2ea85c] 	                                
+ DEBUG [4c2ea85c] 	32% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:42 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 fonts-dejavu-core all 2.35-1 [1,039 kB]
+ DEBUG [4c2ea85c] 	
+32% [42 fonts-dejavu-core 0 B/1,039 kB 0%]
+ DEBUG [4c2ea85c] 	                                          
+ DEBUG [4c2ea85c] 	33% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:43 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 fontconfig-config all 2.11.94-0ubuntu1.1 [49.9 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	33% [43 fontconfig-config 0 B/49.9 kB 0%]
+ DEBUG [4c2ea85c] 	                                         
+ DEBUG [4c2ea85c] 	33% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:44 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 python-pkg-resources all 20.7.0-1 [108 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	33% [44 python-pkg-resources 0 B/108 kB 0%]
+ DEBUG [4c2ea85c] 	                                           
+ DEBUG [4c2ea85c] 	34% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:45 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 python-setuptools all 20.7.0-1 [169 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	34% [45 python-setuptools 0 B/169 kB 0%]
+ DEBUG [4c2ea85c] 	                                        
+ DEBUG [4c2ea85c] 	34% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:46 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/universe amd64 python-gunicorn all 19.4.5-1ubuntu1 [81.1 kB]
+34% [46 python-gunicorn 0 B/81.1 kB 0%]
+ DEBUG [4c2ea85c] 	                                       
+ DEBUG [4c2ea85c] 	34% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:47 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/universe amd64 gunicorn all 19.4.5-1ubuntu1 [17.9 kB]
+ DEBUG [4c2ea85c] 	
+34% [47 gunicorn 0 B/17.9 kB 0%]
+ DEBUG [4c2ea85c] 	                                
+ DEBUG [4c2ea85c] 	35% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:48 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 libalgorithm-diff-perl all 1.19.03-1 [47.6 kB]
+ DEBUG [4c2ea85c] 	
+35% [48 libalgorithm-diff-perl 0 B/47.6 kB 0%]
+ DEBUG [4c2ea85c] 	                                              
+ DEBUG [4c2ea85c] 	35% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:49 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 libalgorithm-diff-xs-perl amd64 0.04-4build1 [11.0 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	35% [49 libalgorithm-diff-xs-perl 0 B/11.0 kB 0%]
+ DEBUG [4c2ea85c] 	                                                 
+ DEBUG [4c2ea85c] 	35% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:50 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 libalgorithm-merge-perl all 0.08-3 [12.0 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	35% [50 libalgorithm-merge-perl 0 B/12.0 kB 0%]
+ DEBUG [4c2ea85c] 	                                               
+ DEBUG [4c2ea85c] 	35% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:51 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libboost-system1.58.0 amd64 1.58.0+dfsg-5ubuntu3.1 [9,146 B]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	35% [51 libboost-system1.58.0 0 B/9,146 B 0%]
+ DEBUG [4c2ea85c] 	                                             
+ DEBUG [4c2ea85c] 	36% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:52 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libboost-filesystem1.58.0 amd64 1.58.0+dfsg-5ubuntu3.1 [37.5 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	36% [52 libboost-filesystem1.58.0 0 B/37.5 kB 0%]
+ DEBUG [4c2ea85c] 	                                                 
+ DEBUG [4c2ea85c] 	36% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:53 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libboost-program-options1.58.0 amd64 1.58.0+dfsg-5ubuntu3.1 [138 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	36% [53 libboost-program-options1.58.0 0 B/138 kB 0%]
+ DEBUG [4c2ea85c] 	                                                     
+ DEBUG [4c2ea85c] 	36% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:54 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libboost-thread1.58.0 amd64 1.58.0+dfsg-5ubuntu3.1 [47.0 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	36% [54 libboost-thread1.58.0 0 B/47.0 kB 0%]
+ DEBUG [4c2ea85c] 	                                             
+ DEBUG [4c2ea85c] 	36% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:55 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libexpat1-dev amd64 2.1.0-7ubuntu0.16.04.2 [115 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	36% [55 libexpat1-dev 0 B/115 kB 0%]
+ DEBUG [4c2ea85c] 	                                    
+ DEBUG [4c2ea85c] 	37% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:56 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 libfile-fcntllock-perl amd64 0.22-3 [32.0 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	37% [56 libfile-fcntllock-perl 0 B/32.0 kB 0%]
+ DEBUG [4c2ea85c] 	                                              
+ DEBUG [4c2ea85c] 	37% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:57 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libfontconfig1 amd64 2.11.94-0ubuntu1.1 [131 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	37% [57 libfontconfig1 0 B/131 kB 0%]
+ DEBUG [4c2ea85c] 	                                     
+ DEBUG [4c2ea85c] 	37% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:58 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 libjpeg8 amd64 8c-2ubuntu8 [2,194 B]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	37% [58 libjpeg8 0 B/2,194 B 0%]
+ DEBUG [4c2ea85c] 	                                
+ DEBUG [4c2ea85c] 	37% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:59 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libtiff5 amd64 4.0.6-1ubuntu0.1 [146 kB]
+37% [59 libtiff5 0 B/146 kB 0%]
+ DEBUG [4c2ea85c] 	                               
+ DEBUG [4c2ea85c] 	38% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:60 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 libvpx3 amd64 1.5.0-2ubuntu1 [732 kB]
+ DEBUG [4c2ea85c] 	
+38% [60 libvpx3 0 B/732 kB 0%]
+ DEBUG [4c2ea85c] 	                              
+ DEBUG [4c2ea85c] 	38% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:61 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libxpm4 amd64 1:3.5.11-1ubuntu0.16.04.1 [33.8 kB]
+ DEBUG [4c2ea85c] 	
+38% [61 libxpm4 0 B/33.8 kB 0%]
+ DEBUG [4c2ea85c] 	                               
+ DEBUG [4c2ea85c] 	39% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:62 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libgd3 amd64 2.1.1-4ubuntu0.16.04.6 [126 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	39% [62 libgd3 0 B/126 kB 0%]
+ DEBUG [4c2ea85c] 	                             
+ DEBUG [4c2ea85c] 	39% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:63 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 libtcmalloc-minimal4 amd64 2.4-0ubuntu5 [105 kB]
+ DEBUG [4c2ea85c] 	
+39% [63 libtcmalloc-minimal4 0 B/105 kB 0%]
+ DEBUG [4c2ea85c] 	                                           
+ DEBUG [4c2ea85c] 	39% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:64 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 libunwind8 amd64 1.1-4.1 [46.5 kB]
+ DEBUG [4c2ea85c] 	
+39% [64 libunwind8 0 B/46.5 kB 0%]
+ DEBUG [4c2ea85c] 	                                  
+ DEBUG [4c2ea85c] 	40% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:65 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 libgoogle-perftools4 amd64 2.4-0ubuntu5 [187 kB]
+ DEBUG [4c2ea85c] 	
+40% [65 libgoogle-perftools4 0 B/187 kB 0%]
+ DEBUG [4c2ea85c] 	                                           
+ DEBUG [4c2ea85c] 	40% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:66 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libpython3.5-dev amd64 3.5.2-2ubuntu0~16.04.1 [37.3 MB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	40% [66 libpython3.5-dev 0 B/37.3 MB 0%]
+ DEBUG [4c2ea85c] 	59% [66 libpython3.5-dev 34.6 MB/37.3 MB 93%]
+ DEBUG [4c2ea85c] 	                                             
+ DEBUG [4c2ea85c] 	61% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:67 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 libpython3-dev amd64 3.5.1-3 [6,926 B]
+ DEBUG [4c2ea85c] 	
+61% [67 libpython3-dev 0 B/6,926 B 0%]
+ DEBUG [4c2ea85c] 	                                      
+ DEBUG [4c2ea85c] 	61% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:68 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/universe amd64 libv8-3.14.5 amd64 3.14.5.8-5ubuntu2 [1,189 kB]
+ DEBUG [4c2ea85c] 	
+61% [68 libv8-3.14.5 0 B/1,189 kB 0%]
+ DEBUG [4c2ea85c] 	                                     
+ DEBUG [4c2ea85c] 	62% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:69 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 libxslt1.1 amd64 1.1.28-2.1 [145 kB]
+ DEBUG [4c2ea85c] 	
+62% [69 libxslt1.1 0 B/145 kB 0%]
+ DEBUG [4c2ea85c] 	                                 
+ DEBUG [4c2ea85c] 	63% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:70 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/universe amd64 libyaml-cpp0.5v5 amd64 0.5.2-3 [158 kB]
+ DEBUG [4c2ea85c] 	
+63% [70 libyaml-cpp0.5v5 0 B/158 kB 0%]
+ DEBUG [4c2ea85c] 	                                       
+ DEBUG [4c2ea85c] 	63% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:71 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 manpages-dev all 4.04-2 [2,048 kB]
+63% [71 manpages-dev 0 B/2,048 kB 0%]
+ DEBUG [4c2ea85c] 	                                     
+ DEBUG [4c2ea85c] 	64% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:72 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 libsnappy1v5 amd64 1.1.3-2 [16.0 kB]
+ DEBUG [4c2ea85c] 	
+64% [72 libsnappy1v5 0 B/16.0 kB 0%]
+ DEBUG [4c2ea85c] 	                                    
+ DEBUG [4c2ea85c] 	64% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:73 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/universe amd64 mongodb-clients amd64 1:2.6.10-0ubuntu1 [48.6 MB]
+ DEBUG [4c2ea85c] 	
+64% [73 mongodb-clients 0 B/48.6 MB 0%]
+ DEBUG [4c2ea85c] 	84% [73 mongodb-clients 35.0 MB/48.6 MB 72%]
+ DEBUG [4c2ea85c] 	                                            
+ DEBUG [4c2ea85c] 	92% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:74 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/universe amd64 mongodb-server amd64 1:2.6.10-0ubuntu1 [7,425 kB]
+ DEBUG [4c2ea85c] 	
+92% [74 mongodb-server 0 B/7,425 kB 0%]
+ DEBUG [4c2ea85c] 	                                       
+ DEBUG [4c2ea85c] 	96% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:75 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/universe amd64 mongodb amd64 1:2.6.10-0ubuntu1 [5,112 B]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	96% [75 mongodb 0 B/5,112 B 0%]
+ DEBUG [4c2ea85c] 	                               
+ DEBUG [4c2ea85c] 	97% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:76 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 nginx-common all 1.10.0-0ubuntu0.16.04.4 [26.6 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	97% [76 nginx-common 0 B/26.6 kB 0%]
+ DEBUG [4c2ea85c] 	                                    
+ DEBUG [4c2ea85c] 	97% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:77 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 nginx-core amd64 1.10.0-0ubuntu0.16.04.4 [428 kB]
+97% [77 nginx-core 0 B/428 kB 0%]
+ DEBUG [4c2ea85c] 	                                 
+ DEBUG [4c2ea85c] 	97% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:78 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 nginx all 1.10.0-0ubuntu0.16.04.4 [3,498 B]
+97% [78 nginx 0 B/3,498 B 0%]
+ DEBUG [4c2ea85c] 	                             
+ DEBUG [4c2ea85c] 	98% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:79 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 python-pip-whl all 8.1.1-2ubuntu0.4 [1,110 kB]
+ DEBUG [4c2ea85c] 	
+98% [79 python-pip-whl 0 B/1,110 kB 0%]
+ DEBUG [4c2ea85c] 	                                       
+ DEBUG [4c2ea85c] 	98% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:80 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/main amd64 python3.5-dev amd64 3.5.2-2ubuntu0~16.04.1 [413 kB]
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	98% [80 python3.5-dev 0 B/413 kB 0%]
+ DEBUG [4c2ea85c] 	                                    
+ DEBUG [4c2ea85c] 	99% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:81 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 python3-dev amd64 3.5.1-3 [1,186 B]
+ DEBUG [4c2ea85c] 	
+99% [81 python3-dev 0 B/1,186 B 0%]
+ DEBUG [4c2ea85c] 	                                   
+ DEBUG [4c2ea85c] 	99% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:82 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 python3-pip all 8.1.1-2ubuntu0.4 [109 kB]
+ DEBUG [4c2ea85c] 	
+99% [82 python3-pip 0 B/109 kB 0%]
+ DEBUG [4c2ea85c] 	                                  
+ DEBUG [4c2ea85c] 	99% [Working]
+ DEBUG [4c2ea85c] 	             
+ DEBUG [4c2ea85c] 	Get:83 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 python3-setuptools all 20.7.0-1 [88.0 kB]
+99% [83 python3-setuptools 0 B/88.0 kB 0%]
+ DEBUG [4c2ea85c] 	                                          
+ DEBUG [4c2ea85c] 	100% [Working]
+ DEBUG [4c2ea85c] 	              
+ DEBUG [4c2ea85c] 	Get:84 http://us-west-2.ec2.archive.ubuntu.com/ubuntu xenial/universe amd64 python3-wheel all 0.29.0-1 [48.1 kB]
+ DEBUG [4c2ea85c] 	
+100% [84 python3-wheel 0 B/48.1 kB 0%]
+ DEBUG [4c2ea85c] 	                                      
+ DEBUG [4c2ea85c] 	100% [Working]
+ DEBUG [4c2ea85c] 	              
+ DEBUG [4c2ea85c] 	Fetched 143 MB in 3s (44.2 MB/s)
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Extracting templates from packages: 35%
+ DEBUG [4c2ea85c] 	Extracting templates from packages: 71%
+ DEBUG [4c2ea85c] 	Extracting templates from packages: 100%
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preconfiguring packages ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libjpeg-turbo8:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	(Reading database ... 
+ DEBUG [4c2ea85c] 	(Reading database ... 5%
+ DEBUG [4c2ea85c] 	(Reading database ... 10%
+ DEBUG [4c2ea85c] 	(Reading database ... 15%
+ DEBUG [4c2ea85c] 	(Reading database ... 20%
+ DEBUG [4c2ea85c] 	(Reading database ... 25%
+ DEBUG [4c2ea85c] 	(Reading database ... 30%
+ DEBUG [4c2ea85c] 	(Reading database ... 35%
+ DEBUG [4c2ea85c] 	(Reading database ... 40%
+ DEBUG [4c2ea85c] 	(Reading database ... 45%
+ DEBUG [4c2ea85c] 	(Reading database ... 50%
+ DEBUG [4c2ea85c] 	(Reading database ... 55%
+ DEBUG [4c2ea85c] 	(Reading database ... 60%
+ DEBUG [4c2ea85c] 	(Reading database ... 65%
+ DEBUG [4c2ea85c] 	(Reading database ... 70%
+ DEBUG [4c2ea85c] 	(Reading database ... 75%
+ DEBUG [4c2ea85c] 	(Reading database ... 80%
+ DEBUG [4c2ea85c] 	(Reading database ... 85%
+ DEBUG [4c2ea85c] 	(Reading database ... 90%
+ DEBUG [4c2ea85c] 	(Reading database ... 95%
+ DEBUG [4c2ea85c] 	(Reading database ... 100%
+ DEBUG [4c2ea85c] 	(Reading database ... 
+ DEBUG [4c2ea85c] 	53844 files and directories currently installed.)
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libjpeg-turbo8_1.4.2-0ubuntu3_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libjpeg-turbo8:amd64 (1.4.2-0ubuntu3) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libpcrecpp0v5:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libpcrecpp0v5_2%3a8.38-3.1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libpcrecpp0v5:amd64 (2:8.38-3.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libpython2.7-minimal:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libpython2.7-minimal_2.7.12-1ubuntu0~16.04.1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libpython2.7-minimal:amd64 (2.7.12-1ubuntu0~16.04.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package python2.7-minimal.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../python2.7-minimal_2.7.12-1ubuntu0~16.04.1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking python2.7-minimal (2.7.12-1ubuntu0~16.04.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package python-minimal.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../python-minimal_2.7.11-1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking python-minimal (2.7.11-1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libpython2.7-stdlib:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libpython2.7-stdlib_2.7.12-1ubuntu0~16.04.1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libpython2.7-stdlib:amd64 (2.7.12-1ubuntu0~16.04.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package python2.7.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../python2.7_2.7.12-1ubuntu0~16.04.1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking python2.7 (2.7.12-1ubuntu0~16.04.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libpython-stdlib:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libpython-stdlib_2.7.11-1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libpython-stdlib:amd64 (2.7.11-1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Processing triggers for libc-bin (2.23-0ubuntu5) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Processing triggers for man-db (2.7.5-1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Processing triggers for mime-support (3.59ubuntu1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libpython2.7-minimal:amd64 (2.7.12-1ubuntu0~16.04.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up python2.7-minimal (2.7.12-1ubuntu0~16.04.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Linking and byte-compiling packages for runtime python2.7...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up python-minimal (2.7.11-1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package python.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	(Reading database ... 
+ DEBUG [4c2ea85c] 	(Reading database ... 5%
+ DEBUG [4c2ea85c] 	(Reading database ... 10%
+ DEBUG [4c2ea85c] 	(Reading database ... 15%
+ DEBUG [4c2ea85c] 	(Reading database ... 20%
+ DEBUG [4c2ea85c] 	(Reading database ... 25%
+ DEBUG [4c2ea85c] 	(Reading database ... 30%
+ DEBUG [4c2ea85c] 	(Reading database ... 35%
+ DEBUG [4c2ea85c] 	(Reading database ... 40%
+ DEBUG [4c2ea85c] 	(Reading database ... 45%
+ DEBUG [4c2ea85c] 	(Reading database ... 50%
+ DEBUG [4c2ea85c] 	(Reading database ... 55%
+ DEBUG [4c2ea85c] 	(Reading database ... 60%
+ DEBUG [4c2ea85c] 	(Reading database ... 65%
+ DEBUG [4c2ea85c] 	(Reading database ... 70%
+ DEBUG [4c2ea85c] 	(Reading database ... 75%
+ DEBUG [4c2ea85c] 	(Reading database ... 80%
+ DEBUG [4c2ea85c] 	(Reading database ... 85%
+ DEBUG [4c2ea85c] 	(Reading database ... 90%
+ DEBUG [4c2ea85c] 	(Reading database ... 95%
+ DEBUG [4c2ea85c] 	(Reading database ... 100%
+ DEBUG [4c2ea85c] 	(Reading database ... 
+ DEBUG [4c2ea85c] 	54604 files and directories currently installed.)
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../python_2.7.11-1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking python (2.7.11-1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libjbig0:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libjbig0_2.1-3.1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libjbig0:amd64 (2.1-3.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libmpc3:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libmpc3_1.0.3-1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libmpc3:amd64 (1.0.3-1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package binutils.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../binutils_2.26.1-1ubuntu1~16.04.3_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking binutils (2.26.1-1ubuntu1~16.04.3) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libc-dev-bin.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libc-dev-bin_2.23-0ubuntu5_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libc-dev-bin (2.23-0ubuntu5) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package linux-libc-dev:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../linux-libc-dev_4.4.0-66.87_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking linux-libc-dev:amd64 (4.4.0-66.87) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libc6-dev:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libc6-dev_2.23-0ubuntu5_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libc6-dev:amd64 (2.23-0ubuntu5) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libisl15:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libisl15_0.16.1-1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libisl15:amd64 (0.16.1-1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package cpp-5.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../cpp-5_5.4.0-6ubuntu1~16.04.4_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking cpp-5 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package cpp.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../cpp_4%3a5.3.1-1ubuntu1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking cpp (4:5.3.1-1ubuntu1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libcc1-0:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libcc1-0_5.4.0-6ubuntu1~16.04.4_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libcc1-0:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libgomp1:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libgomp1_5.4.0-6ubuntu1~16.04.4_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libgomp1:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libitm1:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libitm1_5.4.0-6ubuntu1~16.04.4_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libitm1:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libatomic1:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libatomic1_5.4.0-6ubuntu1~16.04.4_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libatomic1:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libasan2:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libasan2_5.4.0-6ubuntu1~16.04.4_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libasan2:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package liblsan0:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../liblsan0_5.4.0-6ubuntu1~16.04.4_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking liblsan0:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libtsan0:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libtsan0_5.4.0-6ubuntu1~16.04.4_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libtsan0:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libubsan0:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libubsan0_5.4.0-6ubuntu1~16.04.4_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libubsan0:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libcilkrts5:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libcilkrts5_5.4.0-6ubuntu1~16.04.4_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libcilkrts5:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libmpx0:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libmpx0_5.4.0-6ubuntu1~16.04.4_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libmpx0:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libquadmath0:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libquadmath0_5.4.0-6ubuntu1~16.04.4_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libquadmath0:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libgcc-5-dev:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libgcc-5-dev_5.4.0-6ubuntu1~16.04.4_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libgcc-5-dev:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package gcc-5.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../gcc-5_5.4.0-6ubuntu1~16.04.4_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking gcc-5 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package gcc.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../gcc_4%3a5.3.1-1ubuntu1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking gcc (4:5.3.1-1ubuntu1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libstdc++-5-dev:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libstdc++-5-dev_5.4.0-6ubuntu1~16.04.4_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libstdc++-5-dev:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package g++-5.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../g++-5_5.4.0-6ubuntu1~16.04.4_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking g++-5 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package g++.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../g++_4%3a5.3.1-1ubuntu1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking g++ (4:5.3.1-1ubuntu1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package make.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../archives/make_4.1-6_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking make (4.1-6) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libdpkg-perl.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libdpkg-perl_1.18.4ubuntu1.1_all.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libdpkg-perl (1.18.4ubuntu1.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package dpkg-dev.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../dpkg-dev_1.18.4ubuntu1.1_all.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking dpkg-dev (1.18.4ubuntu1.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package build-essential.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../build-essential_12.1ubuntu2_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking build-essential (12.1ubuntu2) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libfakeroot:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libfakeroot_1.20.2-1ubuntu1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libfakeroot:amd64 (1.20.2-1ubuntu1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package fakeroot.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../fakeroot_1.20.2-1ubuntu1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking fakeroot (1.20.2-1ubuntu1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package fonts-dejavu-core.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../fonts-dejavu-core_2.35-1_all.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking fonts-dejavu-core (2.35-1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package fontconfig-config.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../fontconfig-config_2.11.94-0ubuntu1.1_all.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking fontconfig-config (2.11.94-0ubuntu1.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package python-pkg-resources.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../python-pkg-resources_20.7.0-1_all.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking python-pkg-resources (20.7.0-1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package python-setuptools.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../python-setuptools_20.7.0-1_all.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking python-setuptools (20.7.0-1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package python-gunicorn.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../python-gunicorn_19.4.5-1ubuntu1_all.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking python-gunicorn (19.4.5-1ubuntu1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package gunicorn.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../gunicorn_19.4.5-1ubuntu1_all.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking gunicorn (19.4.5-1ubuntu1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libalgorithm-diff-perl.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libalgorithm-diff-perl_1.19.03-1_all.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libalgorithm-diff-perl (1.19.03-1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libalgorithm-diff-xs-perl.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libalgorithm-diff-xs-perl_0.04-4build1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libalgorithm-diff-xs-perl (0.04-4build1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libalgorithm-merge-perl.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libalgorithm-merge-perl_0.08-3_all.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libalgorithm-merge-perl (0.08-3) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libboost-system1.58.0:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libboost-system1.58.0_1.58.0+dfsg-5ubuntu3.1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libboost-system1.58.0:amd64 (1.58.0+dfsg-5ubuntu3.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libboost-filesystem1.58.0:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libboost-filesystem1.58.0_1.58.0+dfsg-5ubuntu3.1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libboost-filesystem1.58.0:amd64 (1.58.0+dfsg-5ubuntu3.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libboost-program-options1.58.0:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libboost-program-options1.58.0_1.58.0+dfsg-5ubuntu3.1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libboost-program-options1.58.0:amd64 (1.58.0+dfsg-5ubuntu3.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libboost-thread1.58.0:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libboost-thread1.58.0_1.58.0+dfsg-5ubuntu3.1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libboost-thread1.58.0:amd64 (1.58.0+dfsg-5ubuntu3.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libexpat1-dev:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libexpat1-dev_2.1.0-7ubuntu0.16.04.2_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libexpat1-dev:amd64 (2.1.0-7ubuntu0.16.04.2) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libfile-fcntllock-perl.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libfile-fcntllock-perl_0.22-3_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libfile-fcntllock-perl (0.22-3) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libfontconfig1:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libfontconfig1_2.11.94-0ubuntu1.1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libfontconfig1:amd64 (2.11.94-0ubuntu1.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libjpeg8:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libjpeg8_8c-2ubuntu8_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libjpeg8:amd64 (8c-2ubuntu8) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libtiff5:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libtiff5_4.0.6-1ubuntu0.1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libtiff5:amd64 (4.0.6-1ubuntu0.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libvpx3:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libvpx3_1.5.0-2ubuntu1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libvpx3:amd64 (1.5.0-2ubuntu1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libxpm4:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libxpm4_1%3a3.5.11-1ubuntu0.16.04.1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libxpm4:amd64 (1:3.5.11-1ubuntu0.16.04.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libgd3:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libgd3_2.1.1-4ubuntu0.16.04.6_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libgd3:amd64 (2.1.1-4ubuntu0.16.04.6) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libtcmalloc-minimal4.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libtcmalloc-minimal4_2.4-0ubuntu5_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libtcmalloc-minimal4 (2.4-0ubuntu5) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libunwind8.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libunwind8_1.1-4.1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libunwind8 (1.1-4.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libgoogle-perftools4.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libgoogle-perftools4_2.4-0ubuntu5_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libgoogle-perftools4 (2.4-0ubuntu5) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libpython3.5-dev:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libpython3.5-dev_3.5.2-2ubuntu0~16.04.1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libpython3.5-dev:amd64 (3.5.2-2ubuntu0~16.04.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libpython3-dev:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libpython3-dev_3.5.1-3_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libpython3-dev:amd64 (3.5.1-3) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libv8-3.14.5.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libv8-3.14.5_3.14.5.8-5ubuntu2_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libv8-3.14.5 (3.14.5.8-5ubuntu2) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libxslt1.1:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libxslt1.1_1.1.28-2.1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libxslt1.1:amd64 (1.1.28-2.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libyaml-cpp0.5v5:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libyaml-cpp0.5v5_0.5.2-3_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libyaml-cpp0.5v5:amd64 (0.5.2-3) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package manpages-dev.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../manpages-dev_4.04-2_all.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking manpages-dev (4.04-2) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package libsnappy1v5:amd64.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../libsnappy1v5_1.1.3-2_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking libsnappy1v5:amd64 (1.1.3-2) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package mongodb-clients.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../mongodb-clients_1%3a2.6.10-0ubuntu1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking mongodb-clients (1:2.6.10-0ubuntu1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package mongodb-server.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../mongodb-server_1%3a2.6.10-0ubuntu1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking mongodb-server (1:2.6.10-0ubuntu1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package mongodb.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../mongodb_1%3a2.6.10-0ubuntu1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking mongodb (1:2.6.10-0ubuntu1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package nginx-common.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../nginx-common_1.10.0-0ubuntu0.16.04.4_all.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking nginx-common (1.10.0-0ubuntu0.16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package nginx-core.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../nginx-core_1.10.0-0ubuntu0.16.04.4_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking nginx-core (1.10.0-0ubuntu0.16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package nginx.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../nginx_1.10.0-0ubuntu0.16.04.4_all.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking nginx (1.10.0-0ubuntu0.16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package python-pip-whl.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../python-pip-whl_8.1.1-2ubuntu0.4_all.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking python-pip-whl (8.1.1-2ubuntu0.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package python3.5-dev.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../python3.5-dev_3.5.2-2ubuntu0~16.04.1_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking python3.5-dev (3.5.2-2ubuntu0~16.04.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package python3-dev.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../python3-dev_3.5.1-3_amd64.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking python3-dev (3.5.1-3) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package python3-pip.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../python3-pip_8.1.1-2ubuntu0.4_all.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking python3-pip (8.1.1-2ubuntu0.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package python3-setuptools.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../python3-setuptools_20.7.0-1_all.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking python3-setuptools (20.7.0-1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Selecting previously unselected package python3-wheel.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Preparing to unpack .../python3-wheel_0.29.0-1_all.deb ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Unpacking python3-wheel (0.29.0-1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Processing triggers for man-db (2.7.5-1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Processing triggers for libc-bin (2.23-0ubuntu5) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Processing triggers for systemd (229-4ubuntu16) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Processing triggers for ureadahead (0.100.0-19) ...
+ DEBUG [4c2ea85c] 	Processing triggers for ufw (0.35-0ubuntu2) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libjpeg-turbo8:amd64 (1.4.2-0ubuntu3) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libpcrecpp0v5:amd64 (2:8.38-3.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libpython2.7-stdlib:amd64 (2.7.12-1ubuntu0~16.04.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up python2.7 (2.7.12-1ubuntu0~16.04.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libpython-stdlib:amd64 (2.7.11-1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up python (2.7.11-1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libjbig0:amd64 (2.1-3.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libmpc3:amd64 (1.0.3-1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up binutils (2.26.1-1ubuntu1~16.04.3) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libc-dev-bin (2.23-0ubuntu5) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up linux-libc-dev:amd64 (4.4.0-66.87) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libc6-dev:amd64 (2.23-0ubuntu5) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libisl15:amd64 (0.16.1-1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up cpp-5 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up cpp (4:5.3.1-1ubuntu1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libcc1-0:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libgomp1:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libitm1:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libatomic1:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libasan2:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up liblsan0:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libtsan0:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libubsan0:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libcilkrts5:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libmpx0:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libquadmath0:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libgcc-5-dev:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up gcc-5 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up gcc (4:5.3.1-1ubuntu1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libstdc++-5-dev:amd64 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up g++-5 (5.4.0-6ubuntu1~16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up g++ (4:5.3.1-1ubuntu1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	update-alternatives: 
+ DEBUG [4c2ea85c] 	using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up make (4.1-6) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libdpkg-perl (1.18.4ubuntu1.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up dpkg-dev (1.18.4ubuntu1.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up build-essential (12.1ubuntu2) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libfakeroot:amd64 (1.20.2-1ubuntu1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up fakeroot (1.20.2-1ubuntu1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	update-alternatives: 
+ DEBUG [4c2ea85c] 	using /usr/bin/fakeroot-sysv to provide /usr/bin/fakeroot (fakeroot) in auto mode
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up fonts-dejavu-core (2.35-1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up fontconfig-config (2.11.94-0ubuntu1.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up python-pkg-resources (20.7.0-1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up python-setuptools (20.7.0-1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up python-gunicorn (19.4.5-1ubuntu1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up gunicorn (19.4.5-1ubuntu1) ...
+ DEBUG [4c2ea85c] 	Setting up libalgorithm-diff-perl (1.19.03-1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libalgorithm-diff-xs-perl (0.04-4build1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libalgorithm-merge-perl (0.08-3) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libboost-system1.58.0:amd64 (1.58.0+dfsg-5ubuntu3.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libboost-filesystem1.58.0:amd64 (1.58.0+dfsg-5ubuntu3.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libboost-program-options1.58.0:amd64 (1.58.0+dfsg-5ubuntu3.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libboost-thread1.58.0:amd64 (1.58.0+dfsg-5ubuntu3.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libexpat1-dev:amd64 (2.1.0-7ubuntu0.16.04.2) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libfile-fcntllock-perl (0.22-3) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libfontconfig1:amd64 (2.11.94-0ubuntu1.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libjpeg8:amd64 (8c-2ubuntu8) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libtiff5:amd64 (4.0.6-1ubuntu0.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libvpx3:amd64 (1.5.0-2ubuntu1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libxpm4:amd64 (1:3.5.11-1ubuntu0.16.04.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libgd3:amd64 (2.1.1-4ubuntu0.16.04.6) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libtcmalloc-minimal4 (2.4-0ubuntu5) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libunwind8 (1.1-4.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libgoogle-perftools4 (2.4-0ubuntu5) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libpython3.5-dev:amd64 (3.5.2-2ubuntu0~16.04.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libpython3-dev:amd64 (3.5.1-3) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libv8-3.14.5 (3.14.5.8-5ubuntu2) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libxslt1.1:amd64 (1.1.28-2.1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libyaml-cpp0.5v5:amd64 (0.5.2-3) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up manpages-dev (4.04-2) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up libsnappy1v5:amd64 (1.1.3-2) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up mongodb-clients (1:2.6.10-0ubuntu1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up mongodb-server (1:2.6.10-0ubuntu1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Adding system user `mongodb' (UID 112) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Adding new user `mongodb' (UID 112) with group `nogroup' ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Not creating home directory `/var/lib/mongodb'.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Adding group `mongodb' (GID 116) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Done.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Adding user `mongodb' to group `mongodb' ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Adding user mongodb to group mongodb
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Done.
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up mongodb (1:2.6.10-0ubuntu1) ...
+ DEBUG [4c2ea85c] 	Setting up nginx-common (1.10.0-0ubuntu0.16.04.4) ...
+ DEBUG [4c2ea85c] 	Setting up nginx-core (1.10.0-0ubuntu0.16.04.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up nginx (1.10.0-0ubuntu0.16.04.4) ...
+ DEBUG [4c2ea85c] 	Setting up python-pip-whl (8.1.1-2ubuntu0.4) ...
+ DEBUG [4c2ea85c] 	Setting up python3.5-dev (3.5.2-2ubuntu0~16.04.1) ...
+ DEBUG [4c2ea85c] 	Setting up python3-dev (3.5.1-3) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up python3-pip (8.1.1-2ubuntu0.4) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up python3-setuptools (20.7.0-1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Setting up python3-wheel (0.29.0-1) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Processing triggers for libc-bin (2.23-0ubuntu5) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Processing triggers for systemd (229-4ubuntu16) ...
+ DEBUG [4c2ea85c] 	
+ DEBUG [4c2ea85c] 	Processing triggers for ureadahead (0.100.0-19) ...
+ DEBUG [4c2ea85c] 	Processing triggers for ufw (0.35-0ubuntu2) ...
+ DEBUG [4c2ea85c] 	
+  INFO [4c2ea85c] Finished in 36.250 seconds with exit status 0 (successful).
+  INFO [217e7552] Running pip3 install virtualenv as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [217e7552] Command: pip3 install virtualenv
+ DEBUG [217e7552] 	Collecting virtualenv
+ DEBUG [217e7552] 	
+ DEBUG [217e7552] 	  Downloading virtualenv-15.1.0-py2.py3-none-any.whl (1.8MB)
+ DEBUG [217e7552] 	
+ DEBUG [217e7552] 	[?25l[K
+ DEBUG [217e7552] 	    0% |▏                               | 10kB 9.6MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    1% |▍                               | 20kB 2.4MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    1% |▌                               | 30kB 3.4MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    2% |▊                               | 40kB 3.5MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    2% |█                               | 51kB 3.5MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    3% |█                               | 61kB 4.1MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    3% |█▎                              | 71kB 3.6MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    4% |█▍                              | 81kB 3.8MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    5% |█▋                              | 92kB 4.3MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    5% |█▉                              | 102kB 4.2MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    6% |██                              | 112kB 4.4MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    6% |██▏                             | 122kB 5.2MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    7% |██▍                             | 133kB 4.6MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    7% |██▌                             | 143kB 5.2MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    8% |██▊                             | 153kB 5.3MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    8% |██▉                             | 163kB 4.6MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    9% |███                             | 174kB 5.8MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    10% |███▎                            | 184kB 5.4MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    10% |███▍                            | 194kB 5.4MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    11% |███▋                            | 204kB 5.6MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    11% |███▉                            | 215kB 4.9MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    12% |████                            | 225kB 6.0MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    12% |████▏                           | 235kB 5.9MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    13% |████▎                           | 245kB 5.3MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    14% |████▌                           | 256kB 6.1MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    14% |████▊                           | 266kB 6.0MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    15% |████▉                           | 276kB 6.0MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    15% |█████                           | 286kB 6.2MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    16% |█████▏                          | 296kB 5.6MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    16% |█████▍                          | 307kB 6.3MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    17% |█████▋                          | 317kB 6.6MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    17% |█████▊                          | 327kB 5.3MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    18% |██████                          | 337kB 6.2MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    19% |██████▏                         | 348kB 6.5MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    19% |██████▎                         | 358kB 6.5MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    20% |██████▌                         | 368kB 6.8MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    20% |██████▋                         | 378kB 6.0MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    21% |██████▉                         | 389kB 6.7MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    21% |███████                         | 399kB 6.8MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    22% |███████▏                        | 409kB 5.8MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    23% |███████▍                        | 419kB 6.4MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    23% |███████▋                        | 430kB 7.3MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    24% |███████▊                        | 440kB 7.3MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    24% |████████                        | 450kB 7.2MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    25% |████████                        | 460kB 6.1MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    25% |████████▎                       | 471kB 7.1MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    26% |████████▌                       | 481kB 7.2MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    26% |████████▋                       | 491kB 6.5MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    27% |████████▉                       | 501kB 7.3MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    28% |█████████                       | 512kB 7.8MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    28% |█████████▏                      | 522kB 7.8MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    29% |█████████▍                      | 532kB 7.7MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    29% |█████████▌                      | 542kB 6.8MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    30% |█████████▊                      | 552kB 7.6MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    30% |██████████                      | 563kB 8.2MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    31% |██████████                      | 573kB 7.1MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    32% |██████████▎                     | 583kB 8.1MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    32% |██████████▍                     | 593kB 8.1MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    33% |██████████▋                     | 604kB 8.1MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    33% |██████████▉                     | 614kB 8.2MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    34% |███████████                     | 624kB 7.2MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    34% |███████████▏                    | 634kB 8.4MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    35% |███████████▍                    | 645kB 8.4MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    35% |███████████▌                    | 655kB 7.4MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    36% |███████████▊                    | 665kB 8.3MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    37% |███████████▉                    | 675kB 8.6MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    37% |████████████                    | 686kB 8.6MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    38% |████████████▎                   | 696kB 7.8MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    38% |████████████▍                   | 706kB 7.4MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    39% |████████████▋                   | 716kB 8.3MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    39% |████████████▉                   | 727kB 8.5MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    40% |█████████████                   | 737kB 7.9MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    41% |█████████████▏                  | 747kB 9.1MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    41% |█████████████▎                  | 757kB 7.8MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    42% |█████████████▌                  | 768kB 7.8MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    42% |█████████████▊                  | 778kB 8.4MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    43% |█████████████▉                  | 788kB 7.4MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    43% |██████████████                  | 798kB 9.3MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    44% |██████████████▏                 | 808kB 9.2MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    44% |██████████████▍                 | 819kB 8.1MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    45% |██████████████▋                 | 829kB 9.2MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    46% |██████████████▊                 | 839kB 8.0MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    46% |███████████████                 | 849kB 8.0MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    47% |███████████████▏                | 860kB 10.0MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    47% |███████████████▎                | 870kB 8.8MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    48% |███████████████▌                | 880kB 9.2MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    48% |███████████████▋                | 890kB 10.2MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    49% |███████████████▉                | 901kB 8.5MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    50% |████████████████                | 911kB 9.0MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    50% |████████████████▏               | 921kB 9.2MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    51% |████████████████▍               | 931kB 9.3MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    51% |████████████████▋               | 942kB 10.5MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    52% |████████████████▊               | 952kB 9.0MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    52% |█████████████████               | 962kB 10.2MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    53% |█████████████████               | 972kB 10.3MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    53% |█████████████████▎              | 983kB 9.2MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    54% |█████████████████▌              | 993kB 9.7MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    55% |█████████████████▋              | 1.0MB 10.1MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    55% |█████████████████▉              | 1.0MB 10.1MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    56% |██████████████████              | 1.0MB 10.6MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    56% |██████████████████▏             | 1.0MB 9.6MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    57% |██████████████████▍             | 1.0MB 10.8MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    57% |██████████████████▌             | 1.1MB 10.9MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    58% |██████████████████▊             | 1.1MB 9.2MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    59% |███████████████████             | 1.1MB 10.4MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    59% |███████████████████             | 1.1MB 11.0MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    60% |███████████████████▎            | 1.1MB 10.9MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    60% |███████████████████▍            | 1.1MB 11.2MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    61% |███████████████████▋            | 1.1MB 10.1MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    61% |███████████████████▉            | 1.1MB 10.9MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    62% |████████████████████            | 1.1MB 11.2MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    62% |████████████████████▏           | 1.1MB 8.6MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    63% |████████████████████▍           | 1.2MB 9.8MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    64% |████████████████████▌           | 1.2MB 11.6MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    64% |████████████████████▊           | 1.2MB 11.6MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    65% |████████████████████▉           | 1.2MB 12.0MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    65% |█████████████████████           | 1.2MB 10.2MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    66% |█████████████████████▎          | 1.2MB 12.0MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    66% |█████████████████████▍          | 1.2MB 11.9MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    67% |█████████████████████▋          | 1.2MB 8.7MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    68% |█████████████████████▊          | 1.2MB 9.2MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    68% |██████████████████████          | 1.2MB 10.4MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    69% |██████████████████████▏         | 1.3MB 10.4MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    69% |██████████████████████▎         | 1.3MB 9.9MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    70% |██████████████████████▌         | 1.3MB 9.2MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    70% |██████████████████████▊         | 1.3MB 9.5MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    71% |██████████████████████▉         | 1.3MB 10.3MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    71% |███████████████████████         | 1.3MB 8.9MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    72% |███████████████████████▏        | 1.3MB 9.9MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    73% |███████████████████████▍        | 1.3MB 12.1MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    73% |███████████████████████▋        | 1.3MB 12.1MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    74% |███████████████████████▊        | 1.4MB 13.6MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    74% |████████████████████████        | 1.4MB 12.3MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    75% |████████████████████████▏       | 1.4MB 13.2MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    75% |████████████████████████▎       | 1.4MB 12.1MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    76% |████████████████████████▌       | 1.4MB 11.0MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    77% |████████████████████████▋       | 1.4MB 11.8MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    77% |████████████████████████▉       | 1.4MB 12.8MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    78% |█████████████████████████       | 1.4MB 12.8MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    78% |█████████████████████████▏      | 1.4MB 14.5MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    79% |█████████████████████████▍      | 1.4MB 11.2MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    79% |█████████████████████████▋      | 1.5MB 12.0MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    80% |█████████████████████████▊      | 1.5MB 12.4MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    80% |██████████████████████████      | 1.5MB 10.7MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    81% |██████████████████████████      | 1.5MB 12.6MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    82% |██████████████████████████▎     | 1.5MB 13.9MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    82% |██████████████████████████▌     | 1.5MB 14.0MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    83% |██████████████████████████▋     | 1.5MB 13.9MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    83% |██████████████████████████▉     | 1.5MB 11.5MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    84% |███████████████████████████     | 1.5MB 12.0MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    84% |███████████████████████████▏    | 1.5MB 14.5MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    85% |███████████████████████████▍    | 1.6MB 13.0MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    86% |███████████████████████████▌    | 1.6MB 13.9MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    86% |███████████████████████████▊    | 1.6MB 13.8MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    87% |████████████████████████████    | 1.6MB 12.3MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    87% |████████████████████████████    | 1.6MB 12.5MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    88% |████████████████████████████▎   | 1.6MB 11.7MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    88% |████████████████████████████▍   | 1.6MB 13.0MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    89% |████████████████████████████▋   | 1.6MB 14.4MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    89% |████████████████████████████▉   | 1.6MB 12.3MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    90% |█████████████████████████████   | 1.6MB 13.2MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    91% |█████████████████████████████▏  | 1.7MB 13.7MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    91% |█████████████████████████████▍  | 1.7MB 12.1MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    92% |█████████████████████████████▌  | 1.7MB 14.4MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    92% |█████████████████████████████▊  | 1.7MB 16.0MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    93% |█████████████████████████████▉  | 1.7MB 16.1MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    93% |██████████████████████████████  | 1.7MB 16.0MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    94% |██████████████████████████████▎ | 1.7MB 13.8MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    95% |██████████████████████████████▍ | 1.7MB 15.4MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    95% |██████████████████████████████▋ | 1.7MB 15.6MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    96% |██████████████████████████████▊ | 1.8MB 13.1MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    96% |███████████████████████████████ | 1.8MB 14.2MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    97% |███████████████████████████████▏| 1.8MB 15.0MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    97% |███████████████████████████████▎| 1.8MB 15.0MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    98% |███████████████████████████████▌| 1.8MB 14.0MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    98% |███████████████████████████████▊| 1.8MB 13.0MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    99% |███████████████████████████████▉| 1.8MB 14.0MB/s eta 0:00:01
+ DEBUG [217e7552] 	[K
+ DEBUG [217e7552] 	    100% |████████████████████████████████| 1.8MB 774kB/s 
+ DEBUG [217e7552] 	
+ DEBUG [217e7552] 	[?25hInstalling collected packages: virtualenv
+ DEBUG [217e7552] 	
+ DEBUG [217e7552] 	Successfully installed virtualenv
+ DEBUG [217e7552] 	
+ DEBUG [217e7552] 	[33mYou are using pip version 8.1.1, however version 9.0.1 is available.
+ DEBUG [217e7552] 	
+ DEBUG [217e7552] 	You should consider upgrading via the 'pip install --upgrade pip' command.[0m
+ DEBUG [217e7552] 	
+  INFO [217e7552] Finished in 2.471 seconds with exit status 0 (successful).
+  INFO [77b64e78] Running cd /var/www/auroville/shared as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [77b64e78] Command: cd /var/www/auroville/shared
+  INFO [77b64e78] Finished in 4.475 seconds with exit status 0 (successful).
+  INFO [fd9ed2f3] Running /usr/bin/env sudo virtualenv --python=python3  /var/www/auroville/shared/env as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [fd9ed2f3] Command: /usr/bin/env sudo virtualenv --python=python3  /var/www/auroville/shared/env
+ DEBUG [fd9ed2f3] 	sudo
+ DEBUG [fd9ed2f3] 	: 
+ DEBUG [fd9ed2f3] 	virtualenv: command not found
+ DEBUG [fd9ed2f3] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 15:40:26 +0530 cap production deploy:setup
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 15:40:46 +0530 cap production deploy:setup
+  INFO ---------------------------------------------------------------------------
+  INFO [c9b3d384] Running cd /var/www/auroville/shared as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [c9b3d384] Command: cd /var/www/auroville/shared
+  INFO [c9b3d384] Finished in 4.097 seconds with exit status 0 (successful).
+  INFO [0736fd05] Running virtualenv --python=python3  /var/www/auroville/shared/env as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [0736fd05] Command: virtualenv --python=python3  /var/www/auroville/shared/env
+ DEBUG [0736fd05] 	bash: virtualenv: command not found
+ DEBUG [0736fd05] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 15:43:49 +0530 cap production deploy:setup
+  INFO ---------------------------------------------------------------------------
+  INFO [654d772a] Running cd /var/www/auroville/shared as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [654d772a] Command: cd /var/www/auroville/shared
+  INFO [654d772a] Finished in 4.136 seconds with exit status 0 (successful).
+  INFO [d0034336] Running virtualenv --python=python3  /var/www/auroville/shared/env as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [d0034336] Command: virtualenv --python=python3  /var/www/auroville/shared/env
+ DEBUG [d0034336] 	bash: virtualenv: command not found
+ DEBUG [d0034336] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 15:50:58 +0530 cap production deploy:setup
+  INFO ---------------------------------------------------------------------------
+  INFO [f2b47373] Running cd /var/www/auroville/shared as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [f2b47373] Command: cd /var/www/auroville/shared
+  INFO [f2b47373] Finished in 4.286 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 15:52:05 +0530 cap production deploy:setup
+  INFO ---------------------------------------------------------------------------
+  INFO [fa38afa3] Running cd /var/www/auroville/shared as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [fa38afa3] Command: cd /var/www/auroville/shared
+  INFO [fa38afa3] Finished in 4.667 seconds with exit status 0 (successful).
+  INFO [4bcbdcc6] Running virtualenv --python=python3  /var/www/auroville/shared/env as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [4bcbdcc6] Command: virtualenv --python=python3  /var/www/auroville/shared/env
+ DEBUG [4bcbdcc6] 	bash: virtualenv: command not found
+ DEBUG [4bcbdcc6] 	
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-03-09 15:56:02 +0530 cap production deploy:setup
+  INFO ---------------------------------------------------------------------------
+  INFO [2ea1b0a9] Running source /var/www/auroville/shared/env/bin/activate as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [2ea1b0a9] Command: source /var/www/auroville/shared/env/bin/activate
+  INFO [2ea1b0a9] Finished in 4.002 seconds with exit status 0 (successful).
+  INFO [e3936078] Running pip3 install -r /var/www/auroville/current/requirements.txt as ubuntu@ec2-35-165-146-82.us-west-2.compute.amazonaws.com
+ DEBUG [e3936078] Command: pip3 install -r /var/www/auroville/current/requirements.txt
+ DEBUG [e3936078] 	Collecting click==6.7 (from -r /var/www/auroville/current/requirements.txt (line 1))
+ DEBUG [e3936078] 	
+ DEBUG [e3936078] 	  Downloading click-6.7-py2.py3-none-any.whl (71kB)
+ DEBUG [e3936078] 	
+ DEBUG [e3936078] 	[?25l[K
+ DEBUG [e3936078] 	    14% |████▋                           | 10kB 6.6MB/s eta 0:00:01
+ DEBUG [e3936078] 	[K
+ DEBUG [e3936078] 	    28% |█████████▏                      | 20kB 2.3MB/s eta 0:00:01
+ DEBUG [e3936078] 	[K
+ DEBUG [e3936078] 	    43% |█████████████▉                  | 30kB 2.7MB/s eta 0:00:01
+ DEBUG [e3936078] 	[K
+ DEBUG [e3936078] 	    57% |██████████████████▍             | 40kB 2.5MB/s eta 0:00:01
+ DEBUG [e3936078] 	[K
+ DEBUG [e3936078] 	    71% |███████████████████████         | 51kB 2.7MB/s eta 0:00:01
+ DEBUG [e3936078] 	[K
+ DEBUG [e3936078] 	    86% |███████████████████████████▋    | 61kB 3.2MB/s eta 0:00:01
+ DEBUG [e3936078] 	[K
+ DEBUG [e3936078] 	    100% |████████████████████████████████| 71kB 2.8MB/s 
+ DEBUG [e3936078] 	
+ DEBUG [e3936078] 	[?25hCollecting comtypes==1.1.3 (from -r /var/www/auroville/current/requirements.txt (line 2))
+ DEBUG [e3936078] 	
+ DEBUG [e3936078] 	[31m  Could not find a version that satisfies the requirement comtypes==1.1.3 (from -r /var/www/auroville/current/requirements.txt (line 2)) (from versions: 0.6.4, 1.0.0, 1.1.0, 1.1.1, 1.1.3.post2)[0m
+ DEBUG [e3936078] 	
+ DEBUG [e3936078] 	[31mNo matching distribution found for comtypes==1.1.3 (from -r /var/www/auroville/current/requirements.txt (line 2))[0m
+ DEBUG [e3936078] 	
+ DEBUG [e3936078] 	[33mYou are using pip version 8.1.1, however version 9.0.1 is available.
+ DEBUG [e3936078] 	
+ DEBUG [e3936078] 	You should consider upgrading via the 'pip install --upgrade pip' command.[0m
+ DEBUG [e3936078] 	

@@ -2,8 +2,10 @@
 lock "3.7.2"
 
 set :application, "auroville"
+set :user, "ubuntu"
 set :branch, "flask_api"
 set :repo_url, "git@github.com:Prashant31/dashboard-analysis.git"
+set :pty, true
 
 # Default branch is :master
 # ask :flask_api, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -32,3 +34,8 @@ set :pty, true
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
+
+namespace :deploy do
+  before "deploy:starting", "deploy:install"
+  after "deploy:install", "deploy:setup"
+end
