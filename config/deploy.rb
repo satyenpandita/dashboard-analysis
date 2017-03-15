@@ -38,9 +38,8 @@ set :pty, true
 
 namespace :deploy do
   after "deploy:install", "nginx:install"
-  after "deploy:install", "deploy:setup"
+  after "deploy:published", "deploy:setup"
   after "deploy:setup", "nginx:setup"
-  after "nginx:setup", "supervisor:setup"
-  after "deploy:published", "deploy:update_env"
-  after "deploy:published", "mongo:restart", "nginx:restart", "supervisor:restart"
+  after "deploy:finished", "mongo:restart"
+  after "mongo:restart", "nginx:restart"
 end

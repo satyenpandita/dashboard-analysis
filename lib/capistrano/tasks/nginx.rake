@@ -11,7 +11,7 @@ namespace :nginx do
     desc "#{command} nginx"
     task command do
         on roles(:all) do |host|
-            execute :sudo, " service nginx #{command}"
+            execute :sudo, "service nginx #{command}"
         end
     end
   end
@@ -23,6 +23,9 @@ namespace :nginx do
         execute :sudo, "mv /tmp/nginx_conf /etc/nginx/sites-enabled/#{fetch(:application)}"
         execute :sudo, "rm -f /etc/nginx/sites-enabled/default"
         Rake::Task["nginx:restart"].invoke
+        execute "cd #{current_path} && source enc"
+        execute "kill -9 $(ps aux | grep -e gunicorn | awk '{ print $2 }') "
+        execute "gunicorn app:app -b localhost:8000"
     end
   end
 

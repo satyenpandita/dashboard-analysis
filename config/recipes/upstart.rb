@@ -8,7 +8,7 @@ namespace :upstart do
       config = ERB.new(IO.read(upstart_config_file)).result(binding)
       path   = "#{upstart_root}/#{File.basename upstart_config_file, '.erb'}"
 
-      put config, path
+      upload! config, path
     end
   end
 end

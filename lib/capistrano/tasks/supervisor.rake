@@ -12,6 +12,7 @@ namespace :supervisor do
   desc "Update Supervisor"
   task :restart do
     on roles(:all) do |host|
+        execute :sudo, "supervisorctl reread"
         execute :sudo, "supervisorctl update"
         execute :sudo, "supervisorctl start #{fetch(:application)}"
     end
