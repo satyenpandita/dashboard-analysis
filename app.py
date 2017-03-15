@@ -1,5 +1,4 @@
-from os import environ as env
-from flask import Flask, request, jsonify, abort
+from flask import Flask, request, jsonify
 from parsers.DashboardParserV2 import DashboardParserV2
 from xlrd import open_workbook
 from werkzeug.contrib.fixers import ProxyFix

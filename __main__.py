@@ -3,9 +3,7 @@ import os
 from xlrd import open_workbook
 from parsers.DashboardParserV2 import DashboardParserV2
 from exporter.report_card_exporters import ReportCardExporter
-from exporter.consolidated_exporter import ConsolidatedExporter
-from exporter.consolidated_exporter_v2 import ConsolidatedExporterV2
-from exporter.consolidated_exporter_v3 import ConsolidatedExporterV3
+from exporter.exporter import Exporter
 from utils.name_diff import get_name_list
 from utils.cell_functions import find_cell
 
@@ -13,10 +11,10 @@ if __name__ == '__main__':
     if len(sys.argv) < 2:
         print("Please supply valid options")
     elif sys.argv[1] == 'parse':
-        for file in os.listdir('data'):
+        for file in os.listdir('uploaded_files'):
             if 'xls' in file[-4:]:
                 print(file)
-                workbook = open_workbook('data/'+file)
+                workbook = open_workbook('uploaded_files/'+file)
                 worksheet = workbook.sheet_by_index(0)
                 dparser = DashboardParserV2(worksheet)
                 dparser.save_dashboard()
@@ -36,12 +34,9 @@ if __name__ == '__main__':
     elif sys.argv[1] == 'reportcard':
         exporter = ReportCardExporter()
         exporter.export_report_card()
-    elif sys.argv[1] == 'consolidated2':
-        exporter = ConsolidatedExporterV3()
-        exporter.export_report_card()
     elif sys.argv[1] == 'consolidated':
-        exporter = ConsolidatedExporter()
-        exporter.export_report_card()
+        exporter = Exporter()
+        exporter.export()
     elif sys.argv[1] == 'cell_function':
         for file in os.listdir('data'):
             if 'xls' in file[-4:]:

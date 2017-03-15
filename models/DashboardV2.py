@@ -19,7 +19,7 @@ def get_likely_outcome(worksheet):
         row, col = cell_address
         likely_outcome['next_1quarter'] = cell_value(worksheet, row + 1, col)
         likely_outcome['next_1year'] = cell_value(worksheet, row + 4, col)
-        likely_outcome['next_3year'] = cell_value(worksheet, row + 7, col)
+        likely_outcome['next_3year'] = cell_value(worksheet, row + 8, col)
     return likely_outcome
 
 
@@ -29,8 +29,8 @@ def get_opp_thesis(worksheet):
     if cell_address:
         row, col = cell_address
         opp_thesis['inv_risks'] = cell_value(worksheet, row + 1, col)
-        opp_thesis['next_opposite_thesis'] = cell_value(worksheet, row + 3, col)
-        opp_thesis['next_living_will'] = cell_value(worksheet, row + 6, col)
+        opp_thesis['next_opposite_thesis'] = cell_value(worksheet, row + 4, col)
+        opp_thesis['next_living_will'] = cell_value(worksheet, row + 7, col)
     return opp_thesis
 
 
@@ -128,9 +128,9 @@ class DashboardV2(object):
 
     def direction_char(self):
         if self.direction.lower() == 'short':
-            return 'S'
+            return 'Short'
         elif self.direction.lower() == 'long':
-            return 'L'
+            return 'Long'
         else:
             return ''
 

@@ -105,9 +105,9 @@ class Dashboard(object):
 
     def direction_char(self):
         if self.direction.lower() == 'short':
-            return 'S'
+            return 'Short'
         elif self.direction.lower() == 'long':
-            return 'L'
+            return 'Long'
         else:
             return ''
 

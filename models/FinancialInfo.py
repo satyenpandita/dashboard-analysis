@@ -5,10 +5,10 @@ class FinancialInfo:
 
     def __init__(self, worksheet):
         super(FinancialInfo, self).__init__()
-        self.fd_shares = cell_value_by_key(worksheet, 'FD Shares (m)')
+        self.fd_shares = cell_value_by_key(worksheet, 'FD Shares (m):')
         self.price_per_share = cell_value_by_key(worksheet, 'Price (USD/sh):')
         self.market_cap = None
-        if self.market_cap and self.price_per_share:
+        if self.fd_shares and self.price_per_share:
             self.market_cap = self.fd_shares*self.price_per_share
         self.cash = cell_value_by_key(worksheet, '  - Cash')
         self.debt = cell_value_by_key(worksheet, '  + Debt')
