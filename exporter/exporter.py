@@ -12,7 +12,7 @@ class Exporter:
         try:
             self.workbook = ConsolidatedExporterDaily.export(self.workbook, 'Daily')
             self.workbook = ConsolidatedExporterFiscal.export(self.workbook, 'Fiscal')
-        except Exception as e:
-            print(str(e))
+        # except Exception as e:
+        #     print(str(e))
         finally:
             self.workbook.close()

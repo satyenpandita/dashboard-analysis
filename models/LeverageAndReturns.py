@@ -3,15 +3,10 @@ from utils.cell_functions import *
 
 def populate_data(worksheet, row, col):
     kf = dict()
-    subkeys = ['net_debt', 'capital_employed', 'leverage', 'net_debt_per_adj_ebidta', 'ebidta_by_capex',
-               'ebidta_by_interest', 'roe', 'roce_ebidta_post_tax', 'roce_wacc_country', 'roce_wacc_company',
-               'incremental_ebitda_per_capex', 'incremental_ebitda_margin', 'incremental_roce']
-    for key in subkeys:
-        row += 1
-        if key == 'roce_ebidta_post_tax' or key == 'incremental_ebitda_per_capex':
-            row += 1
-        kf[key] = cell_value(worksheet, row, col)
-
+    keys = ['current_year', 'current_year_plus_one', 'current_year_plus_two', 'current_year_plus_three',
+            'current_year_plus_three']
+    for idx, key in enumerate(keys):
+        kf[key] = cell_value(worksheet, row, col+idx+3)
     return kf
 
 
@@ -21,11 +16,19 @@ class LeverageAndReturns:
         cell_address = find_cell(worksheet, 'Leverage and Returns')
         if cell_address:
             row,col = cell_address
-            self.current_year = populate_data(worksheet, row, col+3)
-            self.current_year_plus_one = populate_data(worksheet, row, col+4)
-            self.current_year_plus_two = populate_data(worksheet, row, col+5)
-            self.current_year_plus_three = populate_data(worksheet, row, col+6)
-            self.current_year_plus_four = populate_data(worksheet, row, col+7)
+            self.net_debt = populate_data(worksheet, row + 1, col)
+            self.capital_employed = populate_data(worksheet, row+2, col)
+            self.leverage = populate_data(worksheet, row+3, col)
+            self.net_debt_per_adj_ebidta = populate_data(worksheet, row+4, col)
+            self.ebidta_by_capex = populate_data(worksheet, row+5, col)
+            self.ebidta_by_interest = populate_data(worksheet, row+6, col)
+            self.roe = populate_data(worksheet, row+7, col)
+            self.roce_ebidta_post_tax = populate_data(worksheet, row+9, col)
+            self.roce_wacc_country = populate_data(worksheet, row+10, col)
+            self.roce_wacc_company = populate_data(worksheet, row+11, col)
+            self.incremental_ebitda_per_capex = populate_data(worksheet, row+13, col)
+            self.incremental_ebitda_margin = populate_data(worksheet, row+14, col)
+            self.incremental_roce = populate_data(worksheet, row+15, col)
 
 
 

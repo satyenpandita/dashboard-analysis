@@ -62,7 +62,7 @@ class DashboardV2(object):
             self.forecast_period = cell_value_by_key(data, 'Forecast Period:')
             self.likely_outcome = get_likely_outcome(data)
             self.opp_thesis = get_opp_thesis(data)
-            self.delta_consensus_list = get_consensus_list(data)
+            self.delta_consensus = DeltaVsConsensusV2(data).__dict__
             self.short_metrics = ShortMetrics(data).__dict__
             self.irr_decomp = IRRDecomp(data).__dict__
             self.tam = Tam(data).__dict__
@@ -73,10 +73,10 @@ class DashboardV2(object):
             self.financial_info = FinancialInfo(data).__dict__
             self.leverage_and_returns = LeverageAndReturns(data).__dict__
             self.key_financials = KeyFinancials(data).__dict__
-            self.yoy_growth_revenue = self.calculate_growth('gross_revenue')
-            self.cagr_4years_revenue = self.calculate_cagr_4yrs('gross_revenue')
-            self.yoy_growth_eps = self.calculate_growth('adj_eps')
-            self.cagr_4years_eps = self.calculate_cagr_4yrs('adj_eps')
+            # self.yoy_growth_revenue = self.calculate_growth('gross_revenue')
+            # self.cagr_4years_revenue = self.calculate_cagr_4yrs('gross_revenue')
+            # self.yoy_growth_eps = self.calculate_growth('adj_eps')
+            # self.cagr_4years_eps = self.calculate_cagr_4yrs('adj_eps')
             # self.base_plus_bear = self.calculate_base_plus_bear()
 
     def calculate_base_plus_bear(self):
@@ -85,46 +85,46 @@ class DashboardV2(object):
         if base and bear:
             return base + bear
 
-    def calculate_fcf(self):
-        target_year = self.delta_consensus_list.get('current_year_plus_two')
-        cash = self.financial_info.get('cash')
-        if target_year and cash:
-            other = target_year.get('others')
-            if other.get('aim'):
-                return cash / other.get('aim')
-        return None
-
-    def calculate_growth(self, metric):
-        curr_year = self.delta_consensus_list.get('current_year')
-        next_year = self.delta_consensus_list.get('current_year_plus_one')
-        if curr_year and next_year:
-            curr_metric = curr_year.get(metric)
-            next_metric = next_year.get(metric)
-            if curr_metric and next_metric:
-                try:
-                    change_percent = (next_metric.get('aim') / curr_metric.get('aim')) - 1
-                    return change_percent
-                except Exception:
-                    return None
-        return None
-
-    def calculate_cagr_4yrs(self, metric):
-        curr_year = self.delta_consensus_list.get('current_year')
-        target_year = self.delta_consensus_list.get('current_year_plus_three')
-        if curr_year and target_year:
-            curr_metric = curr_year.get(metric)
-            target_year = target_year.get(metric)
-            if curr_metric and target_year:
-                try:
-                    ratio = target_year.get('aim') / curr_metric.get('aim')
-                    if ratio > 0:
-                        cagr = pow(ratio, .25) - 1
-                        return cagr
-                    else:
-                        return None
-                except Exception:
-                    return None
-        return None
+    # def calculate_fcf(self):
+    #     target_year = self.delta_consensus.get('current_year_plus_two')
+    #     cash = self.financial_info.get('cash')
+    #     if target_year and cash:
+    #         other = target_year.get('others')
+    #         if other.get('aim'):
+    #             return cash / other.get('aim')
+    #     return None
+    #
+    # def calculate_growth(self, metric):
+    #     curr_year = self.delta_consensus.get('current_year')
+    #     next_year = self.delta_consensus.get('current_year_plus_one')
+    #     if curr_year and next_year:
+    #         curr_metric = curr_year.get(metric)
+    #         next_metric = next_year.get(metric)
+    #         if curr_metric and next_metric:
+    #             try:
+    #                 change_percent = (next_metric.get('aim') / curr_metric.get('aim')) - 1
+    #                 return change_percent
+    #             except Exception:
+    #                 return None
+    #     return None
+    #
+    # def calculate_cagr_4yrs(self, metric):
+    #     curr_year = self.delta_consensus_list.get('current_year')
+    #     target_year = self.delta_consensus_list.get('current_year_plus_three')
+    #     if curr_year and target_year:
+    #         curr_metric = curr_year.get(metric)
+    #         target_year = target_year.get(metric)
+    #         if curr_metric and target_year:
+    #             try:
+    #                 ratio = target_year.get('aim') / curr_metric.get('aim')
+    #                 if ratio > 0:
+    #                     cagr = pow(ratio, .25) - 1
+    #                     return cagr
+    #                 else:
+    #                     return None
+    #             except Exception:
+    #                 return None
+    #     return None
 
     def direction_char(self):
         if self.direction.lower() == 'short':
@@ -198,19 +198,19 @@ class DashboardV2(object):
     def get_kpi(self, key):
         return self.data_tracking[key]['tracking_metric']
 
-    def get_delta_consensus(self, year, metric):
-        target_year = self.delta_consensus_list.get(year)
-        if target_year:
-            target_metric = target_year.get(metric)
-            if target_metric:
-                try:
-                    change_percent = target_metric.get('aim') / target_metric.get('consensus') - 1
-                    return change_percent
-                except Exception:
-                    return None
+    # def get_delta_consensus(self, year, metric):
+    #     target_year = self.delta_consensus_list.get(year)
+    #     if target_year:
+    #         target_metric = target_year.get(metric)
+    #         if target_metric:
+    #             try:
+    #                 change_percent = target_metric.get('aim') / target_metric.get('consensus') - 1
+    #                 return change_percent
+    #             except Exception:
+    #                 return None
 
 
-def get_consensus_list(worksheet):
+def get_delta_consensus(worksheet):
     dvc_dict = dict()
     keys = ['current_quarter', 'current_year', 'current_year_plus_one', 'current_year_plus_two',
             'current_year_plus_three']
