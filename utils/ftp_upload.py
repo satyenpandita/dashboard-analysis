@@ -1,6 +1,6 @@
 import paramiko
 import json
-from os.path import abspath, exists
+
 
 def ftp_upload(file_path):
     try:

@@ -2,6 +2,7 @@ from config.mongo_config import db
 from models.DashboardV2 import DashboardV2
 import datetime
 
+
 def colnum_string(n):
     div = n
     string = ""
