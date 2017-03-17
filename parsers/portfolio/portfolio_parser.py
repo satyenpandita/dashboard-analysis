@@ -3,6 +3,7 @@ from exporter.portfolio.portfolio_exporter import PortfolioExporter
 from utils.ftp_upload import ftp_upload
 
 
+
 def get_tickers(worksheet, direction):
     folio = dict()
     cell_address = find_cell(worksheet, "Ticker", row_offset=8)
@@ -12,7 +13,7 @@ def get_tickers(worksheet, direction):
         short = False
         while True:
             next_row += 1
-            print(next_row)
+            #print(next_row)
             val = cell_value(worksheet, next_row, col)
             if 'total' in val.lower():
                 if direction == 'long':
