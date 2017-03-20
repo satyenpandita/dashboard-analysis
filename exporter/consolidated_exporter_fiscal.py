@@ -17,17 +17,20 @@ def get_fixed_period(rel_period):
     if 'FY' in rel_period:
         now = datetime.datetime.now()
         year = now.year
-        offset = int(rel_period[0])
+        if '-' in rel_period:
+            offset = int(rel_period[:2])
+        else:
+            offset = int(rel_period[0])
         return year + offset
     else:
         return None
-
 
 
 fiscal_map = {
     'cq_minus_4a': '-4FQ',
     'cq_minus_1a': '-1FQ',
     'cq': '0FQ',
+    'current_quarter': '0FQ',
     'current_year_minus_four': '-4FY',
     'current_year_minus_three': '-3FY',
     'current_year_minus_two': '-2FY',

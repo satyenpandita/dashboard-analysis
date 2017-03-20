@@ -6,6 +6,7 @@ namespace :deploy do
         execute "virtualenv --python=python3 #{current_path}/env"
         execute "source #{current_path}/env/bin/activate"
         execute "pip3 install -r #{current_path}/requirements.txt"
+        execute "pip3 install gunicorn"
     end
   end
 end
