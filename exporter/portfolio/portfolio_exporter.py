@@ -37,7 +37,7 @@ class PortfolioExporter(object):
         for stock, weight in self.longs.items():
             worksheet.write('A{}'.format(count), 'AURO IM MC')
             worksheet.write('B{}'.format(count), stock)
-            worksheet.write('C{}'.format(count), weight, percentage_format)
+            worksheet.write('C{}'.format(count), weight*100)
             now = datetime.datetime.now()
             worksheet.write('D{}'.format(count), now.strftime('%d-%m-%y'))
             count += 1
@@ -45,7 +45,7 @@ class PortfolioExporter(object):
         for stock, weight in self.shorts.items():
             worksheet.write('A{}'.format(count), 'AURO IM MC')
             worksheet.write('B{}'.format(count), stock)
-            worksheet.write('C{}'.format(count), -weight, percentage_format)
+            worksheet.write('C{}'.format(count), -weight*100)
             now = datetime.datetime.now()
             worksheet.write('D{}'.format(count), now.strftime('%d-%m-%y'))
             count += 1
