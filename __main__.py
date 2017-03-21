@@ -30,6 +30,6 @@ if __name__ == '__main__':
                 workbook = open_workbook('uploaded_files/portfolio/'+file)
                 worksheet = workbook.sheet_by_index(0)
                 parser = PortfolioParser(worksheet)
-                parser.generate_upload_file()
-                parser.ftp_upload()
+                parser.generate_upload_file(file)
+                #parser.ftp_upload()
 

@@ -34,12 +34,16 @@ class PortfolioParser(object):
     def __init__(self, worksheet):
         self.long_tickers = get_tickers(worksheet, "long")
         self.short_tickers = get_tickers(worksheet, "short")
-        self.output_file = ''
+        self.output_file_long = ''
+        self.output_file_short = ''
 
-    def generate_upload_file(self):
+    def generate_upload_file(self, filename):
         exporter = PortfolioExporter(self.long_tickers, self.short_tickers)
-        self.output_file = exporter.export()
+        self.output_file_long = exporter.export(filename, 'long')
+        self.output_file_short = exporter.export(filename, 'short')
 
     def ftp_upload(self):
-        output_path = self.output_file if self.output_file else r'uploaded_files/output/portfolio.xlsx'
+        output_path = self.output_file_long if self.output_file_long else r'uploaded_files/output/portfolio.xlsx'
+        ftp_upload(output_path)
+        output_path = self.output_file_short if self.output_file_short else r'uploaded_files/output/portfolio.xlsx'
         ftp_upload(output_path)

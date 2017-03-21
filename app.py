@@ -27,12 +27,14 @@ def dashboard():
 @app.route('/portfolio', methods=['POST'])
 def portfolio():
     file = request.files['uploadfile']
-    complete_name = 'uploaded_files/portfolio/{}'.format(file.filename)
+    print(file.filename)
+    complete_name = 'uploaded_files/portfolio/{}.xlsx'.format(file.filename)
     file.save(complete_name)
     workbook = open_workbook(complete_name)
     worksheet = workbook.sheet_by_index(0)
     parser = PortfolioParser(worksheet)
-    parser.generate_upload_file()
+    parser.generate_upload_file(file.filename)
+    parser.ftp_upload()
     return jsonify({'file': file.filename}), 201
 
 

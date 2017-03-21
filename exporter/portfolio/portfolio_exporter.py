@@ -9,12 +9,12 @@ class PortfolioExporter(object):
         self.longs = longs
         self.shorts = shorts
 
-    def export(self):
-        output_path = r'uploaded_files/output/portfolio.xlsx'
+    def export(self, filename, direction):
+        output_path = "uploaded_files/output/{} {}.xlsx".format(filename, direction)
         self.workbook = xlsxwriter.Workbook(output_path)
         try:
             self.__write_headers('Sheet1')
-            self.__write_data('Sheet1')
+            self.__write_data('Sheet1', direction)
         except Exception as e:
             print(str(e))
         finally:
@@ -29,24 +29,26 @@ class PortfolioExporter(object):
         worksheet.write('C1', 'Weight', merge_format)
         worksheet.write('D1', 'Date', merge_format)
 
-    def __write_data(self, sheet):
+    def __write_data(self, sheet, direction):
         worksheet = self.workbook.get_worksheet_by_name(sheet)
         percentage_format = self.workbook.add_format()
         percentage_format.set_num_format(0x0a)
         count = 2
-        for stock, weight in self.longs.items():
-            worksheet.write('A{}'.format(count), 'AURO IM MC')
-            worksheet.write('B{}'.format(count), stock)
-            worksheet.write('C{}'.format(count), weight*100)
-            now = datetime.datetime.now()
-            worksheet.write('D{}'.format(count), now.strftime('%d-%m-%y'))
-            count += 1
 
-        for stock, weight in self.shorts.items():
-            worksheet.write('A{}'.format(count), 'AURO IM MC')
-            worksheet.write('B{}'.format(count), stock)
-            worksheet.write('C{}'.format(count), -weight*100)
-            now = datetime.datetime.now()
-            worksheet.write('D{}'.format(count), now.strftime('%d-%m-%y'))
-            count += 1
+        if direction == 'long':
+            for stock, weight in self.longs.items():
+                worksheet.write('A{}'.format(count), 'AURO IM MC')
+                worksheet.write('B{}'.format(count), stock)
+                worksheet.write('C{}'.format(count), weight*100)
+                now = datetime.datetime.now()
+                worksheet.write('D{}'.format(count), now.strftime('%d-%m-%y'))
+                count += 1
+        elif direction == 'short':
+            for stock, weight in self.shorts.items():
+                worksheet.write('A{}'.format(count), 'AURO IM MC')
+                worksheet.write('B{}'.format(count), stock)
+                worksheet.write('C{}'.format(count), -weight*100)
+                now = datetime.datetime.now()
+                worksheet.write('D{}'.format(count), now.strftime('%d-%m-%y'))
+                count += 1
 
