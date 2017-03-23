@@ -10,7 +10,8 @@ class PortfolioExporter(object):
         self.shorts = shorts
 
     def export(self, filename, direction):
-        output_path = "uploaded_files/output/{} {}.xlsx".format(filename, direction)
+        filename = "{} {}.xlsx".format(filename, direction)
+        output_path = "uploaded_files/output/{}".format(filename)
         self.workbook = xlsxwriter.Workbook(output_path)
         try:
             self.__write_headers('Sheet1')
@@ -19,7 +20,7 @@ class PortfolioExporter(object):
             print(str(e))
         finally:
             self.workbook.close()
-            return output_path
+            return output_path, filename
 
     def __write_headers(self, sheet):
         worksheet = self.workbook.add_worksheet(sheet)

@@ -3,7 +3,7 @@ import json
 import os
 
 
-def ftp_upload(file_path):
+def ftp_upload(file_path, file_name):
     #try:
         username, password = get_credentials()
         transport = paramiko.Transport(('sftp.bloomberg.com', 22))
@@ -11,7 +11,7 @@ def ftp_upload(file_path):
         sftp = paramiko.SFTPClient.from_transport(transport)
         local_path = os.path.abspath(file_path)
         print(local_path)
-        rdata = sftp.put(local_path, "/portfolio.xlsx", confirm=True)
+        rdata = sftp.put(local_path, "/{}".format(file_name), confirm=True)
         print(rdata)
         sftp.close()
         transport.close()

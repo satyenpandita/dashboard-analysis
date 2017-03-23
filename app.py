@@ -28,7 +28,7 @@ def dashboard():
 def portfolio():
     file = request.files['uploadfile']
     print(file.filename)
-    complete_name = 'uploaded_files/portfolio/{}.xlsx'.format(file.filename)
+    complete_name = 'uploaded_files/portfolio/{}'.format(file.filename)
     file.save(complete_name)
     workbook = open_workbook(complete_name)
     worksheet = workbook.sheet_by_index(0)
