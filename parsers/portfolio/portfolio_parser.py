@@ -1,19 +1,17 @@
 from utils.cell_functions import find_cell, cell_value
 from exporter.portfolio.portfolio_exporter import PortfolioExporter
-from utils.ftp_upload import ftp_upload
-
+from utils.ftp_upload import ftp_upload, get_users
 
 
 def get_tickers(worksheet, direction):
     folio = dict()
-    cell_address = find_cell(worksheet, "Ticker", row_offset=8)
+    cell_address = find_cell(worksheet, "Ticker", row_offset=0)
     if cell_address:
         row, col = cell_address
         next_row = row
         short = False
         while True:
             next_row += 1
-            #print(next_row)
             val = cell_value(worksheet, next_row, col)
             if 'total' in val.lower():
                 if direction == 'long':
@@ -29,11 +27,22 @@ def get_tickers(worksheet, direction):
     return folio
 
 
+def get_analyst(worksheet):
+    name = cell_value(worksheet, 6, 2)
+    user_data = get_users()
+    if name:
+        for key, val in user_data.items():
+            if name.lower() in val:
+                return key
+    return ""
+
+
 class PortfolioParser(object):
 
     def __init__(self, worksheet):
         self.long_tickers = get_tickers(worksheet, "long")
         self.short_tickers = get_tickers(worksheet, "short")
+        self.analyst = get_analyst(worksheet)
         self.output_file_long = ''
         self.output_file_long_name = ''
         self.output_file_short = ''
@@ -41,8 +50,8 @@ class PortfolioParser(object):
 
     def generate_upload_file(self, filename):
         exporter = PortfolioExporter(self.long_tickers, self.short_tickers)
-        self.output_file_long, self.output_file_long_name = exporter.export(filename.split(".")[0], 'long')
-        self.output_file_short, self.output_file_short_name = exporter.export(filename.split(".")[0], 'short')
+        self.output_file_long, self.output_file_long_name = exporter.export(self.analyst, 'long')
+        self.output_file_short, self.output_file_short_name = exporter.export(self.analyst, 'short')
 
     def ftp_upload(self):
         output_path = self.output_file_long if self.output_file_long else r'uploaded_files/output/portfolio.xlsx'

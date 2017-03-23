@@ -9,13 +9,13 @@ class PortfolioExporter(object):
         self.longs = longs
         self.shorts = shorts
 
-    def export(self, filename, direction):
-        filename = "{} {}.xlsx".format(filename, direction)
+    def export(self, analyst, direction):
+        filename = "aim best ideas {} {}.xlsx".format(analyst, direction)
         output_path = "uploaded_files/output/{}".format(filename)
         self.workbook = xlsxwriter.Workbook(output_path)
         try:
             self.__write_headers('Sheet1')
-            self.__write_data('Sheet1', direction)
+            self.__write_data('Sheet1', direction, analyst)
         except Exception as e:
             print(str(e))
         finally:
@@ -30,7 +30,7 @@ class PortfolioExporter(object):
         worksheet.write('C1', 'Weight', merge_format)
         worksheet.write('D1', 'Date', merge_format)
 
-    def __write_data(self, sheet, direction):
+    def __write_data(self, sheet, direction, analyst):
         worksheet = self.workbook.get_worksheet_by_name(sheet)
         percentage_format = self.workbook.add_format()
         percentage_format.set_num_format(0x0a)
@@ -38,7 +38,7 @@ class PortfolioExporter(object):
 
         if direction == 'long':
             for stock, weight in self.longs.items():
-                worksheet.write('A{}'.format(count), 'AURO IM MC')
+                worksheet.write('A{}'.format(count), 'AURO IM {}'.format(analyst))
                 worksheet.write('B{}'.format(count), stock)
                 worksheet.write('C{}'.format(count), weight*100)
                 now = datetime.datetime.now()

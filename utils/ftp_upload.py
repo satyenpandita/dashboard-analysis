@@ -23,7 +23,13 @@ def ftp_upload(file_path, file_name):
 
 
 def get_credentials():
-    with open("utils/secrets.json") as data_file:
+    with open("constants/secrets.json") as data_file:
         data = json.load(data_file)
         credentials = data["ftp_credentials"]
         return credentials['username'], credentials['password']
+
+
+def get_users():
+    with open("constants/users.json") as data_file:
+        data = json.load(data_file)
+        return data
