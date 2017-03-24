@@ -39,20 +39,20 @@ class PortfolioExporter(object):
 
         if direction == 'long':
             for stock, (weight, rfc) in self.longs.items():
-                worksheet.write('A{}'.format(count), 'AURO IM {}'.format(analyst))
+                worksheet.write('A{}'.format(count), 'AIM BEST IDEAS {} LONG'.format(analyst))
                 worksheet.write('B{}'.format(count), stock)
                 worksheet.write('C{}'.format(count), weight*100)
                 now = datetime.datetime.now()
-                worksheet.write('D{}'.format(count), now.strftime('%d-%m-%y'))
+                worksheet.write('D{}'.format(count), now.strftime('%m/%d/%y'))
                 worksheet.write('E{}'.format(count), rfc)
                 count += 1
         elif direction == 'short':
             for stock, (weight, rfc) in self.shorts.items():
-                worksheet.write('A{}'.format(count), 'AURO IM MC')
+                worksheet.write('A{}'.format(count), 'AIM BEST IDEAS {} SHORT'.format(analyst))
                 worksheet.write('B{}'.format(count), stock)
                 worksheet.write('C{}'.format(count), -weight*100)
                 now = datetime.datetime.now()
-                worksheet.write('D{}'.format(count), now.strftime('%d-%m-%y'))
+                worksheet.write('D{}'.format(count), now.strftime('%m/%d/%y'))
                 worksheet.write('E{}'.format(count), rfc)
                 count += 1
 
