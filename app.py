@@ -34,7 +34,7 @@ def portfolio():
     worksheet = workbook.sheet_by_index(0)
     parser = PortfolioParser(worksheet)
     parser.generate_upload_file(file.filename)
-    parser.ftp_upload()
+    parser.send_email()
     return jsonify({'file': file.filename}), 201
 
 

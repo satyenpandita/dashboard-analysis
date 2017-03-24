@@ -4,7 +4,7 @@ import os
 
 
 def ftp_upload(file_path, file_name):
-    #try:
+    try:
         username, password = get_credentials()
         transport = paramiko.Transport(('sftp.bloomberg.com', 22))
         transport.connect(username=username, password=password)
@@ -16,10 +16,10 @@ def ftp_upload(file_path, file_name):
         sftp.close()
         transport.close()
         print('Upload done.')
-    #except FileNotFoundError as e:
-    #    print(str(e))
-    #except Exception as e:
-    #    print(str(e))
+    except FileNotFoundError as e:
+        print(str(e))
+    except Exception as e:
+        print(str(e))
 
 
 def get_credentials():

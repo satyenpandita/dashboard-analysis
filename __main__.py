@@ -5,6 +5,7 @@ from parsers.DashboardParserV2 import DashboardParserV2
 from parsers.portfolio.portfolio_parser import PortfolioParser
 from exporter.report_card_exporters import ReportCardExporter
 from exporter.exporter import Exporter
+from utils.ftp_upload import ftp_upload
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
@@ -32,4 +33,12 @@ if __name__ == '__main__':
                 parser = PortfolioParser(worksheet)
                 parser.generate_upload_file(file.split(".")[0])
                 #parser.ftp_upload()
+    elif sys.argv[1] == 'publish' and len(sys.argv) == 3:
+        for file in os.listdir('uploaded_files/output'):
+            if 'xls' in file[-4:]:
+                print(file)
+                if sys.argv[2] in file.lower():
+                    ftp_upload("uploaded_files/output/{}".format(file), file)
+
+
 

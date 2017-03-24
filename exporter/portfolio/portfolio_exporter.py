@@ -29,6 +29,7 @@ class PortfolioExporter(object):
         worksheet.write('B1', 'Security ', merge_format)
         worksheet.write('C1', 'Weight', merge_format)
         worksheet.write('D1', 'Date', merge_format)
+        worksheet.write('E1', 'Reason For Change', merge_format)
 
     def __write_data(self, sheet, direction, analyst):
         worksheet = self.workbook.get_worksheet_by_name(sheet)
@@ -37,19 +38,21 @@ class PortfolioExporter(object):
         count = 2
 
         if direction == 'long':
-            for stock, weight in self.longs.items():
+            for stock, (weight, rfc) in self.longs.items():
                 worksheet.write('A{}'.format(count), 'AURO IM {}'.format(analyst))
                 worksheet.write('B{}'.format(count), stock)
                 worksheet.write('C{}'.format(count), weight*100)
                 now = datetime.datetime.now()
                 worksheet.write('D{}'.format(count), now.strftime('%d-%m-%y'))
+                worksheet.write('E{}'.format(count), rfc)
                 count += 1
         elif direction == 'short':
-            for stock, weight in self.shorts.items():
+            for stock, (weight, rfc) in self.shorts.items():
                 worksheet.write('A{}'.format(count), 'AURO IM MC')
                 worksheet.write('B{}'.format(count), stock)
                 worksheet.write('C{}'.format(count), -weight*100)
                 now = datetime.datetime.now()
                 worksheet.write('D{}'.format(count), now.strftime('%d-%m-%y'))
+                worksheet.write('E{}'.format(count), rfc)
                 count += 1
 
