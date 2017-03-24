@@ -56,7 +56,7 @@ class PortfolioParser(object):
         self.output_file_short, self.output_file_short_name = exporter.export(self.analyst, 'short')
 
     def send_email(self):
-        send_mail("ppal@auroim.com", ["pal.prashant31@gmail.com"], "Best Ideas Published",
+        send_mail("ppal@auroim.com", ["ppal@auroim.com", "bmukherjee@auroim.com"], "Best Ideas Published",
                   "Please file the file attached published by {}".format(self.analyst),
                   [self.output_file_long, self.output_file_short], username="ppal@auroim.com", password="AuroOct2016")
 
