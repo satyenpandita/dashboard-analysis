@@ -15,11 +15,11 @@ def ftp_upload(file_path, file_name):
         print(rdata)
         sftp.close()
         transport.close()
-        print('Upload done.')
+        return "Upload Successful"
     except FileNotFoundError as e:
-        print(str(e))
+        return str(e)
     except Exception as e:
-        print(str(e))
+        return str(e)
 
 
 def get_credentials():

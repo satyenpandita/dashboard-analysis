@@ -25,7 +25,7 @@ namespace :nginx do
         Rake::Task["nginx:restart"].invoke
         execute "cd #{current_path}"
         execute "kill -9 $(ps aux | grep -e gunicorn | awk '{ print $2 }') "
-        execute "gunicorn app:app -b localhost:8000"
+        execute "#{current_path}/env/bin/gunicorn app:app -b localhost:8000"
     end
   end
 
