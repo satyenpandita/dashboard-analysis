@@ -3,8 +3,8 @@
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-set :tld, "ec2-34-208-134-214.us-west-2.compute.amazonaws.com"
-server "ec2-34-208-134-214.us-west-2.compute.amazonaws.com", user: "ubuntu", roles: %w{app db web}, primary: true
+set :tld, "ec2-52-11-135-60.us-west-2.compute.amazonaws.com"
+server "ec2-52-11-135-60.us-west-2.compute.amazonaws.com", user: "ubuntu", roles: %w{app db web}, primary: true
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
