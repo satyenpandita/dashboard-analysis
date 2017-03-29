@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from parsers.DashboardParserV2 import DashboardParserV2
 from parsers.portfolio.portfolio_parser import PortfolioParser
+from parsers.portfolio.portfolio_parser_v2 import PortfolioParserV2
 from xlrd import open_workbook
 from werkzeug.contrib.fixers import ProxyFix
 import logging
@@ -37,7 +38,24 @@ def portfolio():
     workbook = open_workbook(complete_name)
     worksheet = workbook.sheet_by_index(0)
     app.logger.info("Parser Starting")
-    parser = PortfolioParser(worksheet)
+    parser = PortfolioParser(worksheet, file.filename)
+    parser.generate_upload_file(file.filename)
+    app.logger.info("Email Start")
+    parser.send_email()
+    app.logger.info("Email End")
+    return jsonify({'file': file.filename}), 201
+
+
+@app.route('/portfolio2', methods=['POST'])
+def portfolio():
+    file = request.files['uploadfile']
+    app.logger.info(file.filename)
+    complete_name = 'uploaded_files/portfolio/{}'.format(file.filename)
+    file.save(complete_name)
+    workbook = open_workbook(complete_name)
+    worksheet = workbook.sheet_by_index(0)
+    app.logger.info("Parser Starting")
+    parser = PortfolioParserV2(worksheet, file.filename)
     parser.generate_upload_file(file.filename)
     app.logger.info("Email Start")
     parser.send_email()

@@ -30,7 +30,7 @@ if __name__ == '__main__':
                 print(file)
                 workbook = open_workbook('uploaded_files/portfolio/'+file)
                 worksheet = workbook.sheet_by_index(0)
-                parser = PortfolioParser(worksheet)
+                parser = PortfolioParser(worksheet, file)
                 parser.generate_upload_file(file.split(".")[0])
                 #parser.ftp_upload()
     elif sys.argv[1] == 'publish' and len(sys.argv) == 3:

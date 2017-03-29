@@ -56,7 +56,7 @@ def get_analyst(worksheet):
 
 class PortfolioParser(object):
 
-    def __init__(self, worksheet):
+    def __init__(self, worksheet, input_file):
         self.long_tickers = get_tickers(worksheet, "long")
         self.short_tickers = get_tickers(worksheet, "short")
         self.invalid_tickers = INVALID_TICKERS
@@ -65,6 +65,7 @@ class PortfolioParser(object):
         self.output_file_long_name = ''
         self.output_file_short = ''
         self.output_file_short_name = ''
+        self.input_file = input_file
 
     def generate_upload_file(self, filename):
         exporter = PortfolioExporter(self.long_tickers, self.short_tickers)
@@ -72,9 +73,15 @@ class PortfolioParser(object):
         self.output_file_short, self.output_file_short_name = exporter.export(self.analyst, 'short')
 
     def send_email(self):
-        send_mail("ppal@auroim.com", ["datascience@auroim.com"], "Best Ideas Published",
+        send_mail("ppal@auroim.com",
+                  ["datascience@auroim.com"],
+                  "Best Ideas Published",
                   self.get_body(),
-                  [self.output_file_long, self.output_file_short], username="ppal@auroim.com", password="AuroOct2016")
+                  [self.output_file_long,
+                   self.output_file_short,
+                   'uploaded_files/portfolio/{}'.format(self.input_file)],
+                  username="ppal@auroim.com",
+                  password="AuroOct2016")
         global INVALID_TICKERS
         INVALID_TICKERS = []
 
