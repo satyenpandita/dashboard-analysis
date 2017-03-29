@@ -47,7 +47,7 @@ def portfolio():
 
 
 @app.route('/portfolio2', methods=['POST'])
-def portfolio():
+def portfolio2():
     file = request.files['uploadfile']
     app.logger.info(file.filename)
     complete_name = 'uploaded_files/portfolio/{}'.format(file.filename)

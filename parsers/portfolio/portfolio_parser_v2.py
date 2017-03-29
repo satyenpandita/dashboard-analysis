@@ -5,7 +5,7 @@ from utils.ftp_upload import ftp_upload, get_users
 from utils.email_sender import send_mail
 
 
-INVALID_TICKERS = []
+INVALID_TICKERS = dict()
 
 
 def get_tickers(worksheet, direction):
@@ -20,10 +20,10 @@ def get_tickers(worksheet, direction):
             if val and val != "":
                 ticker = valid_ticker(val)
                 if ticker:
-                    folio[val] = cell_value(worksheet, target_row, target_col+1), \
+                    folio[ticker] = cell_value(worksheet, target_row, target_col+1), \
                                                               cell_value(worksheet, target_row, target_col+2)
                 else:
-                    INVALID_TICKERS.append(val)
+                    INVALID_TICKERS[target_row + 1] = val
                 target_row += 1
             else:
                 break
@@ -33,7 +33,7 @@ def get_tickers(worksheet, direction):
 def valid_ticker(ticker):
     sr = re.search(r"\s[A-Za-z]{2}\s(Equity)$", ticker)
     if sr is None:
-        sr = re.search(r"\s(Equity)$", ticker)
+        sr = re.search(r"^[\w{1}]+\s(Equity)$", ticker)
         if sr is None:
             return None
         else:
@@ -81,7 +81,7 @@ class PortfolioParserV2(object):
                   username="ppal@auroim.com",
                   password="AuroOct2016")
         global INVALID_TICKERS
-        INVALID_TICKERS = []
+        INVALID_TICKERS = dict()
 
     def ftp_upload(self):
         output_path = self.output_file_long if self.output_file_long else r'uploaded_files/output/portfolio.xlsx'
@@ -91,8 +91,14 @@ class PortfolioParserV2(object):
 
     def get_body(self):
         if len(self.invalid_tickers) > 0:
-            return """Please find the Best Ideas files published by {} \n\n Some Invalid Tickers Found \n {}""".\
-                format(self.analyst, "\n".join(self.invalid_tickers))
+            return """Please find the Best Ideas files published by {} \n\n Some Invalid Tickers Found in file {} \n {}""". \
+                format(self.analyst, self.input_file, self.get_errors())
         else:
             return """Please find the Best Ideas files published by {} \n\n No Invalid Securities""".\
                 format(self.analyst)
+
+    def get_errors(self):
+        err_arr = []
+        for key, val in self.invalid_tickers.items():
+            err_arr.append("{} : Row Number {}".format(val, key))
+        return "\n".join(err_arr)

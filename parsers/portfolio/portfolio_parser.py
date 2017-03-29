@@ -5,7 +5,7 @@ from utils.ftp_upload import ftp_upload, get_users
 from utils.email_sender import send_mail
 
 
-INVALID_TICKERS = []
+INVALID_TICKERS = dict()
 
 
 def get_tickers(worksheet, direction):
@@ -32,7 +32,7 @@ def get_tickers(worksheet, direction):
                     folio[val] = cell_value(worksheet, next_row, col+1), \
                                                               cell_value(worksheet, next_row, col+2)
                 else:
-                    INVALID_TICKERS.append(val)
+                    INVALID_TICKERS[next_row+1] = val
     return folio
 
 
@@ -93,8 +93,14 @@ class PortfolioParser(object):
 
     def get_body(self):
         if len(self.invalid_tickers) > 0:
-            return """Please find the Best Ideas files published by {} \n\n Some Invalid Tickers Found \n {}""".\
-                format(self.analyst, "\n".join(self.invalid_tickers))
+            return """Please find the Best Ideas files published by {} \n\n Some Invalid Tickers Found in file {} \n {}""". \
+                format(self.analyst, self.input_file, self.get_errors())
         else:
             return """Please find the Best Ideas files published by {} \n\n No Invalid Securities""".\
                 format(self.analyst)
+
+    def get_errors(self):
+        err_arr = []
+        for key, val in self.invalid_tickers.items():
+            err_arr.append("{} : Row Number {}".format(val, key))
+        return "\n".join(err_arr)
