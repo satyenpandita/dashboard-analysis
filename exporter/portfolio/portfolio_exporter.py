@@ -31,7 +31,7 @@ class PortfolioExporter(object):
         worksheet.write('D1', 'Date', merge_format)
         worksheet.write('E1', 'Reason For Change', merge_format)
         worksheet.write('F1', 'CDE Weight', merge_format)
-        worksheet.write('F1', 'CDE Portfolio Name', merge_format)
+        worksheet.write('G1', 'CDE Portfolio Name', merge_format)
 
     def __write_data(self, sheet, direction, analyst):
         worksheet = self.workbook.get_worksheet_by_name(sheet)
