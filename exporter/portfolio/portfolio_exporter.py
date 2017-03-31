@@ -31,6 +31,7 @@ class PortfolioExporter(object):
         worksheet.write('D1', 'Date', merge_format)
         worksheet.write('E1', 'Reason For Change', merge_format)
         worksheet.write('F1', 'CDE Weight', merge_format)
+        worksheet.write('F1', 'CDE Portfolio Name', merge_format)
 
     def __write_data(self, sheet, direction, analyst):
         worksheet = self.workbook.get_worksheet_by_name(sheet)
@@ -47,6 +48,7 @@ class PortfolioExporter(object):
                 worksheet.write('D{}'.format(count), now.strftime('%m/%d/%y'))
                 worksheet.write('E{}'.format(count), rfc)
                 worksheet.write('F{}'.format(count), weight*100)
+                worksheet.write('G{}'.format(count), 'AIM BEST IDEAS {} LONG'.format(analyst))
                 count += 1
         elif direction == 'short':
             for stock, (weight, rfc) in self.shorts.items():
@@ -57,5 +59,6 @@ class PortfolioExporter(object):
                 worksheet.write('D{}'.format(count), now.strftime('%m/%d/%y'))
                 worksheet.write('E{}'.format(count), rfc)
                 worksheet.write('F{}'.format(count), -weight*100)
+                worksheet.write('G{}'.format(count), 'AIM BEST IDEAS {} LONG'.format(analyst))
                 count += 1
 
