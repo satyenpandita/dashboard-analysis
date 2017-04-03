@@ -25,12 +25,83 @@ def get_fixed_period(rel_period):
     else:
         return None
 
-
+header_list = ['EV/Gross Revenue - AIM',
+               'EV/Net Revenue - AIM',
+               'EV/Net Interest Income - AIM',
+               'EV/GMV',
+               'EV/Adj. EBITDA - AIM',
+               'EV/EBITDAR - AIM',
+               'EV/EBITA - AIM',
+               'EV/EBIT - AIM',
+               'EV/PPOP - AIM'	,
+               'P/Adj. EPS - AIM'	,
+               'P/B - AIM'			,
+               'FCF/ P - AIM'		,
+               'CFCF/ P - AIM'		,
+               'Gross Revenue - AIM',
+               'Net Revenue - AIM',
+               'Net Interest Income - AIM',
+               'Adj. EBITDA - AIM',
+               'EBITDAR - AIM',
+               'EBITA - AIM',
+               'EBIT - AIM',
+               'PPOP - AIM',
+               'Adj. EPS - AIM',
+               'Gap EPS - AIM',
+               'FCF - AIM',
+               'BPS - AIM',
+               'Gross Revenue - Guidance',
+               'Net Revenue - Guidance',
+               'Net Interest Income - Guidance',
+               'Adj. EBITDA - Guidance',
+               'EBITDAR - Guidance',
+               'EBITA - Guidance',
+               'EBIT - Guidance',
+               'PPOP - Guidance',
+               'Adj. EPS - Guidance',
+               'Gap EPS - Guidance',
+               'FCF - Guidance',
+               'BPS - Guidance',
+               'Net Debt',
+               'Capital Employed(E + ND)',
+               'Leverage(ND / CE)',
+               'Net Debt / Adj.EBITDA',
+               'EBITDA / CAPEX',
+               'EBITDA / Interest',
+               'ROE',
+               'ROCE(EBITA post tax)',
+               'ROCE - WACC(Ctry)',
+               'ROCE - WACC(Company)',
+               'Incremental EBITDA / CAPEX',
+               'Incremental EBITA mgn',
+               'Incremental ROCE',
+               'Gross Rev',
+               'Net Rev',
+               'Net Interest Income',
+               'GMV',
+               'Adj EBIDTA',
+               'EBITDAR',
+               'EBITA',
+               'EBIT',
+               'PPOP',
+               'OPEX',
+               'Adj.Net Income',
+               'Net Income(GAAP)',
+               'EPS',
+               'OCF',
+               'Total CAPEX',
+               'Maintenance CAPEX',
+               'Pre Financing FCF',
+               'Free Cash Flow',
+               'Core Free Cash Flow',
+               'Net Cash',
+               'Total SE and Liabilities',
+               'Total Assets'
+               ]
 fiscal_map = {
     'cq_minus_4a': '-4FQ',
     'cq_minus_1a': '-1FQ',
     'cq': '0FQ',
-    'current_quarter': '0FQ',
     'current_year_minus_four': '-4FY',
     'current_year_minus_three': '-3FY',
     'current_year_minus_two': '-2FY',
@@ -43,8 +114,50 @@ fiscal_map = {
 }
 
 
+# def write_data(workbook, data, sheet):
+#     offset = 2
+#     for idx, dashboard in enumerate(data):
+#         dsh = DashboardV2(dashboard)
+#         worksheet = workbook.get_worksheet_by_name(sheet)
+#         percentage_format = workbook.add_format()
+#         integer_format = workbook.add_format()
+#         percentage_format.set_num_format(0x0a)
+#         integer_format.set_num_format(0x01)
+#         models = ['Current Valuation', 'Diff To Cons', 'Diff To Cons (Guidance)', 'Leverage and Returns',
+#                   'Key Financials']
+#         for model in models:
+#             if model == 'Current Valuation':
+#                 offset = populate_data(dsh, model, offset, worksheet, dsh.current_valuation, 'aim')
+#             elif model == 'Diff To Cons':
+#                 offset = populate_data(dsh, model, offset, worksheet, dsh.delta_consensus, 'aim')
+#             elif model == 'Diff To Cons (Guidance)':
+#                 offset = populate_data(dsh, model, offset, worksheet, dsh.delta_consensus, 'guidance')
+#             elif model == 'Leverage and Returns':
+#                 offset = populate_data(dsh, model, offset, worksheet, dsh.delta_consensus, 'aim')
+#             elif model == 'Key Financials':
+#                 offset = populate_data(dsh, model, offset, worksheet, dsh.key_financials, None)
+#     return workbook
+#
+#
+# def populate_data(dsh, model_name, offset, worksheet, model, access_key):
+#     for key, value in model.items():
+#         if value:
+#             for sub_key, sub_val in value.items():
+#                 worksheet.write('{}{}'.format(colnum_string(1), offset), dsh.stock_code)
+#                 if access_key:
+#                     worksheet.write('{}{}'.format(colnum_string(2), offset), sub_val.get(access_key))
+#                 else:
+#                     worksheet.write('{}{}'.format(colnum_string(2), offset), sub_val)
+#                 worksheet.write('{}{}'.format(colnum_string(3), offset), fiscal_map.get(sub_key))
+#                 worksheet.write('{}{}'.format(colnum_string(4), offset), get_fixed_period(fiscal_map.get(sub_key)))
+#                 worksheet.write('{}{}'.format(colnum_string(5), offset), key)
+#                 worksheet.write('{}{}'.format(colnum_string(6), offset), '')
+#                 worksheet.write('{}{}'.format(colnum_string(7), offset), model_name)
+#                 offset += 1
+#     return offset
+
 def write_data(workbook, data, sheet):
-    offset = 2
+    row_offset = 3
     for idx, dashboard in enumerate(data):
         dsh = DashboardV2(dashboard)
         worksheet = workbook.get_worksheet_by_name(sheet)
@@ -52,50 +165,122 @@ def write_data(workbook, data, sheet):
         integer_format = workbook.add_format()
         percentage_format.set_num_format(0x0a)
         integer_format.set_num_format(0x01)
-        models = ['Current Valuation', 'Diff To Cons', 'Diff To Cons (Guidance)', 'Leverage and Returns',
-                  'Key Financials']
-        for model in models:
-            if model == 'Current Valuation':
-                offset = populate_data(dsh, model, offset, worksheet, dsh.current_valuation, 'aim')
-            elif model == 'Diff To Cons':
-                offset = populate_data(dsh, model, offset, worksheet, dsh.delta_consensus, 'aim')
-            elif model == 'Diff To Cons (Guidance)':
-                offset = populate_data(dsh, model, offset, worksheet, dsh.delta_consensus, 'guidance')
-            elif model == 'Leverage and Returns':
-                offset = populate_data(dsh, model, offset, worksheet, dsh.delta_consensus, 'aim')
-            elif model == 'Key Financials':
-                offset = populate_data(dsh, model, offset, worksheet, dsh.key_financials, None)
+        populate_initial_columns(worksheet, dsh, row_offset)
+        populate_current_valuation(worksheet, dsh, row_offset)
+        populate_delta_consensus(worksheet, dsh, row_offset, 'aim', 17)
+        populate_delta_consensus(worksheet, dsh, row_offset, 'guidance', 29)
+        populate_leverage_returns(worksheet, dsh, row_offset)
+        populate_key_financials(worksheet, dsh, row_offset)
+        row_offset += 12
     return workbook
 
 
-def populate_data(dsh, model_name, offset, worksheet, model, access_key):
-    for key, value in model.items():
-        if value:
-            for sub_key, sub_val in value.items():
-                worksheet.write('{}{}'.format(colnum_string(1), offset), dsh.stock_code)
-                if access_key:
-                    worksheet.write('{}{}'.format(colnum_string(2), offset), sub_val.get(access_key))
-                else:
-                    worksheet.write('{}{}'.format(colnum_string(2), offset), sub_val)
-                worksheet.write('{}{}'.format(colnum_string(3), offset), fiscal_map.get(sub_key))
-                worksheet.write('{}{}'.format(colnum_string(4), offset), get_fixed_period(fiscal_map.get(sub_key)))
-                worksheet.write('{}{}'.format(colnum_string(5), offset), key)
-                worksheet.write('{}{}'.format(colnum_string(6), offset), '')
-                worksheet.write('{}{}'.format(colnum_string(7), offset), model_name)
-                offset += 1
-    return offset
+def populate_initial_columns(worksheet, dsh, row_offset):
+    count = row_offset
+    for key, val in fiscal_map.items():
+        worksheet.write("A{}".format(count), dsh.stock_code)
+        worksheet.write("B{}".format(count), val)
+        count += 1
+
+
+def populate_key_financials(worksheet, dsh, row_offset):
+    populate_from_dict(worksheet, dsh.key_financials, 'gross_rev', row_offset, 'BB')
+    populate_from_dict(worksheet, dsh.key_financials, 'net_rev', row_offset, 'BC')
+    populate_from_dict(worksheet, dsh.key_financials, 'net_nii', row_offset, 'BD')
+    populate_from_dict(worksheet, dsh.key_financials, 'gmv', row_offset, 'BE')
+    populate_from_dict(worksheet, dsh.key_financials, 'adj_ebitda', row_offset, 'BF')
+    populate_from_dict(worksheet, dsh.key_financials, 'ebitdar', row_offset, 'BG')
+    populate_from_dict(worksheet, dsh.key_financials, 'ebita', row_offset, 'BH')
+    populate_from_dict(worksheet, dsh.key_financials, 'ebit', row_offset, 'BI')
+    populate_from_dict(worksheet, dsh.key_financials, 'ppop', row_offset, 'BJ')
+    populate_from_dict(worksheet, dsh.key_financials, 'opex', row_offset, 'BK')
+    populate_from_dict(worksheet, dsh.key_financials, 'adj_net_income', row_offset, 'BL')
+    populate_from_dict(worksheet, dsh.key_financials, 'net_income_gaap', row_offset, 'BM')
+    populate_from_dict(worksheet, dsh.key_financials, 'eps_fully_diluted', row_offset, 'BN')
+    populate_from_dict(worksheet, dsh.key_financials, 'ocf', row_offset, 'BO')
+    populate_from_dict(worksheet, dsh.key_financials, 'total_capex', row_offset, 'BP')
+    populate_from_dict(worksheet, dsh.key_financials, 'maintenance_capex', row_offset, 'BQ')
+    populate_from_dict(worksheet, dsh.key_financials, 'pre_financing_fcf', row_offset, 'BR')
+    populate_from_dict(worksheet, dsh.key_financials, 'free_cash_flow', row_offset, 'BS')
+    populate_from_dict(worksheet, dsh.key_financials, 'core_free_cash_flow', row_offset, 'BT')
+    populate_from_dict(worksheet, dsh.key_financials, 'net_cash', row_offset, 'BU')
+    populate_from_dict(worksheet, dsh.key_financials, 'total_se_liabilities', row_offset, 'BV')
+    populate_from_dict(worksheet, dsh.key_financials, 'total_assets', row_offset, 'BW')
+
+
+def populate_leverage_returns(worksheet, dsh, row_offset):
+    populate_from_dict(worksheet, dsh.leverage_and_returns, 'net_debt', row_offset, 'AO')
+    populate_from_dict(worksheet, dsh.leverage_and_returns, 'capital_employed', row_offset, 'AP')
+    populate_from_dict(worksheet, dsh.leverage_and_returns, 'leverage', row_offset, 'AQ')
+    populate_from_dict(worksheet, dsh.leverage_and_returns, 'net_debt_per_adj_ebidta', row_offset, 'AR')
+    populate_from_dict(worksheet, dsh.leverage_and_returns, 'ebidta_by_capex', row_offset, 'AS')
+    populate_from_dict(worksheet, dsh.leverage_and_returns, 'ebidta_by_interest', row_offset, 'AT')
+    populate_from_dict(worksheet, dsh.leverage_and_returns, 'roe', row_offset, 'AU')
+    populate_from_dict(worksheet, dsh.leverage_and_returns, 'roce_ebidta_post_tax', row_offset, 'AV')
+    populate_from_dict(worksheet, dsh.leverage_and_returns, 'roce_wacc_country', row_offset, 'AW')
+    populate_from_dict(worksheet, dsh.leverage_and_returns, 'roce_wacc_company', row_offset, 'AX')
+    populate_from_dict(worksheet, dsh.leverage_and_returns, 'incremental_ebitda_per_capex', row_offset, 'AW')
+    populate_from_dict(worksheet, dsh.leverage_and_returns, 'incremental_ebitda_margin', row_offset, 'AZ')
+    populate_from_dict(worksheet, dsh.leverage_and_returns, 'incremental_roce', row_offset, 'BA')
+
+
+def populate_delta_consensus(worksheet, dsh, row_offset, sub_key, init_col):
+    populate_from_dict(worksheet, dsh.delta_consensus, 'gross_rev', row_offset, colnum_string(init_col), sub_key)
+    populate_from_dict(worksheet, dsh.delta_consensus, 'net_rev', row_offset, colnum_string(init_col + 1), sub_key)
+    populate_from_dict(worksheet, dsh.delta_consensus, 'net_nii', row_offset, colnum_string(init_col + 2), sub_key)
+    populate_from_dict(worksheet, dsh.delta_consensus, 'adj_ebitda', row_offset, colnum_string(init_col + 3), sub_key)
+    populate_from_dict(worksheet, dsh.delta_consensus, 'ebitdar', row_offset, colnum_string(init_col + 4), sub_key)
+    populate_from_dict(worksheet, dsh.delta_consensus, 'ebita', row_offset, colnum_string(init_col + 5), sub_key)
+    populate_from_dict(worksheet, dsh.delta_consensus, 'ebit', row_offset, colnum_string(init_col + 6), sub_key)
+    populate_from_dict(worksheet, dsh.delta_consensus, 'ppop', row_offset, colnum_string(init_col + 7), sub_key)
+    populate_from_dict(worksheet, dsh.delta_consensus, 'adj_eps', row_offset, colnum_string(init_col + 8), sub_key)
+    populate_from_dict(worksheet, dsh.delta_consensus, 'gap_eps', row_offset, colnum_string(init_col + 9), sub_key)
+    populate_from_dict(worksheet, dsh.delta_consensus, 'fcf', row_offset, colnum_string(init_col + 10), sub_key)
+    populate_from_dict(worksheet, dsh.delta_consensus, 'bps', row_offset, colnum_string(init_col + 11), sub_key)
+
+
+def populate_current_valuation(worksheet, dsh, row_offset):
+    populate_from_dict(worksheet,  dsh.current_valuation, 'ev_per_gross_revenue', row_offset, 'D', 'aim')
+    populate_from_dict(worksheet,  dsh.current_valuation, 'ev_per_net_revenue', row_offset, 'E', 'aim')
+    populate_from_dict(worksheet,  dsh.current_valuation, 'ev_per_nii', row_offset, 'F', 'aim')
+    populate_from_dict(worksheet,  dsh.current_valuation, 'ev_per_gmv', row_offset, 'G', 'aim')
+    populate_from_dict(worksheet,  dsh.current_valuation, 'ev_per_adj_ebidta', row_offset, 'H', 'aim')
+    populate_from_dict(worksheet,  dsh.current_valuation, 'ev_per_ebidtar', row_offset, 'I', 'aim')
+    populate_from_dict(worksheet,  dsh.current_valuation, 'ev_per_ebita', row_offset, 'J', 'aim')
+    populate_from_dict(worksheet,  dsh.current_valuation, 'ev_per_ebit', row_offset, 'K', 'aim')
+    populate_from_dict(worksheet,  dsh.current_valuation, 'ev_per_ppop', row_offset, 'L', 'aim')
+    populate_from_dict(worksheet,  dsh.current_valuation, 'cap_per_adj_eps', row_offset, 'M', 'aim')
+    populate_from_dict(worksheet,  dsh.current_valuation, 'cap_per_others', row_offset, 'N', 'aim')
+    populate_from_dict(worksheet,  dsh.current_valuation, 'fcf_per_p', row_offset, 'O', 'aim')
+    populate_from_dict(worksheet,  dsh.current_valuation, 'cfcf_per_p', row_offset, 'P', 'aim')
+    return row_offset + 12
+
+
+def populate_from_dict(worksheet, dsh, key, row_offset, col, sub_key=None):
+    key_obj = dsh.get(key)
+    count = row_offset
+    if key_obj is not None:
+        for year, notation in fiscal_map.items():
+            if sub_key is not None:
+                final_val = None
+                obj_val =  key_obj.get(year, None)
+                if obj_val is not None:
+                    final_val = obj_val.get(sub_key, None)
+                worksheet.write("{}{}".format(col, count), final_val)
+            else:
+                worksheet.write("{}{}".format(col, count), key_obj.get(year, None))
+            count += 1
+    return count
 
 
 def write_headers(workbook, sheet):
     worksheet = workbook.add_worksheet(sheet)
     merge_format = workbook.add_format({'bold': 1, 'align': 'center', 'valign': 'vcenter', 'border': 1})
     worksheet.write('A1', 'Stock Code ', merge_format)
-    worksheet.write('B1', 'Data', merge_format)
-    worksheet.write('C1', 'Rel Period', merge_format)
-    worksheet.write('D1', 'Fixed Period ', merge_format)
-    worksheet.write('E1', 'Field Name', merge_format)
-    worksheet.write('F1', 'CDE Field Mnemonic', merge_format)
-    worksheet.write('G1', 'Category', merge_format)
+    worksheet.write('B1', 'Rel Period', merge_format)
+    worksheet.write('C1', 'Fixed Period', merge_format)
+    for idx, header in enumerate(header_list):
+        worksheet.write('{}1'.format(colnum_string(idx+4)), header, merge_format)
     return workbook
 
 

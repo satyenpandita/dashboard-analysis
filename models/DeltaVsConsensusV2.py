@@ -3,7 +3,7 @@ from utils.cell_functions import cell_value, cell_value_by_key, find_cell
 
 def get_object(worksheet, rowx, colx):
     dvc = dict()
-    keys = ['current_quarter', 'current_year', 'current_year_plus_one', 'current_year_plus_two', 'current_year_plus_three']
+    keys = ['cq', 'current_year', 'current_year_plus_one', 'current_year_plus_two', 'current_year_plus_three']
     for idx, key in enumerate(keys):
         year_data = dict()
         year_data['aim'] = cell_value(worksheet, rowx + 1, colx+2+idx)

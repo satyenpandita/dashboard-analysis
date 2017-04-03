@@ -212,7 +212,7 @@ class DashboardV2(object):
 
 def get_delta_consensus(worksheet):
     dvc_dict = dict()
-    keys = ['current_quarter', 'current_year', 'current_year_plus_one', 'current_year_plus_two',
+    keys = ['cq', 'current_year', 'current_year_plus_one', 'current_year_plus_two',
             'current_year_plus_three']
     cell_address = find_cell(worksheet, 'Delta v/s Consensus')
     if cell_address:

@@ -189,7 +189,7 @@ class Dashboard(object):
 
 def get_consensus_list(worksheet):
     dvc_dict = dict()
-    keys = ['current_quarter', 'current_year', 'current_year_plus_one', 'current_year_plus_two',
+    keys = ['cq', 'current_year', 'current_year_plus_one', 'current_year_plus_two',
             'current_year_plus_three']
     colx = 3
     for key in keys:
