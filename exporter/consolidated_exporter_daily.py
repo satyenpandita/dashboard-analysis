@@ -1,6 +1,6 @@
 from config.mongo_config import db
 import datetime
-import xlsxwriter
+from models.CumulativeDashBoard import CumulativeDashBoard
 from models.DashboardV2 import DashboardV2
 from models.AnalystFillCells import AnalystFillCells
 from utils.cell_functions import get_next_column
@@ -9,7 +9,8 @@ from utils.cell_functions import get_next_column
 def write_data(workbook, data, sheet):
     offset = 7
     for idx, dashboard in enumerate(data):
-        dsh = DashboardV2(dashboard)
+        cum_dash = CumulativeDashBoard.from_dict(dashboard)
+        dsh = DashboardV2(cum_dash.base)
         worksheet = workbook.get_worksheet_by_name(sheet)
         percentage_format = workbook.add_format()
         integer_format = workbook.add_format()
@@ -241,5 +242,5 @@ class ConsolidatedExporterDaily:
     @classmethod
     def export(cls, workbook, sheet):
         workbook = write_headers(workbook, sheet)
-        workbook = write_data(workbook, db.dashboards_v2.find({}), sheet)
+        workbook = write_data(workbook, db.cumulative_dashboards.find({}), sheet)
         return workbook

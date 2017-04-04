@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from parsers.DashboardParserV2 import DashboardParserV2
+from parsers.DashboardParserV3 import DashboardParserV3
 from parsers.portfolio.portfolio_parser import PortfolioParser
 from parsers.portfolio.portfolio_parser_v2 import PortfolioParserV2
 from xlrd import open_workbook
@@ -25,6 +26,25 @@ def dashboard():
     workbook = open_workbook(complete_name)
     worksheet = workbook.sheet_by_index(0)
     dparser = DashboardParserV2(worksheet)
+    dparser.save_dashboard()
+    return jsonify({'file': file.filename}), 201
+
+
+@app.route('/archive', methods=['POST'])
+def dashboard_archive():
+    file = request.files['uploadfile']
+    complete_name = 'uploaded_files/dashboard/originals/{}'.format(file.filename)
+    file.save(complete_name)
+    return jsonify({'file': file.filename}), 201
+
+
+@app.route('/dashboard2', methods=['POST'])
+def dashboard2():
+    file = request.files['uploadfile']
+    complete_name = 'uploaded_files/dashboard/{}'.format(file.filename)
+    file.save(complete_name)
+    workbook = open_workbook(complete_name)
+    dparser = DashboardParserV3(workbook)
     dparser.save_dashboard()
     return jsonify({'file': file.filename}), 201
 
