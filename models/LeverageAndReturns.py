@@ -4,7 +4,7 @@ from utils.cell_functions import *
 def populate_data(worksheet, row, col):
     kf = dict()
     keys = ['current_year', 'current_year_plus_one', 'current_year_plus_two', 'current_year_plus_three',
-            'current_year_plus_three']
+            'current_year_plus_four']
     for idx, key in enumerate(keys):
         kf[key] = cell_value(worksheet, row, col+idx+3)
     return kf

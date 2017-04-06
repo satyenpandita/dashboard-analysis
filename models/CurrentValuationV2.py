@@ -6,8 +6,8 @@ def get_object(worksheet, rowx, colx):
     keys = ['current_year', 'current_year_plus_one', 'current_year_plus_two', 'current_year_plus_three']
     for idx, key in enumerate(keys):
         year_data = dict()
-        year_data['aim'] = cell_value(worksheet, rowx+1, colx+1+idx)
-        year_data['consensus'] = cell_value(worksheet,rowx + 2, colx+1+idx)
+        year_data['aim'] = cell_value(worksheet, rowx, colx+1+idx)
+        year_data['consensus'] = cell_value(worksheet, rowx + 1, colx+1+idx)
         dvc[key] = year_data
     return dvc
 

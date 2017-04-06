@@ -158,7 +158,7 @@ fiscal_map = {
 #     return offset
 
 def write_data(workbook, data, sheet):
-    row_offset = 3
+    row_offset = 4
     worksheet = workbook.get_worksheet_by_name(sheet)
     percentage_format = workbook.add_format()
     integer_format = workbook.add_format()
@@ -172,7 +172,7 @@ def write_data(workbook, data, sheet):
             populate_current_valuation(worksheet, dsh, row_offset, 4)
             populate_delta_consensus(worksheet, dsh, row_offset, 17, 'aim')
             populate_delta_consensus(worksheet, dsh, row_offset, 29, 'guidance')
-            populate_leverage_returns(worksheet, dsh, row_offset, 42)
+            populate_leverage_returns(worksheet, dsh, row_offset, 41)
             populate_key_financials(worksheet, dsh, row_offset, 54)
         row_offset += 12
     return workbook
@@ -282,13 +282,18 @@ def write_headers(workbook, sheet):
     final_col = None
     worksheet = workbook.add_worksheet(sheet)
     merge_format = workbook.add_format({'bold': 1, 'align': 'center', 'valign': 'vcenter', 'border': 1})
-    worksheet.write('A1', 'Stock Code ', merge_format)
-    worksheet.write('B1', 'Rel Period', merge_format)
-    worksheet.write('C1', 'Fixed Period', merge_format)
+    worksheet.merge_range("{}1:{}1".format(colnum_string(4), colnum_string(16)), "Current Valuation", merge_format)
+    worksheet.merge_range("{}1:{}1".format(colnum_string(17), colnum_string(28)), "Delta Vs Consensus (AIM)", merge_format)
+    worksheet.merge_range("{}1:{}1".format(colnum_string(29), colnum_string(40)), "Delta Vs Consensus (Guidance)", merge_format)
+    worksheet.merge_range("{}1:{}1".format(colnum_string(41), colnum_string(53)), "Leverage and Returns", merge_format)
+    worksheet.merge_range("{}1:{}1".format(colnum_string(54), colnum_string(74)), "Key Financials", merge_format)
+    worksheet.write('A2', 'Stock Code ', merge_format)
+    worksheet.write('B2', 'Rel Period', merge_format)
+    worksheet.write('C2', 'Fixed Period', merge_format)
     for idx, header in enumerate(header_list):
-        worksheet.write('{}1'.format(colnum_string(idx+4)), header, merge_format)
+        worksheet.write('{}2'.format(colnum_string(idx+4)), header, merge_format)
         final_col = idx+4
-    worksheet.write('{}1'.format(colnum_string(final_col+1)), "BBU Date", merge_format)
+    worksheet.write('{}2'.format(colnum_string(final_col+1)), "BBU Date", merge_format)
     return workbook
 
 
