@@ -169,11 +169,11 @@ def write_data(workbook, data, sheet):
         for i, scenario in enumerate(['Base', 'Bear', 'Bull']):
             dsh = DashboardV2(getattr(cum_dsh, scenario.lower()))
             populate_initial_columns(worksheet, dsh, row_offset)
-            populate_current_valuation(worksheet, dsh, row_offset, 4 + i*len(header_list))
-            populate_delta_consensus(worksheet, dsh, row_offset, 17 + i*len(header_list), 'aim')
-            populate_delta_consensus(worksheet, dsh, row_offset, 29 + i*len(header_list), 'guidance')
-            populate_leverage_returns(worksheet, dsh, row_offset, 42 + i*len(header_list))
-            populate_key_financials(worksheet, dsh, row_offset, 54 + i*len(header_list))
+            populate_current_valuation(worksheet, dsh, row_offset, 4)
+            populate_delta_consensus(worksheet, dsh, row_offset, 17, 'aim')
+            populate_delta_consensus(worksheet, dsh, row_offset, 29, 'guidance')
+            populate_leverage_returns(worksheet, dsh, row_offset, 42)
+            populate_key_financials(worksheet, dsh, row_offset, 54)
         row_offset += 12
     return workbook
 
@@ -262,6 +262,7 @@ def populate_current_valuation(worksheet, dsh, row_offset, init_col):
 def populate_from_dict(worksheet, dsh, key, row_offset, col, sub_key=None):
     key_obj = dsh.get(key)
     count = row_offset
+    now = datetime.datetime.now()
     if key_obj is not None:
         for year, notation in fiscal_map.items():
             if sub_key is not None:
@@ -272,20 +273,22 @@ def populate_from_dict(worksheet, dsh, key, row_offset, col, sub_key=None):
                 worksheet.write("{}{}".format(colnum_string(col), count), final_val)
             else:
                 worksheet.write("{}{}".format(colnum_string(col), count), key_obj.get(year, None))
+            worksheet.write("{}{}".format(colnum_string(4+len(header_list)), count), now.strftime('%m/%d/%y'))
             count += 1
     return count
 
 
 def write_headers(workbook, sheet):
+    final_col = None
     worksheet = workbook.add_worksheet(sheet)
     merge_format = workbook.add_format({'bold': 1, 'align': 'center', 'valign': 'vcenter', 'border': 1})
     worksheet.write('A1', 'Stock Code ', merge_format)
     worksheet.write('B1', 'Rel Period', merge_format)
     worksheet.write('C1', 'Fixed Period', merge_format)
-    for i, scenario in enumerate(['Base',  'Bear', 'Bull']):
-        for idx, header in enumerate(header_list):
-            header_text = header if scenario == 'Base' else header + ' ' + scenario
-            worksheet.write('{}1'.format(colnum_string(idx+4+i*len(header_list))), header_text, merge_format)
+    for idx, header in enumerate(header_list):
+        worksheet.write('{}1'.format(colnum_string(idx+4)), header, merge_format)
+        final_col = idx+4
+    worksheet.write('{}1'.format(colnum_string(final_col+1)), "BBU Date", merge_format)
     return workbook
 
 

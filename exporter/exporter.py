@@ -5,14 +5,35 @@ from exporter.consolidated_exporter_fiscal import ConsolidatedExporterFiscal
 
 class Exporter:
     def __init__(self):
-        self.workbook = None
+        self.workbook_fiscal_base = None
+        self.workbook_fiscal_bear = None
+        self.workbook_fiscal_bull = None
+        self.workbook_daily1 = None
+        self.workbook_daily2 = None
 
     def export(self):
-        self.workbook = xlsxwriter.Workbook("uploaded_files/output/upload.xlsx")
+        self.workbook_fiscal_base = xlsxwriter.Workbook("uploaded_files/output/fiscal_base.xlsx")
+        self.workbook_fiscal_bear = xlsxwriter.Workbook("uploaded_files/output/fiscal_bear.xlsx")
+        self.workbook_fiscal_bull = xlsxwriter.Workbook("uploaded_files/output/fiscal_bull.xlsx")
+        self.workbook_daily1 = xlsxwriter.Workbook("uploaded_files/output/daily1.xlsx")
+        self.workbook_daily2 = xlsxwriter.Workbook("uploaded_files/output/daily2.xlsx")
         try:
-            self.workbook = ConsolidatedExporterDaily.export(self.workbook, 'Daily')
-            self.workbook = ConsolidatedExporterFiscal.export(self.workbook, 'Fiscal')
-        # except Exception as e:
-        #     print(str(e))
+            self.workbook_daily1 = ConsolidatedExporterDaily.export(self.workbook_daily1, 'Daily1')
         finally:
-            self.workbook.close()
+            self.workbook_daily1.close()
+        try:
+            self.workbook_daily2 = ConsolidatedExporterDaily.export(self.workbook_daily2, 'Daily2')
+        finally:
+            self.workbook_daily2.close()
+        try:
+            self.workbook_fiscal_base = ConsolidatedExporterFiscal.export(self.workbook_fiscal_base, 'Fiscal Base')
+        finally:
+            self.workbook_fiscal_base.close()
+        try:
+            self.workbook_fiscal_bull = ConsolidatedExporterFiscal.export(self.workbook_fiscal_bear, 'Fiscal Bull')
+        finally:
+            self.workbook_fiscal_bull.close()
+        try:
+            self.workbook_fiscal_bear = ConsolidatedExporterFiscal.export(self.workbook_fiscal_bull, 'Fiscal Bear')
+        finally:
+            self.workbook_fiscal_bear.close()

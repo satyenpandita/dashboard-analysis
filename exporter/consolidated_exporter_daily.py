@@ -12,6 +12,7 @@ def write_data(workbook, data, sheet):
         cum_dash = CumulativeDashBoard.from_dict(dashboard)
         dsh = DashboardV2(cum_dash.base)
         worksheet = workbook.get_worksheet_by_name(sheet)
+        date_format = workbook.add_format({'num_format': 'mm/dd/yy'})
         percentage_format = workbook.add_format()
         integer_format = workbook.add_format()
         percentage_format.set_num_format(0x0a)
@@ -20,7 +21,7 @@ def write_data(workbook, data, sheet):
         worksheet.write('B{}'.format(idx+offset), dsh.direction_char())
         worksheet.write('C{}'.format(idx+offset), dsh.current_size)
         worksheet.write('D{}'.format(idx+offset), dsh.scenario)
-        worksheet.write('E{}'.format(idx+offset), dsh.last_updated)
+        worksheet.write('E{}'.format(idx+offset), dsh.last_updated, date_format)
 
         # Analyst Fill Cells
         analyst_fill_cells = AnalystFillCells(dsh.analyst_fill_cells)
@@ -99,6 +100,8 @@ def write_data(workbook, data, sheet):
         worksheet.write('BG{}'.format(idx+offset), dsh.target_price.get('borrow_cost_3year'), percentage_format)
         worksheet.write('BH{}'.format(idx+offset), dsh.target_price.get('net_ret_3year'), percentage_format)
 
+        now = datetime.datetime.now()
+        worksheet.write('BI{}'.format(idx+offset), now.strftime('%m/%d/%y'))
         # Implied Multiple
 
         worksheet.freeze_panes(6, 4)
@@ -196,37 +199,47 @@ def write_headers(workbook, sheet):
     worksheet.write('BG4', 'Borrow Cost', merge_format)
     worksheet.write('BH4', 'Net Return', merge_format)
 
+    worksheet.merge_range('BI2:BI4', 'BBU Date', merge_format)
+
+    return workbook
+
+
+def write_headers2(workbook, sheet):
     # Implied Multiple
-    worksheet.merge_range('BI2:EC2', 'Implied Multiple ', merge_format)
-    worksheet.merge_range('BI3:CR3', '1 year', merge_format)
-    worksheet.merge_range('CS3:EC3', '3 year', merge_format)
-    worksheet.merge_range('BI4:BK4', 'EV/Gross Revenue - AIM', merge_format)
-    worksheet.merge_range('BL4:BN4', 'EV/Net Revenue - AIM', merge_format)
-    worksheet.merge_range('BO4:BQ4', 'EV/Net Interest Income - AIM', merge_format)
-    worksheet.merge_range('BR4:BT4', 'EV/GMV', merge_format)
-    worksheet.merge_range('BU4:BW4', 'EV/Adj. EBITDA - AIM', merge_format)
-    worksheet.merge_range('BX4:BZ4', 'EV/EBITDAR - AIM', merge_format)
-    worksheet.merge_range('CA4:CC4', 'EV/EBITA - AIM', merge_format)
-    worksheet.merge_range('CD4:CF4', 'EV/EBIT - AIM', merge_format)
-    worksheet.merge_range('CG4:CI4', 'EV/PPOP - AIM', merge_format)
-    worksheet.merge_range('CJ4:CL4', 'P/Adj. EPS - AIM', merge_format)
-    worksheet.merge_range('CM4:CO4', 'FCF/ P - AIM', merge_format)
-    worksheet.merge_range('CP4:CR4', 'CFCF/ P - AIM', merge_format)
-    worksheet.merge_range('CS4:CU4', 'EV/Gross Revenue - AIM', merge_format)
-    worksheet.merge_range('CV4:CX4', 'EV/Net Revenue - AIM', merge_format)
-    worksheet.merge_range('CY4:DA4', 'EV/Net Interest Income - AIM', merge_format)
-    worksheet.merge_range('DB4:DD4', 'EV/GMV', merge_format)
-    worksheet.merge_range('DE4:DG4', 'EV/Adj. EBITDA - AIM', merge_format)
-    worksheet.merge_range('DH4:DJ4', 'EV/EBITDAR - AIM', merge_format)
-    worksheet.merge_range('DL4:DN4', 'EV/EBITA - AIM', merge_format)
-    worksheet.merge_range('DO4:DQ4', 'EV/EBIT - AIM', merge_format)
-    worksheet.merge_range('DR4:DT4', 'EV/PPOP - AIM', merge_format)
-    worksheet.merge_range('DU4:DW4', 'P/Adj. EPS - AIM', merge_format)
-    worksheet.merge_range('DX4:DZ4', 'FCF/ P - AIM', merge_format)
-    worksheet.merge_range('EA4:EC4', 'CFCF/ P - AIM', merge_format)
-    init_col = 'BI'
+    worksheet = workbook.add_worksheet(sheet)
+    merge_format = workbook.add_format({'bold': 1, 'align': 'center', 'valign': 'vcenter', 'border': 1})
+    worksheet.merge_range('A2:A5', 'Stock Code', merge_format)
+    worksheet.merge_range('B2:B5', 'BBU Date', merge_format)
+    worksheet.merge_range('C2:BV2', 'Implied Multiple ', merge_format)
+    worksheet.merge_range('C3:AL3', '1 year', merge_format)
+    worksheet.merge_range('AM3:BV3', '3 year', merge_format)
+    worksheet.merge_range('C4:E4', 'EV/Gross Revenue - AIM', merge_format)
+    worksheet.merge_range('F4:H4', 'EV/Net Revenue - AIM', merge_format)
+    worksheet.merge_range('I4:K4', 'EV/Net Interest Income - AIM', merge_format)
+    worksheet.merge_range('L4:N4', 'EV/GMV', merge_format)
+    worksheet.merge_range('O4:Q4', 'EV/Adj. EBITDA - AIM', merge_format)
+    worksheet.merge_range('R4:T4', 'EV/EBITDAR - AIM', merge_format)
+    worksheet.merge_range('U4:W4', 'EV/EBITA - AIM', merge_format)
+    worksheet.merge_range('X4:Z4', 'EV/EBIT - AIM', merge_format)
+    worksheet.merge_range('AA4:AC4', 'EV/PPOP - AIM', merge_format)
+    worksheet.merge_range('AD4:AF4', 'P/Adj. EPS - AIM', merge_format)
+    worksheet.merge_range('AG4:AI4', 'FCF/ P - AIM', merge_format)
+    worksheet.merge_range('AJ4:AL4', 'CFCF/ P - AIM', merge_format)
+    worksheet.merge_range('AM4:AO4', 'EV/Gross Revenue - AIM', merge_format)
+    worksheet.merge_range('AP4:AR4', 'EV/Net Revenue - AIM', merge_format)
+    worksheet.merge_range('AS4:AU4', 'EV/Net Interest Income - AIM', merge_format)
+    worksheet.merge_range('AV4:AX4', 'EV/GMV', merge_format)
+    worksheet.merge_range('AY4:BA4', 'EV/Adj. EBITDA - AIM', merge_format)
+    worksheet.merge_range('BB4:BD4', 'EV/EBITDAR - AIM', merge_format)
+    worksheet.merge_range('BE4:BG4', 'EV/EBITA - AIM', merge_format)
+    worksheet.merge_range('BH4:BJ4', 'EV/EBIT - AIM', merge_format)
+    worksheet.merge_range('BK4:BM4', 'EV/PPOP - AIM', merge_format)
+    worksheet.merge_range('BN4:BP4', 'P/Adj. EPS - AIM', merge_format)
+    worksheet.merge_range('BQ4:BS4', 'FCF/ P - AIM', merge_format)
+    worksheet.merge_range('BT4:BV4', 'CFCF/ P - AIM', merge_format)
+    init_col = 'C'
     head_str = 'PT(Bear)'
-    for i in range(73):
+    for i in range(72):
         if i % 3 == 0:
             head_str = 'PT(Bear)'
         elif i % 3 == 1:
@@ -238,9 +251,17 @@ def write_headers(workbook, sheet):
     return workbook
 
 
+def write_data2(workbook, data, sheet):
+    return workbook
+
+
 class ConsolidatedExporterDaily:
     @classmethod
     def export(cls, workbook, sheet):
-        workbook = write_headers(workbook, sheet)
-        workbook = write_data(workbook, db.cumulative_dashboards.find({}), sheet)
+        if sheet == 'Daily1':
+            workbook = write_headers(workbook, sheet)
+            workbook = write_data(workbook, db.cumulative_dashboards.find({}), sheet)
+        elif sheet == 'Daily2':
+            workbook = write_headers2(workbook, sheet)
+            workbook = write_data2(workbook, db.cumulative_dashboards.find({}), sheet)
         return workbook
