@@ -4,6 +4,7 @@ import os
 import paramiko
 from boto.s3.connection import S3Connection
 from boto.s3.key import Key
+import boto
 
 from config.celery import app
 
@@ -30,8 +31,8 @@ def ftp_upload(file_path, file_name):
 @app.task()
 def s3_upload(file):
     complete_path = 'uploaded_files/dashboard/originals/{}'.format(file)
-    key, secret, host = get_s3_credentials()
-    conn = S3Connection(key, secret, host=host)
+    conn = boto.connect_s3()
+    conn.host = "s3-us-west-2.amazonaws.com"
     try:
         stock = (file.split('_')[0]).split()[0]
         bucket = conn.get_bucket("aimdashboards", validate=False)
