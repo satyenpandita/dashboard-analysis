@@ -1,4 +1,5 @@
 import xlsxwriter
+from utils.upload_ops import ftp_upload
 from exporter.consolidated_exporter_daily import ConsolidatedExporterDaily
 from exporter.consolidated_exporter_fiscal import ConsolidatedExporterFiscal
 
@@ -37,3 +38,10 @@ class Exporter:
             self.workbook_fiscal_bear = ConsolidatedExporterFiscal.export(self.workbook_fiscal_bull, 'Fiscal Bear')
         finally:
             self.workbook_fiscal_bear.close()
+
+    def ftp_upload(self):
+        ftp_upload.delay(self.workbook_daily1)
+        ftp_upload.delay(self.workbook_daily1)
+        ftp_upload.delay(self.workbook_fiscal_base)
+        ftp_upload.delay(self.workbook_fiscal_bear)
+        ftp_upload.delay(self.workbook_fiscal_bull)
