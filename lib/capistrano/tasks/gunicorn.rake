@@ -1,4 +1,4 @@
-namespace :guniorn do
+namespace :gunicorn do
 desc "Setup gunicorn configuration for this application"
   task :restart do
     on roles(:all) do |host|
