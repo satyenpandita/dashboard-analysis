@@ -7,7 +7,8 @@ from xlrd import open_workbook
 from werkzeug.contrib.fixers import ProxyFix
 import logging
 from logging.handlers import RotatingFileHandler
-from utils.ftp_upload import ftp_upload
+from utils.upload_ops import ftp_upload
+from utils.upload_ops import s3_upload
 import os
 
 app = Flask(__name__)
@@ -35,6 +36,7 @@ def dashboard_archive():
     file = request.files['uploadfile']
     complete_name = 'uploaded_files/dashboard/originals/{}'.format(file.filename)
     file.save(complete_name)
+    s3_upload(file.filename)
     return jsonify({'file': file.filename}), 201
 
 

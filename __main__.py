@@ -5,7 +5,8 @@ from parsers.DashboardParserV2 import DashboardParserV2
 from parsers.portfolio.portfolio_parser import PortfolioParser
 from exporter.report_card_exporters import ReportCardExporter
 from exporter.exporter import Exporter
-from utils.ftp_upload import ftp_upload
+from utils.upload_ops import ftp_upload
+from utils.upload_ops import s3_upload
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
@@ -24,6 +25,8 @@ if __name__ == '__main__':
     elif sys.argv[1] == 'consolidated':
         exporter = Exporter()
         exporter.export()
+    elif sys.argv[1] == 's3':
+        s3_upload("ONDK US Equity_03-04-17.xlsx")
     elif sys.argv[1] == 'portfolio':
         for file in os.listdir('uploaded_files/portfolio'):
             if 'xls' in file[-4:]:

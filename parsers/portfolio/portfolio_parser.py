@@ -1,7 +1,7 @@
 import re
 from utils.cell_functions import find_cell, cell_value
 from exporter.portfolio.portfolio_exporter import PortfolioExporter
-from utils.ftp_upload import ftp_upload, get_users
+from utils.upload_ops import ftp_upload, get_users
 from utils.email_sender import send_mail
 
 
