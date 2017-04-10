@@ -41,7 +41,7 @@ if __name__ == '__main__':
             if 'xls' in file[-4:]:
                 print(file)
                 if sys.argv[2] in file.lower():
-                    ftp_upload("uploaded_files/output/{}".format(file), file)
+                    ftp_upload.delay("uploaded_files/output/{}".format(file), file)
 
 
 

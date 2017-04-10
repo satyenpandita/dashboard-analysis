@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from exporter.exporter import Exporter
 from parsers.DashboardParserV2 import DashboardParserV2
 from parsers.DashboardParserV3 import DashboardParserV3
 from parsers.portfolio.portfolio_parser import PortfolioParser
@@ -48,6 +49,9 @@ def dashboard2():
     workbook = open_workbook(complete_name)
     dparser = DashboardParserV3(workbook)
     dparser.save_dashboard()
+    exporter = Exporter()
+    exporter.export()
+    exporter.ftp_upload()
     return jsonify({'file': file.filename}), 201
 
 
@@ -93,7 +97,7 @@ def portfolio_upload():
         for file in os.listdir('uploaded_files/output'):
             if 'xls' in file[-4:] and analyst in file:
                 app.logger.info(file)
-                res = ftp_upload("uploaded_files/output/{}".format(file), file)
+                res = ftp_upload.delay("uploaded_files/output/{}".format(file), file)
                 response_dict[file] = res
         return jsonify(response_dict), 201
     else:

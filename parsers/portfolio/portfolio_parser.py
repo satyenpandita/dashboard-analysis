@@ -87,9 +87,9 @@ class PortfolioParser(object):
 
     def ftp_upload(self):
         output_path = self.output_file_long if self.output_file_long else r'uploaded_files/output/portfolio.xlsx'
-        ftp_upload(output_path, self.output_file_long_name)
+        ftp_upload.delay(output_path, self.output_file_long_name)
         output_path = self.output_file_short if self.output_file_short else r'uploaded_files/output/portfolio.xlsx'
-        ftp_upload(output_path, self.output_file_short_name)
+        ftp_upload.delay(output_path, self.output_file_short_name)
 
     def get_body(self):
         if len(self.invalid_tickers) > 0:
