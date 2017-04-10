@@ -26,8 +26,8 @@ def ftp_upload(file_path, file_name):
 
 def s3_upload(file):
     complete_path = 'uploaded_files/dashboard/originals/{}'.format(file)
-    key, secret = get_s3_credentials()
-    conn = S3Connection(key, secret)
+    key, secret, host = get_s3_credentials()
+    conn = S3Connection(key, secret, host=host)
     try:
         stock = (file.split('_')[0]).split()[0]
         bucket = conn.get_bucket("aimdashboards", validate=False)
@@ -54,7 +54,7 @@ def get_s3_credentials():
     with open("constants/secrets.json") as data_file:
         data = json.load(data_file)
         credentials = data["s3_credentials"]
-        return credentials['s3_key'], credentials['s3_secret']
+        return credentials['s3_key'], credentials['s3_secret'], credentials['host']
 
 
 def get_users():

@@ -26,7 +26,7 @@ if __name__ == '__main__':
         exporter = Exporter()
         exporter.export()
     elif sys.argv[1] == 's3':
-        s3_upload("ONDK US Equity_03-04-17.xlsx")
+        s3_upload('ONDK US Equity_03-04-17.xlsx')
     elif sys.argv[1] == 'portfolio':
         for file in os.listdir('uploaded_files/portfolio'):
             if 'xls' in file[-4:]:
