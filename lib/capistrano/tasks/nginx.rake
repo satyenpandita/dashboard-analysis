@@ -22,10 +22,6 @@ namespace :nginx do
         template "nginx.erb", "/tmp/nginx_conf"
         execute :sudo, "mv /tmp/nginx_conf /etc/nginx/sites-enabled/#{fetch(:application)}"
         execute :sudo, "rm -f /etc/nginx/sites-enabled/default"
-        Rake::Task["nginx:restart"].invoke
-        execute "cd #{current_path}"
-        execute "kill -9 $(ps aux | grep -e gunicorn | awk '{ print $2 }') "
-        execute "#{current_path}/env/bin/gunicorn app:app -b localhost:8000 --daemon"
     end
   end
 

@@ -1,9 +1,9 @@
 import re
-from utils.cell_functions import find_cell, cell_value
-from exporter.portfolio.portfolio_exporter import PortfolioExporter
-from utils.upload_ops import ftp_upload, get_users
-from utils.email_sender import send_mail
 
+from exporter.portfolio.portfolio_exporter import PortfolioExporter
+from utils.cell_functions import find_cell, cell_value
+from utils.email_sender import send_mail
+from utils.upload_ops import ftp_upload, get_users
 
 INVALID_TICKERS = dict()
 
@@ -21,7 +21,7 @@ def get_tickers(worksheet, direction):
                 ticker = valid_ticker(val)
                 if ticker:
                     folio[ticker] = cell_value(worksheet, target_row, target_col+1), \
-                                                              cell_value(worksheet, target_row, target_col+2)
+                                    cell_value(worksheet, target_row, target_col+2)
                 else:
                     INVALID_TICKERS[target_row + 1] = val
                 target_row += 1
@@ -71,15 +71,15 @@ class PortfolioParserV2(object):
         self.output_file_short, self.output_file_short_name = exporter.export(self.analyst, 'short')
 
     def send_email(self):
-        send_mail("ppal@auroim.com",
-                  ["datascience@auroim.com"],
-                  "Best Ideas Published",
-                  self.get_body(),
-                  [self.output_file_long,
-                   self.output_file_short,
-                   'uploaded_files/portfolio/{}'.format(self.input_file)],
-                  username="ppal@auroim.com",
-                  password="AuroOct2016")
+        send_mail.delay("ppal@auroim.com",
+                        ["datascience@auroim.com"],
+                        "Best Ideas Published",
+                        self.get_body(),
+                        [self.output_file_long,
+                         self.output_file_short,
+                         'uploaded_files/portfolio/{}'.format(self.input_file)],
+                        username="ppal@auroim.com",
+                        password="AuroOct2016")
         global INVALID_TICKERS
         INVALID_TICKERS = dict()
 
@@ -94,7 +94,7 @@ class PortfolioParserV2(object):
             return """Please find the Best Ideas files published by {} \n\n Some Invalid Tickers Found in file {} \n {}""". \
                 format(self.analyst, self.input_file, self.get_errors())
         else:
-            return """Please find the Best Ideas files published by {} \n\n No Invalid Securities""".\
+            return """Please find the Best Ideas files published by {} \n\n No Invalid Securities""". \
                 format(self.analyst)
 
     def get_errors(self):

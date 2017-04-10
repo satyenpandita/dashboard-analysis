@@ -30,7 +30,7 @@ def get_tickers(worksheet, direction):
             if direction == 'long' or (direction == 'short' and short):
                 if is_valid_ticker(val):
                     folio[val] = cell_value(worksheet, next_row, col+1), \
-                                                              cell_value(worksheet, next_row, col+2)
+                                 cell_value(worksheet, next_row, col+2)
                 else:
                     INVALID_TICKERS[next_row+1] = val
     return folio
@@ -73,15 +73,15 @@ class PortfolioParser(object):
         self.output_file_short, self.output_file_short_name = exporter.export(self.analyst, 'short')
 
     def send_email(self):
-        send_mail("ppal@auroim.com",
-                  ["datascience@auroim.com"],
-                  "Best Ideas Published",
-                  self.get_body(),
-                  [self.output_file_long,
-                   self.output_file_short,
-                   'uploaded_files/portfolio/{}'.format(self.input_file)],
-                  username="ppal@auroim.com",
-                  password="AuroOct2016")
+        send_mail.delay("ppal@auroim.com",
+                        ["datascience@auroim.com"],
+                        "Best Ideas Published",
+                        self.get_body(),
+                        [self.output_file_long,
+                         self.output_file_short,
+                         'uploaded_files/portfolio/{}'.format(self.input_file)],
+                        username="ppal@auroim.com",
+                        password="AuroOct2016")
         global INVALID_TICKERS
         INVALID_TICKERS = []
 
@@ -96,7 +96,7 @@ class PortfolioParser(object):
             return """Please find the Best Ideas files published by {} \n\n Some Invalid Tickers Found in file {} \n {}""". \
                 format(self.analyst, self.input_file, self.get_errors())
         else:
-            return """Please find the Best Ideas files published by {} \n\n No Invalid Securities""".\
+            return """Please find the Best Ideas files published by {} \n\n No Invalid Securities""". \
                 format(self.analyst)
 
     def get_errors(self):

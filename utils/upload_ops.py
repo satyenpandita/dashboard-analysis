@@ -1,10 +1,13 @@
-import paramiko
 import json
 import os
+
+import paramiko
 from boto.s3.connection import S3Connection
 from boto.s3.key import Key
 
+from config.celery import app
 
+@app.task()
 def ftp_upload(file_path, file_name):
     try:
         username, password = get_ftp_credentials()
@@ -24,6 +27,7 @@ def ftp_upload(file_path, file_name):
         return str(e)
 
 
+@app.task()
 def s3_upload(file):
     complete_path = 'uploaded_files/dashboard/originals/{}'.format(file)
     key, secret, host = get_s3_credentials()

@@ -36,7 +36,7 @@ def dashboard_archive():
     file = request.files['uploadfile']
     complete_name = 'uploaded_files/dashboard/originals/{}'.format(file.filename)
     file.save(complete_name)
-    s3_upload(file.filename)
+    s3_upload.delay(file.filename)
     return jsonify({'file': file.filename}), 201
 
 
@@ -63,7 +63,7 @@ def portfolio():
     parser = PortfolioParser(worksheet, file.filename)
     parser.generate_upload_file(file.filename)
     app.logger.info("Email Start")
-    parser.send_email()
+    parser.send_email.delay()
     app.logger.info("Email End")
     return jsonify({'file': file.filename}), 201
 
