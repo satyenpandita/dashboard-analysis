@@ -9,6 +9,7 @@ from models.AnalystFillCells import AnalystFillCells
 from models.IRRDecomp import IRRDecomp
 from models.KeyFinancials import KeyFinancials
 from models.Tam import Tam
+from models.ImpliedMultiple import ImpliedMultiple
 from utils.cell_functions import cell_value, cell_value_by_key, find_cell
 
 
@@ -73,6 +74,7 @@ class DashboardV2(object):
             self.financial_info = FinancialInfo(data).__dict__
             self.leverage_and_returns = LeverageAndReturns(data).__dict__
             self.key_financials = KeyFinancials(data).__dict__
+            self.implied_multiple = ImpliedMultiple(data).__dict__
             # self.yoy_growth_revenue = self.calculate_growth('gross_revenue')
             # self.cagr_4years_revenue = self.calculate_cagr_4yrs('gross_revenue')
             # self.yoy_growth_eps = self.calculate_growth('adj_eps')

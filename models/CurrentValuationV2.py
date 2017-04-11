@@ -16,7 +16,7 @@ class CurrentValuationV2(object):
 
     REV_CHOICES = ['EV/Gross Rev  - AIM', 'EV/Net Rev  - AIM','EV/Net Interest Income - AIM', 'EV/GMV - AIM']
     EB_CHOICES = ['EV/Adj. EBITDA - AIM', 'EV/EBITDAR - AIM', 'EV/EBITA - AIM', 'EV/EBIT - AIM', 'EV/PPOP - AIM']
-    FCF_CHOICES = ['Free Cash Flow / P - Consensus', 'Core Free Cash Flow / P - Consensus']
+    FCF_CHOICES = ['Free Cash Flow / P - AIM', 'Core Free Cash Flow / P - AIM']
 
     def __init__(self, worksheet):
         super(CurrentValuationV2, self).__init__()

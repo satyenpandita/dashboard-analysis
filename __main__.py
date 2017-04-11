@@ -1,7 +1,7 @@
 import sys
 import os
 from xlrd import open_workbook
-from parsers.DashboardParserV2 import DashboardParserV2
+from parsers.DashboardParserV3 import DashboardParserV3
 from parsers.portfolio.portfolio_parser import PortfolioParser
 from exporter.report_card_exporters import ReportCardExporter
 from exporter.exporter import Exporter
@@ -16,8 +16,7 @@ if __name__ == '__main__':
             if 'xls' in file[-4:]:
                 print(file)
                 workbook = open_workbook('uploaded_files/dashboard/'+file)
-                worksheet = workbook.sheet_by_index(0)
-                dparser = DashboardParserV2(worksheet)
+                dparser = DashboardParserV3(workbook)
                 dparser.save_dashboard()
     elif sys.argv[1] == 'reportcard':
         exporter = ReportCardExporter()
