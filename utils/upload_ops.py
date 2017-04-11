@@ -1,10 +1,9 @@
-import json
 import os
 import paramiko
-from boto.s3.connection import S3Connection
 from boto.s3.key import Key
 import boto
 from config.celery import app
+from constants import secrets, users
 
 
 @app.task()
@@ -48,13 +47,10 @@ def s3_upload(file):
 
 
 def get_ftp_credentials():
-    with open(os.path.abspath("constants/secrets.json")) as data_file:
-        data = json.load(data_file)
-        credentials = data["ftp_credentials"]
-        return credentials['username'], credentials['password']
+    credentials = secrets.FTP_CREDENTIALS
+    return credentials['username'], credentials['password']
 
 
 def get_users():
-    with open(os.path.abspath("constants/secrets.json")) as data_file:
-        data = json.load(data_file)
-        return data
+    data = users.USERS
+    return data
