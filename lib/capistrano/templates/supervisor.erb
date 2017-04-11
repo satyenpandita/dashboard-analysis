@@ -1,5 +1,5 @@
 [program:celeryd]
-command=<%= current_path %>/env/bin/celery worker -A config  --loglevel=INFO
+command=<%= current_path %>/env/bin/celery worker -A config  --loglevel=INFO --concurrency=4 --pid /tmp/celery.pid
 user=ubuntu
 directory=<%= current_path %>
 autostart=true

@@ -31,11 +31,11 @@ class Exporter:
         finally:
             self.workbook_fiscal_base.close()
         try:
-            self.workbook_fiscal_bull = ConsolidatedExporterFiscal.export(self.workbook_fiscal_bear, 'Fiscal Bull')
+            self.workbook_fiscal_bull = ConsolidatedExporterFiscal.export(self.workbook_fiscal_bull, 'Fiscal Bull')
         finally:
             self.workbook_fiscal_bull.close()
         try:
-            self.workbook_fiscal_bear = ConsolidatedExporterFiscal.export(self.workbook_fiscal_bull, 'Fiscal Bear')
+            self.workbook_fiscal_bear = ConsolidatedExporterFiscal.export(self.workbook_fiscal_bear, 'Fiscal Bear')
         finally:
             self.workbook_fiscal_bear.close()
 
