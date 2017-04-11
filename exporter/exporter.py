@@ -23,7 +23,9 @@ class Exporter:
             self.workbook_daily1 = ConsolidatedExporterDaily.export(self.workbook_daily1, 'Daily1')
         finally:
             self.workbook_daily1.close()
+        try:
             self.workbook_daily2 = ConsolidatedExporterDaily.export(self.workbook_daily2, 'Daily2')
+        finally:
             self.workbook_daily2.close()
         try:
             self.workbook_fiscal_base = ConsolidatedExporterFiscal.export(self.workbook_fiscal_base, 'Fiscal Base')
