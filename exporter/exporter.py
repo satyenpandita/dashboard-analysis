@@ -44,14 +44,14 @@ class Exporter:
         ftp_upload.delay(self.workbook_fiscal_base.filename, "fiscal_base.xlsx")
         ftp_upload.delay(self.workbook_fiscal_bear.filename, "fiscal_bear.xlsx")
         ftp_upload.delay(self.workbook_fiscal_bull.filename, "fiscal_bull.xlsx")
-        # send_mail.delay("ppal@auroim.com",
-        #                 ["datascience@auroim.com"],
-        #                 "Dashbord Published",
-        #                 "Dashbord Published",
-        #                 [self.workbook_daily1.filename,
-        #                  self.workbook_daily2.filename,
-        #                  self.workbook_fiscal_base.filename,
-        #                  self.workbook_fiscal_bear.filename,
-        #                  self.workbook_fiscal_bull.filename],
-        #                 username="ppal@auroim.com",
-        #                 password="AuroOct2016")
+        send_mail.delay("ppal@auroim.com",
+                        ["datascience@auroim.com"],
+                        "Dashbord Published",
+                        "Dashbord Published",
+                        [self.workbook_daily1.filename,
+                         self.workbook_daily2.filename,
+                         self.workbook_fiscal_base.filename,
+                         self.workbook_fiscal_bear.filename,
+                         self.workbook_fiscal_bull.filename],
+                        username="ppal@auroim.com",
+                        password="AuroOct2016")
