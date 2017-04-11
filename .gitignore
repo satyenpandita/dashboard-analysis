@@ -1,5 +1,4 @@
 .idea/
-dashboard/
 denv/
 data*/
 denvn/
@@ -7,6 +6,7 @@ denvn/
 *.pyc
 .DS_Store
 *.xlsx
+*.xlsm
 log
 denvu/
 log/
