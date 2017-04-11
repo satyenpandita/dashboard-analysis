@@ -9,4 +9,15 @@ namespace :deploy do
         execute "#{current_path}/env/bin/pip3 install gunicorn"
     end
   end
+
+  task :refresh do
+    on roles(:all) do |host|
+        execute "virtualenv --python=python3 #{current_path}/env"
+        execute "source #{current_path}/env/bin/activate"
+        execute "source #{current_path}/env/bin/activate"
+        execute "#{current_path}/env/bin/pip3 install -r #{current_path}/requirements.txt"
+        execute "#{current_path}/env/bin/pip3 install gunicorn"
+    end
+  end
+
 end

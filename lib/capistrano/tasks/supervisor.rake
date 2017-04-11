@@ -12,9 +12,16 @@ namespace :supervisor do
   desc "Update Supervisor"
   task :restart do
     on roles(:all) do |host|
-        execute :sudo, "supervisorctl reread"
-        execute :sudo, "supervisorctl update"
-        execute :sudo, "supervisorctl start #{fetch(:application)}"
+        execute :sudo, "systemctl restart supervisor"
+    end
+  end
+
+  desc "Restart Services"
+  task :services_restart do
+    on roles(:all) do |host|
+        execute :sudo, "supervisorctl restart celery"
+        execute :sudo, "supervisorctl restart flower"
+        execute :sudo, "supervisorctl restart gunicorn"
     end
   end
 

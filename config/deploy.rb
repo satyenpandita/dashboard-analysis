@@ -39,9 +39,12 @@ set :pty, true
 namespace :deploy do
   after "deploy:install", "nginx:install"
   after "nginx:install", "redis:install"
-  after "deploy:published", "deploy:setup"
+
   after "deploy:setup", "nginx:setup"
+  after "nginx:setup", "supervisor:setup"
+
+  after "deploy:published", "deploy:refresh"
   after "deploy:finished", "mongo:restart"
-  after "mongo:restart", "nginx:restart"
-  after "nginx:restart", "gunicorn:restart"
+  after "mongo:restart", "supervisor:services_restart"
+  after "supervisor:services_restart", "nginx:restart"
 end
