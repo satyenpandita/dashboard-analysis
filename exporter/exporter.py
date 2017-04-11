@@ -48,7 +48,7 @@ class Exporter:
         ftp_upload.delay(self.workbook_fiscal_bull.filename, "fiscal_bull.xlsx")
         send_mail.delay("ppal@auroim.com",
                         ["datascience@auroim.com"],
-                        "Best Ideas Published",
+                        "Dashbord Published",
                         "Dashbord Published",
                         [self.workbook_daily1.filename,
                          self.workbook_daily2.filename,
