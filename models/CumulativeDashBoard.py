@@ -1,3 +1,4 @@
+import datetime
 from models.BaseModel import BaseModel
 
 
@@ -7,6 +8,7 @@ class CumulativeDashBoard(BaseModel):
         self.base = base
         self.bull = bull
         self.bear = bear
+        self.created_at = datetime.datetime.today().date()
 
     @classmethod
     def from_dict(cls, obj):
