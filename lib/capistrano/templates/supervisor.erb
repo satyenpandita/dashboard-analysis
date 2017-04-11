@@ -11,7 +11,7 @@ stdout_logfile=/var/log/celery/aim-celeryd.log
 stderr_logfile=/var/log/celery/aim-celeryd.log
 
 [program:gunicorn]
-command=<%= current_path %>/env/bin/gunicorn app:app --bind 127.0.0.1:8000 --workers 4 --pid /tmp/gunicorn.pid ;
+command=<%= current_path %>/env/bin/gunicorn app:app --bind 127.0.0.1:8000 --workers 4 --pid /tmp/gunicorn.pid --log-file /var/log/gunicorn/auroville.log --log-level DEBUG
 directory=<%= current_path %>
 
 [program:flower]
