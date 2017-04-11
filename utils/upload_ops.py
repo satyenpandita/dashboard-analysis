@@ -48,20 +48,13 @@ def s3_upload(file):
 
 
 def get_ftp_credentials():
-    with open("constants/secrets.json") as data_file:
+    with open(os.path.abspath("constants/secrets.json")) as data_file:
         data = json.load(data_file)
         credentials = data["ftp_credentials"]
         return credentials['username'], credentials['password']
 
 
-def get_s3_credentials():
-    with open("constants/secrets.json") as data_file:
-        data = json.load(data_file)
-        credentials = data["s3_credentials"]
-        return credentials['s3_key'], credentials['s3_secret'], credentials['host']
-
-
 def get_users():
-    with open("constants/users.json") as data_file:
+    with open(os.path.abspath("constants/secrets.json")) as data_file:
         data = json.load(data_file)
         return data

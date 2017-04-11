@@ -6,8 +6,6 @@ from parsers.portfolio.portfolio_parser import PortfolioParser
 from parsers.portfolio.portfolio_parser_v2 import PortfolioParserV2
 from xlrd import open_workbook
 from werkzeug.contrib.fixers import ProxyFix
-import logging
-from logging.handlers import RotatingFileHandler
 from utils.upload_ops import ftp_upload
 from utils.upload_ops import s3_upload
 import os
