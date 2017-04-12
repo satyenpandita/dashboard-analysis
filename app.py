@@ -128,11 +128,11 @@ def dashboard_generate():
 
 @app.route('/dashboard_upload_only', methods=['GET'])
 def dashboard_upload_only():
-    ftp_upload.delay("uploaded_files/output/fiscal_base.xlsx", "fiscal_base.xlsx")
-    ftp_upload.delay("uploaded_files/output/fiscal_bear.xlsx", "fiscal_bear.xlsx")
-    ftp_upload.delay("uploaded_files/output/fiscal_bull.xlsx", "fiscal_bull.xlsx")
-    ftp_upload.delay("uploaded_files/output/daily1.xlsx", "daily1.xlsx")
-    ftp_upload.delay("uploaded_files/output/daily2.xlsx", "daily2.xlsx")
+    ftp_upload.delay("/var/www/output/fiscal_base.xlsx", "fiscal_base.xlsx")
+    ftp_upload.delay("/var/www//output/fiscal_bear.xlsx", "fiscal_bear.xlsx")
+    ftp_upload.delay("/var/www//output/fiscal_bull.xlsx", "fiscal_bull.xlsx")
+    ftp_upload.delay("/var/www//output/daily1.xlsx", "daily1.xlsx")
+    ftp_upload.delay("/var/www//output/daily2.xlsx", "daily2.xlsx")
     return jsonify({'response': "Upload Queued"}), 201
 
 
