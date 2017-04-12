@@ -19,7 +19,7 @@ namespace :supervisor do
   desc "Restart Services"
   task :services_restart do
     on roles(:all) do |host|
-        execute :sudo, "supervisorctl restart celery"
+        execute :sudo, "supervisorctl restart celeryd"
         execute :sudo, "supervisorctl restart flower"
         execute :sudo, "supervisorctl restart gunicorn"
     end

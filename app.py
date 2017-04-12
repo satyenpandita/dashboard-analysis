@@ -127,7 +127,7 @@ def dashboard_generate():
 
 
 @app.route('/dashboard_upload_only', methods=['GET'])
-def dashboard_generate():
+def dashboard_upload_only():
     ftp_upload.delay("uploaded_files/output/fiscal_base.xlsx", "fiscal_base.xlsx")
     ftp_upload.delay("uploaded_files/output/fiscal_bear.xlsx", "fiscal_bear.xlsx")
     ftp_upload.delay("uploaded_files/output/fiscal_bull.xlsx", "fiscal_bull.xlsx")
