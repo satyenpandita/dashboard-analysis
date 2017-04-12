@@ -13,7 +13,7 @@ class DashboardParserV3(object):
         self.stock_code = self.base.stock_code
 
     def save_dashboard(self):
-        cum_dash = CumulativeDashBoard(self.stock_code, self.base, self.bear, self.bull)
+        cum_dash = CumulativeDashBoard(self.stock_code, self.base, self.bull, self.bear)
         document = db.cumulative_dashboards.find_one({'stock_code': self.stock_code})
         if document is not None:
             archive = DashboardArchive(CumulativeDashBoard.from_dict(document))
