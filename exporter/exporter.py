@@ -59,3 +59,16 @@ class Exporter:
                          self.workbook_fiscal_bull.filename],
                         username="ppal@auroim.com",
                         password="AuroOct2016")
+
+    def send_email_me(self):
+        send_mail.delay("ppal@auroim.com",
+                        ["ppal@auroim.com"],
+                        "Dashbord Published",
+                        "Dashbord Published",
+                        [self.workbook_daily1.filename,
+                         self.workbook_daily2.filename,
+                         self.workbook_fiscal_base.filename,
+                         self.workbook_fiscal_bear.filename,
+                         self.workbook_fiscal_bull.filename],
+                        username="ppal@auroim.com",
+                        password="AuroOct2016")

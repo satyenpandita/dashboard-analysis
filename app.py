@@ -111,6 +111,14 @@ def dashboard_upload():
     return jsonify({'response': "Files Generated and Tasks queued"}), 201
 
 
+@app.route('/dashboard_email', methods=['GET'])
+def dashboard_email():
+    exporter = Exporter()
+    exporter.export()
+    exporter.send_email_me()
+    return jsonify({'response': "Files Generated and Tasks queued"}), 201
+
+
 
 app.wsgi_app = ProxyFix(app.wsgi_app)
 if __name__ == '__main__':
