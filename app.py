@@ -102,6 +102,16 @@ def portfolio_upload():
         return jsonify({'error':'No Analyst name'})
 
 
+@app.route('/dashboard_upload', methods=['GET'])
+def dashboard_upload():
+    exporter = Exporter()
+    exporter.export()
+    exporter.ftp_upload()
+    exporter.send_email()
+    return jsonify({'response': "Files Generated and Tasks queued"}), 201
+
+
+
 app.wsgi_app = ProxyFix(app.wsgi_app)
 if __name__ == '__main__':
     app.run()
