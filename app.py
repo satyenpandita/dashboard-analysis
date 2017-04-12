@@ -119,6 +119,22 @@ def dashboard_email():
     return jsonify({'response': "Files Generated and Tasks queued"}), 201
 
 
+@app.route('/dashboard_generate', methods=['GET'])
+def dashboard_generate():
+    exporter = Exporter()
+    exporter.export()
+    return jsonify({'response': "Files Generated"}), 201
+
+
+@app.route('/dashboard_upload_only', methods=['GET'])
+def dashboard_generate():
+    ftp_upload.delay("uploaded_files/output/fiscal_base.xlsx", "fiscal_base.xlsx")
+    ftp_upload.delay("uploaded_files/output/fiscal_bear.xlsx", "fiscal_bear.xlsx")
+    ftp_upload.delay("uploaded_files/output/fiscal_bull.xlsx", "fiscal_bull.xlsx")
+    ftp_upload.delay("uploaded_files/output/daily1.xlsx", "daily1.xlsx")
+    ftp_upload.delay("uploaded_files/output/daily2.xlsx", "daily2.xlsx")
+    return jsonify({'response': "Upload Queued"}), 201
+
 
 app.wsgi_app = ProxyFix(app.wsgi_app)
 if __name__ == '__main__':
