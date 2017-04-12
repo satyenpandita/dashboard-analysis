@@ -28,7 +28,7 @@ def ftp_upload(file_path, file_name):
 
 @app.task()
 def s3_upload(file):
-    complete_path = 'uploaded_files/dashboard/originals/{}'.format(file)
+    complete_path = '/var/www/dashboard/originals/{}'.format(file)
     conn = boto.connect_s3()
     conn.host = "s3-us-west-2.amazonaws.com"
     try:

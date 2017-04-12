@@ -21,7 +21,7 @@ def index():
 @app.route('/dashboard', methods=['POST'])
 def dashboard():
     file = request.files['uploadfile']
-    complete_name = 'uploaded_files/dashboard/{}'.format(file.filename)
+    complete_name = '/var/www/dashboard/{}'.format(file.filename)
     file.save(complete_name)
     workbook = open_workbook(complete_name)
     worksheet = workbook.sheet_by_index(0)
@@ -33,7 +33,7 @@ def dashboard():
 @app.route('/archive', methods=['POST'])
 def dashboard_archive():
     file = request.files['uploadfile']
-    complete_name = 'uploaded_files/dashboard/originals/{}'.format(file.filename)
+    complete_name = '/var/www/dashboard/originals/{}'.format(file.filename)
     file.save(complete_name)
     s3_upload.delay(file.filename)
     return jsonify({'file': file.filename}), 201
@@ -42,7 +42,7 @@ def dashboard_archive():
 @app.route('/dashboard2', methods=['POST'])
 def dashboard2():
     file = request.files['uploadfile']
-    complete_name = 'uploaded_files/dashboard/{}'.format(file.filename)
+    complete_name = '/var/www/dashboard/{}'.format(file.filename)
     file.save(complete_name)
     workbook = open_workbook(complete_name)
     dparser = DashboardParserV3(workbook)
@@ -57,7 +57,7 @@ def dashboard2():
 def portfolio():
     file = request.files['uploadfile']
     app.logger.info(file.filename)
-    complete_name = 'uploaded_files/portfolio/{}'.format(file.filename)
+    complete_name = '/var/www/portfolio/{}'.format(file.filename)
     file.save(complete_name)
     workbook = open_workbook(complete_name)
     worksheet = workbook.sheet_by_index(0)
@@ -74,7 +74,7 @@ def portfolio():
 def portfolio2():
     file = request.files['uploadfile']
     app.logger.info(file.filename)
-    complete_name = 'uploaded_files/portfolio/{}'.format(file.filename)
+    complete_name = '/var/www/portfolio/{}'.format(file.filename)
     file.save(complete_name)
     workbook = open_workbook(complete_name)
     worksheet = workbook.sheet_by_index(0)
@@ -92,10 +92,10 @@ def portfolio_upload():
     if 'analyst' in request.args:
         response_dict = dict()
         analyst = request.args['analyst']
-        for file in os.listdir('uploaded_files/output'):
+        for file in os.listdir('/var/www/output'):
             if 'xls' in file[-4:] and analyst in file:
                 app.logger.info(file)
-                res = ftp_upload.delay("uploaded_files/output/{}".format(file), file)
+                res = ftp_upload.delay("var/www/output/{}".format(file), file)
                 response_dict[file] = res
         return jsonify(response_dict), 201
     else:
