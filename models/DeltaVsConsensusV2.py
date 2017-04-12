@@ -1,14 +1,17 @@
 from utils.cell_functions import cell_value, cell_value_by_key, find_cell
 
 
-def get_object(worksheet, rowx, colx):
+def get_object(worksheet, rowx, colx, metric = None):
     dvc = dict()
     keys = ['cq', 'current_year', 'current_year_plus_one', 'current_year_plus_two', 'current_year_plus_three']
     for idx, key in enumerate(keys):
         year_data = dict()
         year_data['aim'] = cell_value(worksheet, rowx + 1, colx+2+idx)
         year_data['consensus'] = cell_value(worksheet, rowx + 2, colx+2+idx)
-        year_data['guidance'] = cell_value(worksheet, rowx + 3, colx+2+idx)
+        if metric is not None and metric == 'gap_eps':
+            year_data['guidance'] = None
+        else:
+            year_data['guidance'] = cell_value(worksheet, rowx + 3, colx+2+idx)
         dvc[key] = year_data
     return dvc
 
@@ -55,7 +58,7 @@ class DeltaVsConsensusV2(object):
             elif metric == DeltaVsConsensusV2.EB_CHOICES[2]:
                 self.ppop = get_object(worksheet, row + 5, col)
 
-            self.adj_eps = get_object(worksheet, row + 9, col)
+            self.adj_eps = get_object(worksheet, row + 9, col, metric="gap_eps")
             self.gap_eps = get_object(worksheet, row + 13, col)
 
             self.fcf = None
