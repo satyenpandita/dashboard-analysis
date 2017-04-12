@@ -32,4 +32,4 @@ def send_mail(send_from, send_to, subject, text, files=[], server="smtp.office36
         smtp.quit()
     except Exception as e:
         print(str(e))
-        send_mail.retry(exc=e, max_retries=2)
+        send_mail.retry(exc=e, max_retries=2, countdown=10)
