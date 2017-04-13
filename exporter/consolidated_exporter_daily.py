@@ -88,7 +88,7 @@ def write_data(workbook, data, sheet):
         worksheet.write('AW{}'.format(idx+offset), dsh.target_price.get('base').get('return_1year'), percentage_format)
         worksheet.write('AX{}'.format(idx+offset), dsh.target_price.get('bear').get('return_1year'), percentage_format)
         worksheet.write('AY{}'.format(idx+offset), dsh.target_price.get('bull').get('return_1year'), percentage_format)
-        worksheet.write('AZ{}'.format(idx+offset), dsh.target_price.get('expected_value_1year'), percentage_format)
+        worksheet.write('AZ{}'.format(idx+offset), dsh.target_price.get('expected_value_1year'))
         worksheet.write('BA{}'.format(idx+offset), dsh.target_price.get('borrow_cost_1year'), percentage_format)
         worksheet.write('BB{}'.format(idx+offset), dsh.target_price.get('net_ret_1year'), percentage_format)
 
@@ -96,7 +96,7 @@ def write_data(workbook, data, sheet):
         worksheet.write('BC{}'.format(idx+offset), dsh.target_price.get('base').get('return_3year'), percentage_format)
         worksheet.write('BD{}'.format(idx+offset), dsh.target_price.get('bear').get('return_3year'), percentage_format)
         worksheet.write('BE{}'.format(idx+offset), dsh.target_price.get('bull').get('return_3year'), percentage_format)
-        worksheet.write('BF{}'.format(idx+offset), dsh.target_price.get('expected_value_3year'), percentage_format)
+        worksheet.write('BF{}'.format(idx+offset), dsh.target_price.get('expected_value_3year'))
         worksheet.write('BG{}'.format(idx+offset), dsh.target_price.get('borrow_cost_3year'), percentage_format)
         worksheet.write('BH{}'.format(idx+offset), dsh.target_price.get('net_ret_3year'), percentage_format)
 
