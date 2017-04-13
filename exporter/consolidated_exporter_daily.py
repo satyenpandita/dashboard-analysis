@@ -265,10 +265,10 @@ def write_data2(workbook, data, sheet):
         dsh = DashboardV2(cum_dash.base)
         worksheet = workbook.get_worksheet_by_name(sheet)
         now = datetime.datetime.now()
-        worksheet.write('A{}'.format(idx+offset), dsh.stock_code)
-        worksheet.write('B{}'.format(idx+offset), now.strftime('%m/%d/%y'))
-        implied_multiple = dsh.implied_multiple
         if not dsh.old:
+            worksheet.write('A{}'.format(idx+offset), dsh.stock_code)
+            worksheet.write('B{}'.format(idx+offset), now.strftime('%m/%d/%y'))
+            implied_multiple = dsh.implied_multiple
             worksheet.write('C{}'.format(idx+offset), get_val(implied_multiple, 'ev_per_gross_revenue', 'pt_bear', 'current_year'))
             worksheet.write('D{}'.format(idx+offset), get_val(implied_multiple, 'ev_per_gross_revenue', 'pt_base', 'current_year'))
             worksheet.write('E{}'.format(idx+offset), get_val(implied_multiple, 'ev_per_gross_revenue', 'pt_bull', 'current_year'))
