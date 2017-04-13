@@ -157,7 +157,7 @@ fiscal_map = {
 #                 offset += 1
 #     return offset
 
-def write_data(workbook, data, sheet):
+def write_data(workbook, data, sheet, scenario):
     row_offset = 4
     worksheet = workbook.get_worksheet_by_name(sheet)
     percentage_format = workbook.add_format()
@@ -166,16 +166,15 @@ def write_data(workbook, data, sheet):
     integer_format.set_num_format(0x01)
     for idx, dashboard in enumerate(data):
         cum_dsh = CumulativeDashBoard.from_dict(dashboard)
-        for i, scenario in enumerate(['Base', 'Bear', 'Bull']):
-            dsh = DashboardV2(getattr(cum_dsh, scenario.lower()))
-            if not dsh.old:
-                populate_initial_columns(worksheet, dsh, row_offset)
-                populate_current_valuation(worksheet, dsh, row_offset, 4)
-                populate_delta_consensus(worksheet, dsh, row_offset, 17, 'aim')
-                populate_delta_consensus(worksheet, dsh, row_offset, 29, 'guidance')
-                populate_leverage_returns(worksheet, dsh, row_offset, 41)
-                populate_key_financials(worksheet, dsh, row_offset, 54)
-                row_offset += 12
+        dsh = DashboardV2(getattr(cum_dsh, scenario.lower()))
+        if not dsh.old:
+            populate_initial_columns(worksheet, dsh, row_offset)
+            populate_current_valuation(worksheet, dsh, row_offset, 4)
+            populate_delta_consensus(worksheet, dsh, row_offset, 17, 'aim')
+            populate_delta_consensus(worksheet, dsh, row_offset, 29, 'guidance')
+            populate_leverage_returns(worksheet, dsh, row_offset, 41)
+            populate_key_financials(worksheet, dsh, row_offset, 54)
+            row_offset += 12
     return workbook
 
 
@@ -300,7 +299,7 @@ def write_headers(workbook, sheet):
 
 class ConsolidatedExporterFiscal:
     @classmethod
-    def export(cls, workbook, sheet):
+    def export(cls, workbook, sheet, scenario):
         workbook = write_headers(workbook, sheet)
-        workbook = write_data(workbook, db.cumulative_dashboards.find({}), sheet)
+        workbook = write_data(workbook, db.cumulative_dashboards.find({}), sheet, scenario)
         return workbook
