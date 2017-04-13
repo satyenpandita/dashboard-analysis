@@ -5,7 +5,8 @@ def find_cell(worksheet, val, row_fixed=None, row_offset=0):
     if row_fixed:
         return __cell_by_row(worksheet, row_fixed, val)
     else:
-        for row in range(row_offset, 300):
+        lines = worksheet.nrows if worksheet.nrows < 300 else 300
+        for row in range(row_offset, lines):
             cell = __cell_by_row(worksheet, row, val)
             if cell:
                 return cell
