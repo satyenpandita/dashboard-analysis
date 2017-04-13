@@ -35,6 +35,14 @@ def get_opp_thesis(worksheet):
     return opp_thesis
 
 
+def is_old(worksheet):
+    val = cell_value(worksheet, 0, 0)
+    if val is not None and val != "" and val == 'old':
+        return True
+    else:
+        return False
+
+
 class DashboardV2(object):
     """docstring for Dashboard"""
 
@@ -43,6 +51,7 @@ class DashboardV2(object):
             for k, v in data.items():
                 setattr(self, k, v)
         else:
+            self.old = is_old(data)
             self.company = cell_value_by_key(data, 'Company:')
             self.stock_code = cell_value_by_key(data, 'Stock Code:')
             self.fiscal_year_end = cell_value_by_key(data, 'Fiscal Yea end:')
@@ -63,18 +72,23 @@ class DashboardV2(object):
             self.forecast_period = cell_value_by_key(data, 'Forecast Period:')
             self.likely_outcome = get_likely_outcome(data)
             self.opp_thesis = get_opp_thesis(data)
-            self.delta_consensus = DeltaVsConsensusV2(data).__dict__
             self.short_metrics = ShortMetrics(data).__dict__
             self.irr_decomp = IRRDecomp(data).__dict__
             self.tam = Tam(data).__dict__
             self.analyst_fill_cells = AnalystFillCells(data).__dict__
             self.target_price = TargetPrice(data).__dict__
-            self.data_tracking = DataTracking(data).__dict__
-            self.current_valuation = CurrentValuationV2(data).__dict__
             self.financial_info = FinancialInfo(data).__dict__
-            self.leverage_and_returns = LeverageAndReturns(data).__dict__
-            self.key_financials = KeyFinancials(data).__dict__
-            self.implied_multiple = ImpliedMultiple(data).__dict__
+            self.data_tracking = DataTracking(data).__dict__
+            if self.old:
+                # Create  old Version of Implied Multiple
+                print("Old Model")
+            else:
+                self.current_valuation = CurrentValuationV2(data).__dict__
+                self.leverage_and_returns = LeverageAndReturns(data).__dict__
+                self.key_financials = KeyFinancials(data).__dict__
+                self.delta_consensus = DeltaVsConsensusV2(data).__dict__
+                self.implied_multiple = ImpliedMultiple(data).__dict__
+
             # self.yoy_growth_revenue = self.calculate_growth('gross_revenue')
             # self.cagr_4years_revenue = self.calculate_cagr_4yrs('gross_revenue')
             # self.yoy_growth_eps = self.calculate_growth('adj_eps')

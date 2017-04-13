@@ -168,13 +168,14 @@ def write_data(workbook, data, sheet):
         cum_dsh = CumulativeDashBoard.from_dict(dashboard)
         for i, scenario in enumerate(['Base', 'Bear', 'Bull']):
             dsh = DashboardV2(getattr(cum_dsh, scenario.lower()))
-            populate_initial_columns(worksheet, dsh, row_offset)
-            populate_current_valuation(worksheet, dsh, row_offset, 4)
-            populate_delta_consensus(worksheet, dsh, row_offset, 17, 'aim')
-            populate_delta_consensus(worksheet, dsh, row_offset, 29, 'guidance')
-            populate_leverage_returns(worksheet, dsh, row_offset, 41)
-            populate_key_financials(worksheet, dsh, row_offset, 54)
-        row_offset += 12
+            if not dsh.old:
+                populate_initial_columns(worksheet, dsh, row_offset)
+                populate_current_valuation(worksheet, dsh, row_offset, 4)
+                populate_delta_consensus(worksheet, dsh, row_offset, 17, 'aim')
+                populate_delta_consensus(worksheet, dsh, row_offset, 29, 'guidance')
+                populate_leverage_returns(worksheet, dsh, row_offset, 41)
+                populate_key_financials(worksheet, dsh, row_offset, 54)
+                row_offset += 12
     return workbook
 
 

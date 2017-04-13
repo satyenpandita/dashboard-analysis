@@ -9,6 +9,9 @@ from werkzeug.contrib.fixers import ProxyFix
 from utils.upload_ops import ftp_upload
 from utils.upload_ops import s3_upload
 import os
+from config.mongo_config import db
+from models.CumulativeDashBoard import CumulativeDashBoard
+from models.DashboardV2 import DashboardV2
 
 app = Flask(__name__)
 
@@ -133,6 +136,21 @@ def dashboard_upload_only():
     ftp_upload.delay("/var/www//output/fiscal_bull.xlsx", "fiscal_bull.xlsx")
     ftp_upload.delay("/var/www//output/daily1.xlsx", "daily1.xlsx")
     ftp_upload.delay("/var/www//output/daily2.xlsx", "daily2.xlsx")
+    return jsonify({'response': "Upload Queued"}), 201
+
+
+@app.route('/migration_old', methods=['GET'])
+def migration_old():
+    for cum_dsh in enumerate(db.cumulative_dashboards.find({})):
+        cum_dsh = CumulativeDashBoard.from_dict(cum_dsh)
+        dsh_base = DashboardV2(cum_dsh.base)
+        dsh_bull = DashboardV2(cum_dsh.bull)
+        dsh_bear = DashboardV2(cum_dsh.bear)
+        dsh_base.old = False
+        dsh_bear.old = False
+        dsh_bull.old = False
+        updated_cum_dsh = CumulativeDashBoard(cum_dsh.stock_code, dsh_base, dsh_bull,dsh_bear)
+        updated_cum_dsh.save()
     return jsonify({'response': "Upload Queued"}), 201
 
 
