@@ -28,15 +28,15 @@ class Exporter:
         finally:
             self.workbook_daily2.close()
         try:
-            self.workbook_fiscal_base = ConsolidatedExporterFiscal.export(self.workbook_fiscal_base, 'Fiscal Base')
+            self.workbook_fiscal_base = ConsolidatedExporterFiscal.export(self.workbook_fiscal_base, 'Fiscal Base', 'base')
         finally:
             self.workbook_fiscal_base.close()
         try:
-            self.workbook_fiscal_bull = ConsolidatedExporterFiscal.export(self.workbook_fiscal_bull, 'Fiscal Bull')
+            self.workbook_fiscal_bull = ConsolidatedExporterFiscal.export(self.workbook_fiscal_bull, 'Fiscal Bull', 'bull')
         finally:
             self.workbook_fiscal_bull.close()
         try:
-            self.workbook_fiscal_bear = ConsolidatedExporterFiscal.export(self.workbook_fiscal_bear, 'Fiscal Bear')
+            self.workbook_fiscal_bear = ConsolidatedExporterFiscal.export(self.workbook_fiscal_bear, 'Fiscal Bear', 'bear')
         finally:
             self.workbook_fiscal_bear.close()
 
