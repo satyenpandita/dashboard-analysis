@@ -1,10 +1,8 @@
 import time
 from models.BaseModel import BaseModel
-from models.CumulativeDashBoard import CumulativeDashBoard
-
 
 class DashboardArchive(BaseModel):
-    def __init__(self, cdsh: CumulativeDashBoard):
+    def __init__(self, cdsh):
         self.stock_code = cdsh.stock_code
         self.base = cdsh.base
         self.bull = cdsh.bull
