@@ -8,7 +8,7 @@ class Tam(object):
         self.cagr = cell_value_by_key(workbook, 'Cagr')
         self.mkt_share_t = cell_value_by_key(workbook,'Mkt Share (t)')
         self.mkt_share_t3 = cell_value_by_key(workbook, 'Mkt Share (t+3)')
-        self.key_comps = []
+        self.key_comps = ["", "", ""]
         cell_address = find_cell(workbook, 'Key Comps')
         if cell_address:
             row, col = cell_address
