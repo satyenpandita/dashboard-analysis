@@ -49,7 +49,7 @@ def dashboard2():
     dparser.save_dashboard()
     exporter = Exporter()
     exporter.export()
-    exporter.ftp_upload()
+    # exporter.ftp_upload()
     return jsonify({'file': file.filename}), 201
 
 
