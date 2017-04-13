@@ -260,12 +260,12 @@ def get_val(obj, key, sub_key, year):
 
 def write_data2(workbook, data, sheet):
     offset = 7
+    count = 0
     for idx, dashboard in enumerate(data):
         cum_dash = CumulativeDashBoard.from_dict(dashboard)
         dsh = DashboardV2(cum_dash.base)
         worksheet = workbook.get_worksheet_by_name(sheet)
         now = datetime.datetime.now()
-        count = 0
         if not dsh.old:
             worksheet.write('A{}'.format(count+offset), dsh.stock_code)
             worksheet.write('B{}'.format(count+offset), now.strftime('%m/%d/%y'))
