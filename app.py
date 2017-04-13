@@ -141,7 +141,7 @@ def dashboard_upload_only():
 
 @app.route('/migration_old', methods=['GET'])
 def migration_old():
-    for cum_dsh in enumerate(db.cumulative_dashboards.find({})):
+    for idx, cum_dsh in enumerate(db.cumulative_dashboards.find({})):
         cum_dsh = CumulativeDashBoard.from_dict(cum_dsh)
         dsh_base = DashboardV2(cum_dsh.base)
         dsh_bull = DashboardV2(cum_dsh.bull)
