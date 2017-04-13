@@ -34,7 +34,10 @@ def cell_value(worksheet, rowx, colx):
         if val == 'NM':
             return 0
         else:
-            return val
+            if cell.ctype == xlrd.XL_CELL_TEXT:
+                return val.strip()
+            else:
+                return val
 
 
 def cell_value_by_key(worksheet, key_str, row_offset=0, col_offset=1):

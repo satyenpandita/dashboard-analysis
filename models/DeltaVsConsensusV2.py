@@ -58,8 +58,8 @@ class DeltaVsConsensusV2(object):
             elif metric == DeltaVsConsensusV2.EB_CHOICES[2]:
                 self.ppop = get_object(worksheet, row + 5, col)
 
-            self.adj_eps = get_object(worksheet, row + 9, col, metric="gap_eps")
-            self.gap_eps = get_object(worksheet, row + 13, col)
+            self.adj_eps = get_object(worksheet, row + 9, col)
+            self.gap_eps = get_object(worksheet, row + 13, col, metric="gap_eps")
 
             self.fcf = None
             self.bps = None
