@@ -1,6 +1,7 @@
-from config.mongo_config import db
 import xlsxwriter
-from models.Dashboard import Dashboard
+
+from config.mongo_config import db
+from models.obselete.Dashboard import Dashboard
 from utils.cell_functions import get_next_column
 
 

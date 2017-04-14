@@ -1,5 +1,5 @@
-from models.Dashboard import Dashboard
 from config.mongo_config import db
+from models.obselete.Dashboard import Dashboard
 
 
 class DashboardParser:

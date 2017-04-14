@@ -1,10 +1,9 @@
-import sys
 import os
+import sys
 from xlrd import open_workbook
+from exporter.exporter import Exporter
 from parsers.DashboardParserV3 import DashboardParserV3
 from parsers.portfolio.portfolio_parser import PortfolioParser
-from exporter.report_card_exporters import ReportCardExporter
-from exporter.exporter import Exporter
 from utils.upload_ops import ftp_upload
 from utils.upload_ops import s3_upload
 
@@ -18,9 +17,6 @@ if __name__ == '__main__':
                 workbook = open_workbook('uploaded_files/dashboard/'+file)
                 dparser = DashboardParserV3(workbook)
                 dparser.save_dashboard()
-    elif sys.argv[1] == 'reportcard':
-        exporter = ReportCardExporter()
-        exporter.export_report_card()
     elif sys.argv[1] == 'consolidated':
         exporter = Exporter()
         exporter.export()
