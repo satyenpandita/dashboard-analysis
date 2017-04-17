@@ -102,16 +102,16 @@ header_list = ['EV/Gross Revenue - AIM',
 fiscal_map = {
     'cq_minus_4a': '-4FQ',
     'cq_minus_1a': '-1FQ',
-    'cq': '0FQ',
+    'cq': '1FQ',
     'current_year_minus_four': '-4FY',
     'current_year_minus_three': '-3FY',
     'current_year_minus_two': '-2FY',
     'current_year_minus_one': '-1FY',
-    'current_year': '0FY',
-    'current_year_plus_one': '1FY',
-    'current_year_plus_two': '2FY',
-    'current_year_plus_three': '3FY',
-    'current_year_plus_four': '4FY'
+    'current_year': '1FY',
+    'current_year_plus_one': '2FY',
+    'current_year_plus_two': '3FY',
+    'current_year_plus_three': '4FY',
+    'current_year_plus_four': '5FY'
 }
 
 
