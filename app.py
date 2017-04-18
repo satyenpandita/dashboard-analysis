@@ -93,16 +93,14 @@ def portfolio2():
 @app.route('/portfolio_upload', methods=['GET'])
 def portfolio_upload():
     if 'analyst' in request.args:
-        response_dict = dict()
         analyst = request.args['analyst']
         for file in os.listdir('/var/www/output'):
             if 'xls' in file[-4:] and analyst in file:
                 app.logger.info(file)
-                res = ftp_upload.delay("var/www/output/{}".format(file), file)
-                response_dict[file] = res
-        return jsonify(response_dict), 201
+                ftp_upload.delay("var/www/output/{}".format(file), file)
+        return jsonify({'success': 'Tasks Queued'}), 201
     else:
-        return jsonify({'error':'No Analyst name'})
+        return jsonify({'error': 'No Analyst name'})
 
 
 @app.route('/dashboard_upload', methods=['GET'])
