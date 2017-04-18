@@ -59,6 +59,6 @@ class PortfolioExporter(object):
                 worksheet.write('D{}'.format(count), now.strftime('%m/%d/%y'))
                 worksheet.write('E{}'.format(count), rfc)
                 worksheet.write('F{}'.format(count), -weight*100)
-                worksheet.write('G{}'.format(count), 'AIM BEST IDEAS {} LONG'.format(analyst))
+                worksheet.write('G{}'.format(count), 'AIM BEST IDEAS {} SHORT'.format(analyst))
                 count += 1
 
