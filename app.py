@@ -97,7 +97,7 @@ def portfolio_upload():
         for file in os.listdir('/var/www/output'):
             if 'xls' in file[-4:] and analyst in file:
                 app.logger.info(file)
-                ftp_upload.delay("var/www/output/{}".format(file), file)
+                ftp_upload.delay("/var/www/output/{}".format(file), file)
         return jsonify({'success': 'Tasks Queued'}), 201
     else:
         return jsonify({'error': 'No Analyst name'})
