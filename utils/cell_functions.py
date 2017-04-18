@@ -3,7 +3,10 @@ import functools
 
 
 def find_cell(worksheet, val, row_fixed=None, row_offset=None, col_fixed=None):
-    limit_row, limit_col = find_cell_wrapped(worksheet, "Total Assets", row_offset=100, col_fixed=1)
+    limit_row, limit_col = None, None
+    cell_address = find_cell_wrapped(worksheet, "Total Assets", row_offset=100, col_fixed=1)
+    if cell_address:
+        limit_row, limit_col = cell_address
     return find_cell_wrapped(worksheet, val, row_fixed, row_offset, col_fixed, limit_row)
 
 
