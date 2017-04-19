@@ -25,7 +25,7 @@ class Dashboard(Document):
     forecast_period = StringField()
     likely_outcome = DictField(default=dict())
     opp_thesis = DictField(default=dict())
-    short_metrics = MapField(EmbeddedDocumentField(ShortMetrics))
+    short_metrics = ListField(EmbeddedDocumentField(ShortMetrics))
     # irr_decomp = DictField(EmbeddedDocumentField(IRRDecomp))
     # tam = DictField(EmbeddedDocumentField(Tam))
     # analyst_fill_cells = DictField(EmbeddedDocumentField(AnalystFillCells))

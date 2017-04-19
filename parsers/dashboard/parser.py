@@ -36,7 +36,7 @@ class DashboardParser(object):
             forecast_period=self.forecast_period(),
             likely_outcome=self.likely_outcome(),
             opp_thesis=self.opp_thesis(),
-            short_metrics=short_metrics.to_mongo()
+            short_metrics=short_metrics
         )
         dashboard.save()
 
