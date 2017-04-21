@@ -102,9 +102,10 @@ def write_data(workbook, data, sheet):
 
         now = datetime.datetime.now()
         worksheet.write('BI{}'.format(idx+offset), now.strftime('%m/%d/%y'))
-        worksheet.write('BJ{}'.format(idx+offset), dsh.analyst_primary)
-        worksheet.write('BK{}'.format(idx+offset), dsh.analyst_secondary)
-        # Implied Multiple
+
+        if dsh.qualitative_assessment:
+            worksheet.write('BJ{}'.format(idx+offset), dsh.analyst_primary)
+            worksheet.write('BK{}'.format(idx+offset), dsh.analyst_secondary)
 
         worksheet.freeze_panes(6, 4)
     return workbook
@@ -354,12 +355,13 @@ def write_data2(workbook, data, sheet):
             worksheet.write('BT{}'.format(count+offset), get_val(implied_multiple, 'cfcf_per_p', 'pt_bear', 'current_year_plus_three'))
             worksheet.write('BU{}'.format(count+offset), get_val(implied_multiple, 'cfcf_per_p', 'pt_base', 'current_year_plus_three'))
             worksheet.write('BV{}'.format(count+offset), get_val(implied_multiple, 'cfcf_per_p', 'pt_bull', 'current_year_plus_three'))
-            worksheet.write('BW{}'.format(count+offset), dsh.qualitative_assessment.get('macro', None))
-            worksheet.write('BX{}'.format(count+offset), dsh.qualitative_assessment.get('moat', None))
-            worksheet.write('BY{}'.format(count+offset), dsh.qualitative_assessment.get('mgmt', None))
-            worksheet.write('BZ{}'.format(count+offset), dsh.qualitative_assessment.get('corp_gov', None))
-            worksheet.write('CA{}'.format(count+offset), dsh.qualitative_assessment.get('others', None))
-            worksheet.write('CB{}'.format(count+offset), dsh.qualitative_assessment.get('mgmt_dialogue', None))
+            if dsh.qualitative_assessment:
+                worksheet.write('BW{}'.format(count+offset), dsh.qualitative_assessment.get('macro', None))
+                worksheet.write('BX{}'.format(count+offset), dsh.qualitative_assessment.get('moat', None))
+                worksheet.write('BY{}'.format(count+offset), dsh.qualitative_assessment.get('mgmt', None))
+                worksheet.write('BZ{}'.format(count+offset), dsh.qualitative_assessment.get('corp_gov', None))
+                worksheet.write('CA{}'.format(count+offset), dsh.qualitative_assessment.get('others', None))
+                worksheet.write('CB{}'.format(count+offset), dsh.qualitative_assessment.get('mgmt_dialogue', None))
             count += 1
     return workbook
 
