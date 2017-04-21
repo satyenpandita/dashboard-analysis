@@ -103,9 +103,8 @@ def write_data(workbook, data, sheet):
         now = datetime.datetime.now()
         worksheet.write('BI{}'.format(idx+offset), now.strftime('%m/%d/%y'))
 
-        if dsh.qualitative_assessment:
-            worksheet.write('BJ{}'.format(idx+offset), dsh.analyst_primary)
-            worksheet.write('BK{}'.format(idx+offset), dsh.analyst_secondary)
+        worksheet.write('BJ{}'.format(idx+offset), dsh.analyst_primary)
+        worksheet.write('BK{}'.format(idx+offset), dsh.analyst_secondary)
 
         worksheet.freeze_panes(6, 4)
     return workbook
