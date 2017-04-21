@@ -17,6 +17,7 @@ namespace :deploy do
         execute "source #{current_path}/env/bin/activate"
         execute "#{current_path}/env/bin/pip3 install -r #{current_path}/requirements.txt"
         execute "#{current_path}/env/bin/pip3 install gunicorn"
+        execute :sudo, "chmod 777 -R /var/www/auroville/releases"
     end
   end
 
