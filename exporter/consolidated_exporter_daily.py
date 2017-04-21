@@ -361,6 +361,7 @@ def write_data2(workbook, data, sheet):
                 worksheet.write('BZ{}'.format(count+offset), dsh.qualitative_assessment.get('corp_gov', None))
                 worksheet.write('CA{}'.format(count+offset), dsh.qualitative_assessment.get('others', None))
                 worksheet.write('CB{}'.format(count+offset), dsh.qualitative_assessment.get('mgmt_dialogue', None))
+                count += 1
         except Exception as e:
             print(str(e))
             print(dsh.stock_code)
