@@ -10,6 +10,7 @@ from models.IRRDecomp import IRRDecomp
 from models.KeyFinancials import KeyFinancials
 from models.Tam import Tam
 from models.ImpliedMultiple import ImpliedMultiple
+from models.QualitativeAssessment import QualitativeAssessment
 from utils.cell_functions import cell_value, cell_value_by_key, find_cell
 
 
@@ -79,6 +80,7 @@ class DashboardV2(object):
             self.target_price = TargetPrice(data).__dict__
             self.financial_info = FinancialInfo(data).__dict__
             self.data_tracking = DataTracking(data).__dict__
+            self.qualitative_assessment = QualitativeAssessment(data).__dict__
             if self.old:
                 # Create  old Version of Implied Multiple
                 print("Old Model")
