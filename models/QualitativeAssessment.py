@@ -4,7 +4,7 @@ from utils.cell_functions import find_cell, cell_value_by_key, cell_value
 class QualitativeAssessment(object):
 
     def __init__(self, worksheet):
-        cell_address = find_cell(worksheet, 'Qualitative Assessment (1=worst, 3=best)')
+        cell_address = find_cell(worksheet, 'Qualitative Assessment', like=True)
         if cell_address:
             row,col = cell_address
             self.macro = cell_value(worksheet, row+2, col)

@@ -2,29 +2,29 @@ import xlrd
 import functools
 
 
-def find_cell(worksheet, val, row_fixed=None, row_offset=None, col_fixed=None):
+def find_cell(worksheet, val, row_fixed=None, row_offset=None, col_fixed=None, like=False):
     limit_row, limit_col = None, None
     cell_address = find_cell_wrapped(worksheet, "Total Assets", row_offset=100, col_fixed=1)
     if cell_address:
         limit_row, limit_col = cell_address
-    return find_cell_wrapped(worksheet, val, row_fixed, row_offset, col_fixed, limit_row)
+    return find_cell_wrapped(worksheet, val, row_fixed, row_offset, col_fixed, limit_row, like)
 
 
-def find_cell_wrapped(worksheet, val, row_fixed=None, row_offset=0, col_fixed=0, limit=None):
+def find_cell_wrapped(worksheet, val, row_fixed=None, row_offset=0, col_fixed=0, limit=None, like=False):
     if row_fixed:
-        return __cell_by_row(worksheet, row_fixed, val)
+        return __cell_by_row(worksheet, row_fixed, val, like)
     elif col_fixed:
-        return __cell_by_col(worksheet, col_fixed, val)
+        return __cell_by_col(worksheet, col_fixed, val, like)
     else:
         max_limit = worksheet.nrows if limit is None else limit
         min_limit = row_offset if row_offset is not None else 0
         for row in range(min_limit, max_limit):
-            cell = __cell_by_row(worksheet, row, val)
+            cell = __cell_by_row(worksheet, row, val, like)
             if cell:
                 return cell
 
 
-def __cell_by_col(worksheet, col, val):
+def __cell_by_col(worksheet, col, val, like):
     rows = worksheet.nrows
     for row in range(rows):
         cell = worksheet.cell(row, col)
@@ -34,11 +34,15 @@ def __cell_by_col(worksheet, col, val):
                 if cell_val in val:
                     return row, col, cell_val
             else:
-                if cell_val and cell_val.strip().lower() == val.strip().lower():
-                    return row, col
+                if like:
+                    if cell_val and val.strip().lower() in cell_val.strip().lower():
+                        return row, col
+                else:
+                    if cell_val and val.strip().lower() == cell_val.strip().lower():
+                        return row, col
 
 
-def __cell_by_row(worksheet, row, val):
+def __cell_by_row(worksheet, row, val, like):
     cols = worksheet.ncols
     for col in range(cols):
         cell = worksheet.cell(row, col)
@@ -48,8 +52,12 @@ def __cell_by_row(worksheet, row, val):
                 if cell_val in val:
                     return row, col, cell_val
             else:
-                if cell_val and cell_val.strip().lower() == val.strip().lower():
-                    return row, col
+                if like:
+                    if cell_val and val.strip().lower() in cell_val.strip().lower():
+                        return row, col
+                else:
+                    if cell_val and val.strip().lower() == cell_val.strip().lower():
+                        return row, col
 
 
 def cell_value(worksheet, rowx, colx):
