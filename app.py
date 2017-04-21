@@ -50,9 +50,6 @@ def dashboard2():
     workbook = open_workbook(complete_name)
     dparser = DashboardParserV3(workbook)
     dparser.save_dashboard()
-    exporter = Exporter()
-    exporter.export()
-    exporter.send_email()
     # exporter.ftp_upload()
     return jsonify({'file': file.filename}), 201
 
