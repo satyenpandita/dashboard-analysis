@@ -7,6 +7,7 @@ def find_cell(worksheet, val, row_fixed=None, row_offset=None, col_fixed=None, l
     cell_address = find_cell_wrapped(worksheet, "Total Assets", row_offset=100, col_fixed=1)
     if cell_address:
         limit_row, limit_col = cell_address
+        limit_row += 1
     return find_cell_wrapped(worksheet, val, row_fixed, row_offset, col_fixed, limit_row, like)
 
 

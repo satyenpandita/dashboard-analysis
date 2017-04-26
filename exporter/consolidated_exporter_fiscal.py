@@ -97,7 +97,8 @@ header_list = ['EV/Gross Revenue - AIM',
                'Core Free Cash Flow',
                'Net Cash',
                'Total SE and Liabilities',
-               'Total Assets'
+               'Total Assets',
+               'Gross Profit'
                ]
 fiscal_map = {
     'cq_minus_4a': '-4FQ',
@@ -209,6 +210,7 @@ def populate_key_financials(worksheet, dsh, row_offset, init_col):
     populate_from_dict(worksheet, dsh.key_financials, 'net_cash', row_offset, init_col + 19)
     populate_from_dict(worksheet, dsh.key_financials, 'total_se_liabilities', row_offset, init_col + 20)
     populate_from_dict(worksheet, dsh.key_financials, 'total_assets', row_offset, init_col + 21)
+    populate_from_dict(worksheet, dsh.key_financials, 'gross_profit', row_offset, init_col + 21)
 
 
 def populate_leverage_returns(worksheet, dsh, row_offset, init_col):
@@ -286,7 +288,7 @@ def write_headers(workbook, sheet):
     worksheet.merge_range("{}1:{}1".format(colnum_string(17), colnum_string(28)), "Delta Vs Consensus (AIM)", merge_format)
     worksheet.merge_range("{}1:{}1".format(colnum_string(29), colnum_string(40)), "Delta Vs Consensus (Guidance)", merge_format)
     worksheet.merge_range("{}1:{}1".format(colnum_string(41), colnum_string(53)), "Leverage and Returns", merge_format)
-    worksheet.merge_range("{}1:{}1".format(colnum_string(54), colnum_string(74)), "Key Financials", merge_format)
+    worksheet.merge_range("{}1:{}1".format(colnum_string(54), colnum_string(76)), "Key Financials", merge_format)
     worksheet.write('A2', 'Stock Code ', merge_format)
     worksheet.write('B2', 'Rel Period', merge_format)
     worksheet.write('C2', 'Fixed Period', merge_format)

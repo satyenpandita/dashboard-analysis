@@ -111,12 +111,12 @@ class KeyFinancials(object):
         self.maintenance_capex = None
         cell_address = find_cell(worksheet, KeyFinancials.CAPEX_CHOICES[0], row_offset=74)
         if cell_address:
-            row_capex, col_capex, metric = cell_address
+            row_capex, col_capex = cell_address
             self.total_capex = get_object(worksheet, row_capex, col_capex)
 
         cell_address = find_cell(worksheet, KeyFinancials.CAPEX_CHOICES[0], row_offset=74)
         if cell_address:
-            row_capex, col_capex, metric = cell_address
+            row_capex, col_capex = cell_address
             self.maintenance_capex = get_object(worksheet, row_capex, col_capex)
 
         self.pre_financing_fcf = None
