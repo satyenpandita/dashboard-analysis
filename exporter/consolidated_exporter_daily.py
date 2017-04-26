@@ -366,11 +366,17 @@ def write_data2(workbook, data, sheet):
 
 class ConsolidatedExporterDaily:
     @classmethod
-    def export(cls, workbook, sheet):
+    def export(cls, workbook, sheet, stock_code):
         if sheet == 'Daily1':
             workbook = write_headers(workbook, sheet)
-            workbook = write_data(workbook, db.cumulative_dashboards.find({}), sheet)
+            if stock_code is not None:
+                workbook = write_data(workbook, db.cumulative_dashboards.find({'stock_code': stock_code}), sheet)
+            else:
+                workbook = write_data(workbook, db.cumulative_dashboards.find({}), sheet)
         elif sheet == 'Daily2':
             workbook = write_headers2(workbook, sheet)
-            workbook = write_data2(workbook, db.cumulative_dashboards.find({}), sheet)
+            if stock_code is not None:
+                workbook = write_data2(workbook, db.cumulative_dashboards.find({'stock_code': stock_code}), sheet)
+            else:
+                workbook = write_data2(workbook, db.cumulative_dashboards.find({}), sheet)
         return workbook

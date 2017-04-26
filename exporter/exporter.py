@@ -13,7 +13,7 @@ class Exporter:
         self.workbook_daily1 = None
         self.workbook_daily2 = None
 
-    def export(self):
+    def export(self, stock_code=None):
         self.workbook_fiscal_base = xlsxwriter.Workbook("/var/www/output/fiscal_base.xlsx")
         self.workbook_fiscal_bear = xlsxwriter.Workbook("/var/www/output/fiscal_bear.xlsx")
         self.workbook_fiscal_bull = xlsxwriter.Workbook("/var/www/output/fiscal_bull.xlsx")
@@ -26,23 +26,26 @@ class Exporter:
         # self.workbook_daily1 = xlsxwriter.Workbook("uploaded_files/output/daily1.xlsx")
         # self.workbook_daily2 = xlsxwriter.Workbook("uploaded_files/output/daily2.xlsx")
         try:
-            self.workbook_daily1 = ConsolidatedExporterDaily.export(self.workbook_daily1, 'Daily1')
+            self.workbook_daily1 = ConsolidatedExporterDaily.export(self.workbook_daily1, 'Daily1', stock_code)
         finally:
             self.workbook_daily1.close()
         try:
-            self.workbook_daily2 = ConsolidatedExporterDaily.export(self.workbook_daily2, 'Daily2')
+            self.workbook_daily2 = ConsolidatedExporterDaily.export(self.workbook_daily2, 'Daily2', stock_code)
         finally:
             self.workbook_daily2.close()
         try:
-            self.workbook_fiscal_base = ConsolidatedExporterFiscal.export(self.workbook_fiscal_base, 'Fiscal Base', 'base')
+            self.workbook_fiscal_base = ConsolidatedExporterFiscal.export(self.workbook_fiscal_base, 'Fiscal Base',
+                                                                          'base', stock_code)
         finally:
             self.workbook_fiscal_base.close()
         try:
-            self.workbook_fiscal_bull = ConsolidatedExporterFiscal.export(self.workbook_fiscal_bull, 'Fiscal Bull', 'bull')
+            self.workbook_fiscal_bull = ConsolidatedExporterFiscal.export(self.workbook_fiscal_bull, 'Fiscal Bull',
+                                                                          'bull', stock_code)
         finally:
             self.workbook_fiscal_bull.close()
         try:
-            self.workbook_fiscal_bear = ConsolidatedExporterFiscal.export(self.workbook_fiscal_bear, 'Fiscal Bear', 'bear')
+            self.workbook_fiscal_bear = ConsolidatedExporterFiscal.export(self.workbook_fiscal_bear, 'Fiscal Bear',
+                                                                          'bear', stock_code)
         finally:
             self.workbook_fiscal_bear.close()
 
@@ -78,3 +81,8 @@ class Exporter:
                          self.workbook_fiscal_bull.filename],
                         username="ppal@auroim.com",
                         password="AuroOct2016")
+
+    def export_and_upload(self, stock_code=None):
+        self.export(stock_code)
+        self.ftp_upload()
+        return "Files Generated Upload Queued"

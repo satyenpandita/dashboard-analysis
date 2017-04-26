@@ -50,7 +50,8 @@ def dashboard2():
     workbook = open_workbook(complete_name)
     dparser = DashboardParserV3(workbook)
     dparser.save_dashboard()
-    # exporter.ftp_upload()
+    exporter = Exporter()
+    exporter.export_and_upload(dparser.stock_code)
     return jsonify({'file': file.filename}), 201
 
 
@@ -104,8 +105,7 @@ def portfolio_upload():
 @app.route('/dashboard_upload', methods=['GET'])
 def dashboard_upload():
     exporter = Exporter()
-    exporter.export()
-    exporter.ftp_upload()
+    exporter.export_and_upload()
     exporter.send_email()
     return jsonify({'response': "Files Generated and Tasks queued"}), 201
 

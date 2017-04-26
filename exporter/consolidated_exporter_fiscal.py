@@ -210,7 +210,7 @@ def populate_key_financials(worksheet, dsh, row_offset, init_col):
     populate_from_dict(worksheet, dsh.key_financials, 'net_cash', row_offset, init_col + 19)
     populate_from_dict(worksheet, dsh.key_financials, 'total_se_liabilities', row_offset, init_col + 20)
     populate_from_dict(worksheet, dsh.key_financials, 'total_assets', row_offset, init_col + 21)
-    populate_from_dict(worksheet, dsh.key_financials, 'gross_profit', row_offset, init_col + 21)
+    populate_from_dict(worksheet, dsh.key_financials, 'gross_profit', row_offset, init_col + 22)
 
 
 def populate_leverage_returns(worksheet, dsh, row_offset, init_col):
@@ -301,7 +301,10 @@ def write_headers(workbook, sheet):
 
 class ConsolidatedExporterFiscal:
     @classmethod
-    def export(cls, workbook, sheet, scenario):
+    def export(cls, workbook, sheet, scenario, stock_code):
         workbook = write_headers(workbook, sheet)
-        workbook = write_data(workbook, db.cumulative_dashboards.find({}), sheet, scenario)
+        if stock_code is not None:
+            workbook = write_data(workbook, db.cumulative_dashboards.find({'stock_code': stock_code}), sheet, scenario)
+        else:
+            workbook = write_data(workbook, db.cumulative_dashboards.find({}), sheet, scenario)
         return workbook
