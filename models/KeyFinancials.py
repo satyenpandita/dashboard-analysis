@@ -154,3 +154,10 @@ class KeyFinancials(object):
         if cell_address:
             row_total_assets, col_total_assets = cell_address
             self.total_assets = get_object(worksheet, row_total_assets, col_total_assets)
+
+        self.gross_profit = None
+        cell_address = find_cell(worksheet, 'Gross profit', row_offset=74)
+        if cell_address:
+            row_profit, col_profit = cell_address
+            self.gross_profit = get_object(worksheet, row_profit, col_profit)
+
