@@ -96,9 +96,9 @@ class KeyFinancials(object):
             self.adj_net_income = get_object(worksheet, row_income, col_income)
 
         self.eps_fully_diluted = None
-        cell_address = find_cell(worksheet, 'EPS (fully-diluted)', row_offset=74)
+        cell_address = find_cell(worksheet, ['EPS', 'EPS (fully-diluted)', 'NG EPS'], row_offset=74)
         if cell_address:
-            row_eps, col_eps = cell_address
+            row_eps, col_eps, cell_val = cell_address
             self.eps_fully_diluted = get_object(worksheet, row_eps, col_eps)
 
         self.ocf = None
