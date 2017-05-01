@@ -14,7 +14,7 @@ def get_tickers(worksheet, direction):
     cell_address = find_cell(worksheet, folio_type)
     if cell_address:
         row, col = cell_address
-        target_row, target_col = row + 3, col + 1
+        target_row, target_col = row + 3, col + 2
         while True:
             val = cell_value(worksheet, target_row, target_col)
             if val and val != "":
