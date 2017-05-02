@@ -2,7 +2,7 @@ import sys
 import os
 from xlrd import open_workbook
 from parsers.DashboardParserV3 import DashboardParserV3
-from parsers.portfolio.portfolio_parser import PortfolioParser
+from parsers.portfolio.portfolio_parser_v2 import PortfolioParserV2
 from exporter.report_card_exporters import ReportCardExporter
 from exporter.exporter import Exporter
 from utils.upload_ops import ftp_upload
@@ -32,9 +32,8 @@ if __name__ == '__main__':
                 print(file)
                 workbook = open_workbook('uploaded_files/portfolio/'+file)
                 worksheet = workbook.sheet_by_index(0)
-                parser = PortfolioParser(worksheet, file)
+                parser = PortfolioParserV2(worksheet, file)
                 parser.generate_upload_file(file.split(".")[0])
-                #parser.ftp_upload()
     elif sys.argv[1] == 'publish' and len(sys.argv) == 3:
         for file in os.listdir('uploaded_files/output'):
             if 'xls' in file[-4:]:

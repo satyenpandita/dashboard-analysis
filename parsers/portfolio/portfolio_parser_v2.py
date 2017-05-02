@@ -11,10 +11,11 @@ INVALID_TICKERS = dict()
 def get_tickers(worksheet, direction):
     folio = dict()
     folio_type = 'LONG Pfolio ($M)' if direction == 'long' else 'Short Pfolio ($M)'
+    row_offset = 3 if direction == 'long' else 2
     cell_address = find_cell(worksheet, folio_type)
     if cell_address:
         row, col = cell_address
-        target_row, target_col = row + 3, col + 2
+        target_row, target_col = row + row_offset, col + 1
         while True:
             val = cell_value(worksheet, target_row, target_col)
             if val and val != "":

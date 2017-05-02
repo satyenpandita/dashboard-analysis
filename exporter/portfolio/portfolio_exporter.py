@@ -12,6 +12,7 @@ class PortfolioExporter(object):
     def export(self, analyst, direction):
         filename = "aim best ideas {} {}.xlsx".format(analyst, direction)
         output_path = "/var/www/output/{}".format(filename)
+        # output_path = "uploaded_files/output/{}".format(filename)
         self.workbook = xlsxwriter.Workbook(output_path)
         try:
             self.__write_headers('Sheet1')

@@ -18,7 +18,7 @@ def get_tickers(worksheet, direction):
         while True:
             next_row += 1
             val = cell_value(worksheet, next_row, col)
-            if 'total' in val.lower():
+            if ('total' in val.lower()) or val == '':
                 if direction == 'long':
                     break
                 elif direction == 'short':
