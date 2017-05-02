@@ -12,6 +12,7 @@ import os
 from config.mongo_config import db
 from models.CumulativeDashBoard import CumulativeDashBoard
 from models.DashboardV2 import DashboardV2
+from utils.error_handlers import handle_500
 
 app = Flask(__name__)
 
@@ -148,6 +149,11 @@ def migration_old():
         updated_cum_dsh = CumulativeDashBoard(cum_dsh.stock_code, dsh_base, dsh_bull,dsh_bear)
         updated_cum_dsh.save()
     return jsonify({'response': "Upload Queued"}), 201
+
+
+@app.errorhandler(500)
+def server_error(e):
+    handle_500(e)
 
 
 app.wsgi_app = ProxyFix(app.wsgi_app)
