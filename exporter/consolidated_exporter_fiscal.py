@@ -98,8 +98,20 @@ header_list = ['EV/Gross Revenue - AIM',
                'Net Cash',
                'Total SE and Liabilities',
                'Total Assets',
-               'Gross Profit'
+               'Gross Profit',
                ]
+
+additional_headers = [
+    'P/EV - AIM',
+    'Free Surpus(Insurance)/P - AIM',
+    'ANP - AIM',
+    'ANP - Guidance',
+    'VoNB - AIM',
+    'VoNB - Guidance',
+    'IFRS EPS - AIM',
+    'IFRS EPS - Guidance'
+]
+
 fiscal_map = {
     'cq_minus_4a': '-4FQ',
     'cq_minus_1a': '-1FQ',
@@ -175,6 +187,7 @@ def write_data(workbook, data, sheet, scenario):
             populate_delta_consensus(worksheet, dsh, row_offset, 29, 'guidance')
             populate_leverage_returns(worksheet, dsh, row_offset, 41)
             populate_key_financials(worksheet, dsh, row_offset, 54)
+            populate_additional_columns(worksheet, dsh, row_offset, 78)
             row_offset += 12
     return workbook
 
@@ -258,7 +271,17 @@ def populate_current_valuation(worksheet, dsh, row_offset, init_col):
     populate_from_dict(worksheet,  dsh.current_valuation, 'cap_per_others', row_offset, init_col + 10, 'aim')
     populate_from_dict(worksheet,  dsh.current_valuation, 'fcf_per_p', row_offset, init_col + 11, 'aim')
     populate_from_dict(worksheet,  dsh.current_valuation, 'cfcf_per_p', row_offset, init_col + 12, 'aim')
-    return row_offset + 12
+
+
+def populate_additional_columns(worksheet, dsh, row_offset, init_col):
+    populate_from_dict(worksheet,  dsh.current_valuation, 'p_ev', row_offset, init_col, 'aim')
+    populate_from_dict(worksheet,  dsh.current_valuation, 'free_surpus_price', row_offset, init_col + 1, 'aim')
+    populate_from_dict(worksheet, dsh.delta_consensus, 'anp', row_offset, init_col + 2, 'aim')
+    populate_from_dict(worksheet, dsh.delta_consensus, 'anp', row_offset, init_col + 3, 'consensus')
+    populate_from_dict(worksheet, dsh.delta_consensus, 'vonb', row_offset, init_col + 4, 'aim')
+    populate_from_dict(worksheet, dsh.delta_consensus, 'vonb', row_offset, init_col + 5, 'consensus')
+    populate_from_dict(worksheet, dsh.delta_consensus, 'ifrs_eps', row_offset, init_col + 6, 'aim')
+    populate_from_dict(worksheet, dsh.delta_consensus, 'ifrs_eps', row_offset, init_col + 7, 'consensus')
 
 
 def populate_from_dict(worksheet, dsh, key, row_offset, col, sub_key=None):
@@ -289,6 +312,8 @@ def write_headers(workbook, sheet):
     worksheet.merge_range("{}1:{}1".format(colnum_string(29), colnum_string(40)), "Delta Vs Consensus (Guidance)", merge_format)
     worksheet.merge_range("{}1:{}1".format(colnum_string(41), colnum_string(53)), "Leverage and Returns", merge_format)
     worksheet.merge_range("{}1:{}1".format(colnum_string(54), colnum_string(76)), "Key Financials", merge_format)
+    worksheet.merge_range("{}1:{}1".format(colnum_string(78), colnum_string(79)), "Current Caluation", merge_format)
+    worksheet.merge_range("{}1:{}1".format(colnum_string(80), colnum_string(85)), "Delta Vs Consensus", merge_format)
     worksheet.write('A2', 'Stock Code ', merge_format)
     worksheet.write('B2', 'Rel Period', merge_format)
     worksheet.write('C2', 'Fixed Period', merge_format)
@@ -296,6 +321,8 @@ def write_headers(workbook, sheet):
         worksheet.write('{}2'.format(colnum_string(idx+4)), header, merge_format)
         final_col = idx+4
     worksheet.write('{}2'.format(colnum_string(final_col+1)), "BBU Date", merge_format)
+    for idx, header in enumerate(additional_headers):
+        worksheet.write('{}2'.format(colnum_string(final_col+idx+2)), header, merge_format)
     return workbook
 
 
