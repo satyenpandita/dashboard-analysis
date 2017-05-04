@@ -187,7 +187,7 @@ def write_data(workbook, data, sheet, scenario):
             populate_delta_consensus(worksheet, dsh, row_offset, 29, 'guidance')
             populate_leverage_returns(worksheet, dsh, row_offset, 41)
             populate_key_financials(worksheet, dsh, row_offset, 54)
-            populate_additional_columns(worksheet, dsh, row_offset, 79)
+            populate_additional_columns(worksheet, dsh, row_offset, 78)
             row_offset += 12
     return workbook
 
@@ -274,7 +274,14 @@ def populate_current_valuation(worksheet, dsh, row_offset, init_col):
 
 
 def populate_additional_columns(worksheet, dsh, row_offset, init_col):
-    populate_from_dict(worksheet,  dsh.current_valuation, 'ev_per_gross_revenue', row_offset, init_col, 'aim')
+    populate_from_dict(worksheet,  dsh.current_valuation, 'p_ev', row_offset, init_col, 'aim')
+    populate_from_dict(worksheet,  dsh.current_valuation, 'free_surpus_price', row_offset, init_col + 1, 'aim')
+    populate_from_dict(worksheet, dsh.delta_consensus, 'anp', row_offset, init_col + 2, 'aim')
+    populate_from_dict(worksheet, dsh.delta_consensus, 'anp', row_offset, init_col + 3, 'consensus')
+    populate_from_dict(worksheet, dsh.delta_consensus, 'vonb', row_offset, init_col + 4, 'aim')
+    populate_from_dict(worksheet, dsh.delta_consensus, 'vonb', row_offset, init_col + 5, 'consensus')
+    populate_from_dict(worksheet, dsh.delta_consensus, 'ifrs_eps', row_offset, init_col + 6, 'aim')
+    populate_from_dict(worksheet, dsh.delta_consensus, 'ifrs_eps', row_offset, init_col + 7, 'consensus')
 
 
 def populate_from_dict(worksheet, dsh, key, row_offset, col, sub_key=None):

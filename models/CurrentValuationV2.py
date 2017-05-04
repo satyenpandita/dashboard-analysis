@@ -56,9 +56,9 @@ class CurrentValuationV2(object):
                 self.ev_per_ebita = get_object(worksheet, row + 3, col)
             elif metric == CurrentValuationV2.EB_CHOICES[3]:
                 self.ev_per_ebit = get_object(worksheet, row + 3, col)
-            elif metric == CurrentValuationV2.EB_CHOICES[3]:
-                self.ev_per_ppop = get_object(worksheet, row + 3, col)
             elif metric == CurrentValuationV2.EB_CHOICES[4]:
+                self.ev_per_ppop = get_object(worksheet, row + 3, col)
+            elif metric == CurrentValuationV2.EB_CHOICES[5]:
                 self.p_ev = get_object(worksheet, row + 3, col)
 
             self.cap_per_adj_eps = get_object(worksheet, row + 7, col)
