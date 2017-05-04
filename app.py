@@ -19,7 +19,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    raise ValueError
+    return "Hello, World!!!!!!!!!!!"
 
 
 @app.route('/dashboard', methods=['POST'])
