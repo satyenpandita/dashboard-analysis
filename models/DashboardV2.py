@@ -84,6 +84,7 @@ class DashboardV2(object):
             if self.old:
                 # Create  old Version of Implied Multiple
                 print("Old Model")
+                self.delta_consensus = DeltaVsConsensusV2(data, self.old).__dict__
             else:
                 self.current_valuation = CurrentValuationV2(data).__dict__
                 self.leverage_and_returns = LeverageAndReturns(data).__dict__

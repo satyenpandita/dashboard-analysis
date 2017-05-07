@@ -22,10 +22,11 @@ class DeltaVsConsensusV2(object):
     FCF_CHOICES = ['FCF', 'BPS']
     EPS_CHOICES = ['IFRS EPS', 'Gaap EPS']
 
-    def __init__(self, worksheet):
+    def __init__(self, worksheet, is_old=False):
         super(DeltaVsConsensusV2, self).__init__()
 
         cell_address = find_cell(worksheet, 'Delta v/s Consensus')
+        self.stock_code = cell_value_by_key(worksheet, 'Stock Code:')
 
         if cell_address:
             row, col = cell_address
@@ -87,5 +88,40 @@ class DeltaVsConsensusV2(object):
                 self.fcf = get_object(worksheet, row+16, col)
             elif metric == DeltaVsConsensusV2.FCF_CHOICES[1]:
                 self.bps = get_object(worksheet, row+16, col)
+
+            if is_old:
+                self.delta_consensus_old_model(worksheet, row, col)
+
+    def delta_consensus_old_model(self, worksheet, row, col):
+        if self.stock_code.lower() == '1299 hk equity':
+            self.anp = get_object(worksheet, row + 1, col)
+            self.vonb = get_object(worksheet, row + 5, col)
+            self.adj_eps = get_object(worksheet, row + 9, col)
+            self.gap_eps = get_object(worksheet, row + 13, col)
+            self.bps = get_object(worksheet, row + 16, col)
+        elif self.stock_code.lower() == '8630 jp equity':
+            self.gross_rev = get_object(worksheet, row + 1, col)
+            self.vonb = get_object(worksheet, row + 5, col)
+            self.adj_eps = get_object(worksheet, row + 9, col)
+            self.gap_eps = get_object(worksheet, row + 13, col)
+            self.bps = get_object(worksheet, row + 16, col)
+        elif self.stock_code.lower() == '2007 hk equity':
+            self.gross_rev = get_object(worksheet, row + 1, col)
+            self.adj_ebitda = get_object(worksheet, row + 5, col)
+            self.adj_eps = get_object(worksheet, row + 9, col)
+            self.gap_eps = get_object(worksheet, row + 13, col)
+            self.bps = get_object(worksheet, row + 16, col)
+        elif self.stock_code.lower() == 'bzun us equity' or self.stock_code == 'vips us equity':
+            self.gross_rev = get_object(worksheet, row + 1, col)
+            self.ebit = get_object(worksheet, row + 5, col)
+            self.adj_eps = get_object(worksheet, row + 9, col)
+            self.gap_eps = get_object(worksheet, row + 13, col)
+            self.fcf = get_object(worksheet, row + 16, col)
+        else:
+            self.gross_rev = get_object(worksheet, row + 1, col)
+            self.adj_ebitda = get_object(worksheet, row + 5, col)
+            self.adj_eps = get_object(worksheet, row + 9, col)
+            self.gap_eps = get_object(worksheet, row + 13, col)
+            self.fcf = get_object(worksheet, row + 16, col)
 
 
