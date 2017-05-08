@@ -7,9 +7,16 @@ from config.mongo_config import db
 class DashboardParserV3(object):
 
     def __init__(self, workbook):
-        self.bull = DashboardV2(workbook.sheet_by_index(0))
-        self.base = DashboardV2(workbook.sheet_by_index(1))
-        self.bear = DashboardV2(workbook.sheet_by_index(2))
+        self.base = None
+        self.bear = None
+        self.bull = None
+        for sheet in workbook.sheets():
+            if "bull" in sheet.name.lower():
+                self.bull = DashboardV2(sheet)
+            elif "base" in sheet.name.lower():
+                self.base = DashboardV2(sheet)
+            elif "bear" in sheet.name.lower():
+                self.bear = DashboardV2(sheet)
         self.stock_code = self.base.stock_code
 
     def save_dashboard(self):
