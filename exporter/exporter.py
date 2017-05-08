@@ -56,10 +56,14 @@ class Exporter:
         ftp_upload.delay(self.workbook_fiscal_bear.filename, "fiscal_bear.xlsx")
         ftp_upload.delay(self.workbook_fiscal_bull.filename, "fiscal_bull.xlsx")
 
-    def send_email(self):
+    def send_email(self, stock_code=None):
+        subject = "Dashboard Published"
+        if stock_code:
+            subject = "Dashboard Published for {}".format(stock_code)
+
         send_mail.delay("ppal@auroim.com",
                         ["datascience@auroim.com"],
-                        "Dashbord Published",
+                        subject,
                         "Dashbord Published",
                         [self.workbook_daily1.filename,
                          self.workbook_daily2.filename,
