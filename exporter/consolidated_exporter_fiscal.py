@@ -249,18 +249,21 @@ def populate_leverage_returns(worksheet, dsh, row_offset, init_col):
 
 
 def populate_delta_consensus(worksheet, dsh, row_offset, init_col, sub_key):
-    populate_from_dict(worksheet, dsh.delta_consensus, 'gross_rev', row_offset, init_col, sub_key)
-    populate_from_dict(worksheet, dsh.delta_consensus, 'net_rev', row_offset, init_col + 1, sub_key)
-    populate_from_dict(worksheet, dsh.delta_consensus, 'net_nii', row_offset, init_col + 2, sub_key)
-    populate_from_dict(worksheet, dsh.delta_consensus, 'adj_ebitda', row_offset, init_col + 3, sub_key)
-    populate_from_dict(worksheet, dsh.delta_consensus, 'ebitdar', row_offset, init_col + 4, sub_key)
-    populate_from_dict(worksheet, dsh.delta_consensus, 'ebita', row_offset, init_col + 5, sub_key)
-    populate_from_dict(worksheet, dsh.delta_consensus, 'ebit', row_offset, init_col + 6, sub_key)
-    populate_from_dict(worksheet, dsh.delta_consensus, 'ppop', row_offset, init_col + 7, sub_key)
-    populate_from_dict(worksheet, dsh.delta_consensus, 'adj_eps', row_offset, init_col + 8, sub_key)
-    populate_from_dict(worksheet, dsh.delta_consensus, 'gap_eps', row_offset, init_col + 9, sub_key)
-    populate_from_dict(worksheet, dsh.delta_consensus, 'fcf', row_offset, init_col + 10, sub_key)
-    populate_from_dict(worksheet, dsh.delta_consensus, 'bps', row_offset, init_col + 11, sub_key)
+    try :
+        populate_from_dict(worksheet, dsh.delta_consensus, 'gross_rev', row_offset, init_col, sub_key)
+        populate_from_dict(worksheet, dsh.delta_consensus, 'net_rev', row_offset, init_col + 1, sub_key)
+        populate_from_dict(worksheet, dsh.delta_consensus, 'net_nii', row_offset, init_col + 2, sub_key)
+        populate_from_dict(worksheet, dsh.delta_consensus, 'adj_ebitda', row_offset, init_col + 3, sub_key)
+        populate_from_dict(worksheet, dsh.delta_consensus, 'ebitdar', row_offset, init_col + 4, sub_key)
+        populate_from_dict(worksheet, dsh.delta_consensus, 'ebita', row_offset, init_col + 5, sub_key)
+        populate_from_dict(worksheet, dsh.delta_consensus, 'ebit', row_offset, init_col + 6, sub_key)
+        populate_from_dict(worksheet, dsh.delta_consensus, 'ppop', row_offset, init_col + 7, sub_key)
+        populate_from_dict(worksheet, dsh.delta_consensus, 'adj_eps', row_offset, init_col + 8, sub_key)
+        populate_from_dict(worksheet, dsh.delta_consensus, 'gap_eps', row_offset, init_col + 9, sub_key)
+        populate_from_dict(worksheet, dsh.delta_consensus, 'fcf', row_offset, init_col + 10, sub_key)
+        populate_from_dict(worksheet, dsh.delta_consensus, 'bps', row_offset, init_col + 11, sub_key)
+    except Exception:
+        print("No Delta and Consensus {}".format(dsh.stock_code))
 
 
 def populate_current_valuation(worksheet, dsh, row_offset, init_col):
