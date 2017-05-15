@@ -249,7 +249,7 @@ def populate_leverage_returns(worksheet, dsh, row_offset, init_col):
 
 
 def populate_delta_consensus(worksheet, dsh, row_offset, init_col, sub_key):
-    try :
+    try:
         populate_from_dict(worksheet, dsh.delta_consensus, 'gross_rev', row_offset, init_col, sub_key)
         populate_from_dict(worksheet, dsh.delta_consensus, 'net_rev', row_offset, init_col + 1, sub_key)
         populate_from_dict(worksheet, dsh.delta_consensus, 'net_nii', row_offset, init_col + 2, sub_key)
@@ -284,13 +284,16 @@ def populate_current_valuation(worksheet, dsh, row_offset, init_col):
 
 def populate_additional_columns(worksheet, dsh, row_offset, init_col, selection=None):
     if selection == 'dvc':
-        populate_from_dict(worksheet, dsh.delta_consensus, 'anp', row_offset, init_col + 2, 'aim')
-        populate_from_dict(worksheet, dsh.delta_consensus, 'anp', row_offset, init_col + 3, 'guidance')
-        populate_from_dict(worksheet, dsh.delta_consensus, 'vonb', row_offset, init_col + 4, 'aim')
-        populate_from_dict(worksheet, dsh.delta_consensus, 'vonb', row_offset, init_col + 5, 'guidance')
-        populate_from_dict(worksheet, dsh.delta_consensus, 'ifrs_eps', row_offset, init_col + 6, 'aim')
-        populate_from_dict(worksheet, dsh.delta_consensus, 'ifrs_eps', row_offset, init_col + 7, 'guidance')
-        return
+        try:
+            populate_from_dict(worksheet, dsh.delta_consensus, 'anp', row_offset, init_col + 2, 'aim')
+            populate_from_dict(worksheet, dsh.delta_consensus, 'anp', row_offset, init_col + 3, 'guidance')
+            populate_from_dict(worksheet, dsh.delta_consensus, 'vonb', row_offset, init_col + 4, 'aim')
+            populate_from_dict(worksheet, dsh.delta_consensus, 'vonb', row_offset, init_col + 5, 'guidance')
+            populate_from_dict(worksheet, dsh.delta_consensus, 'ifrs_eps', row_offset, init_col + 6, 'aim')
+            populate_from_dict(worksheet, dsh.delta_consensus, 'ifrs_eps', row_offset, init_col + 7, 'guidance')
+            return
+        except Exception:
+            print("No Delta and Consensus {}".format(dsh.stock_code))
 
     populate_from_dict(worksheet,  dsh.current_valuation, 'p_ev', row_offset, init_col, 'aim')
     populate_from_dict(worksheet,  dsh.current_valuation, 'free_surpus_price', row_offset, init_col + 1, 'aim')
