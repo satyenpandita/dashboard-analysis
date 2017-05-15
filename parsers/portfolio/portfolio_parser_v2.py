@@ -73,7 +73,7 @@ class PortfolioParserV2(object):
 
     def send_email(self):
         send_mail.delay("ppal@auroim.com",
-                        ["datascience@auroim.com"],
+                        ["datascience@auroim.com", "aanand@auroim.com"],
                         "Best Ideas Published",
                         self.get_body(),
                         [self.output_file_long,

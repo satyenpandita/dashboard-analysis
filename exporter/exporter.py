@@ -62,7 +62,7 @@ class Exporter:
             subject = "Dashboard Published for {}".format(stock_code)
 
         send_mail.delay("ppal@auroim.com",
-                        ["datascience@auroim.com"],
+                        ["datascience@auroim.com", 'aanand@auroim.com'],
                         subject,
                         "Dashbord Published",
                         [self.workbook_daily1.filename,
