@@ -294,15 +294,17 @@ def populate_additional_columns(worksheet, dsh, row_offset, init_col, selection=
             return
         except Exception:
             print("No Delta and Consensus {}".format(dsh.stock_code))
-
-    populate_from_dict(worksheet,  dsh.current_valuation, 'p_ev', row_offset, init_col, 'aim')
-    populate_from_dict(worksheet,  dsh.current_valuation, 'free_surpus_price', row_offset, init_col + 1, 'aim')
-    populate_from_dict(worksheet, dsh.delta_consensus, 'anp', row_offset, init_col + 2, 'aim')
-    populate_from_dict(worksheet, dsh.delta_consensus, 'anp', row_offset, init_col + 3, 'guidance')
-    populate_from_dict(worksheet, dsh.delta_consensus, 'vonb', row_offset, init_col + 4, 'aim')
-    populate_from_dict(worksheet, dsh.delta_consensus, 'vonb', row_offset, init_col + 5, 'guidance')
-    populate_from_dict(worksheet, dsh.delta_consensus, 'ifrs_eps', row_offset, init_col + 6, 'aim')
-    populate_from_dict(worksheet, dsh.delta_consensus, 'ifrs_eps', row_offset, init_col + 7, 'guidance')
+    try:
+        populate_from_dict(worksheet,  dsh.current_valuation, 'p_ev', row_offset, init_col, 'aim')
+        populate_from_dict(worksheet,  dsh.current_valuation, 'free_surpus_price', row_offset, init_col + 1, 'aim')
+        populate_from_dict(worksheet, dsh.delta_consensus, 'anp', row_offset, init_col + 2, 'aim')
+        populate_from_dict(worksheet, dsh.delta_consensus, 'anp', row_offset, init_col + 3, 'guidance')
+        populate_from_dict(worksheet, dsh.delta_consensus, 'vonb', row_offset, init_col + 4, 'aim')
+        populate_from_dict(worksheet, dsh.delta_consensus, 'vonb', row_offset, init_col + 5, 'guidance')
+        populate_from_dict(worksheet, dsh.delta_consensus, 'ifrs_eps', row_offset, init_col + 6, 'aim')
+        populate_from_dict(worksheet, dsh.delta_consensus, 'ifrs_eps', row_offset, init_col + 7, 'guidance')
+    except Exception:
+        print("No Current Valuation {}".format(dsh.stock_code))
 
 
 def populate_from_dict(worksheet, dsh, key, row_offset, col, sub_key=None):
