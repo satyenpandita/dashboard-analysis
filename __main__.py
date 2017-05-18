@@ -33,7 +33,7 @@ if __name__ == '__main__':
                 workbook = open_workbook('uploaded_files/portfolio/'+file)
                 worksheet = workbook.sheet_by_index(0)
                 parser = PortfolioParserV2(worksheet, file)
-                parser.generate_upload_file(file.split(".")[0])
+                parser.save_and_generate_files()
     elif sys.argv[1] == 'publish' and len(sys.argv) == 3:
         for file in os.listdir('uploaded_files/output'):
             if 'xls' in file[-4:]:

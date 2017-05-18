@@ -83,7 +83,7 @@ def portfolio2():
     worksheet = workbook.sheet_by_index(0)
     app.logger.info("Parser Starting")
     parser = PortfolioParserV2(worksheet, file.filename)
-    parser.generate_upload_file(file.filename)
+    parser.save_and_generate_files()
     app.logger.info("Email Start")
     parser.send_email()
     app.logger.info("Email End")

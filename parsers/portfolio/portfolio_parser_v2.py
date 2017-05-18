@@ -1,5 +1,5 @@
 import re
-
+from models.portfolio import Portfolio, PortfolioItem
 from exporter.portfolio.portfolio_exporter import PortfolioExporter
 from utils.cell_functions import find_cell, cell_value
 from utils.email_sender import send_mail
@@ -66,15 +66,29 @@ class PortfolioParserV2(object):
         self.output_file_short_name = ''
         self.input_file = input_file
 
-    def generate_upload_file(self, filename):
+    def save_and_generate_files(self):
+        short_list = []
+        long_list = []
+        for stock, (weight, roc) in self.short_tickers.items():
+            portfolio_item = PortfolioItem(stock_code=stock, weight=weight, reason_for_change=roc)
+            short_list.append(portfolio_item)
+        for stock, (weight, roc) in self.long_tickers.items():
+            portfolio_item = PortfolioItem(stock_code=stock, weight=weight, reason_for_change=roc)
+            long_list.append(portfolio_item)
+        portfolio = Portfolio(analyst=self.analyst, shorts=short_list, longs=long_list,
+                              file_path='/var/www/portfolio/{}'.format(self.input_file))
+        portfolio.save()
+        self.generate_upload_file()
+
+    def generate_upload_file(self):
         exporter = PortfolioExporter(self.long_tickers, self.short_tickers)
         self.output_file_long, self.output_file_long_name = exporter.export(self.analyst, 'long')
         self.output_file_short, self.output_file_short_name = exporter.export(self.analyst, 'short')
 
     def send_email(self):
         send_mail.delay("ppal@auroim.com",
-                        ["datascience@auroim.com", "aanand@auroim.com"],
-                        "Best Ideas Published",
+                        ["datascience@auroim.com"],
+                        "Best Ideas Published for {}".format(self.analyst),
                         self.get_body(),
                         [self.output_file_long,
                          self.output_file_short,

@@ -20,11 +20,6 @@ class Exporter:
         self.workbook_daily1 = xlsxwriter.Workbook("/var/www/output/daily1.xlsx")
         self.workbook_daily2 = xlsxwriter.Workbook("/var/www/output/daily2.xlsx")
 
-        # self.workbook_fiscal_base = xlsxwriter.Workbook("uploaded_files/output/fiscal_base.xlsx")
-        # self.workbook_fiscal_bear = xlsxwriter.Workbook("uploaded_files/output/fiscal_bear.xlsx")
-        # self.workbook_fiscal_bull = xlsxwriter.Workbook("uploaded_files/output/fiscal_bull.xlsx")
-        # self.workbook_daily1 = xlsxwriter.Workbook("uploaded_files/output/daily1.xlsx")
-        # self.workbook_daily2 = xlsxwriter.Workbook("uploaded_files/output/daily2.xlsx")
         try:
             self.workbook_daily1 = ConsolidatedExporterDaily.export(self.workbook_daily1, 'Daily1', stock_code)
         finally:
