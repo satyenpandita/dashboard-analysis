@@ -29,7 +29,7 @@ def best_idea_diff_email(portfolio_id):
         if len(longs_removed + shorts_removed) > 0:
             subject += " - Stocks Removed [{}]".format("|".join(longs_removed + shorts_removed))
         send_mail("ppal@auroim.com",
-                  ["datascience@auroim.com"],
+                  ["datascience@auroim.com", "dwills@auroim.com", "aanand@auroim.com"],
                   subject,
                   "",
                   files=[portfolio.file_path],
