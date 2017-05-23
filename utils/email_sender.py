@@ -39,7 +39,7 @@ def send_mail(send_from, send_to, subject, text, files=[], server="smtp.office36
 @app.task()
 def send_dashboard_email(exporter, stock_code):
     subject = "Dashboard Published"
-    recipients = ["ppal@auroim.com@auroim.com"]
+    recipients = ["datascience@auroim.com"]
     if stock_code:
         subject = "Dashboard Published for {}".format(stock_code)
         email = get_user_from_stock(stock_code)
