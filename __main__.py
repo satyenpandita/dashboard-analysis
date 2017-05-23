@@ -18,12 +18,14 @@ if __name__ == '__main__':
                 workbook = open_workbook('uploaded_files/dashboard/'+file)
                 dparser = DashboardParserV3(workbook)
                 dparser.save_dashboard()
+                exporter = Exporter()
+                exporter.export_and_upload(dparser.stock_code)
     elif sys.argv[1] == 'export':
         exporter = Exporter()
         exporter.export()
     elif sys.argv[1] == 'consolidated':
         exporter = Exporter()
-        exporter.export()
+        exporter.export_and_upload()
     elif sys.argv[1] == 's3':
         s3_upload('ONDK US Equity_03-04-17.xlsx')
     elif sys.argv[1] == 'portfolio':

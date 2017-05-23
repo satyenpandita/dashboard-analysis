@@ -54,3 +54,22 @@ def get_ftp_credentials():
 def get_users():
     data = users.USERS
     return data
+
+
+def get_user_email(user):
+    data = users.USERS_EMAILS
+    try:
+        return data[user]
+    except KeyError:
+        return None
+
+
+def get_user_from_stock(stock):
+    from config.mongo_config import db
+    from models.DashboardV2 import DashboardV2
+    doc = db.cumulative_dashboards.find_one({"stock_code" : stock})
+    if doc is not None:
+        dashboard = DashboardV2(doc['base'])
+        return get_user_email(dashboard.analyst_primary)
+    else:
+        return None

@@ -45,15 +45,19 @@ def dashboard_archive():
 
 @app.route('/dashboard2', methods=['POST'])
 def dashboard2():
-    file = request.files['uploadfile']
-    complete_name = '/var/www/dashboard/{}'.format(file.filename)
-    file.save(complete_name)
-    workbook = open_workbook(complete_name)
-    dparser = DashboardParserV3(workbook)
-    dparser.save_dashboard()
-    exporter = Exporter()
-    exporter.export_and_upload(dparser.stock_code)
-    return jsonify({'file': file.filename}), 201
+    try:
+        file = request.files['uploadfile']
+        complete_name = '/var/www/dashboard/{}'.format(file.filename)
+        file.save(complete_name)
+        workbook = open_workbook(complete_name)
+        dparser = DashboardParserV3(workbook)
+        dparser.save_dashboard()
+        exporter = Exporter()
+        exporter.export_and_upload(dparser.stock_code)
+        return jsonify({'file': file.filename}), 201
+    except Exception as e:
+        app.logger.error("Publish Failed for file : {}".format(file.filename))
+        handle_500(e, file)
 
 
 @app.route('/portfolio', methods=['POST'])
@@ -75,7 +79,6 @@ def portfolio():
     except Exception as e:
         app.logger.error("Publish Failed for file : {}".format(file.filename))
         handle_500(e, file)
-
 
 
 @app.route('/portfolio2', methods=['POST'])

@@ -5,6 +5,7 @@ from email.mime.text import MIMEText
 from email.utils import COMMASPACE, formatdate
 from email import encoders
 from config.celery import app
+from utils.upload_ops import get_user_from_stock
 
 
 @app.task()
@@ -33,3 +34,26 @@ def send_mail(send_from, send_to, subject, text, files=[], server="smtp.office36
     except Exception as e:
         print(str(e))
         send_mail.retry(exc=e, max_retries=2, countdown=10)
+
+
+@app.task()
+def send_dashboard_email(exporter, stock_code):
+    subject = "Dashboard Published"
+    recipients = ["ppal@auroim.com@auroim.com"]
+    if stock_code:
+        subject = "Dashboard Published for {}".format(stock_code)
+        email = get_user_from_stock(stock_code)
+        if email is not None:
+            recipients.append(email)
+
+    send_mail("ppal@auroim.com",
+              recipients,
+              subject,
+              "Dashbord Published",
+              [exporter.workbook_daily1.filename,
+               exporter.workbook_daily2.filename,
+               exporter.workbook_fiscal_base.filename,
+               exporter.workbook_fiscal_bear.filename,
+               exporter.workbook_fiscal_bull.filename],
+              username="ppal@auroim.com",
+              password="AuroOct2016")
