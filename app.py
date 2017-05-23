@@ -58,19 +58,24 @@ def dashboard2():
 
 @app.route('/portfolio', methods=['POST'])
 def portfolio():
-    file = request.files['uploadfile']
-    app.logger.info(file.filename)
-    complete_name = '/var/www/portfolio/{}'.format(file.filename)
-    file.save(complete_name)
-    workbook = open_workbook(complete_name)
-    worksheet = workbook.sheet_by_index(0)
-    app.logger.info("Parser Starting")
-    parser = PortfolioParser(worksheet, file.filename)
-    parser.generate_upload_file(file.filename)
-    app.logger.info("Email Start")
-    parser.send_email.delay()
-    app.logger.info("Email End")
-    return jsonify({'file': file.filename}), 201
+    try:
+        file = request.files['uploadfile']
+        app.logger.info(file.filename)
+        complete_name = '/var/www/portfolio/{}'.format(file.filename)
+        file.save(complete_name)
+        workbook = open_workbook(complete_name)
+        worksheet = workbook.sheet_by_index(0)
+        app.logger.info("Parser Starting")
+        parser = PortfolioParser(worksheet, file.filename)
+        parser.generate_upload_file(file.filename)
+        app.logger.info("Email Start")
+        parser.send_email.delay()
+        app.logger.info("Email End")
+        return jsonify({'file': file.filename}), 201
+    except Exception as e:
+        app.logger.error("Publish Failed for file : {}".format(file.filename))
+        handle_500(e, file)
+
 
 
 @app.route('/portfolio2', methods=['POST'])

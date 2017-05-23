@@ -57,7 +57,7 @@ class Exporter:
             subject = "Dashboard Published for {}".format(stock_code)
 
         send_mail.delay("ppal@auroim.com",
-                        ["datascience@auroim.com", 'aanand@auroim.com'],
+                        ["datascience@auroim.com"],
                         subject,
                         "Dashbord Published",
                         [self.workbook_daily1.filename,
@@ -84,5 +84,5 @@ class Exporter:
     def export_and_upload(self, stock_code=None):
         self.export(stock_code)
         self.ftp_upload()
-        self.send_email()
+        self.send_email(stock_code)
         return "Files Generated Upload Queued"
