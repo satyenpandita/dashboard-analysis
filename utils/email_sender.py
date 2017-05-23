@@ -37,7 +37,7 @@ def send_mail(send_from, send_to, subject, text, files=[], server="smtp.office36
 
 
 @app.task()
-def send_dashboard_email(exporter, stock_code):
+def send_dashboard_email(exporter_file_list, stock_code):
     subject = "Dashboard Published"
     recipients = ["datascience@auroim.com"]
     if stock_code:
@@ -50,10 +50,6 @@ def send_dashboard_email(exporter, stock_code):
               recipients,
               subject,
               "Dashbord Published",
-              [exporter.workbook_daily1.filename,
-               exporter.workbook_daily2.filename,
-               exporter.workbook_fiscal_base.filename,
-               exporter.workbook_fiscal_bear.filename,
-               exporter.workbook_fiscal_bull.filename],
+              exporter_file_list,
               username="ppal@auroim.com",
               password="AuroOct2016")
