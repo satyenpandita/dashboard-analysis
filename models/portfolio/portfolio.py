@@ -59,8 +59,9 @@ class Portfolio(Document):
 
     @classmethod
     def post_save(cls, sender, document, **kwargs):
-        from utils.diff_email import best_idea_diff_email
-        best_idea_diff_email.delay(str(document.id))
+        # from utils.diff_email import best_idea_diff_email
+        # best_idea_diff_email.delay(str(document.id))
+        pass
 
 
 signals.post_save.connect(Portfolio.post_save, sender=Portfolio)
