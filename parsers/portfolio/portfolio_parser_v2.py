@@ -21,8 +21,8 @@ def get_tickers(worksheet, direction):
             if val and val != "":
                 ticker = valid_ticker(val)
                 if ticker:
-                    folio[ticker] = cell_value(worksheet, target_row, target_col+1), \
-                                    cell_value(worksheet, target_row, target_col+2)
+                    folio[ticker] = cell_value(worksheet, target_row, target_col+5), \
+                                    cell_value(worksheet, target_row, target_col+7)
                 else:
                     INVALID_TICKERS[target_row + 1] = val
                 target_row += 1
