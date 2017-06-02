@@ -1,6 +1,7 @@
 from __future__ import absolute_import
+import pymongo
 from config.celery import app
-from config import mongo_config
+from config.mongo_config import db
 from .email_sender import send_mail
 from models.portfolio.portfolio import Portfolio
 from models.portfolio.portfolio_archive import PortfolioArchive
@@ -40,6 +41,92 @@ def best_idea_diff_email(portfolio_id):
         print("Do nothing")
 
 
+@app.task()
+def target_price_diff_stock(stock_code):
+    cum_dash = db.cumulative_dashboards.find_one({"stock_code": stock_code})
+    archive = db.dashboard_archives.find_one({"stock_code": stock_code}, sort=[('deleted_at', pymongo.DESCENDING)])
+    target_price_diff(archive, cum_dash)
 
 
+@app.task()
+def target_price_diff_ids(cum_dash_id, archive_id):
+    archive = db.dashboard_archives.find_one({"_id": archive_id})
+    cum_dash = db.cumulative_dashboards.find_one({"_id": cum_dash_id})
+    target_price_diff(archive, cum_dash)
 
+
+@app.task()
+def target_price_diff(archive, cum_dash):
+    archive_tp = archive['base']['target_price']
+    cum_dash_tp = cum_dash['base']['target_price']
+    stock = cum_dash['stock_code'].replace("Equity", "").strip()
+    analyst = cum_dash['base']['analyst_primary']
+    archive_tp_base_1yr = archive_tp['base'].get('pt_1year', "")
+    archive_tp_base_3yr = archive_tp['base'].get('pt_3year', "")
+    archive_tp_bear_1yr = archive_tp['bear'].get('pt_1year', "")
+    archive_tp_bear_3yr = archive_tp['bear'].get('pt_3year', "")
+    archive_tp_bull_1yr = archive_tp['bull'].get('pt_1year', "")
+    archive_tp_bull_3yr = archive_tp['bull'].get('pt_3year', "")
+    cum_dash_tp_base_1yr = cum_dash_tp['base'].get('pt_1year', "")
+    cum_dash_tp_base_3yr = cum_dash_tp['base'].get('pt_3year', "")
+    cum_dash_ret_base_1yr = cum_dash_tp['base'].get('return_1year', "")
+    cum_dash_ret_base_3yr = cum_dash_tp['base'].get('return_3year', "")
+    cum_dash_tp_bear_1yr = cum_dash_tp['bear'].get('pt_1year', "")
+    cum_dash_tp_bear_3yr = cum_dash_tp['bear'].get('pt_3year', "")
+    cum_dash_ret_bear_1yr = cum_dash_tp['bear'].get('return_1year', "")
+    cum_dash_ret_bear_3yr = cum_dash_tp['bear'].get('return_3year', "")
+    cum_dash_tp_bull_1yr = cum_dash_tp['bull'].get('pt_1year', "")
+    cum_dash_tp_bull_3yr = cum_dash_tp['bull'].get('pt_3year', "")
+    cum_dash_ret_bull_1yr = cum_dash_tp['bull'].get('return_1year', "")
+    cum_dash_ret_bull_3yr = cum_dash_tp['bull'].get('return_3year', "")
+    change_base_1yr_tp = ''
+    change_bear_1yr_tp = ''
+    change_bull_1yr_tp = ''
+    change_base_3yr_tp = ''
+    change_bear_3yr_tp = ''
+    change_bull_3yr_tp = ''
+
+    if cum_dash_tp_base_1yr and archive_tp_base_1yr:
+        change_base_1yr_tp = '{:.1%}'.format((cum_dash_tp_base_1yr - archive_tp_base_1yr)/cum_dash_tp_base_1yr)
+
+    if cum_dash_tp_bear_1yr and cum_dash_tp_bear_1yr:
+        change_bear_1yr_tp = '{:.1%}'.format((cum_dash_tp_bear_1yr - archive_tp_bear_1yr)/cum_dash_tp_bear_1yr)
+
+    if cum_dash_tp_bull_1yr and archive_tp_bull_1yr:
+        change_bull_1yr_tp = '{:.1%}'.format((cum_dash_tp_bull_1yr - archive_tp_bull_1yr)/cum_dash_tp_bull_1yr)
+
+    if cum_dash_tp_base_3yr and archive_tp_base_3yr:
+        change_base_3yr_tp = '{:.1%}'.format((cum_dash_tp_base_3yr - archive_tp_base_3yr)/cum_dash_tp_base_3yr)
+
+    if cum_dash_tp_bear_3yr and archive_tp_bear_3yr:
+        change_bear_3yr_tp = '{:.1%}'.format((cum_dash_tp_bear_3yr - archive_tp_bear_3yr)/cum_dash_tp_bear_3yr)
+
+    if cum_dash_tp_bull_3yr and archive_tp_bull_3yr:
+        change_bull_3yr_tp = '{:.1%}'.format((cum_dash_tp_bull_3yr - archive_tp_bull_3yr)/cum_dash_tp_bull_3yr)
+
+    subject = "[{},{},DASH]({}|{}|{},{}|{}|{})" \
+              "{}{}|{}|{}, {}|{}|{}{}" \
+        .format(stock,
+                analyst,
+                '{:.1%}'.format(cum_dash_ret_base_1yr) if cum_dash_ret_base_1yr else "N/A",
+                '{:.1%}'.format(cum_dash_ret_bear_1yr) if cum_dash_ret_bear_1yr else "N/A",
+                '{:.1%}'.format(cum_dash_ret_bull_1yr) if cum_dash_ret_bull_1yr else "N/A",
+                '{:.1%}'.format(cum_dash_ret_base_3yr) if cum_dash_ret_base_3yr else "N/A",
+                '{:.1%}'.format(cum_dash_ret_bear_3yr) if cum_dash_ret_bear_3yr else "N/A",
+                '{:.1%}'.format(cum_dash_ret_bull_3yr) if cum_dash_ret_bull_3yr else "N/A",
+                '{',
+                change_base_1yr_tp,
+                change_bear_1yr_tp,
+                change_bull_1yr_tp,
+                change_base_3yr_tp,
+                change_bear_3yr_tp,
+                change_bull_3yr_tp,
+                '}'
+                )
+    print(subject)
+    send_mail("ppal@auroim.com",
+              ["ppal@auroim.com"],
+              subject,
+              "",
+              username="ppal@auroim.com",
+              password="AuroOct2016")
