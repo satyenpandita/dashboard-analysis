@@ -147,7 +147,7 @@ def dashboard_upload_only():
 @app.route('/portfolio', methods=['GET'])
 def portfolio_json():
     from models.portfolio.portfolio import Portfolio
-    portfolios = Portfolio.objects.only('analyst', 'longs', 'shorts').to_json()
+    portfolios = Portfolio.objects.to_json()
     return portfolios, 200
 
 
