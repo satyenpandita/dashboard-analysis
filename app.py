@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from exporter.exporter import Exporter
 from parsers.DashboardParserV2 import DashboardParserV2
 from parsers.DashboardParserV3 import DashboardParserV3
@@ -14,12 +14,17 @@ from models.CumulativeDashBoard import CumulativeDashBoard
 from models.DashboardV2 import DashboardV2
 from utils.error_handlers import handle_500
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 
 
 @app.route('/')
 def index():
     return "Hello, World!!!!!!!!!!!"
+
+
+@app.route('/robots.txt')
+def static_from_root():
+    return send_from_directory(app.static_folder, request.path[1:])
 
 
 @app.route('/dashboard', methods=['POST'])
