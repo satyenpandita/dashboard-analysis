@@ -12,11 +12,12 @@ def get_tickers(worksheet, direction):
     folio = dict()
     folio_type = 'LONG Pfolio ($M)' if direction == 'long' else 'Short Pfolio ($M)'
     row_offset = 3 if direction == 'long' else 2
+    range_length = 11 if direction == 'long' else 13
     cell_address = find_cell(worksheet, folio_type)
     if cell_address:
         row, col = cell_address
         target_row, target_col = row + row_offset, col + 1
-        while True:
+        for i in range(range_length):
             val = cell_value(worksheet, target_row, target_col)
             if val and val != "":
                 ticker = valid_ticker(val)
@@ -26,8 +27,6 @@ def get_tickers(worksheet, direction):
                 else:
                     INVALID_TICKERS[target_row + 1] = val
                 target_row += 1
-            else:
-                break
     return folio
 
 

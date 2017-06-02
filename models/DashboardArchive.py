@@ -1,6 +1,7 @@
 import time
 from models.BaseModel import BaseModel
 
+
 class DashboardArchive(BaseModel):
     def __init__(self, cdsh):
         self.stock_code = cdsh.stock_code

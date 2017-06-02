@@ -44,7 +44,7 @@ def __cell_by_col(worksheet, col, val, like):
 
 
 def __cell_by_row(worksheet, row, val, like):
-    cols = worksheet.ncols
+    cols = worksheet.ncols if worksheet.ncols < 25 else 25
     for col in range(cols):
         cell = worksheet.cell(row, col)
         if cell.ctype == xlrd.XL_CELL_TEXT:

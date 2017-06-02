@@ -144,6 +144,13 @@ def dashboard_upload_only():
     return jsonify({'response': "Upload Queued"}), 201
 
 
+@app.route('/portfolio', methods=['GET'])
+def portfolio_json():
+    from models.portfolio.portfolio import Portfolio
+    portfolios = Portfolio.objects.only('analyst', 'longs', 'shorts').to_json()
+    return portfolios, 200
+
+
 @app.route('/migration_old', methods=['GET'])
 def migration_old():
     for idx, cum_dsh in enumerate(db.cumulative_dashboards.find({})):
