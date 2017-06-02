@@ -4,6 +4,7 @@ from exporter.portfolio.portfolio_exporter import PortfolioExporter
 from utils.cell_functions import find_cell, cell_value
 from utils.email_sender import send_mail
 from utils.upload_ops import ftp_upload, get_users
+from utils.upload_ops import get_user_email
 
 INVALID_TICKERS = dict()
 
@@ -85,8 +86,12 @@ class PortfolioParserV2(object):
         self.output_file_short, self.output_file_short_name = exporter.export(self.analyst, 'short')
 
     def send_email(self):
+        analyst_email = get_user_email(self.analyst)
+        recipients = ["datascience@auroim.com"]
+        if analyst_email is not None:
+            recipients.append(analyst_email)
         send_mail.delay("ppal@auroim.com",
-                        ["datascience@auroim.com"],
+                        recipients,
                         "Best Ideas Published for {}".format(self.analyst),
                         self.get_body(),
                         [self.output_file_long,

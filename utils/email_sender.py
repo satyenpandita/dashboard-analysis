@@ -28,7 +28,7 @@ def send_mail(send_from, send_to, subject, text, files=[], server="smtp.office36
 
         smtp = smtplib.SMTP(server, port)
         if is_tls: smtp.starttls()
-        smtp.login(username,password)
+        smtp.login(username, password)
         smtp.sendmail(send_from, send_to, msg.as_string())
         smtp.quit()
     except Exception as e:
@@ -42,9 +42,9 @@ def send_dashboard_email(exporter_file_list, stock_code):
     recipients = ["datascience@auroim.com"]
     if stock_code:
         subject = "Dashboard Published for {}".format(stock_code)
-        # email = get_user_from_stock(stock_code)
-        # if email is not None:
-        #     recipients.append(email)
+        email = get_user_from_stock(stock_code)
+        if email is not None:
+            recipients.append(email)
 
     send_mail("ppal@auroim.com",
               recipients,
