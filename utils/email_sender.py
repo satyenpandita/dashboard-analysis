@@ -5,7 +5,7 @@ from email.mime.text import MIMEText
 from email.utils import COMMASPACE, formatdate
 from email import encoders
 from config.celery import app
-from utils.upload_ops import get_user_from_stock
+from utils.upload_ops import get_user_from_stock, get_user_email
 
 
 @app.task()
@@ -51,5 +51,20 @@ def send_dashboard_email(exporter_file_list, stock_code):
               subject,
               "Dashbord Published",
               exporter_file_list,
+              username="ppal@auroim.com",
+              password="AuroOct2016")
+
+
+@app.task()
+def best_ideas_notification_email(analyst):
+    recipients = ["datascience@auroim.com"]
+    email = get_user_email(analyst)
+    if email:
+        recipients.append(email)
+    send_mail("ppal@auroim.com",
+              recipients,
+              "Best Ideas Uploaded to Bloomberg",
+              "Hi {}, \n Your best Ideas have been uploaded to Bloomberg. Please refresh your monitors and check",
+              files=[],
               username="ppal@auroim.com",
               password="AuroOct2016")

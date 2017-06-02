@@ -86,10 +86,7 @@ class PortfolioParserV2(object):
         self.output_file_short, self.output_file_short_name = exporter.export(self.analyst, 'short')
 
     def send_email(self):
-        analyst_email = get_user_email(self.analyst)
         recipients = ["datascience@auroim.com"]
-        if analyst_email is not None:
-            recipients.append(analyst_email)
         send_mail.delay("ppal@auroim.com",
                         recipients,
                         "Best Ideas Published for {}".format(self.analyst),

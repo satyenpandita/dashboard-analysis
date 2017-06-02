@@ -8,6 +8,7 @@ from xlrd import open_workbook
 from werkzeug.contrib.fixers import ProxyFix
 from utils.upload_ops import ftp_upload
 from utils.upload_ops import s3_upload
+from utils.email_sender import best_ideas_notification_email
 import os
 from config.mongo_config import db
 from models.CumulativeDashBoard import CumulativeDashBoard
@@ -105,12 +106,16 @@ def portfolio2():
 
 @app.route('/portfolio_upload', methods=['GET'])
 def portfolio_upload():
+    file_found = False
     if 'analyst' in request.args:
         analyst = request.args['analyst']
         for file in os.listdir('/var/www/output'):
             if 'xls' in file[-4:] and analyst in file:
                 app.logger.info(file)
+                file_found = True
                 ftp_upload.delay("/var/www/output/{}".format(file), file)
+        if file_found:
+            best_ideas_notification_email.delay(analyst)
         return jsonify({'success': 'Tasks Queued'}), 201
     else:
         return jsonify({'error': 'No Analyst name'})
