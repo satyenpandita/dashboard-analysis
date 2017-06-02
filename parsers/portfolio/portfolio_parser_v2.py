@@ -26,7 +26,7 @@ def get_tickers(worksheet, direction):
                                     cell_value(worksheet, target_row, target_col+7)
                 else:
                     INVALID_TICKERS[target_row + 1] = val
-                target_row += 1
+            target_row += 1
     return folio
 
 
