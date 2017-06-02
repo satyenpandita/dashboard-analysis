@@ -1,5 +1,6 @@
 from __future__ import absolute_import
 import pymongo
+from bson.objectid import ObjectId
 from config.celery import app
 from config.mongo_config import db
 from .email_sender import send_mail
@@ -49,14 +50,14 @@ def target_price_diff_stock(stock_code):
 
 
 @app.task()
-def target_price_diff_ids(cum_dash_id, archive_id):
-    archive = db.dashboard_archives.find_one({"_id": archive_id})
-    cum_dash = db.cumulative_dashboards.find_one({"_id": cum_dash_id})
-    target_price_diff(archive, cum_dash)
+def target_price_diff_ids(cum_dash_id, archive_id, file=None):
+    archive = db.dashboard_archives.find_one({"_id": ObjectId(archive_id)})
+    cum_dash = db.cumulative_dashboards.find_one({"_id": ObjectId(cum_dash_id)})
+    target_price_diff(archive, cum_dash, file=file)
 
 
 @app.task()
-def target_price_diff(archive, cum_dash):
+def target_price_diff(archive, cum_dash, file=None):
     archive_tp = archive['base']['target_price']
     cum_dash_tp = cum_dash['base']['target_price']
     stock = cum_dash['stock_code'].replace("Equity", "").strip()
@@ -79,12 +80,12 @@ def target_price_diff(archive, cum_dash):
     cum_dash_tp_bull_3yr = cum_dash_tp['bull'].get('pt_3year', "")
     cum_dash_ret_bull_1yr = cum_dash_tp['bull'].get('return_1year', "")
     cum_dash_ret_bull_3yr = cum_dash_tp['bull'].get('return_3year', "")
-    change_base_1yr_tp = ''
-    change_bear_1yr_tp = ''
-    change_bull_1yr_tp = ''
-    change_base_3yr_tp = ''
-    change_bear_3yr_tp = ''
-    change_bull_3yr_tp = ''
+    change_base_1yr_tp = 'N/A'
+    change_bear_1yr_tp = 'N/A'
+    change_bull_1yr_tp = 'N/A'
+    change_base_3yr_tp = 'N/A'
+    change_bear_3yr_tp = 'N/A'
+    change_bull_3yr_tp = 'N/A'
 
     if cum_dash_tp_base_1yr and archive_tp_base_1yr:
         change_base_1yr_tp = '{:.1%}'.format((cum_dash_tp_base_1yr - archive_tp_base_1yr)/cum_dash_tp_base_1yr)
@@ -125,8 +126,9 @@ def target_price_diff(archive, cum_dash):
                 )
     print(subject)
     send_mail("ppal@auroim.com",
-              ["ppal@auroim.com"],
+              ["datascience@auroim.com", "aanand@auroim.com"],
               subject,
               "",
+              files=[file] if file else [],
               username="ppal@auroim.com",
               password="AuroOct2016")

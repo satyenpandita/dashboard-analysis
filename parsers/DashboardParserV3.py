@@ -20,7 +20,7 @@ class DashboardParserV3(object):
                 self.bear = DashboardV2(sheet)
         self.stock_code = self.base.stock_code
 
-    def save_dashboard(self):
+    def save_dashboard(self, file=None):
         doc_exists = False
         archive_id = None
         cum_dash = CumulativeDashBoard(self.stock_code, self.base, self.bull, self.bear)
@@ -34,4 +34,4 @@ class DashboardParserV3(object):
         res = db.cumulative_dashboards.insert_one(cum_dash.to_json())
         cum_dash_id = res.inserted_id
         if doc_exists:
-            target_price_diff_ids(cum_dash_id, archive_id)
+            target_price_diff_ids(str(cum_dash_id), str(archive_id), file=file)

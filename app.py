@@ -56,7 +56,7 @@ def dashboard2():
         file.save(complete_name)
         workbook = open_workbook(complete_name)
         dparser = DashboardParserV3(workbook)
-        dparser.save_dashboard()
+        dparser.save_dashboard(file=complete_name)
         exporter = Exporter()
         exporter.export_and_upload(dparser.stock_code)
         return jsonify({'file': file.filename}), 201

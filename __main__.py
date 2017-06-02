@@ -17,7 +17,7 @@ if __name__ == '__main__':
                 print(file)
                 workbook = open_workbook('uploaded_files/dashboard/'+file)
                 dparser = DashboardParserV3(workbook)
-                dparser.save_dashboard()
+                dparser.save_dashboard(file='uploaded_files/dashboard/'+file)
                 # exporter = Exporter()
                 # exporter.export_and_upload(dparser.stock_code)
     elif sys.argv[1] == 'export':
