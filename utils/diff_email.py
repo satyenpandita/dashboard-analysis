@@ -27,7 +27,8 @@ def best_idea_diff_email(portfolio_id):
         for stock in longs_added + shorts_added:
             stocks.append(stock.replace("Equity", "").strip())
             weight_dif.append(portfolio.get_weight_str(stock))
-        subject = "[{},{},TW,{}]".format("|".join(stocks), portfolio.analyst, "|".join(weight_dif))
+        subject = "[{},{},TW]".format("|".join([stocks[i] + " " + weight_dif[i] for i in range(len(stocks))]), portfolio.analyst)
+        print(subject)
         if len(longs_removed + shorts_removed) > 0:
             subject += " - Stocks Removed [{}]".format("|".join(longs_removed + shorts_removed))
         send_mail("ppal@auroim.com",
