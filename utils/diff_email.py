@@ -127,7 +127,7 @@ def target_price_diff(archive, cum_dash, file=None):
                 )
     print(subject)
     send_mail("ppal@auroim.com",
-              ["datascience@auroim.com"],
+              ["datascience@auroim.com", 'aanand@auroim.com'],
               subject,
               "",
               files=[file] if file else [],

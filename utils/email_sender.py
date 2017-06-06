@@ -57,7 +57,7 @@ def send_dashboard_email(exporter_file_list, stock_code):
 
 @app.task()
 def best_ideas_notification_email(analyst):
-    recipients = ["datascience@auroim.com"]
+    recipients = ["datascience@auroim.com", "aanand@auroim.com"]
     email = get_user_email(analyst)
     if email:
         recipients.append(email)
