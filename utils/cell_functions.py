@@ -15,7 +15,7 @@ def find_cell_wrapped(worksheet, val, row_fixed=None, row_offset=0, col_fixed=0,
     if row_fixed:
         return __cell_by_row(worksheet, row_fixed, val, like)
     elif col_fixed:
-        return __cell_by_col(worksheet, col_fixed, val, like)
+        return __cell_by_col(worksheet, col_fixed, val, row_offset, limit, like)
     else:
         max_limit = worksheet.nrows if limit is None else limit
         min_limit = row_offset if row_offset is not None else 0
@@ -25,9 +25,9 @@ def find_cell_wrapped(worksheet, val, row_fixed=None, row_offset=0, col_fixed=0,
                 return cell
 
 
-def __cell_by_col(worksheet, col, val, like):
-    rows = worksheet.nrows
-    for row in range(rows):
+def __cell_by_col(worksheet, col, val, row_offset, limit, like):
+    rows = limit if limit is not None else worksheet.nrows
+    for row in range(row_offset, rows):
         cell = worksheet.cell(row, col)
         if cell.ctype == xlrd.XL_CELL_TEXT:
             cell_val = cell_value(worksheet, row, col)
