@@ -4,18 +4,27 @@ from parsers.DashboardParserV2 import DashboardParserV2
 from parsers.DashboardParserV3 import DashboardParserV3
 from parsers.portfolio.portfolio_parser import PortfolioParser
 from parsers.portfolio.portfolio_parser_v2 import PortfolioParserV2
-from xlrd import open_workbook
+from xlrd import open_workbook, XLRDError
 from werkzeug.contrib.fixers import ProxyFix
 from utils.upload_ops import ftp_upload
 from utils.upload_ops import s3_upload
 from utils.email_sender import best_ideas_notification_email
 import os
+import logging
 from config.mongo_config import db
 from models.CumulativeDashBoard import CumulativeDashBoard
 from models.DashboardV2 import DashboardV2
 from utils.error_handlers import handle_500
 
 app = Flask(__name__, static_folder='static')
+
+
+@app.before_first_request
+def setup_logging():
+    if not app.debug:
+        # In production mode, add log handler to sys.stderr.
+        app.logger.addHandler(logging.StreamHandler())
+        app.logger.setLevel(logging.INFO)
 
 
 @app.route('/')
@@ -68,9 +77,9 @@ def dashboard2():
 
 @app.route('/portfolio', methods=['POST'])
 def portfolio():
+    file = request.files['uploadfile']
+    app.logger.info(file.filename)
     try:
-        file = request.files['uploadfile']
-        app.logger.info(file.filename)
         complete_name = '/var/www/portfolio/{}'.format(file.filename)
         file.save(complete_name)
         workbook = open_workbook(complete_name)
@@ -82,6 +91,9 @@ def portfolio():
         parser.send_email.delay()
         app.logger.info("Email End")
         return jsonify({'file': file.filename}), 201
+    except XLRDError as e:
+        app.logger.info("XLRD Error {}".format(str(e)))
+        app.logger.info("File Mime {}".format(file.content_type))
     except Exception as e:
         app.logger.error("Publish Failed for file : {}".format(file.filename))
         handle_500(e, file)
@@ -91,17 +103,25 @@ def portfolio():
 def portfolio2():
     file = request.files['uploadfile']
     app.logger.info(file.filename)
-    complete_name = '/var/www/portfolio/{}'.format(file.filename)
-    file.save(complete_name)
-    workbook = open_workbook(complete_name)
-    worksheet = workbook.sheet_by_index(0)
-    app.logger.info("Parser Starting")
-    parser = PortfolioParserV2(worksheet, file.filename)
-    parser.save_and_generate_files()
-    app.logger.info("Email Start")
-    parser.send_email()
-    app.logger.info("Email End")
-    return jsonify({'file': file.filename}), 201
+    try:
+        complete_name = '/var/www/portfolio/{}'.format(file.filename)
+        file.save(complete_name)
+        workbook = open_workbook(complete_name)
+        worksheet = workbook.sheet_by_index(0)
+        app.logger.info("Parser Starting")
+        parser = PortfolioParserV2(worksheet, file.filename)
+        parser.save_and_generate_files()
+        app.logger.info("Email Start")
+        parser.send_email()
+        app.logger.info("Email End")
+        return jsonify({'file': file.filename}), 201
+    except XLRDError as e:
+        app.logger.info("XLRD Error {}".format(str(e)))
+        app.logger.info("File Mime {}".format(file.content_type))
+    except Exception as e:
+        app.logger.error("Publish Failed for file : {}".format(file.filename))
+        handle_500(e, file)
+
 
 
 @app.route('/portfolio_upload', methods=['GET'])
