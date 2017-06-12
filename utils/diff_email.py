@@ -67,8 +67,6 @@ def target_price_diff(archive, cum_dash, file=None):
     archive_tp_base_3yr = archive_tp['base'].get('pt_3year', "")
     archive_tp_bear_1yr = archive_tp['bear'].get('pt_1year', "")
     archive_tp_bear_3yr = archive_tp['bear'].get('pt_3year', "")
-    archive_tp_bull_1yr = archive_tp['bull'].get('pt_1year', "")
-    archive_tp_bull_3yr = archive_tp['bull'].get('pt_3year', "")
     cum_dash_tp_base_1yr = cum_dash_tp['base'].get('pt_1year', "")
     cum_dash_tp_base_3yr = cum_dash_tp['base'].get('pt_3year', "")
     cum_dash_ret_base_1yr = cum_dash_tp['base'].get('return_1year', "")
@@ -77,16 +75,10 @@ def target_price_diff(archive, cum_dash, file=None):
     cum_dash_tp_bear_3yr = cum_dash_tp['bear'].get('pt_3year', "")
     cum_dash_ret_bear_1yr = cum_dash_tp['bear'].get('return_1year', "")
     cum_dash_ret_bear_3yr = cum_dash_tp['bear'].get('return_3year', "")
-    cum_dash_tp_bull_1yr = cum_dash_tp['bull'].get('pt_1year', "")
-    cum_dash_tp_bull_3yr = cum_dash_tp['bull'].get('pt_3year', "")
-    cum_dash_ret_bull_1yr = cum_dash_tp['bull'].get('return_1year', "")
-    cum_dash_ret_bull_3yr = cum_dash_tp['bull'].get('return_3year', "")
     change_base_1yr_tp = 'N/A'
     change_bear_1yr_tp = 'N/A'
-    change_bull_1yr_tp = 'N/A'
     change_base_3yr_tp = 'N/A'
     change_bear_3yr_tp = 'N/A'
-    change_bull_3yr_tp = 'N/A'
 
     if cum_dash_tp_base_1yr and archive_tp_base_1yr:
         change_base_1yr_tp = '{:.1%}'.format((cum_dash_tp_base_1yr - archive_tp_base_1yr)/cum_dash_tp_base_1yr)
@@ -94,35 +86,27 @@ def target_price_diff(archive, cum_dash, file=None):
     if cum_dash_tp_bear_1yr and cum_dash_tp_bear_1yr:
         change_bear_1yr_tp = '{:.1%}'.format((cum_dash_tp_bear_1yr - archive_tp_bear_1yr)/cum_dash_tp_bear_1yr)
 
-    if cum_dash_tp_bull_1yr and archive_tp_bull_1yr:
-        change_bull_1yr_tp = '{:.1%}'.format((cum_dash_tp_bull_1yr - archive_tp_bull_1yr)/cum_dash_tp_bull_1yr)
-
     if cum_dash_tp_base_3yr and archive_tp_base_3yr:
         change_base_3yr_tp = '{:.1%}'.format((cum_dash_tp_base_3yr - archive_tp_base_3yr)/cum_dash_tp_base_3yr)
 
     if cum_dash_tp_bear_3yr and archive_tp_bear_3yr:
         change_bear_3yr_tp = '{:.1%}'.format((cum_dash_tp_bear_3yr - archive_tp_bear_3yr)/cum_dash_tp_bear_3yr)
 
-    if cum_dash_tp_bull_3yr and archive_tp_bull_3yr:
-        change_bull_3yr_tp = '{:.1%}'.format((cum_dash_tp_bull_3yr - archive_tp_bull_3yr)/cum_dash_tp_bull_3yr)
-
-    subject = "[{},{},DASH]({}|{}|{},{}|{}|{})" \
-              "{}{}|{}|{}, {}|{}|{}{}" \
+    subject = "[{},{},DASH]({}|{})({}|{})" \
+              "{}{}|{}{}, {}{}|{}{}" \
         .format(stock,
                 analyst,
                 "RetBase1yr : {}".format('{:.1%}'.format(cum_dash_ret_base_1yr) if cum_dash_ret_base_1yr else "N/A"),
-                "RetBear1yr : {}".format('{:.1%}'.format(cum_dash_ret_bear_1yr) if cum_dash_ret_bear_1yr else "N/A"),
-                "RetBull1yr : {}".format('{:.1%}'.format(cum_dash_ret_bull_1yr) if cum_dash_ret_bull_1yr else "N/A"),
+                "Bear : {}".format('{:.1%}'.format(cum_dash_ret_bear_1yr) if cum_dash_ret_bear_1yr else "N/A"),
                 "RetBase3yr : {}".format('{:.1%}'.format(cum_dash_ret_base_3yr) if cum_dash_ret_base_3yr else "N/A"),
-                "RetBear3yr : {}".format('{:.1%}'.format(cum_dash_ret_bear_3yr) if cum_dash_ret_bear_3yr else "N/A"),
-                "RetBull3yr : {}".format('{:.1%}'.format(cum_dash_ret_bull_3yr) if cum_dash_ret_bull_3yr else "N/A"),
+                "Bear : {}".format('{:.1%}'.format(cum_dash_ret_bear_3yr) if cum_dash_ret_bear_3yr else "N/A"),
                 '{',
                 "TPBase1yr : {}".format(change_base_1yr_tp),
-                "TPBear1yr : {}".format(change_bear_1yr_tp),
-                "TPBull1yr : {}".format(change_bull_1yr_tp),
+                "Bear : {}".format(change_bear_1yr_tp),
+                '}',
+                '{',
                 "TPBase3yr : {}".format(change_base_3yr_tp),
-                "TPBear3yr : {}".format(change_bear_3yr_tp),
-                "TPBull3yr : {}".format(change_bull_3yr_tp),
+                "Bear3yr : {}".format(change_bear_3yr_tp),
                 '}'
                 )
     print(subject)
