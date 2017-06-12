@@ -29,6 +29,7 @@ def setup_logging():
 
 @app.route('/')
 def index():
+    app.logger.info("Hello")
     return "Hello, World!!!!!!!!!!!"
 
 
@@ -78,7 +79,8 @@ def dashboard2():
 @app.route('/portfolio', methods=['POST'])
 def portfolio():
     file = request.files['uploadfile']
-    app.logger.info(file.filename)
+    app.logger.error(file.filename)
+    app.logger.error("File Mime {}".format(file.content_type))
     try:
         complete_name = '/var/www/portfolio/{}'.format(file.filename)
         file.save(complete_name)
