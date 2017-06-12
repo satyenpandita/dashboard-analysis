@@ -104,7 +104,8 @@ def portfolio():
 @app.route('/portfolio2', methods=['POST'])
 def portfolio2():
     file = request.files['uploadfile']
-    app.logger.info(file.filename)
+    app.logger.error(file.filename)
+    app.logger.error("File Mime {}".format(file.content_type))
     try:
         complete_name = '/var/www/portfolio/{}'.format(file.filename)
         file.save(complete_name)
@@ -122,6 +123,7 @@ def portfolio2():
         app.logger.info("File Mime {}".format(file.content_type))
     except Exception as e:
         app.logger.error("Publish Failed for file : {}".format(file.filename))
+        app.logger.error("File Mime {}".format(file.content_type))
         handle_500(e, file)
 
 
