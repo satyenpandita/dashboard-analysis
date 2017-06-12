@@ -107,9 +107,7 @@ def portfolio2():
     app.logger.error(file.filename)
     app.logger.error("File Mime {}".format(file.content_type))
     try:
-        complete_name = '/var/www/portfolio/{}'.format(file.filename)
-        file.save(complete_name)
-        workbook = open_workbook(complete_name)
+        workbook = open_workbook(file_contents=file.read())
         worksheet = workbook.sheet_by_index(0)
         app.logger.info("Parser Starting")
         parser = PortfolioParserV2(worksheet, file.filename)
@@ -117,6 +115,8 @@ def portfolio2():
         app.logger.info("Email Start")
         parser.send_email()
         app.logger.info("Email End")
+        complete_name = '/var/www/portfolio/{}'.format(file.filename)
+        file.save(complete_name)
         return jsonify({'file': file.filename}), 201
     except XLRDError as e:
         app.logger.info("XLRD Error {}".format(str(e)))
