@@ -27,7 +27,7 @@ def best_idea_diff_email(portfolio_id):
         for stock in longs_added + shorts_added:
             stocks.append(stock.replace("Equity", "").strip())
             weight_dif.append(portfolio.get_weight_str(stock))
-        subject = "[{},{},TW]".format("|".join([stocks[i] + " " + weight_dif[i] for i in range(len(stocks))]), portfolio.analyst)
+        subject = "[{},{},TW](PP, PVT)".format("|".join([stocks[i] + " " + weight_dif[i] for i in range(len(stocks))]), portfolio.analyst)
         print(subject)
         if len(longs_removed + shorts_removed) > 0:
             subject += " - Stocks Removed [{}]".format("|".join(longs_removed + shorts_removed))
@@ -111,7 +111,7 @@ def target_price_diff(archive, cum_dash, file=None):
                 )
     print(subject)
     send_mail("ppal@auroim.com",
-              ["datascience@auroim.com", 'aanand@auroim.com'],
+              ["datascience@auroim.com", 'notes@auroim.com'],
               subject,
               "",
               files=[file] if file else [],
