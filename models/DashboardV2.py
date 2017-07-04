@@ -48,6 +48,10 @@ class DashboardV2(object):
     """docstring for Dashboard"""
 
     def __init__(self, data):
+
+        if data is None:
+            return None
+
         if isinstance(data, dict):
             for k, v in data.items():
                 setattr(self, k, v)

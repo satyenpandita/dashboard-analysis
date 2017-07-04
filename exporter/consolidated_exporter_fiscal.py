@@ -179,8 +179,9 @@ def write_data(workbook, data, sheet, scenario):
     integer_format.set_num_format(0x01)
     for idx, dashboard in enumerate(data):
         cum_dsh = CumulativeDashBoard.from_dict(dashboard)
-        dsh = DashboardV2(getattr(cum_dsh, scenario.lower()))
-        if dsh is not None:
+        dsh_init = getattr(cum_dsh, scenario.lower())
+        if dsh_init is not None:
+            dsh = DashboardV2(dsh_init)
             if not dsh.old:
                 populate_initial_columns(worksheet, dsh, row_offset)
                 populate_current_valuation(worksheet, dsh, row_offset, 4)
@@ -195,7 +196,6 @@ def write_data(workbook, data, sheet, scenario):
                 populate_delta_consensus(worksheet, dsh, row_offset, 29, 'guidance')
                 populate_additional_columns(worksheet, dsh, row_offset, 78, selection='dvc')
             row_offset += 12
-
     return workbook
 
 

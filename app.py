@@ -74,6 +74,7 @@ def dashboard2():
     except Exception as e:
         app.logger.error("Publish Failed for file : {}".format(file.filename))
         handle_500(e, file)
+        return jsonify({'file': file.filename}), 500
 
 
 @app.route('/portfolio', methods=['POST'])
@@ -121,11 +122,12 @@ def portfolio2():
     except XLRDError as e:
         app.logger.info("XLRD Error {}".format(str(e)))
         app.logger.info("File Mime {}".format(file.content_type))
+        return jsonify({'file': file.filename}), 500
     except Exception as e:
         app.logger.error("Publish Failed for file : {}".format(file.filename))
         app.logger.error("File Mime {}".format(file.content_type))
         handle_500(e, file)
-
+        return jsonify({'file': file.filename}), 500
 
 
 @app.route('/portfolio_upload', methods=['GET'])
