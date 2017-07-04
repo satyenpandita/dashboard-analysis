@@ -180,20 +180,21 @@ def write_data(workbook, data, sheet, scenario):
     for idx, dashboard in enumerate(data):
         cum_dsh = CumulativeDashBoard.from_dict(dashboard)
         dsh = DashboardV2(getattr(cum_dsh, scenario.lower()))
-        if not dsh.old:
-            populate_initial_columns(worksheet, dsh, row_offset)
-            populate_current_valuation(worksheet, dsh, row_offset, 4)
-            populate_delta_consensus(worksheet, dsh, row_offset, 17, 'aim')
-            populate_delta_consensus(worksheet, dsh, row_offset, 29, 'guidance')
-            populate_leverage_returns(worksheet, dsh, row_offset, 41)
-            populate_key_financials(worksheet, dsh, row_offset, 54)
-            populate_additional_columns(worksheet, dsh, row_offset, 78)
-        else:
-            populate_initial_columns(worksheet, dsh, row_offset)
-            populate_delta_consensus(worksheet, dsh, row_offset, 17, 'aim')
-            populate_delta_consensus(worksheet, dsh, row_offset, 29, 'guidance')
-            populate_additional_columns(worksheet, dsh, row_offset, 78, selection='dvc')
-        row_offset += 12
+        if dsh is not None:
+            if not dsh.old:
+                populate_initial_columns(worksheet, dsh, row_offset)
+                populate_current_valuation(worksheet, dsh, row_offset, 4)
+                populate_delta_consensus(worksheet, dsh, row_offset, 17, 'aim')
+                populate_delta_consensus(worksheet, dsh, row_offset, 29, 'guidance')
+                populate_leverage_returns(worksheet, dsh, row_offset, 41)
+                populate_key_financials(worksheet, dsh, row_offset, 54)
+                populate_additional_columns(worksheet, dsh, row_offset, 78)
+            else:
+                populate_initial_columns(worksheet, dsh, row_offset)
+                populate_delta_consensus(worksheet, dsh, row_offset, 17, 'aim')
+                populate_delta_consensus(worksheet, dsh, row_offset, 29, 'guidance')
+                populate_additional_columns(worksheet, dsh, row_offset, 78, selection='dvc')
+            row_offset += 12
 
     return workbook
 
