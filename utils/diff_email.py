@@ -14,9 +14,9 @@ def best_idea_diff_email(portfolio_id):
     archive = PortfolioArchive.objects(analyst=portfolio.analyst).first()
     if archive:
         pairs = zip(portfolio.longs, archive.longs)
-        diff_list_longs = [(x.stock_tag, '{:.1%}'.format(x.weight-y.weight)) for x, y in pairs if x != y]
+        diff_list_longs = [(x.stock_tag, '{:.1%}'.format(x.weight-y.weight)) for x, y in pairs if x != y and x - y>.001]
         pairs = zip(portfolio.shorts, archive.shorts)
-        diff_list_shorts = [(x.stock_tag, '{:.1%}'.format(x.weight-y.weight)) for x, y in pairs if x != y]
+        diff_list_shorts = [(x.stock_tag, '{:.1%}'.format(x.weight-y.weight)) for x, y in pairs if x != y and x - y>.001]
         combined_list = diff_list_longs + diff_list_shorts
         longs_added = list(set(portfolio.all_longs()) - set(archive.all_longs()))
         shorts_added = list(set(portfolio.all_shorts()) - set(archive.all_shorts()))
