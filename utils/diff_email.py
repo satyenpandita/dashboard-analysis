@@ -14,9 +14,11 @@ def best_idea_diff_email(portfolio_id):
     archive = PortfolioArchive.objects(analyst=portfolio.analyst).first()
     if archive:
         pairs = zip(portfolio.longs, archive.longs)
-        diff_list_longs = [(x.stock_tag, '{:.1%}'.format(x.weight-y.weight)) for x, y in pairs if x != y and x - y>.001]
+        diff_list_longs = [(x.stock_tag, '{:.1%}'.format(x.weight-y.weight)) for x, y in pairs
+                           if x.weight != y.weight and x.weight - y.weight > .001]
         pairs = zip(portfolio.shorts, archive.shorts)
-        diff_list_shorts = [(x.stock_tag, '{:.1%}'.format(x.weight-y.weight)) for x, y in pairs if x != y and x - y>.001]
+        diff_list_shorts = [(x.stock_tag, '{:.1%}'.format(x.weight-y.weight)) for x, y in pairs
+                            if x.weight != y.weight and x.weight - y.weight > .001]
         combined_list = diff_list_longs + diff_list_shorts
         longs_added = list(set(portfolio.all_longs()) - set(archive.all_longs()))
         shorts_added = list(set(portfolio.all_shorts()) - set(archive.all_shorts()))
@@ -31,7 +33,7 @@ def best_idea_diff_email(portfolio_id):
         print(subject)
         if len(longs_removed + shorts_removed) > 0:
             subject += " - Stocks Removed [{}]".format("|".join(longs_removed + shorts_removed))
-        send_mail("ppal@auroim.com",
+        send_mail("datascience@auroim.com",
                   ["ppal@auroim.com"],
                   subject,
                   "",
