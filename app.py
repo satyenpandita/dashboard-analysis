@@ -188,7 +188,7 @@ def portfolio_json():
 
 
 @app.route('/comps', methods=['GET'])
-def portfolio_json():
+def comps():
     from exporter.dash.comp_exporter import export_comps
     status = export_comps()
     return status, 200
