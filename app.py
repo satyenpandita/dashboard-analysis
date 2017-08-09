@@ -187,6 +187,13 @@ def portfolio_json():
     return portfolios, 200
 
 
+@app.route('/comps', methods=['GET'])
+def portfolio_json():
+    from exporter.dash.comp_exporter import export_comps
+    status = export_comps()
+    return status, 200
+
+
 @app.route('/migration_old', methods=['GET'])
 def migration_old():
     for idx, cum_dsh in enumerate(db.cumulative_dashboards.find({})):
