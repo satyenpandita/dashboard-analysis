@@ -33,5 +33,5 @@ class DashboardParserV3(object):
             db.cumulative_dashboards.delete_one({'stock_code': self.stock_code})
         res = db.cumulative_dashboards.insert_one(cum_dash.to_json())
         cum_dash_id = res.inserted_id
-        if doc_exists:
-            target_price_diff_ids.delay(str(cum_dash_id), str(archive_id), file=file)
+        # if doc_exists:
+        #     target_price_diff_ids.delay(str(cum_dash_id), str(archive_id), file=file)

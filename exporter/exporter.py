@@ -75,5 +75,5 @@ class Exporter:
     def export_and_upload(self, stock_code=None):
         self.export(stock_code)
         self.ftp_upload()
-        self.send_email(stock_code)
+        # self.send_email(stock_code)
         return "Files Generated Upload Queued"
