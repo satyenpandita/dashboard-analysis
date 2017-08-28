@@ -1,5 +1,5 @@
 from __future__ import absolute_import
-import pymongo
+import pymongo, requests
 from bson.objectid import ObjectId
 from config.celery import app
 from config.mongo_config import db
@@ -46,6 +46,15 @@ def best_idea_diff_email(portfolio_id):
 
 
 @app.task()
+def save_publish_time(stock_code):
+    res = requests.get("https://notes.aurovilleinvestments.com/notes/update_publish_date",
+                       params={"stock_code":stock_code})
+    if res.status_code == requests.codes.ok:
+        return "Request Successful"
+    else:
+        return "Request Failed"
+
+@app.task()
 def target_price_diff_stock(stock_code):
     cum_dash = db.cumulative_dashboards.find_one({"stock_code": stock_code})
     archive = db.dashboard_archives.find_one({"stock_code": stock_code}, sort=[('deleted_at', pymongo.DESCENDING)])
@@ -56,6 +65,7 @@ def target_price_diff_stock(stock_code):
 def target_price_diff_ids(cum_dash_id, archive_id, file=None):
     archive = db.dashboard_archives.find_one({"_id": ObjectId(archive_id)})
     cum_dash = db.cumulative_dashboards.find_one({"_id": ObjectId(cum_dash_id)})
+    save_publish_time.delay(cum_dash['stock_code'])
     target_price_diff(archive, cum_dash, file=file)
 
 
