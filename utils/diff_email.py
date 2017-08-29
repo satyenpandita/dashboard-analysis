@@ -54,6 +54,7 @@ def save_publish_time(stock_code):
     else:
         return "Request Failed"
 
+
 @app.task()
 def target_price_diff_stock(stock_code):
     cum_dash = db.cumulative_dashboards.find_one({"stock_code": stock_code})
@@ -65,7 +66,7 @@ def target_price_diff_stock(stock_code):
 def target_price_diff_ids(cum_dash_id, archive_id, file=None):
     archive = db.dashboard_archives.find_one({"_id": ObjectId(archive_id)})
     cum_dash = db.cumulative_dashboards.find_one({"_id": ObjectId(cum_dash_id)})
-    save_publish_time.delay(cum_dash['stock_code'])
+    # save_publish_time.delay(cum_dash['stock_code'])
     target_price_diff(archive, cum_dash, file=file)
 
 
@@ -113,12 +114,12 @@ def target_price_diff(archive, cum_dash, file=None):
                 "RetBase3yr : {}".format('{:.1%}'.format(cum_dash_ret_base_3yr) if cum_dash_ret_base_3yr else "N/A"),
                 "Bear : {}".format('{:.1%}'.format(cum_dash_ret_bear_3yr) if cum_dash_ret_bear_3yr else "N/A"),
                 '{',
-                "TPBase1yr : {}".format(change_base_1yr_tp),
-                "Bear : {}".format(change_bear_1yr_tp),
+                "TPBase1yr : {}/{}".format(change_base_1yr_tp, cum_dash_tp_base_1yr),
+                "Bear : {}/{}".format(change_bear_1yr_tp, cum_dash_ret_base_1yr),
                 '}',
                 '{',
-                "TPBase3yr : {}".format(change_base_3yr_tp),
-                "Bear3yr : {}".format(change_bear_3yr_tp),
+                "TPBase3yr : {}/{}".format(change_base_3yr_tp, cum_dash_tp_base_3yr),
+                "Bear3yr : {}/{}".format(change_bear_3yr_tp, cum_dash_tp_bear_3yr),
                 '}'
                 )
     print(subject)
