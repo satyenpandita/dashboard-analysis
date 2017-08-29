@@ -83,7 +83,9 @@ class DeltaVsConsensusV2(object):
             self.fcf = None
             self.bps = None
 
-            metric = cell_value(worksheet, row + 16, col)
+            metric = cell_value(worksheet, row + 17, col)
+            if not metric or metric == "":
+                metric = cell_value(worksheet, row + 16, col)
             if metric == DeltaVsConsensusV2.FCF_CHOICES[0]:
                 self.fcf = get_object(worksheet, row+16, col)
             elif metric == DeltaVsConsensusV2.FCF_CHOICES[1]:
