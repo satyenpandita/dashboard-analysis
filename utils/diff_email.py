@@ -47,12 +47,15 @@ def best_idea_diff_email(portfolio_id):
 
 @app.task()
 def save_publish_time(stock_code):
-    res = requests.get("https://notes.aurovilleinvestments.com/notes/update_publish_date",
-                       params={"stock_code":stock_code})
-    if res.status_code == requests.codes.ok:
-        return "Request Successful"
-    else:
-        return "Request Failed"
+    try:
+        res = requests.get("https://notes.aurovilleinvestments.com/notes/update_publish_date",
+                           params={"stock_code":stock_code})
+        if res.status_code == requests.codes.ok:
+            return "Request Successful"
+        else:
+            return "Request Failed"
+    except Exception as e:
+        print("Request Failed for update : {}".format(str(e)))
 
 
 @app.task()
@@ -66,7 +69,7 @@ def target_price_diff_stock(stock_code):
 def target_price_diff_ids(cum_dash_id, archive_id, file=None):
     archive = db.dashboard_archives.find_one({"_id": ObjectId(archive_id)})
     cum_dash = db.cumulative_dashboards.find_one({"_id": ObjectId(cum_dash_id)})
-    # save_publish_time.delay(cum_dash['stock_code'])
+    save_publish_time(cum_dash['stock_code'])
     target_price_diff(archive, cum_dash, file=file)
 
 
@@ -114,12 +117,16 @@ def target_price_diff(archive, cum_dash, file=None):
                 "RetBase3yr : {}".format('{:.1%}'.format(cum_dash_ret_base_3yr) if cum_dash_ret_base_3yr else "N/A"),
                 "Bear : {}".format('{:.1%}'.format(cum_dash_ret_bear_3yr) if cum_dash_ret_bear_3yr else "N/A"),
                 '{',
-                "TPBase1yr : {}/{}".format(change_base_1yr_tp, cum_dash_tp_base_1yr),
-                "Bear : {}/{}".format(change_bear_1yr_tp, cum_dash_ret_base_1yr),
+                "TPBase1yr : {}/{}".format(change_base_1yr_tp,
+                                           round(cum_dash_tp_base_1yr, 2) if cum_dash_ret_base_1yr is not None else "N/A"),
+                "Bear : {}/{}".format(change_bear_1yr_tp,
+                                      round(cum_dash_tp_bear_1yr, 2) if cum_dash_tp_bear_1yr is not None else "N/A"),
                 '}',
                 '{',
-                "TPBase3yr : {}/{}".format(change_base_3yr_tp, cum_dash_tp_base_3yr),
-                "Bear3yr : {}/{}".format(change_bear_3yr_tp, cum_dash_tp_bear_3yr),
+                "TPBase3yr : {}/{}".format(change_base_3yr_tp,
+                                           round(cum_dash_tp_base_3yr, 2) if cum_dash_tp_base_3yr is not None else "N/A"),
+                "Bear3yr : {}/{}".format(change_bear_3yr_tp,
+                                         round(cum_dash_tp_bear_3yr, 2) if cum_dash_tp_bear_3yr is not None else "N/A"),
                 '}'
                 )
     print(subject)
