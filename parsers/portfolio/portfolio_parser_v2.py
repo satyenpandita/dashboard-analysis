@@ -32,9 +32,9 @@ def get_tickers(worksheet, direction):
 
 
 def valid_ticker(ticker):
-    sr = re.search(r"\s[A-Za-z]{2}\s(Equity)$", ticker)
+    sr = re.search(r"\s[A-Za-z]{2}\s(equity)$", ticker.lower())
     if sr is None:
-        sr = re.search(r"^[\w{1}]+\s(Equity)$", ticker)
+        sr = re.search(r"^[\w{1}]+\s(equity)$", ticker.lower())
         if sr is None:
             return None
         else:
