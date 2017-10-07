@@ -78,7 +78,7 @@ class PortfolioParserV2(object):
         portfolio = Portfolio(analyst=self.analyst, shorts=short_list, longs=long_list,
                               file_path='/var/www/portfolio/{}'.format(self.input_file))
         portfolio.save()
-        self.generate_upload_file()
+        # self.generate_upload_file()
 
     def generate_upload_file(self):
         exporter = PortfolioExporter(self.long_tickers, self.short_tickers)
