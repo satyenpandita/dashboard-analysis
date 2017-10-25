@@ -135,7 +135,7 @@ def portfolio_upload():
     file_found = False
     if 'analyst' in request.args:
         analyst = request.args['analyst']
-        for file in os.listdir('/var/www/output'):
+        for file in os.listdir('/var/www/portfolio'):
             if 'xls' in file[-4:] and analyst in file:
                 app.logger.info(file)
                 file_found = True
