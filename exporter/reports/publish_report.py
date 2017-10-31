@@ -9,7 +9,7 @@ FILE_PATH = "/var/www/DashPublishReport_{}.xlsx".format(datetime.now().strftime(
 def generate_and_send():
     file_path = generate_publish_report()
     send_mail.delay("ppal@auroim.com",
-                    "ppal@auroim.com",
+                    ["ppal@auroim.com"],
                     "Dashboard Publish Report",
                     "",
                     [file_path],
