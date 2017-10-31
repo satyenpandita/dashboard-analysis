@@ -209,6 +209,13 @@ def migration_old():
     return jsonify({'response': "Upload Queued"}), 201
 
 
+@app.route('/publish_report', methods=['GET'])
+def publish_report():
+    from exporter.reports import publish_report
+    publish_report.generate_and_send()
+    return jsonify({'response': "Report Generated and sent"}), 201
+
+
 @app.errorhandler(500)
 def server_error(e):
     handle_500(e)
