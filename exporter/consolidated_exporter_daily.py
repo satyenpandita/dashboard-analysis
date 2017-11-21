@@ -102,7 +102,9 @@ def write_data(workbook, data, sheet):
 
         now = datetime.datetime.now()
         worksheet.write('BI{}'.format(idx+offset), now.strftime('%m/%d/%y'))
-        # Implied Multiple
+
+        worksheet.write('BJ{}'.format(idx+offset), dsh.analyst_primary)
+        worksheet.write('BK{}'.format(idx+offset), dsh.analyst_secondary)
 
         worksheet.freeze_panes(6, 4)
     return workbook
@@ -200,6 +202,8 @@ def write_headers(workbook, sheet):
     worksheet.write('BH4', 'Net Return', merge_format)
 
     worksheet.merge_range('BI2:BI4', 'BBU Date', merge_format)
+    worksheet.merge_range('BJ2:BJ4', 'Primary Analyst', merge_format)
+    worksheet.merge_range('BK2:BK4', 'Sec Analyst', merge_format)
 
     return workbook
 
@@ -248,6 +252,14 @@ def write_headers2(workbook, sheet):
             head_str = 'PT(Bull)'
         worksheet.write("{}5".format(init_col), head_str, merge_format)
         init_col = get_next_column(init_col)
+    worksheet.merge_range('BW2:CB3', 'Qualitative Assessment', merge_format)
+    worksheet.merge_range('BW4:BW5', 'Macro', merge_format)
+    worksheet.merge_range('BX4:BX5', 'Moat', merge_format)
+    worksheet.merge_range('BY4:BY5', 'Mgmt', merge_format)
+    worksheet.merge_range('BZ4:BZ5', 'Corp Gov', merge_format)
+    worksheet.merge_range('CA4:CA5', 'Other', merge_format)
+    worksheet.merge_range('CB4:CB5', 'Mgmt Dialogue', merge_format)
+
     return workbook
 
 
@@ -342,17 +354,29 @@ def write_data2(workbook, data, sheet):
             worksheet.write('BT{}'.format(count+offset), get_val(implied_multiple, 'cfcf_per_p', 'pt_bear', 'current_year_plus_three'))
             worksheet.write('BU{}'.format(count+offset), get_val(implied_multiple, 'cfcf_per_p', 'pt_base', 'current_year_plus_three'))
             worksheet.write('BV{}'.format(count+offset), get_val(implied_multiple, 'cfcf_per_p', 'pt_bull', 'current_year_plus_three'))
+            worksheet.write('BW{}'.format(count+offset), dsh.qualitative_assessment.get('macro', None))
+            worksheet.write('BX{}'.format(count+offset), dsh.qualitative_assessment.get('moat', None))
+            worksheet.write('BY{}'.format(count+offset), dsh.qualitative_assessment.get('mgmt', None))
+            worksheet.write('BZ{}'.format(count+offset), dsh.qualitative_assessment.get('corp_gov', None))
+            worksheet.write('CA{}'.format(count+offset), dsh.qualitative_assessment.get('others', None))
+            worksheet.write('CB{}'.format(count+offset), dsh.qualitative_assessment.get('mgmt_dialogue', None))
             count += 1
     return workbook
 
 
 class ConsolidatedExporterDaily:
     @classmethod
-    def export(cls, workbook, sheet):
+    def export(cls, workbook, sheet, stock_code):
         if sheet == 'Daily1':
             workbook = write_headers(workbook, sheet)
-            workbook = write_data(workbook, db.cumulative_dashboards.find({}), sheet)
+            if stock_code is not None:
+                workbook = write_data(workbook, db.cumulative_dashboards.find({'stock_code': stock_code}), sheet)
+            else:
+                workbook = write_data(workbook, db.cumulative_dashboards.find({}), sheet)
         elif sheet == 'Daily2':
             workbook = write_headers2(workbook, sheet)
-            workbook = write_data2(workbook, db.cumulative_dashboards.find({}), sheet)
+            if stock_code is not None:
+                workbook = write_data2(workbook, db.cumulative_dashboards.find({'stock_code': stock_code}), sheet)
+            else:
+                workbook = write_data2(workbook, db.cumulative_dashboards.find({}), sheet)
         return workbook

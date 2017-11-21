@@ -15,8 +15,10 @@ def get_object(worksheet, row, col):
 class ImpliedMultiple(object):
 
     REV_CHOICES = ['EV/Gross Rev  - AIM', 'EV/Net Rev  - AIM','EV/Net Interest Income - AIM', 'EV/GMV - AIM']
-    EB_CHOICES = ['EV/Adj. EBITDA - AIM', 'EV/EBITDAR - AIM', 'EV/EBITA - AIM', 'EV/EBIT - AIM', 'EV/PPOP - AIM']
-    FCF_CHOICES = ['Free Cash Flow / P - AIM', 'Core Free Cash Flow / P - AIM']
+    EB_CHOICES = ['EV/Adj. EBITDA - AIM', 'EV/EBITDAR - AIM', 'EV/EBITA - AIM', 'EV/EBIT - AIM',
+                  'EV/PPOP - AIM', 'P/EV - AIM']
+    FCF_CHOICES = ['Free Cash Flow / P - AIM', 'Core Free Cash Flow / P - AIM',
+                   'Free Surpus (Insurance)/P - AIM']
 
     def __init__(self, worksheet):
         cell_address = find_cell(worksheet, 'Implied multiple')
@@ -41,6 +43,7 @@ class ImpliedMultiple(object):
             self.ev_per_ebita =None
             self.ev_per_ebit = None
             self.ev_per_ppop = None
+            self.p_ev = None
 
             metric = cell_value(worksheet, 7, 22)
             if metric == ImpliedMultiple.EB_CHOICES[0]:
@@ -53,13 +56,18 @@ class ImpliedMultiple(object):
                 self.ev_per_ebit = get_object(worksheet, row + 5, col)
             elif metric == ImpliedMultiple.EB_CHOICES[3]:
                 self.ev_per_ppop = get_object(worksheet, row + 5, col)
+            elif metric == ImpliedMultiple.EB_CHOICES[4]:
+                self.p_ev = get_object(worksheet, row + 5, col)
 
             self.adj_eps = get_object(worksheet, row+8, col)
 
             self.fcf_per_p = None
             self.cfcf_per_p = None
+            self.free_surpus_price = None
             metric = cell_value(worksheet, 13, 22)
             if metric == ImpliedMultiple.FCF_CHOICES[0]:
                 self.fcf_per_p = get_object(worksheet, row + 11, col)
             elif metric == ImpliedMultiple.FCF_CHOICES[1]:
+                self.cfcf_per_p = get_object(worksheet, row + 11, col)
+            elif metric == ImpliedMultiple.FCF_CHOICES[2]:
                 self.cfcf_per_p = get_object(worksheet, row + 11, col)

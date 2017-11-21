@@ -61,7 +61,7 @@ class TargetPrice(object):
         self.base = BaseScenario(worksheet, row, col).__dict__
         self.bear = BearScenario(worksheet, row, col).__dict__
         self.bull = BullScenario(worksheet, row, col).__dict__
-        self.__validate_and_shuffle()
+        # self.__validate_and_shuffle()
         self.expected_value_1year = cell_value(worksheet, row + 7, col + 1)
         self.expected_value_3year = cell_value(worksheet, row + 7, col + 2)
         self.borrow_cost_1year = cell_value(worksheet, row + 8, col + 3)

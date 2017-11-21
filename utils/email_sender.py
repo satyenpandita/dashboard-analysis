@@ -5,6 +5,7 @@ from email.mime.text import MIMEText
 from email.utils import COMMASPACE, formatdate
 from email import encoders
 from config.celery import app
+from utils.upload_ops import get_user_from_stock, get_user_email
 
 
 @app.task()
@@ -27,9 +28,43 @@ def send_mail(send_from, send_to, subject, text, files=[], server="smtp.office36
 
         smtp = smtplib.SMTP(server, port)
         if is_tls: smtp.starttls()
-        smtp.login(username,password)
+        smtp.login(username, password)
         smtp.sendmail(send_from, send_to, msg.as_string())
         smtp.quit()
     except Exception as e:
         print(str(e))
         send_mail.retry(exc=e, max_retries=2, countdown=10)
+
+
+@app.task()
+def send_dashboard_email(exporter_file_list, stock_code):
+    subject = "Dashboard Published"
+    recipients = ["datascience@auroim.com"]
+    if stock_code:
+        subject = "Dashboard Published for {}".format(stock_code)
+        email = get_user_from_stock(stock_code)
+        if email is not None:
+            recipients.append(email)
+
+    send_mail("ppal@auroim.com",
+              recipients,
+              subject,
+              "Dashbord Published",
+              exporter_file_list,
+              username="ppal@auroim.com",
+              password="AuroOct2016")
+
+
+@app.task()
+def best_ideas_notification_email(analyst):
+    recipients = ["datascience@auroim.com", "aanand@auroim.com"]
+    email = get_user_email(analyst)
+    if email:
+        recipients.append(email)
+    send_mail("ppal@auroim.com",
+              recipients,
+              "Best Ideas Uploaded to Bloomberg",
+              "Hi {}, \n Your best Ideas have been uploaded to Bloomberg. Please refresh your monitors and check",
+              files=[],
+              username="ppal@auroim.com",
+              password="AuroOct2016")

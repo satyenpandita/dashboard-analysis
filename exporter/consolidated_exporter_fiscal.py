@@ -97,8 +97,21 @@ header_list = ['EV/Gross Revenue - AIM',
                'Core Free Cash Flow',
                'Net Cash',
                'Total SE and Liabilities',
-               'Total Assets'
+               'Total Assets',
+               'Gross Profit',
                ]
+
+additional_headers = [
+    'P/EV - AIM',
+    'Free Surpus(Insurance)/P - AIM',
+    'ANP - AIM',
+    'ANP - Guidance',
+    'VoNB - AIM',
+    'VoNB - Guidance',
+    'IFRS EPS - AIM',
+    'IFRS EPS - Guidance'
+]
+
 fiscal_map = {
     'cq_minus_4a': '-4FQ',
     'cq_minus_1a': '-1FQ',
@@ -166,14 +179,22 @@ def write_data(workbook, data, sheet, scenario):
     integer_format.set_num_format(0x01)
     for idx, dashboard in enumerate(data):
         cum_dsh = CumulativeDashBoard.from_dict(dashboard)
-        dsh = DashboardV2(getattr(cum_dsh, scenario.lower()))
-        if not dsh.old:
-            populate_initial_columns(worksheet, dsh, row_offset)
-            populate_current_valuation(worksheet, dsh, row_offset, 4)
-            populate_delta_consensus(worksheet, dsh, row_offset, 17, 'aim')
-            populate_delta_consensus(worksheet, dsh, row_offset, 29, 'guidance')
-            populate_leverage_returns(worksheet, dsh, row_offset, 41)
-            populate_key_financials(worksheet, dsh, row_offset, 54)
+        dsh_init = getattr(cum_dsh, scenario.lower())
+        if dsh_init is not None:
+            dsh = DashboardV2(dsh_init)
+            if not dsh.old:
+                populate_initial_columns(worksheet, dsh, row_offset)
+                populate_current_valuation(worksheet, dsh, row_offset, 4)
+                populate_delta_consensus(worksheet, dsh, row_offset, 17, 'aim')
+                populate_delta_consensus(worksheet, dsh, row_offset, 29, 'guidance')
+                populate_leverage_returns(worksheet, dsh, row_offset, 41)
+                populate_key_financials(worksheet, dsh, row_offset, 54)
+                populate_additional_columns(worksheet, dsh, row_offset, 78)
+            else:
+                populate_initial_columns(worksheet, dsh, row_offset)
+                populate_delta_consensus(worksheet, dsh, row_offset, 17, 'aim')
+                populate_delta_consensus(worksheet, dsh, row_offset, 29, 'guidance')
+                populate_additional_columns(worksheet, dsh, row_offset, 78, selection='dvc')
             row_offset += 12
     return workbook
 
@@ -209,6 +230,7 @@ def populate_key_financials(worksheet, dsh, row_offset, init_col):
     populate_from_dict(worksheet, dsh.key_financials, 'net_cash', row_offset, init_col + 19)
     populate_from_dict(worksheet, dsh.key_financials, 'total_se_liabilities', row_offset, init_col + 20)
     populate_from_dict(worksheet, dsh.key_financials, 'total_assets', row_offset, init_col + 21)
+    populate_from_dict(worksheet, dsh.key_financials, 'gross_profit', row_offset, init_col + 22)
 
 
 def populate_leverage_returns(worksheet, dsh, row_offset, init_col):
@@ -228,18 +250,21 @@ def populate_leverage_returns(worksheet, dsh, row_offset, init_col):
 
 
 def populate_delta_consensus(worksheet, dsh, row_offset, init_col, sub_key):
-    populate_from_dict(worksheet, dsh.delta_consensus, 'gross_rev', row_offset, init_col, sub_key)
-    populate_from_dict(worksheet, dsh.delta_consensus, 'net_rev', row_offset, init_col + 1, sub_key)
-    populate_from_dict(worksheet, dsh.delta_consensus, 'net_nii', row_offset, init_col + 2, sub_key)
-    populate_from_dict(worksheet, dsh.delta_consensus, 'adj_ebitda', row_offset, init_col + 3, sub_key)
-    populate_from_dict(worksheet, dsh.delta_consensus, 'ebitdar', row_offset, init_col + 4, sub_key)
-    populate_from_dict(worksheet, dsh.delta_consensus, 'ebita', row_offset, init_col + 5, sub_key)
-    populate_from_dict(worksheet, dsh.delta_consensus, 'ebit', row_offset, init_col + 6, sub_key)
-    populate_from_dict(worksheet, dsh.delta_consensus, 'ppop', row_offset, init_col + 7, sub_key)
-    populate_from_dict(worksheet, dsh.delta_consensus, 'adj_eps', row_offset, init_col + 8, sub_key)
-    populate_from_dict(worksheet, dsh.delta_consensus, 'gap_eps', row_offset, init_col + 9, sub_key)
-    populate_from_dict(worksheet, dsh.delta_consensus, 'fcf', row_offset, init_col + 10, sub_key)
-    populate_from_dict(worksheet, dsh.delta_consensus, 'bps', row_offset, init_col + 11, sub_key)
+    try:
+        populate_from_dict(worksheet, dsh.delta_consensus, 'gross_rev', row_offset, init_col, sub_key)
+        populate_from_dict(worksheet, dsh.delta_consensus, 'net_rev', row_offset, init_col + 1, sub_key)
+        populate_from_dict(worksheet, dsh.delta_consensus, 'net_nii', row_offset, init_col + 2, sub_key)
+        populate_from_dict(worksheet, dsh.delta_consensus, 'adj_ebitda', row_offset, init_col + 3, sub_key)
+        populate_from_dict(worksheet, dsh.delta_consensus, 'ebitdar', row_offset, init_col + 4, sub_key)
+        populate_from_dict(worksheet, dsh.delta_consensus, 'ebita', row_offset, init_col + 5, sub_key)
+        populate_from_dict(worksheet, dsh.delta_consensus, 'ebit', row_offset, init_col + 6, sub_key)
+        populate_from_dict(worksheet, dsh.delta_consensus, 'ppop', row_offset, init_col + 7, sub_key)
+        populate_from_dict(worksheet, dsh.delta_consensus, 'adj_eps', row_offset, init_col + 8, sub_key)
+        populate_from_dict(worksheet, dsh.delta_consensus, 'gap_eps', row_offset, init_col + 9, sub_key)
+        populate_from_dict(worksheet, dsh.delta_consensus, 'fcf', row_offset, init_col + 10, sub_key)
+        populate_from_dict(worksheet, dsh.delta_consensus, 'bps', row_offset, init_col + 11, sub_key)
+    except Exception:
+        print("No Delta and Consensus {}".format(dsh.stock_code))
 
 
 def populate_current_valuation(worksheet, dsh, row_offset, init_col):
@@ -256,7 +281,31 @@ def populate_current_valuation(worksheet, dsh, row_offset, init_col):
     populate_from_dict(worksheet,  dsh.current_valuation, 'cap_per_others', row_offset, init_col + 10, 'aim')
     populate_from_dict(worksheet,  dsh.current_valuation, 'fcf_per_p', row_offset, init_col + 11, 'aim')
     populate_from_dict(worksheet,  dsh.current_valuation, 'cfcf_per_p', row_offset, init_col + 12, 'aim')
-    return row_offset + 12
+
+
+def populate_additional_columns(worksheet, dsh, row_offset, init_col, selection=None):
+    if selection == 'dvc':
+        try:
+            populate_from_dict(worksheet, dsh.delta_consensus, 'anp', row_offset, init_col + 2, 'aim')
+            populate_from_dict(worksheet, dsh.delta_consensus, 'anp', row_offset, init_col + 3, 'guidance')
+            populate_from_dict(worksheet, dsh.delta_consensus, 'vonb', row_offset, init_col + 4, 'aim')
+            populate_from_dict(worksheet, dsh.delta_consensus, 'vonb', row_offset, init_col + 5, 'guidance')
+            populate_from_dict(worksheet, dsh.delta_consensus, 'ifrs_eps', row_offset, init_col + 6, 'aim')
+            populate_from_dict(worksheet, dsh.delta_consensus, 'ifrs_eps', row_offset, init_col + 7, 'guidance')
+            return
+        except Exception:
+            print("No Delta and Consensus {}".format(dsh.stock_code))
+    try:
+        populate_from_dict(worksheet,  dsh.current_valuation, 'p_ev', row_offset, init_col, 'aim')
+        populate_from_dict(worksheet,  dsh.current_valuation, 'free_surpus_price', row_offset, init_col + 1, 'aim')
+        populate_from_dict(worksheet, dsh.delta_consensus, 'anp', row_offset, init_col + 2, 'aim')
+        populate_from_dict(worksheet, dsh.delta_consensus, 'anp', row_offset, init_col + 3, 'guidance')
+        populate_from_dict(worksheet, dsh.delta_consensus, 'vonb', row_offset, init_col + 4, 'aim')
+        populate_from_dict(worksheet, dsh.delta_consensus, 'vonb', row_offset, init_col + 5, 'guidance')
+        populate_from_dict(worksheet, dsh.delta_consensus, 'ifrs_eps', row_offset, init_col + 6, 'aim')
+        populate_from_dict(worksheet, dsh.delta_consensus, 'ifrs_eps', row_offset, init_col + 7, 'guidance')
+    except Exception:
+        print("No Current Valuation {}".format(dsh.stock_code))
 
 
 def populate_from_dict(worksheet, dsh, key, row_offset, col, sub_key=None):
@@ -286,7 +335,9 @@ def write_headers(workbook, sheet):
     worksheet.merge_range("{}1:{}1".format(colnum_string(17), colnum_string(28)), "Delta Vs Consensus (AIM)", merge_format)
     worksheet.merge_range("{}1:{}1".format(colnum_string(29), colnum_string(40)), "Delta Vs Consensus (Guidance)", merge_format)
     worksheet.merge_range("{}1:{}1".format(colnum_string(41), colnum_string(53)), "Leverage and Returns", merge_format)
-    worksheet.merge_range("{}1:{}1".format(colnum_string(54), colnum_string(74)), "Key Financials", merge_format)
+    worksheet.merge_range("{}1:{}1".format(colnum_string(54), colnum_string(76)), "Key Financials", merge_format)
+    worksheet.merge_range("{}1:{}1".format(colnum_string(78), colnum_string(79)), "Current Caluation", merge_format)
+    worksheet.merge_range("{}1:{}1".format(colnum_string(80), colnum_string(85)), "Delta Vs Consensus", merge_format)
     worksheet.write('A2', 'Stock Code ', merge_format)
     worksheet.write('B2', 'Rel Period', merge_format)
     worksheet.write('C2', 'Fixed Period', merge_format)
@@ -294,12 +345,17 @@ def write_headers(workbook, sheet):
         worksheet.write('{}2'.format(colnum_string(idx+4)), header, merge_format)
         final_col = idx+4
     worksheet.write('{}2'.format(colnum_string(final_col+1)), "BBU Date", merge_format)
+    for idx, header in enumerate(additional_headers):
+        worksheet.write('{}2'.format(colnum_string(final_col+idx+2)), header, merge_format)
     return workbook
 
 
 class ConsolidatedExporterFiscal:
     @classmethod
-    def export(cls, workbook, sheet, scenario):
+    def export(cls, workbook, sheet, scenario, stock_code):
         workbook = write_headers(workbook, sheet)
-        workbook = write_data(workbook, db.cumulative_dashboards.find({}), sheet, scenario)
+        if stock_code is not None:
+            workbook = write_data(workbook, db.cumulative_dashboards.find({'stock_code': stock_code}), sheet, scenario)
+        else:
+            workbook = write_data(workbook, db.cumulative_dashboards.find({}), sheet, scenario)
         return workbook
