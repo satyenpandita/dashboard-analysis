@@ -11,6 +11,7 @@ def write_data(workbook, data, sheet):
     for idx, dashboard in enumerate(data):
         cum_dash = CumulativeDashBoard.from_dict(dashboard)
         dsh = DashboardV2(cum_dash.base)
+        dsh_bear = DashboardV2(cum_dash.bear)
         worksheet = workbook.get_worksheet_by_name(sheet)
         date_format = workbook.add_format({'num_format': 'mm/dd/yy'})
         percentage_format = workbook.add_format()
@@ -71,22 +72,22 @@ def write_data(workbook, data, sheet):
         # Target Prices
         # 1year target prices
         worksheet.write('AK{}'.format(idx+offset), dsh.target_price.get('base').get('pt_1year'))
-        worksheet.write('AL{}'.format(idx+offset), dsh.target_price.get('bear').get('pt_1year'))
+        worksheet.write('AL{}'.format(idx+offset), dsh_bear.target_price.get('bear').get('pt_1year'))
         worksheet.write('AM{}'.format(idx+offset), dsh.target_price.get('bull').get('pt_1year'))
         worksheet.write('AN{}'.format(idx+offset), dsh.target_price.get('base').get('prob_1year'), percentage_format)
-        worksheet.write('AO{}'.format(idx+offset), dsh.target_price.get('bear').get('prob_1year'), percentage_format)
+        worksheet.write('AO{}'.format(idx+offset), dsh_bear.target_price.get('bear').get('prob_1year'), percentage_format)
         worksheet.write('AP{}'.format(idx+offset), dsh.target_price.get('bull').get('prob_1year'), percentage_format)
         # 3year target prices
         worksheet.write('AQ{}'.format(idx+offset), dsh.target_price.get('base').get('pt_3year'))
-        worksheet.write('AR{}'.format(idx+offset), dsh.target_price.get('bear').get('pt_3year'))
+        worksheet.write('AR{}'.format(idx+offset), dsh_bear.target_price.get('bear').get('pt_3year'))
         worksheet.write('AS{}'.format(idx+offset), dsh.target_price.get('bull').get('pt_3year'))
         worksheet.write('AT{}'.format(idx+offset), dsh.target_price.get('base').get('prob_3year'), percentage_format)
-        worksheet.write('AU{}'.format(idx+offset), dsh.target_price.get('bear').get('prob_3year'), percentage_format)
+        worksheet.write('AU{}'.format(idx+offset), dsh_bear.target_price.get('bear').get('prob_3year'), percentage_format)
         worksheet.write('AV{}'.format(idx+offset), dsh.target_price.get('bull').get('prob_3year'), percentage_format)
 
         # Return 1 yr
         worksheet.write('AW{}'.format(idx+offset), dsh.target_price.get('base').get('return_1year'), percentage_format)
-        worksheet.write('AX{}'.format(idx+offset), dsh.target_price.get('bear').get('return_1year'), percentage_format)
+        worksheet.write('AX{}'.format(idx+offset), dsh_bear.target_price.get('bear').get('return_1year'), percentage_format)
         worksheet.write('AY{}'.format(idx+offset), dsh.target_price.get('bull').get('return_1year'), percentage_format)
         worksheet.write('AZ{}'.format(idx+offset), dsh.target_price.get('expected_value_1year'))
         worksheet.write('BA{}'.format(idx+offset), dsh.target_price.get('borrow_cost_1year'), percentage_format)
@@ -94,7 +95,7 @@ def write_data(workbook, data, sheet):
 
         # Return 3 yr
         worksheet.write('BC{}'.format(idx+offset), dsh.target_price.get('base').get('return_3year'), percentage_format)
-        worksheet.write('BD{}'.format(idx+offset), dsh.target_price.get('bear').get('return_3year'), percentage_format)
+        worksheet.write('BD{}'.format(idx+offset), dsh_bear.target_price.get('bear').get('return_3year'), percentage_format)
         worksheet.write('BE{}'.format(idx+offset), dsh.target_price.get('bull').get('return_3year'), percentage_format)
         worksheet.write('BF{}'.format(idx+offset), dsh.target_price.get('expected_value_3year'))
         worksheet.write('BG{}'.format(idx+offset), dsh.target_price.get('borrow_cost_3year'), percentage_format)
