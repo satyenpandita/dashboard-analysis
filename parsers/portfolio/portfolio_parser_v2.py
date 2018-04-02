@@ -21,7 +21,7 @@ def get_tickers(worksheet, direction):
         for i in range(range_length):
             val = cell_value(worksheet, target_row, target_col)
             if val and val != "":
-                ticker = valid_ticker(val)
+                ticker = val
                 if ticker:
                     folio[ticker] = cell_value(worksheet, target_row, target_col+5), \
                                     cell_value(worksheet, target_row, target_col+7)
