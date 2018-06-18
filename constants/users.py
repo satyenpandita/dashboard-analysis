@@ -13,7 +13,8 @@ USERS = dict(MG=["mona gao", "mona", "MG", 'mg'],
              DH=["daniel hui", "daniel", "DH", "dh"],
              GG=["gaurav gupta", "gaurav", "GG", "gg"],
              KP=["karan parmanandka", "karan", "KP", "kp"],
-             SM=["suhail mohiuddin", "suhail", "SM", "sm"]
+             SM=["suhail mohiuddin", "suhail", "SM", "sm"],
+             VA=["varun arora", "varun", "VA", "va"]
              )
 
 
@@ -31,4 +32,5 @@ USERS_EMAILS = dict(MG="mgao@auroim.com",
                     PA="pagarwal@@auroim.com",
                     DH="dhui@@auroim.com",
                     KP="karan@auroim.com",
-                    GG="ggupta@auroim.com")
+                    GG="ggupta@auroim.com",
+                    VA="varora@auroim.com")
