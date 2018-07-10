@@ -23,8 +23,21 @@ def get_tickers(worksheet, direction):
             if val and val != "":
                 ticker = val
                 if ticker:
-                    folio[ticker] = cell_value(worksheet, target_row, target_col+5), \
-                                    cell_value(worksheet, target_row, target_col+7)
+                    folio[ticker] = (cell_value(worksheet, target_row, target_col + 5),
+                                     cell_value(worksheet, target_row, target_col + 7),
+                                     cell_value(worksheet, target_row, target_col + 13),
+                                     cell_value(worksheet, target_row, target_col + 14),
+                                     cell_value(worksheet, target_row, target_col + 15),
+                                     cell_value(worksheet, target_row, target_col + 16),
+                                     cell_value(worksheet, target_row, target_col + 27),
+                                     cell_value(worksheet, target_row, target_col + 28),
+                                     cell_value(worksheet, target_row, target_col + 29),
+                                     cell_value(worksheet, target_row, target_col + 30),
+                                     cell_value(worksheet, target_row, target_col + 57),
+                                     cell_value(worksheet, target_row, target_col + 58),
+                                     cell_value(worksheet, target_row, target_col + 59),
+                                     cell_value(worksheet, target_row, target_col + 60),
+                                     )
                 else:
                     INVALID_TICKERS[target_row + 1] = val
             target_row += 1
@@ -54,7 +67,6 @@ def get_analyst(worksheet):
 
 
 class PortfolioParserV2(object):
-
     def __init__(self, worksheet, input_file):
         self.long_tickers = get_tickers(worksheet, "long")
         self.short_tickers = get_tickers(worksheet, "short")
@@ -69,11 +81,25 @@ class PortfolioParserV2(object):
     def save_and_generate_files(self):
         short_list = []
         long_list = []
-        for stock, (weight, roc) in self.short_tickers.items():
-            portfolio_item = PortfolioItem(stock_code=stock, weight=weight, reason_for_change=roc)
+        for stock, (weight, roc, base_tp_1yr, bear_tp_1yr, base_con_1yr, bear_con_1yr, base_tp_3yr, bear_tp_3yr,
+                    base_con_3yr, bear_con_3yr, base_eps_1yr, bear_eps_1yr, base_multiple_1yr, bear_multiple_1yr) \
+                in self.short_tickers.items():
+            portfolio_item = PortfolioItem(stock_code=stock, weight=weight, reason_for_change=roc,
+                                           base_tp_1yr=base_tp_1yr, bear_tp_1yr=bear_tp_1yr, base_con_1yr=base_con_1yr,
+                                           bear_con_1yr=bear_con_1yr, base_tp_3yr=base_tp_3yr, bear_tp_3yr=bear_tp_3yr,
+                                           base_con_3yr=base_con_3yr, bear_con_3yr=bear_con_3yr,
+                                           base_eps_1yr=base_eps_1yr, bear_eps_1yr=bear_eps_1yr,
+                                           base_multiple_1yr=base_multiple_1yr, bear_multiple_1yr=bear_multiple_1yr)
             short_list.append(portfolio_item)
-        for stock, (weight, roc) in self.long_tickers.items():
-            portfolio_item = PortfolioItem(stock_code=stock, weight=weight, reason_for_change=roc)
+        for stock, (weight, roc, base_tp_1yr, bear_tp_1yr, base_con_1yr, bear_con_1yr, base_tp_3yr, bear_tp_3yr,
+                    base_con_3yr, bear_con_3yr, base_eps_1yr, bear_eps_1yr, base_multiple_1yr, bear_multiple_1yr) \
+                in self.long_tickers.items():
+            portfolio_item = PortfolioItem(stock_code=stock, weight=weight, reason_for_change=roc,
+                                           base_tp_1yr=base_tp_1yr, bear_tp_1yr=bear_tp_1yr, base_con_1yr=base_con_1yr,
+                                           bear_con_1yr=bear_con_1yr, base_tp_3yr=base_tp_3yr, bear_tp_3yr=bear_tp_3yr,
+                                           base_con_3yr=base_con_3yr, bear_con_3yr=bear_con_3yr,
+                                           base_eps_1yr=base_eps_1yr, bear_eps_1yr=bear_eps_1yr,
+                                           base_multiple_1yr=base_multiple_1yr, bear_multiple_1yr=bear_multiple_1yr)
             long_list.append(portfolio_item)
         portfolio = Portfolio(analyst=self.analyst, shorts=short_list, longs=long_list,
                               file_path='/var/www/portfolio/{}'.format(self.input_file))
