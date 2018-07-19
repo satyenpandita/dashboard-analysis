@@ -79,7 +79,7 @@ def save_publish_time(stock_code):
 @app.task()
 def dispatch_slack_messages(data):
     try:
-        res = requests.post("https://notes.aurovilleinvestments.com/slack/best_idea_published/", json=data)
+        res = requests.post("https://notes.aurovilleinvestments.com/auro_slack/best_idea_published/", json=data)
         if res.status_code == requests.codes.ok:
             return "Request Successful"
         else:
