@@ -105,8 +105,8 @@ def portfolio():
 @app.route('/portfolio2', methods=['POST'])
 def portfolio2():
     file = request.files['uploadfile']
-    app.logger.error(file.filename)
-    app.logger.error("File Mime {}".format(file.content_type))
+    app.logger.info(file.filename)
+    app.logger.info("File Mime {}".format(file.content_type))
     try:
         complete_name = '/var/www/portfolio/{}'.format(file.filename)
         file.save(complete_name)
@@ -120,8 +120,8 @@ def portfolio2():
         app.logger.info("Email End")
         return jsonify({'file': file.filename}), 201
     except XLRDError as e:
-        app.logger.info("XLRD Error {}".format(str(e)))
-        app.logger.info("File Mime {}".format(file.content_type))
+        app.logger.error("XLRD Error {}".format(str(e)))
+        app.logger.error("File Mime {}".format(file.content_type))
         return jsonify({'file': file.filename}), 500
     except Exception as e:
         app.logger.error("Publish Failed for file : {}".format(file.filename))

@@ -13,10 +13,10 @@ def best_idea_diff_email(portfolio_id):
     portfolio = Portfolio.objects.get(id=portfolio_id)
     archive = PortfolioArchive.objects(analyst=portfolio.analyst).first()
     if archive:
-        pairs = zip(portfolio.longs, archive.longs)
+        pairs = generate_pairs(portfolio.longs, archive.longs)
         diff_list_longs = [(x.stock_tag, '{:.1%}'.format(x.weight-y.weight)) for x, y in pairs
                            if x.weight != y.weight and (x.weight - y.weight > .001 or x.weight - y.weight < -.001)]
-        pairs = zip(portfolio.shorts, archive.shorts)
+        pairs = generate_pairs(portfolio.shorts, archive.shorts)
         diff_list_shorts = [(x.stock_tag, '{:.1%}'.format(x.weight-y.weight)) for x, y in pairs
                             if x.weight != y.weight and (x.weight - y.weight > .001 or x.weight - y.weight < -.001)]
         combined_list = diff_list_longs + diff_list_shorts
@@ -37,7 +37,7 @@ def best_idea_diff_email(portfolio_id):
                                                   "|".join([" ".join(i) for i in stocks_short]),
                                                   portfolio.analyst)
 
-        print(subject)
+        dispatch_slack_messages.delay({"analyst": portfolio.analyst, "longs": stocks_long, "shorts": stocks_short})
 
         if len(longs_removed + shorts_removed) > 0:
             subject += " - Stocks Removed [{}]".format("|".join(longs_removed + shorts_removed))
@@ -54,11 +54,32 @@ def best_idea_diff_email(portfolio_id):
         print("Do nothing")
 
 
+def generate_pairs(new_items, old_items):
+    pairs = []
+    for item in new_items:
+        old_match = next((x for x in old_items if item.stock_tag == x.stock_tag), None)
+        if old_match is not None:
+            pairs.append((item, old_match))
+    return pairs
+
+
 @app.task()
 def save_publish_time(stock_code):
     try:
         res = requests.get("https://notes.aurovilleinvestments.com/notes/update_publish_date",
                            params={"stock_code":stock_code})
+        if res.status_code == requests.codes.ok:
+            return "Request Successful"
+        else:
+            return "Request Failed"
+    except Exception as e:
+        print("Request Failed for update : {}".format(str(e)))
+
+
+@app.task()
+def dispatch_slack_messages(data):
+    try:
+        res = requests.post("https://notes.aurovilleinvestments.com/slack/best_idea_published", json=data)
         if res.status_code == requests.codes.ok:
             return "Request Successful"
         else:
