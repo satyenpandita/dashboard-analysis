@@ -5,9 +5,16 @@ from exporter.portfolio.portfolio_eps_exporter import PortfolioEPSExporter
 from utils.cell_functions import find_cell, cell_value
 from utils.email_sender import send_mail
 from utils.upload_ops import ftp_upload, get_users
-from utils.upload_ops import get_user_email
 
 INVALID_TICKERS = dict()
+
+
+def check_is_new(worksheet):
+    val = cell_value(worksheet, 0, 0)
+    if val is not None and val != "" and val == 'new':
+        return True
+    else:
+        return False
 
 
 def get_tickers(worksheet, direction):
@@ -24,23 +31,63 @@ def get_tickers(worksheet, direction):
             if val and val != "":
                 ticker = val
                 if ticker:
-                    folio[ticker] = (cell_value(worksheet, target_row, target_col + 5),
-                                     cell_value(worksheet, target_row, target_col + 7),
-                                     cell_value(worksheet, target_row, target_col + 13) if cell_value(worksheet, target_row, target_col + 13) != "" else None,
-                                     cell_value(worksheet, target_row, target_col + 14) if cell_value(worksheet, target_row, target_col + 14) != "" else None,
-                                     cell_value(worksheet, target_row, target_col + 15)*100 if cell_value(worksheet, target_row, target_col + 15) != "" else None,
-                                     cell_value(worksheet, target_row, target_col + 16)*100 if cell_value(worksheet, target_row, target_col + 16) != "" else None,
-                                     cell_value(worksheet, target_row, target_col + 27) if cell_value(worksheet, target_row, target_col + 27) != "" else None,
-                                     cell_value(worksheet, target_row, target_col + 28) if cell_value(worksheet, target_row, target_col + 28) != "" else None,
-                                     cell_value(worksheet, target_row, target_col + 29)*100 if cell_value(worksheet, target_row, target_col + 29) != "" else None,
-                                     cell_value(worksheet, target_row, target_col + 30)*100 if cell_value(worksheet, target_row, target_col + 30) != "" else None,
-                                     cell_value(worksheet, target_row, target_col + 57) if cell_value(worksheet, target_row, target_col + 57) != "" else None,
-                                     cell_value(worksheet, target_row, target_col + 58) if cell_value(worksheet, target_row, target_col + 58) != "" else None,
-                                     cell_value(worksheet, target_row, target_col + 59) if cell_value(worksheet, target_row, target_col + 59) != "" else None,
-                                     cell_value(worksheet, target_row, target_col + 60) if cell_value(worksheet, target_row, target_col + 60) != "" else None,
-                                     )
+                    folio[ticker] = dict(weight=cell_value(worksheet, target_row, target_col + 5),
+                                         roc=cell_value(worksheet, target_row, target_col + 7),
+                                         base_tp_1yr=cell_value(worksheet, target_row, target_col + 13) if cell_value(worksheet, target_row, target_col + 13) != "" else None,
+                                         bear_tp_1yr=cell_value(worksheet, target_row, target_col + 14) if cell_value(worksheet, target_row, target_col + 14) != "" else None,
+                                         base_con_1yr=cell_value(worksheet, target_row, target_col + 15)*100 if cell_value(worksheet, target_row, target_col + 15) != "" else None,
+                                         bear_con_1yr=cell_value(worksheet, target_row, target_col + 16)*100 if cell_value(worksheet, target_row, target_col + 16) != "" else None,
+                                         base_tp_3yr=cell_value(worksheet, target_row, target_col + 27) if cell_value(worksheet, target_row, target_col + 27) != "" else None,
+                                         bear_tp_3yr=cell_value(worksheet, target_row, target_col + 28) if cell_value(worksheet, target_row, target_col + 28) != "" else None,
+                                         base_con_3yr=(worksheet, target_row, target_col + 29)*100 if cell_value(worksheet, target_row, target_col + 29) != "" else None,
+                                         bear_con_3yr=(worksheet, target_row, target_col + 30)*100 if cell_value(worksheet, target_row, target_col + 30) != "" else None,
+                                         base_eps_1yr=cell_value(worksheet, target_row, target_col + 57) if cell_value(worksheet, target_row, target_col + 57) != "" else None,
+                                         base_multiple_1yr=cell_value(worksheet, target_row, target_col + 58) if cell_value(worksheet, target_row, target_col + 58) != "" else None,
+                                         bear_eps_1yr=cell_value(worksheet, target_row, target_col + 59) if cell_value(worksheet, target_row, target_col + 59) != "" else None,
+                                         bear_multiple_1yr=cell_value(worksheet, target_row, target_col + 60) if cell_value(worksheet, target_row, target_col + 60) != "" else None,
+                                         valuation_str=""
+                                         )
                 else:
                     INVALID_TICKERS[target_row + 1] = val
+            target_row += 1
+    return folio
+
+
+def get_tickers_new(worksheet, direction):
+    folio = dict()
+    folio_type = 'LONG Pfolio ($M)' if direction == 'long' else 'Short Pfolio ($M)'
+    row_offset = 3 if direction == 'long' else 2
+    cell_address = find_cell(worksheet, folio_type)
+    if cell_address:
+        row, col = cell_address
+        target_row, target_col = row + row_offset, col + 1
+        while True:
+            ticker = cell_value(worksheet, target_row, target_col)
+            weight = cell_value(worksheet, target_row, target_col + 5)
+            if ticker == "END":
+                break
+            elif ticker and ticker != "" and weight and weight != "" and weight > 0:
+                ticker = ticker
+                if ticker:
+                    folio[ticker] = dict(weight=weight,
+                                         roc=cell_value(worksheet, target_row, target_col + 7),
+                                         base_tp_1yr=cell_value(worksheet, target_row, target_col + 13) if cell_value(worksheet, target_row, target_col + 13) != "" else None,
+                                         bear_tp_1yr=cell_value(worksheet, target_row, target_col + 14) if cell_value(worksheet, target_row, target_col + 14) != "" else None,
+                                         base_con_1yr=cell_value(worksheet, target_row, target_col + 15)*100 if cell_value(worksheet, target_row, target_col + 15) != "" else None,
+                                         bear_con_1yr=cell_value(worksheet, target_row, target_col + 16)*100 if cell_value(worksheet, target_row, target_col + 16) != "" else None,
+                                         valuation_str=cell_value(worksheet, target_row, target_col + 20),
+                                         base_tp_3yr=cell_value(worksheet, target_row, target_col + 28) if cell_value(worksheet, target_row, target_col + 28) != "" else None,
+                                         bear_tp_3yr=cell_value(worksheet, target_row, target_col + 29) if cell_value(worksheet, target_row, target_col + 29) != "" else None,
+                                         base_con_3yr=cell_value(worksheet, target_row, target_col + 30)*100 if cell_value(worksheet, target_row, target_col + 30) != "" else None,
+                                         bear_con_3yr=cell_value(worksheet, target_row, target_col + 31)*100 if cell_value(worksheet, target_row, target_col + 31) != "" else None,
+                                         base_eps_1yr=cell_value(worksheet, target_row, target_col + 58) if cell_value(worksheet, target_row, target_col + 58) != "" else None,
+                                         base_multiple_1yr=cell_value(worksheet, target_row, target_col + 59) if cell_value(worksheet, target_row, target_col + 59) != "" else None,
+                                         bear_eps_1yr=cell_value(worksheet, target_row, target_col + 60) if cell_value(worksheet, target_row, target_col + 60) != "" else None,
+                                         bear_multiple_1yr=cell_value(worksheet, target_row, target_col + 61) if cell_value(worksheet, target_row, target_col + 61) != "" else None,
+
+                                         )
+                else:
+                    INVALID_TICKERS[target_row + 1] = ticker
             target_row += 1
     return folio
 
@@ -69,8 +116,9 @@ def get_analyst(worksheet):
 
 class PortfolioParserV2(object):
     def __init__(self, worksheet, input_file):
-        self.long_tickers = get_tickers(worksheet, "long")
-        self.short_tickers = get_tickers(worksheet, "short")
+        self.is_new = check_is_new(worksheet)
+        self.long_tickers = get_tickers_new(worksheet, "long") if self.is_new else get_tickers(worksheet, "long")
+        self.short_tickers = get_tickers_new(worksheet, "short") if self.is_new else get_tickers(worksheet, "short")
         self.invalid_tickers = INVALID_TICKERS
         self.analyst = get_analyst(worksheet)
         self.output_file_long = ''
@@ -84,25 +132,25 @@ class PortfolioParserV2(object):
     def save_and_generate_files(self):
         short_list = []
         long_list = []
-        for stock, (weight, roc, base_tp_1yr, bear_tp_1yr, base_con_1yr, bear_con_1yr, base_tp_3yr, bear_tp_3yr,
-                    base_con_3yr, bear_con_3yr, base_eps_1yr, base_multiple_1yr, bear_eps_1yr, bear_multiple_1yr) \
-                in self.short_tickers.items():
-            portfolio_item = PortfolioItem(stock_code=stock, weight=weight, reason_for_change=roc,
-                                           base_tp_1yr=base_tp_1yr, bear_tp_1yr=bear_tp_1yr, base_con_1yr=base_con_1yr,
-                                           bear_con_1yr=bear_con_1yr, base_tp_3yr=base_tp_3yr, bear_tp_3yr=bear_tp_3yr,
-                                           base_con_3yr=base_con_3yr, bear_con_3yr=bear_con_3yr,
-                                           base_eps_1yr=base_eps_1yr, bear_eps_1yr=bear_eps_1yr,
-                                           base_multiple_1yr=base_multiple_1yr, bear_multiple_1yr=bear_multiple_1yr)
+        for stock, data in self.short_tickers.items():
+            portfolio_item = PortfolioItem(stock_code=stock, weight=data['weight'], reason_for_change=data['roc'],
+                                           base_tp_1yr=data['base_tp_1yr'], bear_tp_1yr=data['bear_tp_1yr'],
+                                           base_con_1yr=data['base_con_1yr'], bear_con_1yr=data['bear_con_1yr'],
+                                           base_tp_3yr=data['base_tp_3yr'], bear_tp_3yr=data['bear_tp_3yr'],
+                                           base_con_3yr=data['base_con_3yr'], bear_con_3yr=data['bear_con_3yr'],
+                                           base_eps_1yr=data['base_eps_1yr'], bear_eps_1yr=data['bear_eps_1yr'],
+                                           base_multiple_1yr=data['base_multiple_1yr'],
+                                           bear_multiple_1yr=data['bear_multiple_1yr'], valuation_str=data['valuation_str'])
             short_list.append(portfolio_item)
-        for stock, (weight, roc, base_tp_1yr, bear_tp_1yr, base_con_1yr, bear_con_1yr, base_tp_3yr, bear_tp_3yr,
-                    base_con_3yr, bear_con_3yr, base_eps_1yr, base_multiple_1yr, bear_eps_1yr, bear_multiple_1yr) \
-                in self.long_tickers.items():
-            portfolio_item = PortfolioItem(stock_code=stock, weight=weight, reason_for_change=roc,
-                                           base_tp_1yr=base_tp_1yr, bear_tp_1yr=bear_tp_1yr, base_con_1yr=base_con_1yr,
-                                           bear_con_1yr=bear_con_1yr, base_tp_3yr=base_tp_3yr, bear_tp_3yr=bear_tp_3yr,
-                                           base_con_3yr=base_con_3yr, bear_con_3yr=bear_con_3yr,
-                                           base_eps_1yr=base_eps_1yr, bear_eps_1yr=bear_eps_1yr,
-                                           base_multiple_1yr=base_multiple_1yr, bear_multiple_1yr=bear_multiple_1yr)
+        for stock, data in self.long_tickers.items():
+            portfolio_item = PortfolioItem(stock_code=stock, weight=data['weight'], reason_for_change=data['roc'],
+                                           base_tp_1yr=data['base_tp_1yr'], bear_tp_1yr=data['bear_tp_1yr'],
+                                           base_con_1yr=data['base_con_1yr'], bear_con_1yr=data['bear_con_1yr'],
+                                           base_tp_3yr=data['base_tp_3yr'], bear_tp_3yr=data['bear_tp_3yr'],
+                                           base_con_3yr=data['base_con_3yr'], bear_con_3yr=data['bear_con_3yr'],
+                                           base_eps_1yr=data['base_eps_1yr'], bear_eps_1yr=data['bear_eps_1yr'],
+                                           base_multiple_1yr=data['base_multiple_1yr'],
+                                           bear_multiple_1yr=data['bear_multiple_1yr'], valuation_str=data['valuation_str'])
             long_list.append(portfolio_item)
         portfolio = Portfolio(analyst=self.analyst, shorts=short_list, longs=long_list,
                               file_path='/var/www/portfolio/{}'.format(self.input_file))

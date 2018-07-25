@@ -38,13 +38,11 @@ class PortfolioEPSExporter(object):
         percentage_format.set_num_format(0x0a)
         count = 2
 
-        for stock, (weight, roc, base_tp_1yr, bear_tp_1yr, base_con_1yr, bear_con_1yr, base_tp_3yr, bear_tp_3yr,
-                    base_con_3yr, bear_con_3yr, base_eps_1yr, base_multiple_1yr, bear_eps_1yr, bear_multiple_1yr) \
-                in portfolio.items():
+        for stock, data in portfolio.items():
             worksheet.write('A{}'.format(count), stock)
             worksheet.write('B{}'.format(count), "1FY")
-            worksheet.write('C{}'.format(count), base_eps_1yr)
-            worksheet.write('D{}'.format(count), bear_eps_1yr)
+            worksheet.write('C{}'.format(count), data['base_eps_1yr'])
+            worksheet.write('D{}'.format(count), data['bear_eps_1yr'])
             now = datetime.datetime.now()
             worksheet.write('E{}'.format(count), now.strftime('%m/%d/%y'))
             count += 1

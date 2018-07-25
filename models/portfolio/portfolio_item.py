@@ -17,6 +17,7 @@ class PortfolioItem(EmbeddedDocument):
     bear_eps_1yr = DecimalField(precision=4)
     base_multiple_1yr = DecimalField(precision=2)
     bear_multiple_1yr = DecimalField(precision=2)
+    valuation_str = StringField(max_length=500)
 
     @property
     def stock_tag(self):
