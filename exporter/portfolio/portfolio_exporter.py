@@ -51,7 +51,7 @@ class PortfolioExporter(object):
 
         if direction == 'long':
             for stock, (weight, roc, base_tp_1yr, bear_tp_1yr, base_con_1yr, bear_con_1yr, base_tp_3yr, bear_tp_3yr,
-                        base_con_3yr, bear_con_3yr, base_eps_1yr, bear_eps_1yr, base_multiple_1yr, bear_multiple_1yr)\
+                        base_con_3yr, bear_con_3yr, base_eps_1yr, base_multiple_1yr, bear_eps_1yr, bear_multiple_1yr) \
                     in self.longs.items():
                 worksheet.write('A{}'.format(count), 'AIM BEST IDEAS {} LONG'.format(analyst))
                 worksheet.write('B{}'.format(count), stock)
@@ -74,7 +74,7 @@ class PortfolioExporter(object):
                 count += 1
         elif direction == 'short':
             for stock, (weight, roc, base_tp_1yr, bear_tp_1yr, base_con_1yr, bear_con_1yr, base_tp_3yr, bear_tp_3yr,
-                        base_con_3yr, bear_con_3yr, base_eps_1yr, bear_eps_1yr, base_multiple_1yr, bear_multiple_1yr)\
+                        base_con_3yr, bear_con_3yr, base_eps_1yr, bear_eps_1yr, base_multiple_1yr, bear_multiple_1yr) \
                     in self.shorts.items():
                 worksheet.write('A{}'.format(count), 'AIM BEST IDEAS {} SHORT'.format(analyst))
                 worksheet.write('B{}'.format(count), stock)

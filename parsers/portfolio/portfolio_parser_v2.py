@@ -1,6 +1,7 @@
 import re
 from models.portfolio import Portfolio, PortfolioItem
 from exporter.portfolio.portfolio_exporter import PortfolioExporter
+from exporter.portfolio.portfolio_eps_exporter import PortfolioEPSExporter
 from utils.cell_functions import find_cell, cell_value
 from utils.email_sender import send_mail
 from utils.upload_ops import ftp_upload, get_users
@@ -77,12 +78,14 @@ class PortfolioParserV2(object):
         self.output_file_short = ''
         self.output_file_short_name = ''
         self.input_file = input_file
+        self.eps_file = ''
+        self.eps_file_name = ''
 
     def save_and_generate_files(self):
         short_list = []
         long_list = []
         for stock, (weight, roc, base_tp_1yr, bear_tp_1yr, base_con_1yr, bear_con_1yr, base_tp_3yr, bear_tp_3yr,
-                    base_con_3yr, bear_con_3yr, base_eps_1yr, bear_eps_1yr, base_multiple_1yr, bear_multiple_1yr) \
+                    base_con_3yr, bear_con_3yr, base_eps_1yr, base_multiple_1yr, bear_eps_1yr, bear_multiple_1yr) \
                 in self.short_tickers.items():
             portfolio_item = PortfolioItem(stock_code=stock, weight=weight, reason_for_change=roc,
                                            base_tp_1yr=base_tp_1yr, bear_tp_1yr=bear_tp_1yr, base_con_1yr=base_con_1yr,
@@ -92,7 +95,7 @@ class PortfolioParserV2(object):
                                            base_multiple_1yr=base_multiple_1yr, bear_multiple_1yr=bear_multiple_1yr)
             short_list.append(portfolio_item)
         for stock, (weight, roc, base_tp_1yr, bear_tp_1yr, base_con_1yr, bear_con_1yr, base_tp_3yr, bear_tp_3yr,
-                    base_con_3yr, bear_con_3yr, base_eps_1yr, bear_eps_1yr, base_multiple_1yr, bear_multiple_1yr) \
+                    base_con_3yr, bear_con_3yr, base_eps_1yr, base_multiple_1yr, bear_eps_1yr, bear_multiple_1yr) \
                 in self.long_tickers.items():
             portfolio_item = PortfolioItem(stock_code=stock, weight=weight, reason_for_change=roc,
                                            base_tp_1yr=base_tp_1yr, bear_tp_1yr=bear_tp_1yr, base_con_1yr=base_con_1yr,
@@ -108,8 +111,10 @@ class PortfolioParserV2(object):
 
     def generate_upload_file(self):
         exporter = PortfolioExporter(self.long_tickers, self.short_tickers)
+        eps_exporter = PortfolioEPSExporter(self.long_tickers, self.short_tickers)
         self.output_file_long, self.output_file_long_name = exporter.export(self.analyst, 'long')
         self.output_file_short, self.output_file_short_name = exporter.export(self.analyst, 'short')
+        self.eps_file, self.eps_file_name = eps_exporter.export(self.analyst)
 
     def send_email(self):
         recipients = ["ppal@auroim.com"]
