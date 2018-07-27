@@ -40,7 +40,7 @@ class PortfolioEPSExporter(object):
 
         for stock, data in portfolio.items():
             worksheet.write('A{}'.format(count), stock)
-            worksheet.write('B{}'.format(count), "1FY")
+            worksheet.write('B{}'.format(count), "2FY")
             worksheet.write('C{}'.format(count), data['base_eps_1yr'])
             worksheet.write('D{}'.format(count), data['bear_eps_1yr'])
             now = datetime.datetime.now()
