@@ -3,6 +3,7 @@ import os
 from xlrd import open_workbook
 from parsers.DashboardParserV3 import DashboardParserV3
 from parsers.portfolio.portfolio_parser_v2 import PortfolioParserV2
+from parsers.portfolio.portfolio_pnl_parser import PortfolioPnlParser
 from exporter.exporter import Exporter
 from exporter.exporter import Exporter
 from utils.upload_ops import ftp_upload
@@ -36,6 +37,13 @@ if __name__ == '__main__':
                 worksheet = workbook.sheet_by_index(0)
                 parser = PortfolioParserV2(worksheet, file)
                 parser.save_and_generate_files()
+    elif sys.argv[1] == 'parse_pnl':
+        for file in os.listdir('uploaded_files/portfolio'):
+            if 'xls' in file[-4:] and "pnl" in file.lower():
+                print(file)
+                workbook = open_workbook('uploaded_files/portfolio/'+file)
+                parser = PortfolioPnlParser(workbook)
+                parser.parse_save_data()
     elif sys.argv[1] == 'publish' and len(sys.argv) == 3:
         for file in os.listdir('uploaded_files/output'):
             if 'xls' in file[-4:]:

@@ -1,11 +1,14 @@
 from mongoengine import *
 from .portfolio_item import PortfolioItem
+from .portfolio_pnl import PortfolioPnl
 
 
 class PortfolioArchive(Document):
     analyst = StringField(max_length=200, required=True)
     shorts = ListField(EmbeddedDocumentField(PortfolioItem))
     longs = ListField(EmbeddedDocumentField(PortfolioItem))
+    long_pnl = ListField(EmbeddedDocumentField(PortfolioPnl))
+    short_pnl = ListField(EmbeddedDocumentField(PortfolioPnl))
     created_at = DecimalField(precision=3)
     deleted_at = DecimalField(precision=3)
 

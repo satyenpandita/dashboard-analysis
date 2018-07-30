@@ -46,6 +46,24 @@ def s3_upload(file):
         # os.remove(complete_path)
 
 
+@app.task()
+def s3_upload_file(file_path, folder, name):
+    conn = boto.connect_s3()
+    bucket = "aimportfolio"
+    conn.host = "s3-us-west-2.amazonaws.com"
+    try:
+        bucket = conn.get_bucket(bucket, validate=False)
+        key = "{}/{}".format(folder, name)
+        k = Key(bucket)
+        k.key = key
+        k.set_contents_from_filename(file_path)
+    except Exception as e:
+        print("Error Occured: {}".format(str(e)))
+    finally:
+        conn.close()
+        return k.generate_url(expires_in=0, query_auth=False)
+
+
 def get_ftp_credentials():
     credentials = secrets.FTP_CREDENTIALS
     return credentials['username'], credentials['password']

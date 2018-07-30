@@ -33,22 +33,23 @@ def best_idea_diff_email(portfolio_id):
         for stock in shorts_added:
             stocks_short.append((stock.replace("Equity", "").strip(), portfolio.get_weight_str(stock)))
 
-        subject = "[L: {}][S: {}]({}, BI)".format("|".join([" ".join(i) for i in stocks_long]),
-                                                  "|".join([" ".join(i) for i in stocks_short]),
-                                                  portfolio.analyst)
+        if len(stocks_long) > 0 or len(stocks_short)>0:
+            subject = "[L: {}][S: {}]({}, BI)".format("|".join([" ".join(i) for i in stocks_long]),
+                                                      "|".join([" ".join(i) for i in stocks_short]),
+                                                      portfolio.analyst)
 
-        dispatch_slack_messages.delay({"analyst": portfolio.analyst, "longs": stocks_long, "shorts": stocks_short})
+            dispatch_slack_messages.delay({"analyst": portfolio.analyst, "longs": stocks_long, "shorts": stocks_short})
 
-        if len(longs_removed + shorts_removed) > 0:
-            subject += " - Stocks Removed [{}]".format("|".join(longs_removed + shorts_removed))
+            if len(longs_removed + shorts_removed) > 0:
+                subject += " - Stocks Removed [{}]".format("|".join(longs_removed + shorts_removed))
 
-        send_mail("ppal@auroim.com",
-                  ["ppal@auroim.com", "aanand@auroim.com"],
-                  subject,
-                  "",
-                  files=[portfolio.file_path],
-                  username="ppal@auroim.com",
-                  password="AuroOct2016")
+            send_mail("ppal@auroim.com",
+                      ["ppal@auroim.com", "aanand@auroim.com"],
+                      subject,
+                      "",
+                      files=[portfolio.file_path],
+                      username="ppal@auroim.com",
+                      password="AuroOct2016")
     else:
         # No archive present
         print("Do nothing")

@@ -3,6 +3,7 @@ from exporter.exporter import Exporter
 from parsers.DashboardParserV2 import DashboardParserV2
 from parsers.DashboardParserV3 import DashboardParserV3
 from parsers.portfolio.portfolio_parser import PortfolioParser
+from parsers.portfolio.portfolio_pnl_parser import PortfolioPnlParser
 from parsers.portfolio.portfolio_parser_v2 import PortfolioParserV2
 from xlrd import open_workbook, XLRDError
 from werkzeug.contrib.fixers import ProxyFix
@@ -55,7 +56,7 @@ def dashboard_archive():
     file = request.files['uploadfile']
     complete_name = '/var/www/dashboard/originals/{}'.format(file.filename)
     file.save(complete_name)
-    s3_upload.delay(file.filename)
+    s3_upload.delay(complete_name)
     return jsonify({'file': file.filename}), 201
 
 
@@ -119,6 +120,33 @@ def portfolio2():
         parser.send_email()
         app.logger.info("Email End")
         return jsonify({'file': file.filename}), 201
+    except XLRDError as e:
+        app.logger.error("XLRD Error {}".format(str(e)))
+        app.logger.error("File Mime {}".format(file.content_type))
+        return jsonify({'file': file.filename}), 500
+    except Exception as e:
+        app.logger.error("Publish Failed for file : {}".format(file.filename))
+        app.logger.error("File Mime {}".format(file.content_type))
+        handle_500(e, file)
+        return jsonify({'file': file.filename}), 500
+
+
+@app.route('/portfolio_pnl', methods=['POST'])
+def portfolio_pnl():
+    file = request.files['uploadfile']
+    app.logger.info(file.filename)
+    app.logger.info("File Mime {}".format(file.content_type))
+    try:
+        complete_name = '/var/www/portfolio/{}'.format(file.filename)
+        file.save(complete_name)
+        app.logger.info("Parser Starting")
+        workbook = open_workbook(complete_name)
+        parser = PortfolioPnlParser(workbook)
+        parser.parse_save_data()
+        app.logger.info("Export Started")
+        resp = parser.export()
+        app.logger.info("Export Ended")
+        return jsonify({'file': resp}), 201
     except XLRDError as e:
         app.logger.error("XLRD Error {}".format(str(e)))
         app.logger.error("File Mime {}".format(file.content_type))

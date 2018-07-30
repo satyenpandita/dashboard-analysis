@@ -1,6 +1,7 @@
 from mongoengine import *
 import time
 from .portfolio_item import PortfolioItem
+from .portfolio_pnl import PortfolioPnl
 from .portfolio_archive import PortfolioArchive
 from mongoengine import signals
 
@@ -9,6 +10,8 @@ class Portfolio(Document):
     analyst = StringField(max_length=200, required=True)
     shorts = ListField(EmbeddedDocumentField(PortfolioItem))
     longs = ListField(EmbeddedDocumentField(PortfolioItem))
+    long_pnl = ListField(EmbeddedDocumentField(PortfolioPnl))
+    short_pnl = ListField(EmbeddedDocumentField(PortfolioPnl))
     created_at = DecimalField(precision=3)
     file_path = StringField(max_length=2000, required=True)
     meta = {
@@ -23,8 +26,17 @@ class Portfolio(Document):
             portfolio = Portfolio.objects.get(analyst=self.analyst)
             archive = PortfolioArchive.objects.create(analyst=portfolio.analyst, longs=portfolio.longs,
                                                       shorts=portfolio.shorts, created_at=portfolio.created_at,
-                                                      deleted_at=time.time())
+                                                      deleted_at=time.time(), long_pnl=portfolio.long_pnl,
+                                                      short_pnl=portfolio.short_pnl)
             portfolio.delete()
+            if self.longs is None or self.shorts is None:
+                self.longs = archive.longs
+                self.shorts = archive.shorts
+
+            if self.long_pnl is None or self.short_pnl is None:
+                self.long_pnl = archive.long_pnl
+                self.short_pnl = archive.short_pnl
+
             self.created_at = time.time()
             super(Portfolio, self).save(*args, **kwargs)
         except DoesNotExist:
@@ -56,6 +68,25 @@ class Portfolio(Document):
                 return None
         else:
             return '{:.1%}'.format(w)
+
+    def generate_pairs(self):
+        pairs = []
+        if self.long_pnl is not None and self.short_pnl is not None:
+            for item in self.long_pnl:
+                short_match = next((x for x in self.short_pnl if item.pnl_date == x.pnl_date), None)
+                if short_match is not None:
+                    pairs.append((item, short_match))
+        return pairs
+
+
+    def get_pnl_ts(self):
+        ts = []
+        pairs = self.generate_pairs()
+        for x, y in pairs:
+            ts.append({**x.get_dict("long"), **y.get_dict("short")})
+        print(len(ts))
+        return ts
+
 
     @classmethod
     def post_save(cls, sender, document, **kwargs):
