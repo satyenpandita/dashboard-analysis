@@ -16,7 +16,7 @@ USERS = dict(MG=["mona gao", "mona", "MG", 'mg'],
              SM=["suhail mohiuddin", "suhail", "SM", "sm"],
              VA=["varun arora", "varun", "VA", "va"],
              LF=["lisa feng", "lisa", "LF", "lf"],
-             RH=["Ryoichi Hayashi", "ryoichi", "RH", "rh"],
+             RH=["ryoichi hayashi", "ryoichi", "RH", "rh"],
              )
 
 
