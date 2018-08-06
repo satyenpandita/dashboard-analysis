@@ -87,6 +87,13 @@ class Portfolio(Document):
         print(len(ts))
         return ts
 
+    def get_item_dict(self, ticker):
+        w = next((x for x in self.longs if x.stock_tag == ticker),None)
+        if w is None:
+            w = next((x for x in self.shorts if x.stock_tag == ticker),None)
+            if w is None:
+                return w.to_dict()
+        return w.to_dict()
 
     @classmethod
     def post_save(cls, sender, document, **kwargs):

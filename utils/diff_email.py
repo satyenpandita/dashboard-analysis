@@ -8,37 +8,64 @@ from models.portfolio.portfolio import Portfolio
 from models.portfolio.portfolio_archive import PortfolioArchive
 
 
+def diff_email_analyst(analyst):
+    p = Portfolio.objects.get(analyst=analyst)
+    best_idea_diff_email(p.id)
+
+
 @app.task()
 def best_idea_diff_email(portfolio_id):
+    stocks_longs_added_slack = []
+    stocks_shorts_added_slack = []
+    stocks_longs_removed_slack = []
+    stocks_shorts_removed_slack = []
     portfolio = Portfolio.objects.get(id=portfolio_id)
     archive = PortfolioArchive.objects(analyst=portfolio.analyst).first()
     if archive:
+
         pairs = generate_pairs(portfolio.longs, archive.longs)
-        diff_list_longs = [(x.stock_tag, '{:.1%}'.format(x.weight-y.weight)) for x, y in pairs
-                           if x.weight != y.weight and (x.weight - y.weight > .001 or x.weight - y.weight < -.001)]
+        diff_longs = get_diffs(pairs)
         pairs = generate_pairs(portfolio.shorts, archive.shorts)
-        diff_list_shorts = [(x.stock_tag, '{:.1%}'.format(x.weight-y.weight)) for x, y in pairs
-                            if x.weight != y.weight and (x.weight - y.weight > .001 or x.weight - y.weight < -.001)]
-        combined_list = diff_list_longs + diff_list_shorts
+        diff_shorts = get_diffs(pairs)
+
         longs_added = list(set(portfolio.all_longs()) - set(archive.all_longs()))
         shorts_added = list(set(portfolio.all_shorts()) - set(archive.all_shorts()))
         longs_removed = list(set(archive.all_longs()) - set(portfolio.all_longs()))
         shorts_removed = list(set(archive.all_shorts()) - set(portfolio.all_shorts()))
 
-        stocks_long = [x for x in diff_list_longs if x[0] not in longs_added]
-        stocks_short = [x for x in diff_list_shorts if x[0] not in shorts_added]
+        stocks_long = [(x['ticker'], x['weight_diff_str']) for x in diff_longs]
+        stocks_short = [(x['ticker'], x['weight_diff_str']) for x in diff_shorts]
+
         for stock in longs_added:
             stocks_long.append((stock.replace("Equity", "").strip(), portfolio.get_weight_str(stock)))
+            stocks_longs_added_slack.append(portfolio.get_item_dict(stock))
 
         for stock in shorts_added:
             stocks_short.append((stock.replace("Equity", "").strip(), portfolio.get_weight_str(stock)))
+            stocks_shorts_added_slack.append(portfolio.get_item_dict(stock))
+
+        for stock in longs_removed:
+            item = archive.get_item(stock)
+            stocks_longs_removed_slack.append({"ticker": item.stock_tag, "weight": item.weight, "name": item.name})
+
+        for stock in shorts_removed:
+            item = archive.get_item(stock)
+            stocks_shorts_removed_slack.append({"ticker": item.stock_tag, "weight": item.weight, "name": item.name})
 
         if len(stocks_long) > 0 or len(stocks_short)>0:
             subject = "[L: {}][S: {}]({}, BI)".format("|".join([" ".join(i) for i in stocks_long]),
                                                       "|".join([" ".join(i) for i in stocks_short]),
                                                       portfolio.analyst)
 
-            dispatch_slack_messages.delay({"analyst": portfolio.analyst, "longs": stocks_long, "shorts": stocks_short})
+            dispatch_slack_messages.delay({
+                "analyst": portfolio.analyst,
+                "longs": diff_longs,
+                "shorts": diff_shorts,
+                "longs_added": stocks_longs_added_slack,
+                "shorts_added": stocks_shorts_added_slack,
+                "longs_exited": stocks_longs_removed_slack,
+                "shorts_exited": stocks_shorts_removed_slack
+            })
 
             if len(longs_removed + shorts_removed) > 0:
                 subject += " - Stocks Removed [{}]".format("|".join(longs_removed + shorts_removed))
@@ -62,6 +89,18 @@ def generate_pairs(new_items, old_items):
         if old_match is not None:
             pairs.append((item, old_match))
     return pairs
+
+
+def get_diffs(pairs):
+    diff_arr = []
+    for x, y in pairs:
+        if x.weight != y.weight and (x.weight - y.weight > .001 or x.weight - y.weight < -.001):
+            tmp = x.to_dict()
+            tmp['weight_old'] = y.weight
+            tmp['weight_diff_str'] = '{:.1%}'.format(x.weight-y.weight)
+            tmp['weight_diff'] = x.weight-y.weight
+            diff_arr.append(tmp)
+    return diff_arr
 
 
 @app.task()

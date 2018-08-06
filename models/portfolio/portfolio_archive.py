@@ -44,3 +44,10 @@ class PortfolioArchive(Document):
         else:
             return '{:.1%}'.format(w)
 
+    def get_item(self, stock_code):
+        w = next((x for x in self.longs if x.stock_code == stock_code + " Equity"), None)
+        if w is None:
+            w = next((x for x in self.shorts if x.stock_code == stock_code + " Equity"), None)
+            if w is None:
+                return None
+        return w

@@ -18,8 +18,14 @@ class PortfolioItem(EmbeddedDocument):
     base_multiple_1yr = DecimalField(precision=2)
     bear_multiple_1yr = DecimalField(precision=2)
     valuation_str = StringField(max_length=500)
+    name = StringField(max_length=500)
 
     @property
     def stock_tag(self):
         return self.stock_code.replace("Equity", "").strip()
 
+    def to_dict(self):
+        import json
+        dic = json.loads(self.to_json())
+        dic['ticker'] = self.stock_tag
+        return dic

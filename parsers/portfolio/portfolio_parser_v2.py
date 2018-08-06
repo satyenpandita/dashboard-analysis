@@ -70,6 +70,7 @@ def get_tickers_new(worksheet, direction):
                 ticker = ticker
                 if ticker:
                     folio[ticker] = dict(weight=weight,
+                                         name=cell_value(worksheet, target_row, target_col - 1),
                                          roc=cell_value(worksheet, target_row, target_col + 7),
                                          base_tp_1yr=cell_value(worksheet, target_row, target_col + 13) if cell_value(worksheet, target_row, target_col + 13) != "" else None,
                                          bear_tp_1yr=cell_value(worksheet, target_row, target_col + 14) if cell_value(worksheet, target_row, target_col + 14) != "" else None,
@@ -84,7 +85,6 @@ def get_tickers_new(worksheet, direction):
                                          base_multiple_1yr=cell_value(worksheet, target_row, target_col + 59) if cell_value(worksheet, target_row, target_col + 59) != "" else None,
                                          bear_eps_1yr=cell_value(worksheet, target_row, target_col + 60) if cell_value(worksheet, target_row, target_col + 60) != "" else None,
                                          bear_multiple_1yr=cell_value(worksheet, target_row, target_col + 61) if cell_value(worksheet, target_row, target_col + 61) != "" else None,
-
                                          )
                 else:
                     INVALID_TICKERS[target_row + 1] = ticker
@@ -139,7 +139,7 @@ class PortfolioParserV2(object):
                                            base_tp_3yr=data['base_tp_3yr'], bear_tp_3yr=data['bear_tp_3yr'],
                                            base_con_3yr=data['base_con_3yr'], bear_con_3yr=data['bear_con_3yr'],
                                            base_eps_1yr=data['base_eps_1yr'], bear_eps_1yr=data['bear_eps_1yr'],
-                                           base_multiple_1yr=data['base_multiple_1yr'],
+                                           base_multiple_1yr=data['base_multiple_1yr'], name=data['name'],
                                            bear_multiple_1yr=data['bear_multiple_1yr'], valuation_str=data['valuation_str'])
             short_list.append(portfolio_item)
         for stock, data in self.long_tickers.items():
@@ -149,7 +149,7 @@ class PortfolioParserV2(object):
                                            base_tp_3yr=data['base_tp_3yr'], bear_tp_3yr=data['bear_tp_3yr'],
                                            base_con_3yr=data['base_con_3yr'], bear_con_3yr=data['bear_con_3yr'],
                                            base_eps_1yr=data['base_eps_1yr'], bear_eps_1yr=data['bear_eps_1yr'],
-                                           base_multiple_1yr=data['base_multiple_1yr'],
+                                           base_multiple_1yr=data['base_multiple_1yr'], name=data['name'],
                                            bear_multiple_1yr=data['bear_multiple_1yr'], valuation_str=data['valuation_str'])
             long_list.append(portfolio_item)
         portfolio = Portfolio(analyst=self.analyst, shorts=short_list, longs=long_list,
