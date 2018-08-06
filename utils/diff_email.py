@@ -52,21 +52,20 @@ def best_idea_diff_email(portfolio_id):
             item = archive.get_item(stock)
             stocks_shorts_removed_slack.append({"ticker": item.stock_tag, "weight": item.weight, "name": item.name})
 
+        dispatch_slack_messages.delay({
+            "analyst": portfolio.analyst,
+            "longs": diff_longs,
+            "shorts": diff_shorts,
+            "longs_added": stocks_longs_added_slack,
+            "shorts_added": stocks_shorts_added_slack,
+            "longs_exited": stocks_longs_removed_slack,
+            "shorts_exited": stocks_shorts_removed_slack
+        })
+
         if len(stocks_long) > 0 or len(stocks_short)>0:
             subject = "[L: {}][S: {}]({}, BI)".format("|".join([" ".join(i) for i in stocks_long]),
                                                       "|".join([" ".join(i) for i in stocks_short]),
                                                       portfolio.analyst)
-
-            dispatch_slack_messages.delay({
-                "analyst": portfolio.analyst,
-                "longs": diff_longs,
-                "shorts": diff_shorts,
-                "longs_added": stocks_longs_added_slack,
-                "shorts_added": stocks_shorts_added_slack,
-                "longs_exited": stocks_longs_removed_slack,
-                "shorts_exited": stocks_shorts_removed_slack
-            })
-
             if len(longs_removed + shorts_removed) > 0:
                 subject += " - Stocks Removed [{}]".format("|".join(longs_removed + shorts_removed))
 
@@ -120,6 +119,7 @@ def save_publish_time(stock_code):
 def dispatch_slack_messages(data):
     try:
         res = requests.post("https://notes.aurovilleinvestments.com/auro_slack/best_idea_published/", json=data)
+        # res = requests.post("http://localhost:8000/auro_slack/best_idea_published/", json=data)
         if res.status_code == requests.codes.ok:
             return "Request Successful"
         else:

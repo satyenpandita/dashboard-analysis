@@ -31,6 +31,7 @@ pyparsing==2.2.0
 pytz==2018.4
 redis==2.10.6
 requests==2.19.1
+simplejson==3.16.0
 six==1.11.0
 tornado==5.0.2
 urllib3==1.23
