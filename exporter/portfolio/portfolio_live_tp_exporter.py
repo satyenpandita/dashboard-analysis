@@ -10,7 +10,10 @@ class PortfolioLiveTPExporter(object):
         self.shorts = shorts
 
     def export(self, analyst):
-        filename = "portfolio live tps {}.xlsx".format(analyst)
+        if analyst=="AA":
+            filename = "aa override portfolio live tps {}.xlsx".format(analyst)
+        else:
+            filename = "portfolio live tps {}.xlsx".format(analyst)
         output_path = "/var/www/output/{}".format(filename)
         self.workbook = xlsxwriter.Workbook(output_path)
         try:

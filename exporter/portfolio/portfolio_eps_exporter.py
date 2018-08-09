@@ -10,7 +10,10 @@ class PortfolioEPSExporter(object):
         self.shorts = shorts
 
     def export(self, analyst):
-        filename = "eps aim best ideas {}.xlsx".format(analyst)
+        if analyst == "AA":
+            filename = "aa override eps ideas {}.xlsx".format(analyst)
+        else:
+            filename = "eps aim best ideas {}.xlsx".format(analyst)
         output_path = "/var/www/output/{}".format(filename)
         self.workbook = xlsxwriter.Workbook(output_path)
         try:

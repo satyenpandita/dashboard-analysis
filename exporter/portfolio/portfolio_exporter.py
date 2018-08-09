@@ -10,7 +10,10 @@ class PortfolioExporter(object):
         self.shorts = shorts
 
     def export(self, analyst, direction):
-        filename = "aim best ideas {} {}.xlsx".format(analyst, direction)
+        if analyst == 'AA':
+            filename = "aa override best ideas {} {}.xlsx".format(analyst, direction)
+        else:
+            filename = "aim best ideas {} {}.xlsx".format(analyst, direction)
         output_path = "/var/www/output/{}".format(filename)
         self.workbook = xlsxwriter.Workbook(output_path)
         try:
@@ -51,15 +54,17 @@ class PortfolioExporter(object):
         count = 2
 
         if direction == 'long':
+            total_securities = len(self.longs)
             for stock, data in self.longs.items():
-                if not data['is_live']:
+                if (not data['is_live']) or (data['is_live'] and analyst == "AA"):
                     worksheet.write('A{}'.format(count), 'AIM BEST IDEAS {} LONG'.format(analyst))
                     worksheet.write('B{}'.format(count), stock)
-                    worksheet.write('C{}'.format(count), data['weight']*100)
+                    weight = data['weight']*100 if analyst != "AA" else round(100/total_securities, 2)
+                    worksheet.write('C{}'.format(count), weight)
                     now = datetime.datetime.now()
                     worksheet.write('D{}'.format(count), now.strftime('%m/%d/%y'))
                     worksheet.write('E{}'.format(count), data['roc'])
-                    worksheet.write('F{}'.format(count), data['weight']*100)
+                    worksheet.write('F{}'.format(count), weight)
                     worksheet.write('G{}'.format(count), 'AIM BEST IDEAS {} LONG'.format(analyst))
                     worksheet.write('H{}'.format(count), data['base_tp_1yr'])
                     worksheet.write('I{}'.format(count), data['bear_tp_1yr'])
@@ -74,15 +79,17 @@ class PortfolioExporter(object):
                     worksheet.write('R{}'.format(count), data['valuation_str'])
                     count += 1
         elif direction == 'short':
+            total_securities = len(self.shorts)
             for stock, data in self.shorts.items():
-                if not data['is_live']:
+                if (not data['is_live']) or (data['is_live'] and analyst == "AA"):
                     worksheet.write('A{}'.format(count), 'AIM BEST IDEAS {} SHORT'.format(analyst))
                     worksheet.write('B{}'.format(count), stock)
-                    worksheet.write('C{}'.format(count), -data['weight']*100)
+                    weight = data['weight']*100 if analyst != "AA" else round(100/total_securities, 2)
+                    worksheet.write('C{}'.format(count), -weight)
                     now = datetime.datetime.now()
                     worksheet.write('D{}'.format(count), now.strftime('%m/%d/%y'))
                     worksheet.write('E{}'.format(count), data['roc'])
-                    worksheet.write('F{}'.format(count), -data['weight']*100)
+                    worksheet.write('F{}'.format(count), -weight)
                     worksheet.write('G{}'.format(count), 'AIM BEST IDEAS {} SHORT'.format(analyst))
                     worksheet.write('H{}'.format(count), data['base_tp_1yr'])
                     worksheet.write('I{}'.format(count), data['bear_tp_1yr'])

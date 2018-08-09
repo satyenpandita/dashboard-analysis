@@ -20,6 +20,9 @@ def best_idea_diff_email(portfolio_id):
     stocks_longs_removed_slack = []
     stocks_shorts_removed_slack = []
     portfolio = Portfolio.objects.get(id=portfolio_id)
+    if portfolio.analyst == "AA":
+        return
+
     archive = PortfolioArchive.objects(analyst=portfolio.analyst).first()
     if archive:
 
