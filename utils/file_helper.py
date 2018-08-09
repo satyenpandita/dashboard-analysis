@@ -13,7 +13,7 @@ def handle_uploaded_file(complete_path, file):
         return False
 
 
-def portfolio_upload(analyst):
+def portfolio_upload_util(analyst):
     file_found = False
     for file in os.listdir('/var/www/output'):
         if 'xls' in file[-4:] and analyst in file:

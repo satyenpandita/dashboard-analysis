@@ -14,7 +14,7 @@ from config.mongo_config import db
 from models.CumulativeDashBoard import CumulativeDashBoard
 from models.DashboardV2 import DashboardV2
 from utils.error_handlers import handle_500
-from utils.file_helper import portfolio_upload
+from utils.file_helper import portfolio_upload_util
 
 app = Flask(__name__, static_folder='static')
 
@@ -161,7 +161,7 @@ def portfolio_pnl():
 def portfolio_upload():
     if 'analyst' in request.args:
         analyst = request.args['analyst']
-        portfolio_upload(analyst)
+        portfolio_upload_util(analyst)
         return jsonify({'success': 'Tasks Queued'}), 201
     else:
         return jsonify({'error': 'No Analyst name'})

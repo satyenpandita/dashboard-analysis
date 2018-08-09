@@ -6,7 +6,7 @@ from exporter.portfolio.portfolio_live_tp_exporter import PortfolioLiveTPExporte
 from utils.cell_functions import find_cell, cell_value
 from utils.email_sender import send_mail
 from utils.upload_ops import ftp_upload, get_users
-from utils.file_helper import portfolio_upload
+from utils.file_helper import portfolio_upload_util
 
 INVALID_TICKERS = dict()
 
@@ -189,7 +189,7 @@ class PortfolioParserV2(object):
         self.output_file_short, self.output_file_short_name = exporter.export(self.analyst, 'short')
         self.eps_file, self.eps_file_name = eps_exporter.export(self.analyst)
         self.live_tp_file, self.live_tp_file_name = live_exporter.export(self.analyst)
-        portfolio_upload(self.analyst)
+        portfolio_upload_util(self.analyst)
 
     def send_email(self):
         recipients = ["ppal@auroim.com"]
