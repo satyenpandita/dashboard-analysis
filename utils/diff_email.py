@@ -84,7 +84,7 @@ def best_idea_diff_email(portfolio_id):
 def generate_pairs(new_items, old_items):
     pairs = []
     for item in new_items:
-        old_match = next((x for x in old_items if item.stock_tag == x.stock_tag), None)
+        old_match = next((x for x in old_items if item.stock_tag == x.stock_tag and not item.is_live), None)
         if old_match is not None:
             pairs.append((item, old_match))
     return pairs
