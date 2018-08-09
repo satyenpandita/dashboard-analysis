@@ -31,7 +31,7 @@ if __name__ == '__main__':
         s3_upload('ONDK US Equity_03-04-17.xlsx')
     elif sys.argv[1] == 'portfolio':
         for file in os.listdir('uploaded_files/portfolio'):
-            if 'xls' in file[-4:]:
+            if 'xls' in file[-4:] and file != 'Analyst PNLs.xlsx':
                 print(file)
                 workbook = open_workbook('uploaded_files/portfolio/'+file)
                 worksheet = workbook.sheet_by_index(0)
