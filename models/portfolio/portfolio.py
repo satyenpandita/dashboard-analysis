@@ -46,10 +46,10 @@ class Portfolio(Document):
             return False
 
     def all_longs(self):
-        return sorted([x.stock_tag for x in self.longs])
+        return sorted([x.stock_tag for x in self.longs if not x.is_live])
 
     def all_shorts(self):
-        return sorted([x.stock_tag for x in self.shorts])
+        return sorted([x.stock_tag for x in self.shorts if not x.is_live])
 
     def get_weight(self, stock_code):
         w = next((x.weight for x in self.longs if x.stock_code == stock_code),None)
