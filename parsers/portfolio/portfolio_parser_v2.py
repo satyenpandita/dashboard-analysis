@@ -68,7 +68,7 @@ def get_tickers_new(worksheet, direction):
             weight = cell_value(worksheet, target_row, target_col + 5)
             if ticker == "END":
                 break
-            elif ticker and ticker != "" and weight and weight != "" and weight >= 0:
+            elif ticker and ticker != "" and weight != "" and weight >= 0:
                 folio[ticker] = dict(weight=weight,
                                      name=cell_value(worksheet, target_row, target_col - 1),
                                      roc=cell_value(worksheet, target_row, target_col + 7),
