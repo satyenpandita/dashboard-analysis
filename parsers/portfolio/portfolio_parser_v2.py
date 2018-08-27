@@ -95,7 +95,7 @@ def get_tickers_new(worksheet, direction):
                                      bear_eps_1yr=cell_value(worksheet, target_row, target_col + 60) if cell_value(worksheet, target_row, target_col + 60) != "" else None,
                                      bear_multiple_1yr=cell_value(worksheet, target_row, target_col + 61) if cell_value(worksheet, target_row, target_col + 61) != "" else None,
                                      is_live=False,
-                                     is_overrride=False if not aa_portfolio else (cell_value(worksheet, target_row, target_col + 62) == "YES" if cell_value(worksheet, target_row, target_col + 62) != "" else False)
+                                     is_override=False if not aa_portfolio else (cell_value(worksheet, target_row, target_col + 62) == "YES" if cell_value(worksheet, target_row, target_col + 62) != "" else False)
                                      )
             elif ticker and ticker != "" and weight == "":
                 folio[ticker] = dict(weight=None,
@@ -115,7 +115,7 @@ def get_tickers_new(worksheet, direction):
                                      bear_eps_1yr=cell_value(worksheet, target_row, target_col + 60) if cell_value(worksheet, target_row, target_col + 60) != "" else None,
                                      bear_multiple_1yr=cell_value(worksheet, target_row, target_col + 61) if cell_value(worksheet, target_row, target_col + 61) != "" else None,
                                      is_live=True,
-                                     is_overrride=False if not aa_portfolio else (cell_value(worksheet, target_row, target_col + 62) == "YES" if cell_value(worksheet, target_row, target_col + 62) != "" else False)
+                                     is_override=False if not aa_portfolio else (cell_value(worksheet, target_row, target_col + 62) == "YES" if cell_value(worksheet, target_row, target_col + 62) != "" else False)
                                      )
             else:
                 INVALID_TICKERS[target_row + 1] = ticker
