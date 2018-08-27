@@ -97,7 +97,7 @@ def get_tickers_new(worksheet, direction):
                                      is_live=False,
                                      is_override=False if not aa_portfolio else (cell_value(worksheet, target_row, target_col + 62) == "YES" if cell_value(worksheet, target_row, target_col + 62) != "" else False)
                                      )
-            elif ticker and ticker != "" and weight == "":
+            elif (ticker and ticker != "" and weight == "") or aa_portfolio:
                 folio[ticker] = dict(weight=None,
                                      name=cell_value(worksheet, target_row, target_col - 1),
                                      roc=cell_value(worksheet, target_row, target_col + 7),
