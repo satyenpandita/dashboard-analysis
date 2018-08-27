@@ -2,7 +2,7 @@ import xlsxwriter
 import datetime
 
 
-class PortfolioLiveTPExporter(object):
+class TPOverrideExporter(object):
 
     def __init__(self, longs, shorts):
         self.workbook = None
@@ -11,7 +11,7 @@ class PortfolioLiveTPExporter(object):
 
     def export(self, analyst):
         if analyst == "AA":
-            filename = "aa override portfolio live tps {}.xlsx".format(analyst)
+            filename = "live_tp_override_{}".format(analyst)
         else:
             filename = "portfolio live tps {}.xlsx".format(analyst)
         output_path = "/var/www/output/{}".format(filename)
@@ -34,13 +34,6 @@ class PortfolioLiveTPExporter(object):
         worksheet.write('D1', 'Bear Tp 1yr', merge_format)
         worksheet.write('E1', 'Base Con 1yr', merge_format)
         worksheet.write('F1', 'Bear Con 1yr', merge_format)
-        worksheet.write('G1', 'Base Tp 3yr', merge_format)
-        worksheet.write('H1', 'Bear Tp 3yr', merge_format)
-        worksheet.write('I1', 'Base Con 3yr', merge_format)
-        worksheet.write('J1', 'Bear Con 3yr', merge_format)
-        worksheet.write('K1', 'Base Multiple 1yr', merge_format)
-        worksheet.write('L1', 'Bear Multiple 1yr', merge_format)
-        worksheet.write('M1', 'Valuation Str', merge_format)
 
     def __write_data(self, sheet):
         portfolio = {**self.longs, **self.shorts}
@@ -50,18 +43,12 @@ class PortfolioLiveTPExporter(object):
         count = 2
 
         for stock, data in portfolio.items():
-            worksheet.write('A{}'.format(count), stock)
-            worksheet.write('B{}'.format(count), datetime.datetime.now().strftime('%m/%d/%y'))
-            worksheet.write('C{}'.format(count), data['base_tp_1yr'])
-            worksheet.write('D{}'.format(count), data['bear_tp_1yr'])
-            worksheet.write('E{}'.format(count), data['base_con_1yr'])
-            worksheet.write('F{}'.format(count), data['bear_con_1yr'])
-            worksheet.write('G{}'.format(count), data['base_tp_3yr'])
-            worksheet.write('H{}'.format(count), data['bear_tp_3yr'])
-            worksheet.write('I{}'.format(count), data['base_con_3yr'])
-            worksheet.write('J{}'.format(count), data['bear_con_3yr'])
-            worksheet.write('K{}'.format(count), data['base_multiple_1yr'])
-            worksheet.write('L{}'.format(count), data['bear_multiple_1yr'])
-            worksheet.write('M{}'.format(count), data['valuation_str'])
-            count += 1
+            if data['is_override']:
+                worksheet.write('A{}'.format(count), stock)
+                worksheet.write('B{}'.format(count), datetime.datetime.now().strftime('%m/%d/%y'))
+                worksheet.write('C{}'.format(count), data['base_tp_1yr'])
+                worksheet.write('D{}'.format(count), data['bear_tp_1yr'])
+                worksheet.write('E{}'.format(count), data['base_con_1yr'])
+                worksheet.write('F{}'.format(count), data['bear_con_1yr'])
+                count += 1
 

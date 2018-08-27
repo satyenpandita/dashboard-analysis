@@ -3,6 +3,7 @@ from models.portfolio import Portfolio, PortfolioItem
 from exporter.portfolio.portfolio_exporter import PortfolioExporter
 from exporter.portfolio.portfolio_eps_exporter import PortfolioEPSExporter
 from exporter.portfolio.portfolio_live_tp_exporter import PortfolioLiveTPExporter
+from exporter.portfolio.tp_override_exporter import TPOverrideExporter
 from utils.cell_functions import find_cell, cell_value
 from utils.email_sender import send_mail
 from utils.upload_ops import ftp_upload, get_users
@@ -55,7 +56,15 @@ def get_tickers(worksheet, direction):
     return folio
 
 
+def is_aa_portfolio(worksheet):
+    analyst = get_analyst(worksheet)
+    if analyst == 'AA':
+        return True
+    return False
+
+
 def get_tickers_new(worksheet, direction):
+    aa_portfolio = is_aa_portfolio(worksheet)
     folio = dict()
     folio_type = 'LONG Pfolio ($M)' if direction == 'long' else 'Short Pfolio ($M)'
     row_offset = 3 if direction == 'long' else 2
@@ -68,7 +77,7 @@ def get_tickers_new(worksheet, direction):
             weight = cell_value(worksheet, target_row, target_col + 5)
             if ticker == "END":
                 break
-            elif ticker and ticker != "" and weight != "" and weight >= 0:
+            elif ticker and ticker != "" and weight != "" and weight >= 0 and not aa_portfolio:
                 folio[ticker] = dict(weight=weight,
                                      name=cell_value(worksheet, target_row, target_col - 1),
                                      roc=cell_value(worksheet, target_row, target_col + 7),
@@ -85,7 +94,8 @@ def get_tickers_new(worksheet, direction):
                                      base_multiple_1yr=cell_value(worksheet, target_row, target_col + 59) if cell_value(worksheet, target_row, target_col + 59) != "" else None,
                                      bear_eps_1yr=cell_value(worksheet, target_row, target_col + 60) if cell_value(worksheet, target_row, target_col + 60) != "" else None,
                                      bear_multiple_1yr=cell_value(worksheet, target_row, target_col + 61) if cell_value(worksheet, target_row, target_col + 61) != "" else None,
-                                     is_live=False
+                                     is_live=False,
+                                     is_overrride=False if not aa_portfolio else (cell_value(worksheet, target_row, target_col + 62) == "YES" if cell_value(worksheet, target_row, target_col + 62) != "" else False)
                                      )
             elif ticker and ticker != "" and weight == "":
                 folio[ticker] = dict(weight=None,
@@ -104,7 +114,8 @@ def get_tickers_new(worksheet, direction):
                                      base_multiple_1yr=cell_value(worksheet, target_row, target_col + 59) if cell_value(worksheet, target_row, target_col + 59) != "" else None,
                                      bear_eps_1yr=cell_value(worksheet, target_row, target_col + 60) if cell_value(worksheet, target_row, target_col + 60) != "" else None,
                                      bear_multiple_1yr=cell_value(worksheet, target_row, target_col + 61) if cell_value(worksheet, target_row, target_col + 61) != "" else None,
-                                     is_live=True
+                                     is_live=True,
+                                     is_overrride=False if not aa_portfolio else (cell_value(worksheet, target_row, target_col + 62) == "YES" if cell_value(worksheet, target_row, target_col + 62) != "" else False)
                                      )
             else:
                 INVALID_TICKERS[target_row + 1] = ticker
@@ -150,6 +161,8 @@ class PortfolioParserV2(object):
         self.eps_file_name = ''
         self.live_tp_file = ''
         self.live_tp_file_name = ''
+        self.live_tp_override_file = ''
+        self.live_tp_override_file_name = ''
 
     def save_and_generate_files(self):
         short_list = []
@@ -189,6 +202,9 @@ class PortfolioParserV2(object):
         self.output_file_short, self.output_file_short_name = exporter.export(self.analyst, 'short')
         self.eps_file, self.eps_file_name = eps_exporter.export(self.analyst)
         self.live_tp_file, self.live_tp_file_name = live_exporter.export(self.analyst)
+        if self.analyst == "AA":
+            live_override_exporter = TPOverrideExporter(self.long_tickers, self.short_tickers)
+            self.live_tp_override_file, self.live_tp_override_file_name = live_override_exporter.export(self.analyst)
         portfolio_upload_util(self.analyst)
 
     def send_email(self):

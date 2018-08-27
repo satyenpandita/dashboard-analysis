@@ -20,6 +20,7 @@ class PortfolioItem(EmbeddedDocument):
     valuation_str = StringField(max_length=500)
     name = StringField(max_length=500)
     is_live = BooleanField(default=False)
+    is_override = BooleanField(default=False)
 
     @property
     def stock_tag(self):

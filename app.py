@@ -126,6 +126,7 @@ def portfolio2():
     except Exception as e:
         app.logger.error("Publish Failed for file : {}".format(file.filename))
         app.logger.error("File Mime {}".format(file.content_type))
+        app.logger.error("Error Occured".format(str(e)))
         handle_500(e, file)
         return jsonify({'file': file.filename}), 500
 
