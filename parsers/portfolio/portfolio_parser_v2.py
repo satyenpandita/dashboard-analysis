@@ -176,7 +176,8 @@ class PortfolioParserV2(object):
                                            base_eps_1yr=data['base_eps_1yr'], bear_eps_1yr=data['bear_eps_1yr'],
                                            base_multiple_1yr=data['base_multiple_1yr'], name=data['name'],
                                            bear_multiple_1yr=data['bear_multiple_1yr'],
-                                           valuation_str=data['valuation_str'], is_live=data['is_live'])
+                                           valuation_str=data['valuation_str'], is_live=data['is_live'],
+                                           is_override=data['is_override'])
             short_list.append(portfolio_item)
         for stock, data in self.long_tickers.items():
             portfolio_item = PortfolioItem(stock_code=stock, weight=data['weight'], reason_for_change=data['roc'],
@@ -187,7 +188,8 @@ class PortfolioParserV2(object):
                                            base_eps_1yr=data['base_eps_1yr'], bear_eps_1yr=data['bear_eps_1yr'],
                                            base_multiple_1yr=data['base_multiple_1yr'], name=data['name'],
                                            bear_multiple_1yr=data['bear_multiple_1yr'],
-                                           valuation_str=data['valuation_str'], is_live=data['is_live'])
+                                           valuation_str=data['valuation_str'], is_live=data['is_live'],
+                                           is_override=data['is_override'])
             long_list.append(portfolio_item)
         portfolio = Portfolio(analyst=self.analyst, shorts=short_list, longs=long_list,
                               file_path='/var/www/portfolio/{}'.format(self.input_file))

@@ -11,7 +11,7 @@ class TPOverrideExporter(object):
 
     def export(self, analyst):
         if analyst == "AA":
-            filename = "live_tp_override_{}".format(analyst)
+            filename = "live tp override {}".format(analyst)
         else:
             filename = "portfolio live tps {}.xlsx".format(analyst)
         output_path = "/var/www/output/{}".format(filename)

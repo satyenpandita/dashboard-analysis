@@ -26,4 +26,4 @@ DEPENDENCIES
   capistrano (~> 3.11, >= 3.11.0)
 
 BUNDLED WITH
-   1.16.1
+   1.16.2
